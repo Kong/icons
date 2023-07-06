@@ -1,0 +1,44 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "editor.formatOnPaste": true,
+  "editor.trimAutoWhitespace": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "eslint.codeActionsOnSave.mode": "problems",
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "typescript",
+    "javascript",
+    "javascriptreact",
+    "vue"
+  ],
+  "files.associations": {
+    ".env.*": "ini",
+    "*.vue": "vue"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "markdownlint.ignore": [
+    "docs/**/*.md"
+  ],
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "sass",
+    "vue"
+  ],
+  "cssVariables.lookupFiles": [
+    "**/*.css",
+    "**/*.scss",
+    "node_modules/@kong/design-tokens/dist/tokens/css/variables.css"
+  ],
+  "scss.scannerExclude": [
+    "**/.git",
+    "**/bower_components"
+  ]
+}

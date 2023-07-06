@@ -1,0 +1,17 @@
+node_modules
+.DS_Store
+dist
+bin
+dist-ssr
+*.local
+bundle-analyzer
+
+.temp
+.cache
+.idea
+.husky
+
+docs/.vitepress/.temp
+docs/.vitepress/.cache
+docs/.vitepress/cache
+docs/.vitepress/dist
