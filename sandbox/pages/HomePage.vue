@@ -8,17 +8,17 @@
         Kong Icons Sandbox
       </h1>
     </router-link>
+    <div class="search">
+      <input
+        id="icon-filter"
+        v-model="query"
+        placeholder="Search icons"
+        type="search"
+      >
+    </div>
   </div>
   <div class="sandbox-layout">
     <div class="sandbox-container">
-      <div class="search">
-        <input
-          id="icon-filter"
-          v-model="query"
-          placeholder="Search icons"
-          type="search"
-        >
-      </div>
       <div
         v-if="filteredComponents.length"
         class="icon-container"
@@ -106,8 +106,6 @@ const filteredComponents = computed(() => {
 }
 
 .search {
-  margin-bottom: 12px;
-
   input {
     border: 1px solid #ccc;
     border-radius: 4px;
