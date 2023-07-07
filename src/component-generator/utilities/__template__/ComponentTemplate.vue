@@ -3,20 +3,41 @@
 import { computed } from 'vue'
 
 const props = defineProps({
+  /** The SVG accessible name element */
   title: {
     type: String,
     required: false,
     default: '',
   },
+  /** The icon color. Defaults to `currentColor` which inherits text color from the parent element */
+  color: {
+    type: String,
+    required: false,
+    default: 'currentColor',
+  },
+  /** The CSS display property for the icon. Defaults to `block` */
+  display: {
+    type: String,
+    required: false,
+    default: 'block',
+  },
+  /** Whether the icon is just eye-candy or is meaningful to the page (should screen-readers ignore the icon?) */
   decorative: {
     type: Boolean,
     required: false,
     default: false,
   },
+  /** The icon size */
   size: {
     type: Number,
     required: false,
     default: 24, // TODO: Replace with a token
+  },
+  /** The HTML tag to utilize for the icon's wrapper element. Defaults to `span` */
+  tag: {
+    type: String,
+    required: false,
+    default: 'span',
   },
 })
 
@@ -26,8 +47,8 @@ const props = defineProps({
  */
 const rootElementStyles = computed((): Record<string, string> => ({
   boxSizing: 'border-box',
-  color: 'currentColor',
-  display: 'block',
+  color: props.color,
+  display: props.display,
   height: `${props.size}px`,
   lineHeight: '0',
   width: `${props.size}px`,
@@ -35,13 +56,16 @@ const rootElementStyles = computed((): Record<string, string> => ({
 </script>
 
 <template>
-  <span
+  <component
+    :is="tag"
     class="kui-icon {%%KONG_COMPONENT_ICON_CLASS%%}"
+    data-testid="kui-icon-wrapper-{%%KONG_COMPONENT_ICON_CLASS%%}"
     :style="rootElementStyles"
   >
     <svg
       :aria-hidden="decorative ? true : false"
       aria-labelledby="theTitle"
+      data-testid="kui-icon-svg-{%%KONG_COMPONENT_ICON_CLASS%%}"
       fill="none"
       :height="size"
       role="img"
@@ -52,7 +76,7 @@ const rootElementStyles = computed((): Record<string, string> => ({
       <title v-if="title">{{ title }}</title>
       {%%ICON_SVG_INNER_HTML%%}
     </svg>
-  </span>
+  </component>
 </template>
 
 <style lang="scss" scoped>
