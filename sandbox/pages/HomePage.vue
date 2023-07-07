@@ -14,6 +14,7 @@
       <SandboxNav />
     </div>
     <div class="sandbox-container">
+      <p>Navigate to a path of <code>/icons/{IconName}</code> to preview a rendered icon</p>
       <router-view />
     </div>
   </div>
@@ -81,5 +82,14 @@ import SandboxNav from '../components/SandboxNav.vue'
 .home-link {
   color: var(--blue-500);
   text-decoration: none;
+}
+
+code {
+  background: #eee;
+  border-radius: 4px;
+  color: #007ac1;
+  font-family: monospace;
+  font-size: 16px;
+  padding: 2px 4px;
 }
 </style>

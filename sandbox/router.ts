@@ -10,9 +10,9 @@ export default createRouter({
       component: () => import('./pages/HomePage.vue'),
       children: [
         {
-          path: 'icons',
-          name: 'icons',
-          meta: { title: 'Icons' },
+          path: 'icons/:icon(\\w+)',
+          name: 'icon',
+          meta: { title: 'Icon' },
           component: () => import('./pages/SandboxIcon.vue'),
         },
       ],

@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 /** {%%KONG_ICONS_COMPONENT_FILE_HEADER%%} */
-defineProps({
+
+import { computed } from 'vue'
+
+const props = defineProps({
   title: {
     type: String,
     required: false,
@@ -17,10 +20,19 @@ defineProps({
     default: 24, // TODO: Replace with a token
   },
 })
+
+const rootElementStyles = computed((): Record<string, string> => ({
+  boxSizing: 'border-box',
+  color: 'currentColor',
+  display: 'block',
+  height: `${props.size}px`,
+  lineHeight: '0',
+  width: `${props.size}px`,
+}))
 </script>
 
 <template>
-  <span class="kui-icon">
+  <span :style="rootElementStyles">
     <svg
       :aria-hidden="decorative ? true : false"
       aria-labelledby="theTitle"

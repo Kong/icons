@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li
+    <!-- <li
       v-for="link in links"
       :key="link.name"
       class="sandbox-link"
@@ -11,7 +11,7 @@
       >
         {{ link.name }}
       </router-link>
-    </li>
+    </li> -->
   </ul>
 </template>
 
@@ -26,11 +26,11 @@ interface SandboxNavItem {
 
 defineEmits(['router-link-click'])
 
-const links = computed((): SandboxNavItem[] => (
-  [
-    { name: 'Icons', to: { name: 'icons' } },
-  ]
-))
+// const links = computed((): SandboxNavItem[] => (
+//   [
+//     { name: 'Icons', to: { name: 'icons' } },
+//   ]
+// ))
 </script>
 
 <style lang="scss" scoped>
