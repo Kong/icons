@@ -3,18 +3,20 @@ import path from 'path'
 import { load } from 'cheerio'
 import { COMPONENT_FILE_HEADER, kebabCase, pascalCase } from './index.js'
 
-export default function createComponentFromSvg(svgFileName) {
+export default function createComponentFromSvg(pathToSvg, svgFileName) {
   let svgFile, componentTemplate
+
   // Get the SVG source file
   try {
-    svgFile = fs.readFileSync(path.resolve(`./svg/${svgFileName}`), 'utf8')
+    // svgFile = fs.readFileSync(path.resolve(`./svg/${pathToSvg}`), 'utf8')
+    svgFile = fs.readFileSync(path.resolve(pathToSvg), 'utf8')
   } catch (err) {
-    console.log('TODO: Add error messaging 1')
-    return
+    console.log('TODO: Add error messaging 1', err)
+    process.exit(1)
   }
 
   // The kebab-case name of the svg
-  const name = kebabCase(`${svgFileName.replace(/icon/gi, '')}Icon`).replace(/\.svg/, '')
+  const name = kebabCase(`${svgFileName.replace(/([a-zA-Z]+)icon/gi, '$1')}Icon`).replace(/\.svg/, '')
   // The PascalCase component name, without the extension
   const componentName = `${pascalCase(name).replace(/\.vue$/gi, '')}`
   // Convert the name to pascal case, ensure the string `Icon.vue` is at the end of the component name
@@ -25,8 +27,20 @@ export default function createComponentFromSvg(svgFileName) {
     xmlMode: true,
   })
 
-  // Modify path element attributes
-  $cheerio('path')?.attr('fill', 'currentColor')
+  // If the svg is within the `/svg/solid/` directory, replace attribute values as needed to standardize
+  const solidIconsDirectory = path.relative(path.resolve('./svg/solid'), pathToSvg)
+  const isSolidIcon = solidIconsDirectory && !solidIconsDirectory.startsWith('..') && !path.isAbsolute(solidIconsDirectory)
+
+  // If a `/svg/solid/` icon, modify element attributes
+  if (isSolidIcon) {
+    const path = $cheerio('path')
+    if (path.attr('fill')) {
+      path?.attr('fill', 'currentColor')
+    }
+    if (path.attr('stroke')) {
+      path?.attr('stroke', 'currentColor')
+    }
+  }
 
   // Get the innerHTML of the <svg> element, stripping any leading or trailing newlines
   const svgInnerHtml = String($cheerio('svg').html() || '').replace(/^\n+|\n+$/g, '')
@@ -40,22 +54,22 @@ export default function createComponentFromSvg(svgFileName) {
       .replace(/{%%KONG_COMPONENT_ICON_CLASS%%}/g, name)
   } catch (err) {
     console.log('TODO: Add error messaging 2')
-    return
+    process.exit(1)
   }
 
   try {
     // Write the template to the file
     fs.writeFileSync(path.resolve(`./src/components/${componentFilenameWithExtension}`), componentTemplate, 'utf8')
   } catch (err) {
-    console.log('TODO: Add error messaging 3')
+    console.log('TODO: Add error messaging 3', err)
+    process.exit(1)
   }
 
   try {
     // Add the component export to the `/src/components/index.ts` file
     fs.appendFileSync(path.resolve('./src/components/index.ts'), `export { default as ${componentName} } from './${componentFilenameWithExtension}'\n`)
   } catch (err) {
-    console.log('TODO: Add error messaging 4')
-    // eslint-disable-next-line no-useless-return
-    return
+    console.log('TODO: Add error messaging 4', err)
+    process.exit(1)
   }
 }
