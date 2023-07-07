@@ -8,14 +8,6 @@ export default createRouter({
       name: 'home',
       meta: { title: 'Kong Icons Sandbox' },
       component: () => import('./pages/HomePage.vue'),
-      children: [
-        {
-          path: 'icons/:icon(\\w+)',
-          name: 'icon',
-          meta: { title: 'Icon' },
-          component: () => import('./pages/SandboxIcon.vue'),
-        },
-      ],
     },
   ],
 })

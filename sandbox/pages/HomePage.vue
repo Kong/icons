@@ -10,23 +10,54 @@
     </router-link>
   </div>
   <div class="sandbox-layout">
-    <div class="nav-container">
-      <SandboxNav />
-    </div>
     <div class="sandbox-container">
-      <p v-if="route.name === 'home'">
-        Navigate to a path of <code>/icons/{IconName}</code> to preview a rendered icon
+      <div class="search">
+        <input
+          id="icon-filter"
+          v-model="query"
+          placeholder="Search icons"
+          type="search"
+        >
+      </div>
+      <div
+        v-if="filteredComponents.length"
+        class="icon-container"
+      >
+        <SandboxIcon
+          v-for="(icon, idx) in filteredComponents"
+          :key="`icon-${idx}`"
+          :icon="icon.component"
+        />
+      </div>
+      <p v-else>
+        No icons match your query. Try searching again.
       </p>
-      <router-view :key="route.fullPath" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import SandboxNav from '../components/SandboxNav.vue'
-import { useRoute } from 'vue-router'
+import { ref, computed } from 'vue'
+import SandboxIcon from '../components/SandboxIcon.vue'
+import * as iconComponents from '../../src/components'
 
-const route = useRoute()
+const query = ref('')
+const filteredComponents = computed(() => {
+  const allComponents = []
+
+  for (const [key, val] of Object.entries(iconComponents)) {
+    allComponents.push({
+      name: key,
+      component: val,
+    })
+  }
+
+  if (!query.value) {
+    return allComponents
+  }
+
+  return allComponents.filter((icon: any) => icon.name.toLowerCase().includes(query.value))
+})
 </script>
 
 <style lang="scss" scoped>
@@ -57,12 +88,6 @@ const route = useRoute()
 .sandbox-layout {
   display: flex;
   padding: 20px;
-
-  .nav-container {
-    display: block;
-    margin-right: 20px;
-    min-width: 280px;
-  }
 }
 
 .sandbox-container {
@@ -73,15 +98,6 @@ const route = useRoute()
     border: 1px solid lightgray;
     padding: 20px;
   }
-
-  .sandbox-welcome {
-    margin: 0 auto;
-    max-width: 700px;
-
-    h2 {
-      text-align: center;
-    }
-  }
 }
 
 .home-link {
@@ -89,12 +105,29 @@ const route = useRoute()
   text-decoration: none;
 }
 
-code {
-  background: #eee;
-  border-radius: 4px;
-  color: #007ac1;
-  font-family: monospace;
-  font-size: 16px;
-  padding: 2px 4px;
+.search {
+  margin-bottom: 12px;
+
+  input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 14px;
+    height: 40px;
+    max-width: 200px;
+    padding: 4px 8px;
+    width: 100%;
+  }
+}
+
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-items: stretch;
+}
+
+p {
+  font-size: 14px;
 }
 </style>

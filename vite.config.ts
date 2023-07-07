@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import fs from 'fs'
 import path, { join } from 'path'
 import { visualizer } from 'rollup-plugin-visualizer'
 
@@ -14,22 +13,11 @@ const buildVisualizerPlugin = process.env.BUILD_VISUALIZER
   })
   : undefined
 
-const getIconComponentList = () => {
-  const iconComponents = fs.readdirSync(path.resolve('./src/components')) || []
-
-  return JSON.stringify(iconComponents.filter(filename => filename.includes('.vue')).map((component: string) => {
-    return component.replace(/\.vue/gi, '')
-  }))
-}
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
   ],
-  define: {
-    ICON_COMPONENT_LIST: getIconComponentList(),
-  },
   resolve: {
     alias: {
       // Alias src directory for imports

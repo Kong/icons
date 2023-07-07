@@ -10,7 +10,7 @@ try {
   console.log('')
 
   // const svgFiles = fs.readdirSync(path.resolve('./svg'))
-  const svgFiles = getAllFiles(path.resolve('./svg'))
+  const svgFiles = getAllFiles(path.resolve('./svg'), 'svg')
   const svgCount = svgFiles.length
 
   console.log(`Generating ${svgCount.toLocaleString()} icon components...`)
