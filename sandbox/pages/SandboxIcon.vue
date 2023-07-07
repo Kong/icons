@@ -2,6 +2,7 @@
   <component
     :is="iconComponent"
     v-if="iconName"
+    :size="60"
   />
 </template>
 

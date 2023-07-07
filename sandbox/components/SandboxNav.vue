@@ -1,39 +1,56 @@
 <template>
-  <ul>
-    <!-- <li
-      v-for="link in links"
-      :key="link.name"
-      class="sandbox-link"
-    >
-      <router-link
-        :to="link.to"
-        @click="$emit('router-link-click')"
+  <nav>
+    <ul>
+      <li
+        v-for="link in links"
+        :key="JSON.stringify(link.to)"
+        class="sandbox-link"
       >
-        {{ link.name }}
-      </router-link>
-    </li> -->
-  </ul>
+        <router-link :to="link.to">
+          {{ link.name }}
+        </router-link>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, nextTick } from 'vue'
 import { RouteLocationRaw } from 'vue-router'
 
 interface SandboxNavItem {
-  name: string
   to: RouteLocationRaw
+  name: string
 }
 
-defineEmits(['router-link-click'])
+const links = computed((): SandboxNavItem[] => {
+  const componentLinks: SandboxNavItem[] = []
 
-// const links = computed((): SandboxNavItem[] => (
-//   [
-//     { name: 'Icons', to: { name: 'icons' } },
-//   ]
-// ))
+  // Iterate through the globally-defined component list (see `vite.config.ts` => `define`)
+  for (const component of ICON_COMPONENT_LIST) {
+    componentLinks.push({
+      name: component,
+      to: { name: 'icon', params: { icon: component } },
+    })
+  }
+
+  return componentLinks
+})
+
+onMounted(async () => {
+  await nextTick()
+
+  const activeLink: HTMLLinkElement | null = document.querySelector('.router-link-exact-active')
+  activeLink?.scrollIntoView({ behavior: 'smooth' })
+})
 </script>
 
 <style lang="scss" scoped>
+nav {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -50,7 +67,7 @@ ul {
   a {
     background: #eee;
     border-radius: 4px;
-    color: var(--blue-500);
+    color: #007ac1;
     display: flex;
     font-weight: 500;
     padding: 8px 16px;
@@ -63,11 +80,11 @@ ul {
     }
 
     &.router-link-active {
-      background: var(--blue-500);
+      background: #007ac1;
       color: #fff;
 
       &:hover {
-        background: var(--blue-500);
+        background: #007ac1;
         color: #fff;
       }
     }

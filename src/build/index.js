@@ -8,7 +8,7 @@ console.log('')
 console.log(pc.cyan(pc.bold(`${emoji('sparkles')} Kong Icons ${emoji('sparkles')}`)))
 console.log('')
 
-const svgFiles = fs.readdirSync('./svg')
+const svgFiles = fs.readdirSync(path.resolve('./svg'))
 const svgCount = svgFiles.length
 
 console.log(`Generating ${svgCount.toLocaleString()} icon components...`)

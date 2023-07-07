@@ -15,13 +15,16 @@
     </div>
     <div class="sandbox-container">
       <p>Navigate to a path of <code>/icons/{IconName}</code> to preview a rendered icon</p>
-      <router-view />
+      <router-view :key="route.fullPath" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import SandboxNav from '../components/SandboxNav.vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 </script>
 
 <style lang="scss" scoped>
@@ -80,7 +83,7 @@ import SandboxNav from '../components/SandboxNav.vue'
 }
 
 .home-link {
-  color: var(--blue-500);
+  color: #000;
   text-decoration: none;
 }
 
