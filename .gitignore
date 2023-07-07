@@ -6,6 +6,11 @@ dist-ssr
 *.local
 bundle-analyzer
 
+# Build files - yes, these should be ignored
+src/components/**
+
+# Temp files
+
 .temp
 .cache
 .idea

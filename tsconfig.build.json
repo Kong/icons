@@ -1,8 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "exclude": [
-    "src/build.js",
-    "src/utilities",
+    "src/build",
     "sandbox",
     "node_modules",
     "dist",

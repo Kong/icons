@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 /** {%%KONG_ICONS_COMPONENT_FILE_HEADER%%} */
-
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -21,6 +20,10 @@ const props = defineProps({
   },
 })
 
+/**
+ * For now, we are adding styles inline to avoid additional stylesheet imports in the host application/component.
+ * This _does_ make it harder to override styles; however, all of the properties can/will be mapped to component props for customization.
+ */
 const rootElementStyles = computed((): Record<string, string> => ({
   boxSizing: 'border-box',
   color: 'currentColor',
@@ -55,12 +58,8 @@ const rootElementStyles = computed((): Record<string, string> => ({
 </template>
 
 <style lang="scss" scoped>
-.kui-icon {
-  box-sizing: border-box;
-  color: currentColor;
-  display: block;
-  height: $kui-font-size-60;
-  line-height: 0;
-  width: $kui-font-size-60;
-}
+/**
+ * For now, we are adding styles inline to avoid additional stylesheet imports in the host application/component.
+ * Do not add styles into this component file.
+ */
 </style>
