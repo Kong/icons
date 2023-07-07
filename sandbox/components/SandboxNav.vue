@@ -1,4 +1,7 @@
 <template>
+  <p class="nav-info">
+    Scroll to view all icons
+  </p>
   <nav>
     <ul>
       <li
@@ -89,5 +92,10 @@ ul {
       }
     }
   }
+}
+
+.nav-info {
+  font-size: 14px;
+  margin: 0 auto 8px;
 }
 </style>
