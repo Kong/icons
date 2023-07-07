@@ -75,6 +75,7 @@ export default defineConfig({
     ],
   },
   server: {
+    open: !!process.env.USE_SANDBOX,
     fs: {
       // Allow serving files from one level up from the package root - IMPORTANT - to support the sandbox
       allow: [join(__dirname, '..')],

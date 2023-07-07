@@ -25,8 +25,9 @@
   "scripts": {
     "build": "yarn stylelint && yarn lint && yarn build:icons && yarn docs:build",
     "build:ci": "yarn build:icons && yarn docs:build",
-    "build:components": "rimraf ./dist && node './src/component-generator' && yarn typecheck && vite build && vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
+    "build:components": "rimraf ./dist && yarn generate && yarn typecheck && vite build && vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
     "build:visualize": "BUILD_VISUALIZER=true rimraf ./dist && node './src/component-generator' && vite build -m production",
+    "generate": "node './src/component-generator' && yarn lint:fix:generated",
     "dev": "USE_SANDBOX=true vite",
     "docs:build": "vitepress build docs",
     "docs:dev": "vitepress dev docs",
@@ -35,6 +36,7 @@
     "typecheck": "vue-tsc -p './tsconfig.build.json' --noEmit",
     "lint": "eslint '**/*.{js,ts,vue}'",
     "lint:fix": "eslint '**/*.{js,ts,vue}' --fix",
+    "lint:fix:generated": "eslint './src/components/*.vue' --fix",
     "stylelint": "stylelint './src/**/*.{css,scss,vue}'",
     "stylelint:fix": "stylelint './src/**/*.{css,scss,vue}' --fix",
     "semantic-release": "semantic-release",

@@ -43,19 +43,14 @@ const rootElementStyles = computed((): Record<string, string> => ({
       :aria-hidden="decorative ? true : false"
       aria-labelledby="theTitle"
       fill="none"
-      :height="String(size)"
+      :height="size"
       role="img"
       viewBox="0 0 24 24"
-      :width="String(size)"
+      :width="size"
       xmlns="http://www.w3.org/2000/svg"
     >
       <title v-if="title">{{ title }}</title>
-      <path
-        clipRule="evenodd"
-        d="{%%ICON_SVG_PATH%%}"
-        fill="currentColor"
-        fillRule="evenodd"
-      />
+      {%%ICON_SVG_INNER_HTML%%}
     </svg>
   </span>
 </template>

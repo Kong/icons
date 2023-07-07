@@ -20,17 +20,23 @@ export default function createComponentFromSvg(svgFileName) {
   // Convert the name to pascal case, ensure the string `Icon.vue` is at the end of the component name
   const componentFilenameWithExtension = `${componentName}.vue`
 
-  const cheerio = load(svgFile, {
+  // Load the svg file as XML
+  const $cheerio = load(svgFile, {
     xmlMode: true,
   })
 
-  const svgPathDefinition = cheerio('path')?.attr('d') || ''
+  // Modify path element attributes
+  $cheerio('path')?.attr('fill', 'currentColor')
+
+  // Get the innerHTML of the <svg> element, stripping any leading or trailing newlines
+  const svgInnerHtml = String($cheerio('svg').html() || '').replace(/^\n+|\n+$/g, '')
 
   try {
     // Import the component template and replace placeholder strings
     componentTemplate = fs.readFileSync(path.resolve('./src/component-generator/utilities/__template__/ComponentTemplate.vue'), 'utf8')
       .replace(/\/\*\* {%%ICON_COMPONENT_FILE_HEADER%%} \*\//g, COMPONENT_FILE_HEADER)
-      .replace(/{%%ICON_SVG_PATH%%}/g, svgPathDefinition)
+      // .replace(/{%%ICON_SVG_PATH%%}/g, svgPathDefinition)
+      .replace(/{%%ICON_SVG_INNER_HTML%%}/g, svgInnerHtml)
       .replace(/{%%KONG_COMPONENT_ICON_CLASS%%}/g, name)
   } catch (err) {
     console.log('TODO: Add error messaging 2')
