@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-/** {%%KONG_ICONS_COMPONENT_FILE_HEADER%%} */
+/** {%%ICON_COMPONENT_FILE_HEADER%%} */
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -35,7 +35,10 @@ const rootElementStyles = computed((): Record<string, string> => ({
 </script>
 
 <template>
-  <span :style="rootElementStyles">
+  <span
+    class="kui-icon {%%KONG_COMPONENT_ICON_CLASS%%}"
+    :style="rootElementStyles"
+  >
     <svg
       :aria-hidden="decorative ? true : false"
       aria-labelledby="theTitle"
@@ -49,7 +52,7 @@ const rootElementStyles = computed((): Record<string, string> => ({
       <title v-if="title">{{ title }}</title>
       <path
         clipRule="evenodd"
-        d="{%%KONG_ICONS_SVG_PATH%%}"
+        d="{%%ICON_SVG_PATH%%}"
         fill="currentColor"
         fillRule="evenodd"
       />

@@ -14,9 +14,9 @@ export default function createComponentFromSvg(svgFileName) {
   }
 
   // The kebab-case name of the svg
-  const name = kebabCase(svgFileName).replace(/\.svg/, '')
+  const name = kebabCase(`${svgFileName.replace(/icon/gi, '')}Icon`).replace(/\.svg/, '')
   // The PascalCase component name, without the extension
-  const componentName = `${pascalCase(name).replace(/icon/gi, '').replace(/\.vue$/gi, '')}Icon`
+  const componentName = `${pascalCase(name).replace(/\.vue$/gi, '')}`
   // Convert the name to pascal case, ensure the string `Icon.vue` is at the end of the component name
   const componentFilenameWithExtension = `${componentName}.vue`
 
@@ -28,9 +28,10 @@ export default function createComponentFromSvg(svgFileName) {
 
   try {
     // Import the component template and replace placeholder strings
-    componentTemplate = fs.readFileSync(path.resolve('./src/build/utilities/__template__/ComponentTemplate.vue'), 'utf8')
-      .replace(/\/\*\* {%%KONG_ICONS_COMPONENT_FILE_HEADER%%} \*\//g, COMPONENT_FILE_HEADER)
-      .replace(/{%%KONG_ICONS_SVG_PATH%%}/g, svgPathDefinition)
+    componentTemplate = fs.readFileSync(path.resolve('./src/component-generator/utilities/__template__/ComponentTemplate.vue'), 'utf8')
+      .replace(/\/\*\* {%%ICON_COMPONENT_FILE_HEADER%%} \*\//g, COMPONENT_FILE_HEADER)
+      .replace(/{%%ICON_SVG_PATH%%}/g, svgPathDefinition)
+      .replace(/{%%KONG_COMPONENT_ICON_CLASS%%}/g, name)
   } catch (err) {
     console.log('TODO: Add error messaging 2')
     return
