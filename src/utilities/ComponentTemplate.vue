@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-/**
-{%%KONG_ICONS_COMPONENT_FILE_HEADER%%}
- */
+/** {%%KONG_ICONS_COMPONENT_FILE_HEADER%%} */
 defineProps({
   title: {
     type: String,

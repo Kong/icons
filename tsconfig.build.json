@@ -1,9 +1,8 @@
 {
   "extends": "./tsconfig.json",
   "exclude": [
-    "src/**/*.cy.ts",
-    "src/App.vue",
-    "src/main.ts",
+    "src/build.js",
+    "src/utilities",
     "sandbox",
     "node_modules",
     "dist",

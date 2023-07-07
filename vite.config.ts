@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path, { join } from 'path'
 import { visualizer } from 'rollup-plugin-visualizer'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // Include the rollup-plugin-visualizer if the BUILD_VISUALIZER env var is set to "true"
 const buildVisualizerPlugin = process.env.BUILD_VISUALIZER
@@ -17,6 +18,10 @@ const buildVisualizerPlugin = process.env.BUILD_VISUALIZER
 export default defineConfig({
   plugins: [
     vue(),
+    // TODO: Verify injecting the styles here will not create downstream issues, including if the Icons are mounted in the shadowDOM
+    // https://github.com/vitejs/vite/issues/1579
+    // https://www.npmjs.com/package/vite-plugin-css-injected-by-js
+    cssInjectedByJsPlugin(),
   ],
   resolve: {
     alias: {
@@ -40,6 +45,7 @@ export default defineConfig({
       name: 'KongIcons',
       fileName: (format) => `kong-icons.${format}.js`,
     },
+    emptyOutDir: true,
     minify: true,
     sourcemap: true,
     rollupOptions: {
