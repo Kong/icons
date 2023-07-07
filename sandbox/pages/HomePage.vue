@@ -14,7 +14,9 @@
       <SandboxNav />
     </div>
     <div class="sandbox-container">
-      <p>Navigate to a path of <code>/icons/{IconName}</code> to preview a rendered icon</p>
+      <p v-if="route.name === 'home'">
+        Navigate to a path of <code>/icons/{IconName}</code> to preview a rendered icon
+      </p>
       <router-view :key="route.fullPath" />
     </div>
   </div>
