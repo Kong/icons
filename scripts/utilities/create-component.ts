@@ -1,16 +1,16 @@
 import fs from 'fs'
 import path from 'path'
 import { load } from 'cheerio'
-import { COMPONENT_FILE_HEADER, kebabCase, pascalCase } from './index.js'
+import { COMPONENT_FILE_HEADER, kebabCase, pascalCase } from './index'
 
-export default function createComponentFromSvg(pathToSvg, svgFileName) {
+export default function createComponentFromSvg(pathToSvg: string, svgFileName: string): void {
   let svgFile, componentTemplate
 
   // Get the SVG source file
   try {
     // svgFile = fs.readFileSync(path.resolve(`./svg/${pathToSvg}`), 'utf8')
     svgFile = fs.readFileSync(path.resolve(pathToSvg), 'utf8')
-  } catch (err) {
+  } catch (err: any) {
     console.log('TODO: Add error messaging 1', err)
     process.exit(1)
   }
@@ -29,7 +29,7 @@ export default function createComponentFromSvg(pathToSvg, svgFileName) {
 
   // If the svg is within the `/svg/solid/` directory, replace attribute values as needed to standardize
   const solidIconsDirectory = path.relative(path.resolve('./svg/solid'), pathToSvg)
-  const isSolidIcon = solidIconsDirectory && !solidIconsDirectory.startsWith('..') && !path.isAbsolute(solidIconsDirectory)
+  const isSolidIcon: boolean = !!solidIconsDirectory && !solidIconsDirectory.startsWith('..') && !path.isAbsolute(solidIconsDirectory)
 
   // If a `/svg/solid/` icon, modify element attributes
   if (isSolidIcon) {
@@ -52,7 +52,7 @@ export default function createComponentFromSvg(pathToSvg, svgFileName) {
       // .replace(/{%%ICON_SVG_PATH%%}/g, svgPathDefinition)
       .replace(/{%%ICON_SVG_INNER_HTML%%}/g, svgInnerHtml)
       .replace(/{%%KONG_COMPONENT_ICON_CLASS%%}/g, name)
-  } catch (err) {
+  } catch (err: any) {
     console.log('TODO: Add error messaging 2')
     process.exit(1)
   }
@@ -60,7 +60,7 @@ export default function createComponentFromSvg(pathToSvg, svgFileName) {
   try {
     // Write the template to the file
     fs.writeFileSync(path.resolve(`./src/components/${componentFilenameWithExtension}`), componentTemplate, 'utf8')
-  } catch (err) {
+  } catch (err: any) {
     console.log('TODO: Add error messaging 3', err)
     process.exit(1)
   }
@@ -68,7 +68,7 @@ export default function createComponentFromSvg(pathToSvg, svgFileName) {
   try {
     // Add the component export to the `/src/components/index.ts` file
     fs.appendFileSync(path.resolve('./src/components/index.ts'), `export { default as ${componentName} } from './${componentFilenameWithExtension}'\n`)
-  } catch (err) {
+  } catch (err: any) {
     console.log('TODO: Add error messaging 4', err)
     process.exit(1)
   }

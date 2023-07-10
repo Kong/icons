@@ -39,14 +39,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Stylelint
-        run: yarn stylelint
-
-      - name: Lint
-        run: yarn lint
-
-      - name: Build components and docs
-        run: yarn build:ci
+      - name: Lint and Build
+        run: yarn build
 
       # - name: Publish package preview
       #   id: package-preview

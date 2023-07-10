@@ -2,7 +2,7 @@ import path, { basename } from 'path'
 import fs from 'fs'
 import pc from 'picocolors'
 import { get as emoji } from 'node-emoji'
-import { getAllFiles, createComponentFromSvg, COMPONENTS_INDEX_FILE_HEADER } from './utilities/index.js'
+import { getAllFiles, createComponentFromSvg, COMPONENTS_INDEX_FILE_HEADER } from './utilities'
 
 try {
   console.log('')
@@ -39,7 +39,7 @@ try {
 
   console.log(pc.green(`${emoji('rocket')} Successfully generated ${svgCount.toLocaleString()} icon components.`))
   console.log('')
-} catch (err) {
+} catch (err: any) {
   console.log('An unexpected error occurred: ', err)
   process.exit(1)
 }

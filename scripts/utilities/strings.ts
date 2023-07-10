@@ -2,7 +2,7 @@
  * @description Capitalize a string.
  * @param {string} str
  */
-export function capitalize(str) {
+export function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
@@ -10,7 +10,7 @@ export function capitalize(str) {
  * @description Checks whether the given string has symbols.
  * @param {string} str
  */
-function hasSymbols(str) {
+function hasSymbols(str: string) {
   return /[!"#%&'()*+,./:;<=>?@[\\\]^`{|}]/u.exec(str) // without " ", "$", "-" and "_"
 }
 
@@ -19,7 +19,7 @@ function hasSymbols(str) {
  * @param {string} str Text to be converted
  * @return {string} Converted string
  */
-export function pascalCase(str) {
+export function pascalCase(str: string): string {
   return capitalize(camelCase(kebabCase(str)))
 }
 
@@ -28,7 +28,7 @@ export function pascalCase(str) {
  * @param {string} str Text to be converted
  * @return {string} Converted string
  */
-export function camelCase(str) {
+export function camelCase(str: string): string {
   if (isPascalCase(str)) {
     return str.charAt(0).toLowerCase() + str.slice(1)
   }
@@ -39,7 +39,7 @@ export function camelCase(str) {
  * @description Checks whether the given string is PascalCase.
  * @param {string} str
  */
-export function isPascalCase(str) {
+export function isPascalCase(str: string): boolean {
   if (
     hasSymbols(str) ||
     /^[a-z]/u.exec(str) ||
@@ -55,7 +55,7 @@ export function isPascalCase(str) {
  * @param {string} str - The string to kebab-case.
  * @return {string} Lowercase and kebab-case version of the input string.
  */
-export function kebabCase(str = '') {
+export function kebabCase(str: string = ''): string {
   if (!str || str.trim() === '') {
     return ''
   }
