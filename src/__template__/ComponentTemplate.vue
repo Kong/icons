@@ -72,10 +72,10 @@ const titleId = computed((): string => `{%%KONG_COMPONENT_ICON_CLASS%%}-${uuidv4
       :aria-labelledby="title ? titleId : undefined"
       data-testid="kui-icon-svg-{%%KONG_COMPONENT_ICON_CLASS%%}"
       fill="none"
-      :height="size"
+      height="100%"
       role="img"
       viewBox="0 0 24 24"
-      :width="size"
+      width="100%"
       xmlns="http://www.w3.org/2000/svg"
     >
       <title
