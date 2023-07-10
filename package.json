@@ -24,7 +24,7 @@
   },
   "scripts": {
     "build": "yarn stylelint && yarn lint && yarn build:components",
-    "build:components": "rimraf ./dist && yarn generate && yarn typecheck && vite build && vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
+    "build:components": "rimraf ./dist && yarn generate && yarn typecheck && vite build && rimraf ./dist/style.css && vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
     "build:visualize": "BUILD_VISUALIZER=true rimraf ./dist && yarn generate && vite build -m production",
     "generate": "ts-node -P './scripts/tsconfig.json' './scripts/generate-icon-components.ts' && yarn lint:fix:generated && yarn stylelint:fix:generated",
     "dev": "USE_SANDBOX=true vite",
