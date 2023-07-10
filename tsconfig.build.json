@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "exclude": [
     "src/__template__",
+    "src/tests",
     "sandbox",
     "node_modules",
     "dist",

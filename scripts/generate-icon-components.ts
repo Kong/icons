@@ -9,7 +9,6 @@ try {
   console.log(pc.cyan(pc.bold(`${emoji('sparkles')} Kong Icons ${emoji('sparkles')}`)))
   console.log('')
 
-  // const svgFiles = fs.readdirSync(path.resolve('./svg'))
   const svgFiles = getAllFiles(path.resolve('./svg'), 'svg')
   const svgCount = svgFiles.length
 
