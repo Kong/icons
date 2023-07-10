@@ -8,7 +8,6 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
 
   // Get the SVG source file
   try {
-    // svgFile = fs.readFileSync(path.resolve(`./svg/${pathToSvg}`), 'utf8')
     svgFile = fs.readFileSync(path.resolve(pathToSvg), 'utf8')
   } catch (err: any) {
     console.log('TODO: Add error messaging 1', err)
@@ -49,7 +48,6 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     // Import the component template and replace placeholder strings
     componentTemplate = fs.readFileSync(path.resolve('./src/__template__/ComponentTemplate.vue'), 'utf8')
       .replace(/\/\*\* {%%ICON_COMPONENT_FILE_HEADER%%} \*\//g, COMPONENT_FILE_HEADER)
-      // .replace(/{%%ICON_SVG_PATH%%}/g, svgPathDefinition)
       .replace(/{%%ICON_SVG_INNER_HTML%%}/g, svgInnerHtml)
       .replace(/{%%KONG_COMPONENT_ICON_CLASS%%}/g, name)
   } catch (err: any) {

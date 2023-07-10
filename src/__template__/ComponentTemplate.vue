@@ -81,6 +81,7 @@ const titleId = computed((): string => `{%%KONG_COMPONENT_ICON_CLASS%%}-${uuidv4
       <title
         v-if="title"
         :id="titleId"
+        data-testid="kui-icon-svg-title"
       >{{ title }}</title>
       {%%ICON_SVG_INNER_HTML%%}
     </svg>

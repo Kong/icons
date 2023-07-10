@@ -28,7 +28,7 @@
     "build:visualize": "BUILD_VISUALIZER=true rimraf ./dist && yarn generate && vite build -m production",
     "generate": "ts-node -P './scripts/tsconfig.json' './scripts/generate-icon-components.ts' && yarn lint:fix:generated && yarn stylelint:fix:generated",
     "dev": "USE_SANDBOX=true vite",
-    "test": "vitest run",
+    "test": "FORCE_COLOR=1 vitest run",
     "test:open": "vitest --ui",
     "typecheck": "vue-tsc -p './tsconfig.build.json' --noEmit",
     "lint": "eslint '**/*.{js,ts,vue}'",

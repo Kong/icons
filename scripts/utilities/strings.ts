@@ -20,7 +20,7 @@ function hasSymbols(str: string) {
  * @return {string} Converted string
  */
 export function pascalCase(str: string): string {
-  return capitalize(camelCase(kebabCase(str)))
+  return capitalize(camelCase(str))
 }
 
 /**
@@ -29,10 +29,11 @@ export function pascalCase(str: string): string {
  * @return {string} Converted string
  */
 export function camelCase(str: string): string {
-  if (isPascalCase(str)) {
-    return str.charAt(0).toLowerCase() + str.slice(1)
+  const modifiedInputString = kebabCase(str)
+  if (isPascalCase(modifiedInputString)) {
+    return modifiedInputString.charAt(0).toLowerCase() + modifiedInputString.slice(1)
   }
-  return str.replace(/[-_](\w)/gu, (_, c) => (c ? c.toUpperCase() : ''))
+  return modifiedInputString.replace(/[-_](\w)/gu, (_, c) => (c ? c.toUpperCase() : ''))
 }
 
 /**
