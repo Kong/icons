@@ -47,7 +47,7 @@ export default function createComponentFromSvg(pathToSvg, svgFileName) {
 
   try {
     // Import the component template and replace placeholder strings
-    componentTemplate = fs.readFileSync(path.resolve('./src/component-generator/utilities/__template__/ComponentTemplate.vue'), 'utf8')
+    componentTemplate = fs.readFileSync(path.resolve('./src/__template__/ComponentTemplate.vue'), 'utf8')
       .replace(/\/\*\* {%%ICON_COMPONENT_FILE_HEADER%%} \*\//g, COMPONENT_FILE_HEADER)
       // .replace(/{%%ICON_SVG_PATH%%}/g, svgPathDefinition)
       .replace(/{%%ICON_SVG_INNER_HTML%%}/g, svgInnerHtml)

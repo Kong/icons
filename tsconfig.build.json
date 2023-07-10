@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "exclude": [
-    "src/component-generator",
+    "src/__template__",
     "sandbox",
     "node_modules",
     "dist",

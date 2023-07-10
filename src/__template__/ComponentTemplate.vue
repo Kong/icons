@@ -42,7 +42,7 @@ const props = defineProps({
 })
 
 /**
- * For now, we are adding styles inline to avoid additional stylesheet imports in the host application/component.
+ * We are adding styles inline to avoid additional stylesheet imports in the host application/component.
  * This _does_ make it harder to override styles; however, all of the properties can/will be mapped to component props for customization.
  */
 const rootElementStyles = computed((): Record<string, string> => ({
@@ -81,7 +81,7 @@ const rootElementStyles = computed((): Record<string, string> => ({
 
 <style lang="scss" scoped>
 /**
- * For now, we are adding styles inline to avoid additional stylesheet imports in the host application/component.
+ * We are adding styles inline to avoid additional stylesheet imports in the host application/component.
  * Do not add styles into this component file.
  */
 </style>
