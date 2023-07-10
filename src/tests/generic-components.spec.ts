@@ -69,5 +69,31 @@ describe(`icon components (randomly testing '${component.__name}.vue')`, () => {
         expect(iconWrapperStyles.color).toContain('rgb')
       })
     })
+
+    describe('display', () => {
+      it('defaults to `block` if display prop is not provided', () => {
+        const wrapper = mount(component)
+
+        const iconWrapper = wrapper.find('.kui-icon').element
+        const iconWrapperStyles = getComputedStyle(iconWrapper)
+
+        expect(iconWrapperStyles.display).toEqual('block')
+      })
+
+      it('customizes the display attribute if display prop is provided', () => {
+        const display = 'inline-flex'
+
+        const wrapper = mount(component, {
+          props: {
+            display,
+          },
+        })
+
+        const iconWrapper = wrapper.find('.kui-icon').element
+        const iconWrapperStyles = getComputedStyle(iconWrapper)
+
+        expect(iconWrapperStyles.display).toEqual(display)
+      })
+    })
   })
 })
