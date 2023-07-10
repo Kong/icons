@@ -3,8 +3,15 @@
 # opens a PR, unless a later match takes precedence.
 * @adamdehaven
 
+# Workflows & CI
+/.github/ @adamdehaven @jillztom
+/lefthook.yml @adamdehaven @jillztom
+
+# Generate scripts
+/scrips/ @adamdehaven @jillztom
+
 # Dependabot approvals
 # Allow Kongponents BOT to approve dependabot updates
 # These rules MUST remain at the bottom as the last entry
-package.json @kongponents-bot @Kong/team-core-ui @adamdehaven @jillztom @kaiarrowood
-yarn.lock @kongponents-bot @Kong/team-core-ui @adamdehaven @jillztom @kaiarrowood
+package.json @kongponents-bot @Kong/team-core-ui @adamdehaven @jillztom
+yarn.lock @kongponents-bot @Kong/team-core-ui @adamdehaven @jillztom
