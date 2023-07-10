@@ -23,8 +23,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn stylelint && yarn lint && yarn build:icons && yarn docs:build",
-    "build:ci": "yarn build:icons && yarn docs:build",
+    "build": "yarn stylelint && yarn lint && yarn build:components && yarn docs:build",
+    "build:ci": "yarn build:components && yarn docs:build",
     "build:components": "rimraf ./dist && yarn generate && yarn typecheck && vite build && vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
     "build:visualize": "BUILD_VISUALIZER=true rimraf ./dist && node './scripts/generate-icon-components.js' && vite build -m production",
     "generate": "node './scripts/generate-icon-components.js' && yarn lint:fix:generated",
