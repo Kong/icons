@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 /** {%%ICON_COMPONENT_FILE_HEADER%%} */
 import { computed } from 'vue'
+import { v4 as uuidv4 } from 'uuid'
 
 const props = defineProps({
   /** The SVG accessible name element */
@@ -32,6 +33,7 @@ const props = defineProps({
     type: Number,
     required: false,
     default: 24, // TODO: Replace with a token
+    validator: (sizeValue: number): boolean => typeof sizeValue === 'number' && sizeValue > 0,
   },
   /** The HTML tag to utilize for the icon's wrapper element. Defaults to `span` */
   tag: {
@@ -43,7 +45,7 @@ const props = defineProps({
 
 /**
  * We are adding styles inline to avoid additional stylesheet imports in the host application/component.
- * This _does_ make it harder to override styles; however, all of the properties can/will be mapped to component props for customization.
+ * All of the properties should be mapped to component props for customization.
  */
 const rootElementStyles = computed((): Record<string, string> => ({
   boxSizing: 'border-box',
@@ -53,6 +55,9 @@ const rootElementStyles = computed((): Record<string, string> => ({
   lineHeight: '0',
   width: `${props.size}px`,
 }))
+
+// Compute a unique ID for the title element for a11y
+const titleId = computed((): string => `{%%KONG_COMPONENT_ICON_CLASS%%}-${uuidv4()}`)
 </script>
 
 <template>
@@ -63,8 +68,8 @@ const rootElementStyles = computed((): Record<string, string> => ({
     :style="rootElementStyles"
   >
     <svg
-      :aria-hidden="decorative ? true : false"
-      aria-labelledby="theTitle"
+      :aria-hidden="decorative ? 'true' : undefined"
+      :aria-labelledby="title ? titleId : undefined"
       data-testid="kui-icon-svg-{%%KONG_COMPONENT_ICON_CLASS%%}"
       fill="none"
       :height="size"
@@ -73,7 +78,10 @@ const rootElementStyles = computed((): Record<string, string> => ({
       :width="size"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title v-if="title">{{ title }}</title>
+      <title
+        v-if="title"
+        :id="titleId"
+      >{{ title }}</title>
       {%%ICON_SVG_INNER_HTML%%}
     </svg>
   </component>

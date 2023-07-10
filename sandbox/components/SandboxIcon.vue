@@ -3,6 +3,7 @@
     <component
       :is="icon"
       :size="24"
+      :title="iconName"
     />
     <span class="icon-name">{{ iconName }}</span>
   </span>

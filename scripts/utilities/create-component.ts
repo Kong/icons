@@ -15,7 +15,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     process.exit(1)
   }
 
-  // The kebab-case name of the svg
+  // The lowercase, kebab-case name of the svg
   const name = kebabCase(`${svgFileName.replace(/([a-zA-Z]+)icon/gi, '$1')}Icon`).replace(/\.svg/, '')
   // The PascalCase component name, without the extension
   const componentName = `${pascalCase(name).replace(/\.vue$/gi, '')}`
