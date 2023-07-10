@@ -2,7 +2,6 @@ import { describe, it, expect } from 'vitest'
 import { getAllFiles } from './utilities'
 import fs from 'fs'
 import path from 'path'
-import { mount } from '@vue/test-utils'
 import * as importedComponents from '../src/components'
 
 describe('generate-icon-components', () => {

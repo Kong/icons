@@ -7,7 +7,7 @@ const componentKeys = Object.keys(importedComponents)
 // @ts-ignore
 const component = importedComponents[componentKeys[Math.floor(Math.random() * componentKeys.length)]]
 
-describe(`icon components (randomly testing '${component.__name}.vue')`, () => {
+describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
   it('has proper default structure', () => {
     const wrapper = mount(component)
 
@@ -23,7 +23,24 @@ describe(`icon components (randomly testing '${component.__name}.vue')`, () => {
     expect(svg.isVisible()).toBe(true)
   })
 
-  describe('props', () => {
+  it('has a `fill` of none on the svg element', () => {
+    const wrapper = mount(component)
+
+    const iconWrapper = wrapper.find('svg').element
+
+    expect(iconWrapper.getAttribute('fill')).toEqual('none')
+  })
+
+  it('wrapper element tag has a line-height of zero', () => {
+    const wrapper = mount(component)
+
+    const iconWrapper = wrapper.find('.kui-icon').element
+    const iconWrapperStyles = getComputedStyle(iconWrapper)
+
+    expect(iconWrapperStyles.lineHeight).toEqual('0')
+  })
+
+  describe('Component Props', () => {
     describe('title', () => {
       it('does not render the title element if prop is not provided', () => {
         const wrapper = mount(component)
@@ -93,6 +110,76 @@ describe(`icon components (randomly testing '${component.__name}.vue')`, () => {
         const iconWrapperStyles = getComputedStyle(iconWrapper)
 
         expect(iconWrapperStyles.display).toEqual(display)
+      })
+    })
+
+    describe('decorative', () => {
+      it('does not add `aria-hidden` attribute if decorative prop is false', () => {
+        const wrapper = mount(component)
+
+        expect(wrapper.find('svg[aria-hidden="true"').exists()).toBe(false)
+      })
+
+      it('adds `aria-hidden="true"` if decorative prop is true', () => {
+        const wrapper = mount(component, {
+          props: {
+            decorative: true,
+          },
+        })
+
+        expect(wrapper.find('svg[aria-hidden="true"').exists()).toBe(true)
+      })
+    })
+
+    describe('size', () => {
+      it('defaults to a size when the size prop is not provided', () => {
+        const wrapper = mount(component)
+
+        const iconWrapper = wrapper.find('.kui-icon').element
+        const iconWrapperStyles = getComputedStyle(iconWrapper)
+
+        expect(iconWrapperStyles.width).toBe('24px')
+        expect(iconWrapperStyles.height).toBe('24px')
+      })
+
+      it('customizes the size of the icon if the size prop is provided', () => {
+        const size = 64
+        const wrapper = mount(component, {
+          props: {
+            size,
+          },
+        })
+
+        const iconWrapper = wrapper.find('.kui-icon').element
+        const iconWrapperStyles = getComputedStyle(iconWrapper)
+
+        expect(iconWrapperStyles.width).toBe(`${size}px`)
+        expect(iconWrapperStyles.height).toBe(`${size}px`)
+      })
+    })
+
+    describe('tag', () => {
+      it('defaults to a `span` tag when the tag prop is not provided', () => {
+        const wrapper = mount(component)
+
+        const iconWrapper = wrapper.find('span.kui-icon')
+
+        expect(iconWrapper.exists()).toBe(true)
+      })
+
+      it('customizes the HTML wrapper element if the tag prop is provided', () => {
+        const tag = 'section'
+        const wrapper = mount(component, {
+          props: {
+            tag,
+          },
+        })
+
+        const spanWrapper = wrapper.find('span.kui-icon')
+        const iconWrapper = wrapper.find(`${tag}.kui-icon`)
+
+        expect(spanWrapper.exists()).toBe(false)
+        expect(iconWrapper.exists()).toBe(true)
       })
     })
   })

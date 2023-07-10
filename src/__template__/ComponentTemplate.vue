@@ -43,6 +43,10 @@ const props = defineProps({
   },
 })
 
+console.log('props', props.size)
+
+const iconSize = computed((): string => typeof props.size === 'number' && props.size !== 0 ? `${props.size}px` : '24px')
+
 /**
  * We are adding styles inline to avoid additional stylesheet imports in the host application/component.
  * All of the properties should be mapped to component props for customization.
@@ -51,9 +55,9 @@ const rootElementStyles = computed((): Record<string, string> => ({
   boxSizing: 'border-box',
   color: props.color,
   display: props.display,
-  height: `${props.size}px`,
+  height: iconSize.value,
   lineHeight: '0',
-  width: `${props.size}px`,
+  width: iconSize.value,
 }))
 
 // Compute a unique ID for the title element for a11y
