@@ -30,12 +30,12 @@ This repository includes a Vue sandbox (see the `/sandbox` directory) to allow y
 To start the sandbox:
 
 ```sh
+# Generate the Icon Components
+yarn generate
+
+# Start the sandbox
 yarn dev
 ```
-
-<!-- This command will simultaneously start the Vite dev server and initialize a watcher on the `/tokens` directory. If any files in the `/tokens` directory are modified, the sandbox will automatically run the build command to update the tokens and then restart the Vite dev server (simulating hot module reload).
-
-Updating any files within the sandbox itself will also trigger hot module reload as expected. -->
 
 ### Lint and fix
 
