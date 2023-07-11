@@ -43,8 +43,6 @@ const props = defineProps({
   },
 })
 
-console.log('props', props.size)
-
 const iconSize = computed((): string => typeof props.size === 'number' && props.size !== 0 ? `${props.size}px` : '24px')
 
 /**

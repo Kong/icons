@@ -23,21 +23,64 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
     expect(svg.isVisible()).toBe(true)
   })
 
-  it('has a `fill` of none on the svg element', () => {
-    const wrapper = mount(component)
+  describe('wrapper element', () => {
+    it('tag has a line-height of zero', () => {
+      const wrapper = mount(component)
 
-    const iconWrapper = wrapper.find('svg').element
+      const iconWrapper = wrapper.find('.kui-icon').element
+      const iconWrapperStyles = getComputedStyle(iconWrapper)
 
-    expect(iconWrapper.getAttribute('fill')).toEqual('none')
+      expect(iconWrapperStyles.lineHeight).toEqual('0')
+    })
+
+    it('renders a span tag by default', () => {
+      const wrapper = mount(component)
+
+      expect(wrapper.find('span.kui-icon').exists()).toBe(true)
+    })
   })
 
-  it('wrapper element tag has a line-height of zero', () => {
-    const wrapper = mount(component)
+  describe('svg element', () => {
+    it('has a `fill` attribute of `none`', () => {
+      const wrapper = mount(component)
 
-    const iconWrapper = wrapper.find('.kui-icon').element
-    const iconWrapperStyles = getComputedStyle(iconWrapper)
+      const iconWrapper = wrapper.find('svg').element
 
-    expect(iconWrapperStyles.lineHeight).toEqual('0')
+      expect(iconWrapper.getAttribute('fill')).toEqual('none')
+    })
+
+    it('has `width` and `height` attributes of `100%`', () => {
+      const wrapper = mount(component)
+
+      const iconWrapper = wrapper.find('svg').element
+
+      expect(iconWrapper.getAttribute('width')).toEqual('100%')
+      expect(iconWrapper.getAttribute('height')).toEqual('100%')
+    })
+
+    it('has a `role` attribute of `img`', () => {
+      const wrapper = mount(component)
+
+      const iconWrapper = wrapper.find('svg').element
+
+      expect(iconWrapper.getAttribute('role')).toEqual('img')
+    })
+
+    it('has a `viewBox` attribute of `0 0 24 24`', () => {
+      const wrapper = mount(component)
+
+      const iconWrapper = wrapper.find('svg').element
+
+      expect(iconWrapper.getAttribute('viewBox')).toEqual('0 0 24 24')
+    })
+
+    it('has a `xmlns` attribute of `http://www.w3.org/2000/svg`', () => {
+      const wrapper = mount(component)
+
+      const iconWrapper = wrapper.find('svg').element
+
+      expect(iconWrapper.getAttribute('xmlns')).toEqual('http://www.w3.org/2000/svg')
+    })
   })
 
   describe('Component Props', () => {
