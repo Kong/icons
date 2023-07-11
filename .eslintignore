@@ -1,9 +1,5 @@
 node_modules
 dist
-dist-ssr
-public
-bin
-cli/template
 
 docs/.vitepress/.temp/
 docs/.vitepress/.cache/

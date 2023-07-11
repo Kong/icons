@@ -2,7 +2,6 @@ node_modules
 .DS_Store
 dist
 bin
-dist-ssr
 *.local
 bundle-analyzer
 
