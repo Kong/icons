@@ -1,16 +1,18 @@
 import fs from 'fs'
 import path from 'path'
 import { load } from 'cheerio'
+import pc from 'picocolors'
 import { COMPONENT_FILE_HEADER, kebabCase, pascalCase } from './index'
 
 export default function createComponentFromSvg(pathToSvg: string, svgFileName: string): void {
-  let svgFile, componentTemplate
+  // @ts-ignore
+  let svgFile: string, componentTemplate: string
 
   // Get the SVG source file
   try {
     svgFile = fs.readFileSync(path.resolve(pathToSvg), 'utf8')
   } catch (err: any) {
-    console.log('TODO: Add error messaging 1', err)
+    console.log(pc.red('createComponentFromSvg: could not read the svg source file'), err)
     process.exit(1)
   }
 
@@ -51,7 +53,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
       .replace(/{%%ICON_SVG_INNER_HTML%%}/g, svgInnerHtml)
       .replace(/{%%KONG_COMPONENT_ICON_CLASS%%}/g, name)
   } catch (err: any) {
-    console.log('TODO: Add error messaging 2')
+    console.log(pc.red('createComponentFromSvg: could not import and parse the component template'), err)
     process.exit(1)
   }
 
@@ -59,7 +61,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     // Write the template to the file
     fs.writeFileSync(path.resolve(`./src/components/${componentFilenameWithExtension}`), componentTemplate, 'utf8')
   } catch (err: any) {
-    console.log('TODO: Add error messaging 3', err)
+    console.log(pc.red('createComponentFromSvg: could not write the component to the new .vue file'), err)
     process.exit(1)
   }
 
@@ -67,7 +69,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     // Add the component export to the `/src/components/index.ts` file
     fs.appendFileSync(path.resolve('./src/components/index.ts'), `export { default as ${componentName} } from './${componentFilenameWithExtension}'\n`)
   } catch (err: any) {
-    console.log('TODO: Add error messaging 4', err)
+    console.log(pc.red('createComponentFromSvg: could add the component export to `/src/components/index.ts`'), err)
     process.exit(1)
   }
 }

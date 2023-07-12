@@ -12,13 +12,13 @@ try {
   const svgFiles = getAllFiles(path.resolve('./svg'), 'svg')
   const svgCount = svgFiles.length
 
-  console.log(`Generating ${svgCount.toLocaleString()} icon components...`)
-
   // If no svg files are found, exit
   if (!svgCount) {
     console.log('No svg files found in the `svg/` directory.')
     process.exit(0)
   }
+
+  console.log(`Generating ${svgCount.toLocaleString()} icon components...`)
 
   // Delete the `./src/components/` directory (to remove old generated components)
   fs.rmSync(path.resolve('./src/components'), { force: true, recursive: true })
@@ -39,6 +39,6 @@ try {
   console.log(pc.green(`${emoji('rocket')} Successfully generated ${svgCount.toLocaleString()} icon components.`))
   console.log('')
 } catch (err: any) {
-  console.log('An unexpected error occurred: ', err)
+  console.error('An error occurred in generating the icon components: ', err)
   process.exit(1)
 }
