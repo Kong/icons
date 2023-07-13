@@ -2,6 +2,7 @@
 /** {%%ICON_COMPONENT_FILE_HEADER%%} */
 import { computed } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
+import { KUI_ICON_SIZE_50 } from '@kong/design-tokens'
 
 const props = defineProps({
   /** The SVG accessible name element */
@@ -32,7 +33,7 @@ const props = defineProps({
   size: {
     type: Number,
     required: false,
-    default: 24, // TODO: Replace with a token
+    default: 24, // KUI_ICON_SIZE_50
     validator: (sizeValue: number): boolean => typeof sizeValue === 'number' && sizeValue > 0,
   },
   /** The HTML tag to utilize for the icon's wrapper element. Defaults to `span` */
@@ -43,7 +44,7 @@ const props = defineProps({
   },
 })
 
-const iconSize = computed((): string => typeof props.size === 'number' && props.size !== 0 ? `${props.size}px` : '24px')
+const iconSize = computed((): string => typeof props.size === 'number' && props.size !== 0 ? `${props.size}px` : KUI_ICON_SIZE_50)
 
 /**
  * We are adding styles inline to avoid additional stylesheet imports in the host application/component.
