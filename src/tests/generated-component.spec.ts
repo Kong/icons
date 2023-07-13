@@ -199,6 +199,21 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
         expect(iconWrapperStyles.width).toBe(`${size}px`)
         expect(iconWrapperStyles.height).toBe(`${size}px`)
       })
+
+      it('accepts a string prop value', () => {
+        const size = '48'
+        const wrapper = mount(component, {
+          props: {
+            size,
+          },
+        })
+
+        const iconWrapper = wrapper.find('.kui-icon').element
+        const iconWrapperStyles = getComputedStyle(iconWrapper)
+
+        expect(iconWrapperStyles.width).toBe(`${size}px`)
+        expect(iconWrapperStyles.height).toBe(`${size}px`)
+      })
     })
 
     describe('tag', () => {
