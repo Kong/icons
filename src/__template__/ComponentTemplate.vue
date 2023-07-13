@@ -31,10 +31,21 @@ const props = defineProps({
   },
   /** The icon size */
   size: {
-    type: Number,
+    type: [Number, String],
     required: false,
     default: 24, // KUI_ICON_SIZE_50
-    validator: (sizeValue: number): boolean => typeof sizeValue === 'number' && sizeValue > 0,
+    validator: (sizeValue: number): boolean => {
+      if (typeof sizeValue === 'number' && sizeValue > 0) {
+        return true
+      }
+
+      if (typeof sizeValue === 'string') {
+        const sizeNumber = Number(sizeValue)
+        return Number.isInteger(sizeNumber) && sizeNumber > 0
+      }
+
+      return false
+    },
   },
   /** The HTML tag to utilize for the icon's wrapper element. Defaults to `span` */
   tag: {
@@ -44,7 +55,21 @@ const props = defineProps({
   },
 })
 
-const iconSize = computed((): string => typeof props.size === 'number' && props.size !== 0 ? `${props.size}px` : KUI_ICON_SIZE_50)
+const iconSize = computed((): string => {
+  // If props.size is a number, ensure it's greater than zero
+  if (typeof props.size === 'number' && props.size > 0) {
+    return `${props.size}px`
+  }
+
+  const sizeNumber = Number(props.size)
+  // If props.size is a string, ensure the string converts 1:1 to a number, and ensure it's greater than zero
+  if (typeof props.size === 'string' && sizeNumber && Number.isInteger(sizeNumber) && sizeNumber > 0) {
+    return `${props.size}px`
+  }
+
+  // Return the default icon size
+  return KUI_ICON_SIZE_50
+})
 
 /**
  * We are adding styles inline to avoid additional stylesheet imports in the host application/component.
