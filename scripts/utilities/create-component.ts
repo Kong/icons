@@ -50,9 +50,11 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
   try {
     // Import the component template and replace placeholder strings
     componentTemplate = fs.readFileSync(path.resolve('./src/__template__/ComponentTemplate.vue'), 'utf8')
+      // Replace the file header first so it can be parsed by other replacements
       .replace(/\/\*\* {%%ICON_COMPONENT_FILE_HEADER%%} \*\//g, COMPONENT_FILE_HEADER)
       .replace(/{%%ICON_SVG_INNER_HTML%%}/g, svgInnerHtml)
       .replace(/{%%KONG_COMPONENT_ICON_CLASS%%}/g, name)
+      .replace(/{%%KONG_COMPONENT_FILENAME%%}/g, componentFilenameWithExtension)
   } catch (err: any) {
     console.log(pc.red('createComponentFromSvg: could not import and parse the component template'), err)
     console.log('')
