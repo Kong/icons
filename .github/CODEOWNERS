@@ -8,7 +8,10 @@
 /lefthook.yml @adamdehaven @jillztom
 
 # Generate scripts
-/scrips/ @adamdehaven @jillztom
+/scripts/ @adamdehaven @jillztom
+
+# Existing component list
+/src/component-list.ts @adamdehaven @jillztom
 
 # Dependabot approvals
 # Allow Kongponents BOT to approve dependabot updates

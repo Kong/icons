@@ -4,7 +4,7 @@ import { load } from 'cheerio'
 import pc from 'picocolors'
 import { COMPONENT_FILE_HEADER, kebabCase, pascalCase } from './index'
 
-export default function createComponentFromSvg(pathToSvg: string, svgFileName: string): void {
+export default function createComponentFromSvg(pathToSvg: string, svgFileName: string): string {
   // @ts-ignore
   let svgFile: string, componentTemplate: string
 
@@ -78,4 +78,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     console.log('')
     process.exit(1)
   }
+
+  // If everything is successful, return the generated component name
+  return componentFilenameWithExtension
 }

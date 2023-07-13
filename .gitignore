@@ -7,6 +7,7 @@ bundle-analyzer
 
 # Build files - yes, these should be ignored
 src/components/**
+src/generated-component-list.ts
 
 # Temp files
 
