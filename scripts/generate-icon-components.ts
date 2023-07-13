@@ -12,16 +12,32 @@ try {
   const svgFiles = getAllFiles(path.resolve('./svg'), 'svg')
   const svgCount = svgFiles.length
 
+  // Delete the `./src/components/` directory (to remove old generated components)
+  fs.rmSync(path.resolve('./src/components'), { force: true, recursive: true })
+
+  console.log(`Verifying ${svgCount.toLocaleString()} svg files...`)
+
   // If no svg files are found, exit
   if (!svgCount) {
-    console.log('No svg files found in the `svg/` directory.')
+    console.log(pc.yellow('No svg files found in the /svg/ directory.'))
+    console.log('')
     process.exit(0)
   }
 
-  console.log(`Generating ${svgCount.toLocaleString()} icon components...`)
+  // Check if there are duplicate svg filenames
+  const uniqueFilenames = new Set()
+  for (const filepath of svgFiles) {
+    const name = basename(filepath)
+    if (!uniqueFilenames.has(name)) {
+      uniqueFilenames.add(name)
+    } else {
+      console.log(pc.red(`Duplicate svg filename '${name}' found. All svg source files must have a unique name.`))
+      console.log('')
+      process.exit(1)
+    }
+  }
 
-  // Delete the `./src/components/` directory (to remove old generated components)
-  fs.rmSync(path.resolve('./src/components'), { force: true, recursive: true })
+  console.log(`Generating ${svgCount.toLocaleString()} icon components...`)
 
   // Recreate the `./src/components` directory
   if (!fs.existsSync(path.resolve('./src/components'))) {
@@ -40,5 +56,6 @@ try {
   console.log('')
 } catch (err: any) {
   console.error('An error occurred in generating the icon components: ', err)
+  console.log('')
   process.exit(1)
 }

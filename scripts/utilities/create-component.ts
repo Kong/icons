@@ -13,6 +13,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     svgFile = fs.readFileSync(path.resolve(pathToSvg), 'utf8')
   } catch (err: any) {
     console.log(pc.red('createComponentFromSvg: could not read the svg source file'), err)
+    console.log('')
     process.exit(1)
   }
 
@@ -54,6 +55,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
       .replace(/{%%KONG_COMPONENT_ICON_CLASS%%}/g, name)
   } catch (err: any) {
     console.log(pc.red('createComponentFromSvg: could not import and parse the component template'), err)
+    console.log('')
     process.exit(1)
   }
 
@@ -62,6 +64,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     fs.writeFileSync(path.resolve(`./src/components/${componentFilenameWithExtension}`), componentTemplate, 'utf8')
   } catch (err: any) {
     console.log(pc.red('createComponentFromSvg: could not write the component to the new .vue file'), err)
+    console.log('')
     process.exit(1)
   }
 
@@ -70,6 +73,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     fs.appendFileSync(path.resolve('./src/components/index.ts'), `export { default as ${componentName} } from './${componentFilenameWithExtension}'\n`)
   } catch (err: any) {
     console.log(pc.red('createComponentFromSvg: could add the component export to `/src/components/index.ts`'), err)
+    console.log('')
     process.exit(1)
   }
 }
