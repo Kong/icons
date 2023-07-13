@@ -26,7 +26,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
   describe('wrapper element', () => {
     it('tag has a line-height of zero', () => {
       const wrapper = mount(component)
-
       const iconWrapper = wrapper.find('.kui-icon').element
       const iconWrapperStyles = getComputedStyle(iconWrapper)
 
@@ -51,7 +50,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
 
     it('has `width` and `height` attributes of `100%`', () => {
       const wrapper = mount(component)
-
       const iconWrapper = wrapper.find('svg').element
 
       expect(iconWrapper.getAttribute('width')).toEqual('100%')
@@ -68,7 +66,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
 
     it('has a `viewBox` attribute of `0 0 24 24`', () => {
       const wrapper = mount(component)
-
       const iconWrapper = wrapper.find('svg').element
 
       expect(iconWrapper.getAttribute('viewBox')).toEqual('0 0 24 24')
@@ -76,7 +73,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
 
     it('has a `xmlns` attribute of `http://www.w3.org/2000/svg`', () => {
       const wrapper = mount(component)
-
       const iconWrapper = wrapper.find('svg').element
 
       expect(iconWrapper.getAttribute('xmlns')).toEqual('http://www.w3.org/2000/svg')
@@ -93,7 +89,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
 
       it('adds the <title> element if title prop is provided', () => {
         const title = 'My svg title'
-
         const wrapper = mount(component, {
           props: {
             title,
@@ -107,7 +102,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
     describe('color', () => {
       it('defaults to `currentColor` if color prop is not provided', () => {
         const wrapper = mount(component)
-
         const iconWrapper = wrapper.find('.kui-icon').element
         const iconWrapperStyles = getComputedStyle(iconWrapper)
 
@@ -116,13 +110,11 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
 
       it('customizes the color attribute if color prop is provided', () => {
         const color = '#007ac1'
-
         const wrapper = mount(component, {
           props: {
             color,
           },
         })
-
         const iconWrapper = wrapper.find('.kui-icon').element
         const iconWrapperStyles = getComputedStyle(iconWrapper)
 
@@ -133,7 +125,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
     describe('display', () => {
       it('defaults to `block` if display prop is not provided', () => {
         const wrapper = mount(component)
-
         const iconWrapper = wrapper.find('.kui-icon').element
         const iconWrapperStyles = getComputedStyle(iconWrapper)
 
@@ -142,13 +133,11 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
 
       it('customizes the display attribute if display prop is provided', () => {
         const display = 'inline-flex'
-
         const wrapper = mount(component, {
           props: {
             display,
           },
         })
-
         const iconWrapper = wrapper.find('.kui-icon').element
         const iconWrapperStyles = getComputedStyle(iconWrapper)
 
@@ -177,7 +166,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
     describe('size', () => {
       it('defaults to a size when the size prop is not provided', () => {
         const wrapper = mount(component)
-
         const iconWrapper = wrapper.find('.kui-icon').element
         const iconWrapperStyles = getComputedStyle(iconWrapper)
 
@@ -192,7 +180,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
             size,
           },
         })
-
         const iconWrapper = wrapper.find('.kui-icon').element
         const iconWrapperStyles = getComputedStyle(iconWrapper)
 
@@ -207,7 +194,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
             size,
           },
         })
-
         const iconWrapper = wrapper.find('.kui-icon').element
         const iconWrapperStyles = getComputedStyle(iconWrapper)
 
@@ -217,8 +203,8 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
 
       it('console.warns if the size prop cannot be coverted to a number', () => {
         const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
-
         const size = '64px'
+
         mount(component, {
           props: {
             size,
@@ -232,7 +218,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
     describe('tag', () => {
       it('defaults to a `span` tag when the tag prop is not provided', () => {
         const wrapper = mount(component)
-
         const iconWrapper = wrapper.find('span.kui-icon')
 
         expect(iconWrapper.exists()).toBe(true)
@@ -245,7 +230,6 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
             tag,
           },
         })
-
         const spanWrapper = wrapper.find('span.kui-icon')
         const iconWrapper = wrapper.find(`${tag}.kui-icon`)
 
