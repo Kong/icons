@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import * as importedComponents from '../components'
 
@@ -213,6 +213,19 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
 
         expect(iconWrapperStyles.width).toBe(`${size}px`)
         expect(iconWrapperStyles.height).toBe(`${size}px`)
+      })
+
+      it('console.warns if the size prop cannot be coverted to a number', () => {
+        const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
+
+        const size = '64px'
+        mount(component, {
+          props: {
+            size,
+          },
+        })
+
+        expect(consoleSpy).toHaveBeenCalledOnce()
       })
     })
 
