@@ -29,6 +29,5 @@ export const COMPONENT_LIST_FILE_HEADER =
  * change which should trigger a new major package version release.
  * The major version should be incremented by utilizing a conventional
  * commit message with \`BREAKING CHANGE:\` text in the commit footer.
- * Generated on ${new Date().toUTCString()}
  */
 `
