@@ -27,7 +27,6 @@
     "build:components": "rimraf './dist' && yarn generate && yarn typecheck && vite build && rimraf ./dist/style.css && vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
     "build:visualize": "BUILD_VISUALIZER=true rimraf ./dist && yarn generate && vite build -m production",
     "generate": "ts-node -P './scripts/tsconfig.json' './scripts/generate.ts' && yarn fix:generated",
-    "update:component-list": "ts-node -P './scripts/tsconfig.json' && yarn fix:generated",
     "dev": "USE_SANDBOX=true vite",
     "test": "FORCE_COLOR=1 vitest run",
     "test:open": "vitest --ui",
@@ -39,6 +38,7 @@
     "stylelint:fix": "stylelint './src/**/*.{css,scss,vue}' --fix",
     "stylelint:fix:generated": "stylelint './src/components/*.vue' --fix",
     "fix:generated": "yarn lint:fix:generated && yarn stylelint:fix:generated",
+    "ci:update-component-list": "ts-node -P './scripts/tsconfig.json' && yarn fix:generated",
     "semantic-release": "semantic-release",
     "commit": "cz"
   },

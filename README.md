@@ -9,7 +9,7 @@ Vue components are generated from SVG source files located in the `/svg/` direct
   - [Import](#import)
   - [Component Props](#component-props)
 - [Contributing \& Local Development](#contributing--local-development)
-  - [SVG Requirements](#svg-requirements)
+  - [SVG file requirements](#svg-file-requirements)
   - [Development Sandbox](#development-sandbox)
   - [Lint and fix](#lint-and-fix)
   - [Testing](#testing)
@@ -31,6 +31,8 @@ yarn add @kong/icons
 ### Import
 
 Icons should be imported individually which allows for proper tree-shaking, so only import the icons you need.
+
+Notice that since the few styles that are included are inlined, there is no stylesheet to import.
 
 ```html
 <template>
@@ -109,15 +111,26 @@ To get started, install the package dependencies
 yarn install --frozen-lockfile
 ```
 
-### SVG Requirements
+### SVG file requirements
 
-- Source SVG filenames must be unique, regardless if they are in a subdirectory
+Source SVG files **must**:
+
+- be stored in the `/svg/` directory
+  - Solid (single-color) SVG files **must** be placed in the `/svg/solid/` directory
+  - Multi-color SVG files may live in any other subdirectory
+- have a **unique**, `kebab-case` filename, regardless of the `/svg/*` subdirectory they are located in
+- have a default size of `24px` when they are exported
+- be sourced from and approved of by Kong's Design team
 
 ### Development Sandbox
 
-This repository includes a Vue sandbox (see the `/sandbox` directory) to allow you to experiment with icons.
+This repository includes a Vue sandbox app (see the `/sandbox` directory) to allow you to experiment with icons.
 
-To start the sandbox:
+Before running the local dev server, you will need to run the generate command.
+
+> **Note**: You must regenerate the icons and restart the sandbox if you make changes to files outside of the `/sandbox/` directory.
+
+To compile the icon components and start the sandbox:
 
 ```sh
 # Generate the Icon Components
@@ -141,7 +154,9 @@ yarn lint:fix
 
 ### Testing
 
-Unit and component tests are run with [Vitest](https://vitest.dev/)
+Unit and component tests are run with [Vitest](https://vitest.dev/).
+
+The Vitest settings are pre-configured to regenerate the icon components before every run.
 
 ```sh
 # Run tests
@@ -154,11 +169,11 @@ yarn test:open
 yarn test -u
 ```
 
-When SVG files are added or removed, this will cause the test that compares the component snapshot exports to fail. If the snapshot change is expected, run `yarn test -u` to update the test snapshots accordingly.
+When SVG files are added or removed, this will cause the test(s) that compare snapshots to fail. If the snapshot change is expected, run `yarn test -u` to update the test snapshots accordingly, then commit those changes to your branch.
 
 ### Build for production
 
-Utilize the `style-dictionary` CLI to build the token assets for production based on the configuration in `/config.js`.
+Process the `/svg/` directory, generate the icon components and associated files, and build for production.
 
 ```sh
 yarn build
