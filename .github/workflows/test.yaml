@@ -16,8 +16,6 @@ jobs:
     name: Run Tests
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN_PUBLIC_PUBLISH }}
     steps:
 
       - name: Remove preview consumption comment
@@ -50,6 +48,8 @@ jobs:
       - name: Publish package preview
         id: package-preview
         if: ${{ github.event_name == 'pull_request' && github.actor != 'dependabot[bot]' && github.actor != 'renovate[bot]' }}
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN_PUBLIC_PUBLISH }}
         run: |
           git config user.email "konnectx-engineers+kongponents-bot@konghq.com"
           git config user.name "Kong UI Bot"
