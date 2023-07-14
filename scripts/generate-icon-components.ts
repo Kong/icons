@@ -74,7 +74,7 @@ try {
   // Inject the generated array of component names into the `/src/generated-component-list.ts` file
   storeComponentList({
     components: Array.from(generatedComponents),
-    save: false,
+    update: false,
   })
 
   // TODO: Check the list of generated components against the components that were created in the last run

@@ -17,7 +17,7 @@ try {
 
   storeComponentList({
     components: Array.from(uniqueComponentNames),
-    save: true,
+    update: true,
   })
 
 } catch (err: any) {

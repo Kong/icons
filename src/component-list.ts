@@ -1,3 +1,15 @@
+/**
+ * This components list is updated whenever a new version is published, and
+ * tracks the list of components that are exported from the package.
+ *
+ * If components are removed from this list (meaning they are
+ * no longer exported from the package), it is likely a breaking
+ * change which should trigger a new major package version release.
+ * The major version should be incremented by utilizing a conventional
+ * commit message with `BREAKING CHANGE:` text in the commit footer.
+ * Generated on Fri, 14 Jul 2023 00:42:12 GMT
+ */
+
 export default [
   'AddCircleIcon.vue',
   'AddIcon.vue',
