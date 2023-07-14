@@ -15,6 +15,7 @@ export const storeComponentList = ({
   save = false,
 }: StoreComponentListOptions) => {
   try {
+    components.sort()
     const componentsArray = components.map(component => `  '${component}',`)
     const filepath = save ? path.resolve('./src/component-list.ts') : path.resolve('./src/generated-component-list.ts')
 
