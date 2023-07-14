@@ -24,12 +24,12 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
   // Convert the name to pascal case, ensure the string `Icon.vue` is at the end of the component name
   const componentFilenameWithExtension = `${componentName}.vue`
 
-  // Load the svg file as XML
+  // Load the SVG file as XML
   const $cheerio = load(svgFile, {
     xmlMode: true,
   })
 
-  // If the svg is within the `/svg/solid/` directory, replace attribute values as needed to standardize
+  // If the SVG is within the `/svg/solid/` directory, replace attribute values as needed to standardize
   const solidIconsDirectory = path.relative(path.resolve('./svg/solid'), pathToSvg)
   const isSolidIcon: boolean = !!solidIconsDirectory && !solidIconsDirectory.startsWith('..') && !path.isAbsolute(solidIconsDirectory)
 

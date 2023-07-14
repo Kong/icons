@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { KUI_ICON_SIZE_50 } from '@kong/design-tokens'
 
 const props = defineProps({
-  /** The SVG accessible name element */
+  /** The accessibility text provided to screen readers */
   title: {
     type: String,
     required: false,
@@ -91,6 +91,7 @@ const titleId = computed((): string => `{%%KONG_COMPONENT_ICON_CLASS%%}-${uuidv4
 <template>
   <component
     :is="tag"
+    :aria-hidden="decorative ? 'true' : undefined"
     class="kui-icon {%%KONG_COMPONENT_ICON_CLASS%%}"
     data-testid="kui-icon-wrapper-{%%KONG_COMPONENT_ICON_CLASS%%}"
     :style="rootElementStyles"

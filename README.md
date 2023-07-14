@@ -1,7 +1,13 @@
 # Kong Icons
 
-Kong's open-source icon component library.
+Kong's open-source, Vue icon component library, partially sourced from [Google's Material Symbols](https://fonts.google.com/icons).
 
+Vue components are generated from SVG source files located in the `/svg/` directory.
+
+- [Usage](#usage)
+  - [Installation](#installation)
+  - [Import](#import)
+  - [Component Props](#component-props)
 - [Contributing \& Local Development](#contributing--local-development)
   - [SVG Requirements](#svg-requirements)
   - [Development Sandbox](#development-sandbox)
@@ -10,6 +16,90 @@ Kong's open-source icon component library.
   - [Build for production](#build-for-production)
   - [Committing Changes](#committing-changes)
   - [Package Publishing](#package-publishing)
+
+
+## Usage
+
+### Installation
+
+Install the `@kong/icons` package in your host project.
+
+```sh
+yarn add @kong/icons
+```
+
+### Import
+
+Icons should be imported individually which allows for proper tree-shaking, so only import the icons you need.
+
+```html
+<template>
+  <button>
+    Add a service
+    <AddIcon size="24" />
+  </button>
+</template>
+
+<script setup lang="ts">
+import { AddIcon } from '@kong/icons'
+</script>
+```
+
+### Component Props
+
+#### `title`
+
+- type: `String`
+- required: `false`
+- default: `''`
+
+The accessibility text provided to screen readers.
+
+#### `color`
+
+> **Note**: The `color` prop only impacts solid, single-color icons generated from the `/svg/solid/` directory.
+
+- type: `String`
+- required: `false`
+- default: `'currentColor'`
+
+Set the icon color to any valid CSS color value or `currentColor`, which inherits the text color of the icon's parent element.
+
+#### `display`
+
+- type: `String`
+- required: `false`
+- default: `'block'`
+
+Set the CSS `display` property for the icon wrapper element.
+
+#### `decorative`
+
+- type: `Boolean`
+- required: `false`
+- default: `false`
+
+Whether the SVG is meaningful to the page, or just complimentary. Utilized to expose or hide the SVG from screen readers.
+
+#### `size`
+
+- type: `[Number, String]`
+- required: `false`
+- default: `24`
+
+The size of the icon, in pixels.
+
+As a convenience, you may pass the size as a `number`, e.g. `24` or as a string that can be converted to an integer, such as `'48'`.
+
+When utilizing a `string`, do not pass any units along with the value.
+
+#### `tag`
+
+- type: `String`
+- required: `false`
+- default: `'span'`
+
+The HTML tag to use in place of the default wrapper `<span>` tag.
 
 ## Contributing & Local Development
 
@@ -21,8 +111,7 @@ yarn install --frozen-lockfile
 
 ### SVG Requirements
 
-<!-- TODO: Add a script rule to enforce -->
-- Source svg filenames must be unique, regardless if they are in a subdirectory
+- Source SVG filenames must be unique, regardless if they are in a subdirectory
 
 ### Development Sandbox
 
@@ -65,7 +154,7 @@ yarn test:open
 yarn test -u
 ```
 
-When svg files are added or removed, this will cause the test that compares the component snapshot exports to fail. If the snapshot change is expected, run `yarn test -u` to update the test snapshots accordingly.
+When SVG files are added or removed, this will cause the test that compares the component snapshot exports to fail. If the snapshot change is expected, run `yarn test -u` to update the test snapshots accordingly.
 
 ### Build for production
 

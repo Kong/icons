@@ -19,7 +19,7 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
     // tag element
     expect(tag.isVisible()).toBe(true)
 
-    // svg element
+    // SVG element
     expect(svg.isVisible()).toBe(true)
   })
 
@@ -88,7 +88,7 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
       })
 
       it('adds the <title> element if title prop is provided', () => {
-        const title = 'My svg title'
+        const title = 'My SVG title'
         const wrapper = mount(component, {
           props: {
             title,

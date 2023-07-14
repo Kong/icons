@@ -27,21 +27,21 @@ export default async function generate() {
 
     console.log(`Verifying ${svgCount.toLocaleString()} svg files...`)
 
-    // If no svg files are found, exit
+    // If no SVG files are found, exit
     if (!svgCount) {
-      console.log(pc.yellow('No svg files found in the /svg/ directory.'))
+      console.log(pc.yellow('No SVG files found in the /svg/ directory.'))
       console.log('')
       process.exit(0)
     }
 
-    // Check if there are duplicate svg filenames
+    // Check if there are duplicate SVG filenames
     const uniqueFilenames = new Set<string>()
     for (const filepath of svgFiles) {
       const name = basename(filepath)
       if (!uniqueFilenames.has(name)) {
         uniqueFilenames.add(name)
       } else {
-        console.log(pc.red(`Duplicate svg filename '${name}' found. All svg source files must have a unique name.`))
+        console.log(pc.red(`Duplicate SVG filename '${name}' found. All SVG source files must have a unique name.`))
         console.log('')
         process.exit(1)
       }
