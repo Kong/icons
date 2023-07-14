@@ -4,7 +4,7 @@
     "src/__template__",
     "src/tests",
     "src/component-list.ts",
-    "src/generated-component-list.ts",
+    "src/temp-generated-component-list.ts",
     "sandbox",
     "node_modules",
     "dist",

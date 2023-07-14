@@ -15,5 +15,10 @@ export default mergeConfig(viteConfig, defineConfig({
       './sandbox/**',
       'node_modules',
     ],
+    // The tests will only successfully run after the `yarn generate` script has been run.
+    // This `globalSetup` entry generates all comopnents before running the tests
+    globalSetup: [
+      './scripts/utilities/generate-icon-components.ts',
+    ],
   },
 }))

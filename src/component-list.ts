@@ -7,7 +7,7 @@
  * change which should trigger a new major package version release.
  * The major version should be incremented by utilizing a conventional
  * commit message with `BREAKING CHANGE:` text in the commit footer.
- * Generated on Fri, 14 Jul 2023 00:42:12 GMT
+ * Generated on Fri, 14 Jul 2023 01:56:19 GMT
  */
 
 export default [
