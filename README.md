@@ -17,7 +17,6 @@ Vue components are generated from SVG source files located in the `/svg/` direct
   - [Committing Changes](#committing-changes)
   - [Package Publishing](#package-publishing)
 
-
 ## Usage
 
 ### Installation
@@ -116,8 +115,9 @@ yarn install --frozen-lockfile
 Source SVG files **must**:
 
 - be stored in the `/svg/` directory
-  - Solid (single-color) SVG files **must** be placed in the `/svg/solid/` directory
-  - Multi-color SVG files may live in any other subdirectory
+  - All solid (single-color) icon SVG files **must** be placed in the `/svg/solid/` directory
+  - All flag icon SVG files **must** be named following the format `flag-{country code}.svg` and **must** be placed in the `/svg/flags/` directory
+  - All multi-color SVG files **must** be placed in the `/svg/multi-color/` directory
 - have a **unique**, `kebab-case` filename, regardless of the `/svg/*` subdirectory they are located in
 - have a default size of `24px` when they are exported
 - be sourced from and approved of by Kong's Design team

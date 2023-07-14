@@ -47,7 +47,7 @@ jobs:
 
         # Since everything was successful, update the src/component-list.ts file to compare against in future runs
         - name: Update component-list.ts
-          run: yarn ci:update-component-list
+          run: yarn update-component-list
 
         - name: Semantic Release
           uses: cycjimmy/semantic-release-action@v3
