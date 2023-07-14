@@ -6,6 +6,7 @@ Kong's open-source icon component library.
   - [SVG Requirements](#svg-requirements)
   - [Development Sandbox](#development-sandbox)
   - [Lint and fix](#lint-and-fix)
+  - [Testing](#testing)
   - [Build for production](#build-for-production)
   - [Committing Changes](#committing-changes)
   - [Package Publishing](#package-publishing)
@@ -48,6 +49,23 @@ yarn lint
 # Lint and fix
 yarn lint:fix
 ```
+
+### Testing
+
+Unit and component tests are run with [Vitest](https://vitest.dev/)
+
+```sh
+# Run tests
+yarn test
+
+# Run tests in the Vitest UI
+yarn test:open
+
+# Update test snapshots
+yarn test -u
+```
+
+When svg files are added or removed, this will cause the test that compares the component snapshot exports to fail. If the snapshot change is expected, run `yarn test -u` to update the test snapshots accordingly.
 
 ### Build for production
 

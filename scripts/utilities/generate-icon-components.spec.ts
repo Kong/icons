@@ -21,12 +21,28 @@ describe('generate', () => {
   })
 
   it('generates the `/src/components/index.ts` file with the correct number of exports', () => {
-    const indexFile = fs.existsSync(path.resolve('./src/components/index.ts'))
-    expect(indexFile).toEqual(true)
+    const componentIndexFile = fs.existsSync(path.resolve('./src/components/index.ts'))
+    expect(componentIndexFile).toEqual(true)
 
     const allSvgFiles = getAllFiles(path.resolve('./svg'), 'svg')
     expect(allSvgFiles.length).not.toEqual(0)
     expect(allSvgFiles.length).toEqual(Object.keys(importedComponents).length)
+  })
+
+  it('`/src/components/index.ts` matches the snapshot', async () => {
+    const { default: componentExports } = await import(path.resolve('./src/components/index.ts'))
+
+    expect(componentExports).toMatchSnapshot()
+  })
+
+  it('`/src/component-list.ts` file exports an array of component filenames', async () => {
+    const componentListFile = fs.existsSync(path.resolve('./src/component-list.ts'))
+    expect(componentListFile).toEqual(true)
+
+    const { default: componentList } = await import(path.resolve('./src/component-list.ts'))
+    expect(typeof componentList).toEqual('object')
+    expect(componentList.length).toBeGreaterThan(0)
+    expect(componentList[0]).toContain('.vue')
   })
 
   it('generates the `/src/temp-generated-component-list.ts` file with the correct number of exports', async () => {
@@ -40,8 +56,9 @@ describe('generate', () => {
     expect(componentList.length).toEqual(Object.keys(importedComponents).length)
   })
 
-  it('does not remove or rename icons from the previous build', () => {
-    // TODO: Add test
-    expect(true).toEqual(true)
+  it('does not remove icons from the previous build', async () => {
+    const { default: componentList } = await import(path.resolve('./src/component-list.ts'))
+
+    expect(componentList).toMatchSnapshot()
   })
 })
