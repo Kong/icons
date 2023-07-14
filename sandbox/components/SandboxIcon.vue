@@ -2,7 +2,7 @@
   <span class="sandbox-icon">
     <component
       :is="icon"
-      :size="60"
+      :size="32"
       :title="iconName"
     />
     <span class="icon-name">{{ iconName }}</span>
