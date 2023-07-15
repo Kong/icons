@@ -22,8 +22,12 @@ export default async function generate() {
     const svgFiles = getAllFiles(path.resolve('./svg'), 'svg')
     const svgCount = svgFiles.length
 
+    // Directories and files
+    const componentsDirectory = path.resolve('./src/components')
+    const componentsIndex = path.resolve('./src/components/index.ts')
+
     // Delete the `./src/components/` directory (to remove old generated components)
-    fs.rmSync(path.resolve('./src/components'), { force: true, recursive: true })
+    fs.rmSync(componentsDirectory, { force: true, recursive: true })
 
     console.log(`Verifying ${svgCount.toLocaleString()} svg files...`)
 
@@ -50,12 +54,36 @@ export default async function generate() {
     console.log(`Generating ${svgCount.toLocaleString()} icon components...`)
 
     // Recreate the `./src/components` directory
-    if (!fs.existsSync(path.resolve('./src/components'))) {
-      fs.mkdirSync(path.resolve('./src/components'))
+    if (!fs.existsSync(componentsDirectory)) {
+      fs.mkdirSync(componentsDirectory)
     }
 
     // Create the `./src/components/index.ts` entry file
-    fs.writeFileSync(path.resolve('./src/components/index.ts'), TS_FILE_HEADER, 'utf8')
+    fs.writeFileSync(componentsIndex, TS_FILE_HEADER, 'utf8')
+
+    // Loop through each subdirectory and create an export
+    for (const subdirectory of ['solid', 'multi-color', 'flags']) {
+      const subdirectoryPath = path.resolve(`./svg/${subdirectory}`)
+      // Ensure path exists
+      if (!fs.existsSync(subdirectoryPath)) {
+        continue
+      }
+
+      const subdirectoryFileCount = getAllFiles(subdirectoryPath, 'svg')
+      // If there are no files in the directory, skip it
+      if (!subdirectoryFileCount.length) {
+        continue
+      }
+
+      // Create `/src/components/{subdirectory}` if it doesn't exist
+      if (!fs.existsSync(path.resolve(`./src/components/${subdirectory}`))) {
+        fs.mkdirSync(path.resolve(`./src/components/${subdirectory}`))
+      }
+      // Create ${subdirectory}/index.ts
+      fs.writeFileSync(path.resolve(`./src/components/${subdirectory}/index.ts`), TS_FILE_HEADER, 'utf8')
+      // Export all from subdirectory
+      fs.appendFileSync(componentsIndex, `export * from './${subdirectory}'\n`, 'utf8')
+    }
 
     // Create a Set to store generated icon component names
     const generatedComponents = new Set<string>()
@@ -93,10 +121,8 @@ export default async function generate() {
         console.error(pc.red(`- '${component}'`))
       }
       console.log('')
-      console.error('If this is intentional:')
-      console.error(' 1. Find the component(s) in the `/src/component-list.ts` file.')
-      console.error(' 2. Manually remove the component name(s) from the array.')
-      console.error(' 3. Save the file, and commit the changes to your branch.')
+      console.error('If this is intentional, run `yarn update-component-list` and')
+      console.error('commit the changes to your branch.')
       console.log('')
       console.error(`In most cases, removing a component is a ${pc.bold('breaking change')} and`)
       console.error('should initiate a new major version via semantic-release.')

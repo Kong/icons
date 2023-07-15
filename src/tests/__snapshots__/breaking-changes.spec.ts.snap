@@ -1,8 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`generate > \`/src/components/index.ts\` file > matches the snapshot 1`] = `undefined`;
-
-exports[`generate > does not remove icons from the previous build 1`] = `
+exports[`Prevent breaking changes > does not remove icons from the previous build 1`] = `
 [
   "AddCircleIcon.vue",
   "AddIcon.vue",

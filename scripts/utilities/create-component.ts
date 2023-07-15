@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { load } from 'cheerio'
 import pc from 'picocolors'
-import { COMPONENT_FILE_HEADER, kebabCase, pascalCase } from './index'
+import { COMPONENT_FILE_HEADER, kebabCase, pascalCase, capitalize, getIconType } from './index'
 
 export default function createComponentFromSvg(pathToSvg: string, svgFileName: string): string {
   // @ts-ignore
@@ -17,8 +17,11 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     process.exit(1)
   }
 
+  // Determine the top-level subdirectory within `/svg/`
+  const iconSubdirectory = getIconType(pathToSvg)
+
   // The lowercase, kebab-case name of the svg
-  const name = kebabCase(`${svgFileName.replace(/([a-zA-Z]+)icon/gi, '$1')}Icon`).replace(/\.svg/, '')
+  const name = kebabCase(`${iconSubdirectory === 'flags' ? 'Flag' : ''}${capitalize(svgFileName).replace(/([a-zA-Z]+)icon/gi, '$1')}Icon`).replace(/\.svg/, '')
   // The PascalCase component name, without the extension
   const componentName = `${pascalCase(name).replace(/\.vue$/gi, '')}`
   // Convert the name to pascal case, ensure the string `Icon.vue` is at the end of the component name
@@ -29,12 +32,8 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     xmlMode: true,
   })
 
-  // If the SVG is within the `/svg/solid/` directory, replace attribute values as needed to standardize
-  const solidIconsDirectory = path.relative(path.resolve('./svg/solid'), pathToSvg)
-  const isSolidIcon: boolean = !!solidIconsDirectory && !solidIconsDirectory.startsWith('..') && !path.isAbsolute(solidIconsDirectory)
-
-  // If a `/svg/solid/` icon, modify element attributes
-  if (isSolidIcon) {
+  // If a `/svg/solid/` icon, modify element attributes as needed to standardize
+  if (iconSubdirectory === 'solid') {
     const path = $cheerio('path')
     if (path.attr('fill')) {
       path?.attr('fill', 'currentColor')
@@ -47,8 +46,8 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
   // Get the innerHTML of the <svg> element, stripping any leading or trailing newlines
   const svgInnerHtml = String($cheerio('svg').html() || '').replace(/^\n+|\n+$/g, '')
 
+  // Import the component template and replace placeholder strings
   try {
-    // Import the component template and replace placeholder strings
     componentTemplate = fs.readFileSync(path.resolve('./src/__template__/ComponentTemplate.vue'), 'utf8')
       // Replace the file header first so it can be parsed by other replacements
       .replace(/\/\*\* {%%ICON_COMPONENT_FILE_HEADER%%} \*\//g, COMPONENT_FILE_HEADER)
@@ -61,9 +60,9 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     process.exit(1)
   }
 
+  // Write the Vue template to the component file
   try {
-    // Write the template to the file
-    fs.writeFileSync(path.resolve(`./src/components/${componentFilenameWithExtension}`), componentTemplate, 'utf8')
+    fs.writeFileSync(path.resolve(`./src/components/${iconSubdirectory}/${componentFilenameWithExtension}`), componentTemplate, 'utf8')
   } catch (err: any) {
     console.log(pc.red('createComponentFromSvg: could not write the component to the new .vue file'), err)
     console.log('')
@@ -72,7 +71,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
 
   try {
     // Add the component export to the `/src/components/index.ts` file
-    fs.appendFileSync(path.resolve('./src/components/index.ts'), `export { default as ${componentName} } from './${componentFilenameWithExtension}'\n`)
+    fs.appendFileSync(path.resolve(`./src/components/${iconSubdirectory}/index.ts`), `export { default as ${componentName} } from './${componentFilenameWithExtension}'\n`)
   } catch (err: any) {
     console.log(pc.red('createComponentFromSvg: could add the component export to `/src/components/index.ts`'), err)
     console.log('')
