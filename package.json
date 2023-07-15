@@ -4,7 +4,7 @@
   "description": "Kong Icon Library",
   "license": "Apache-2.0",
   "type": "module",
-  "main": "./dist/kong-icons.umd.js",
+  "main": "./dist/kong-icons.cjs.js",
   "module": "./dist/kong-icons.es.js",
   "files": [
     "dist"
@@ -14,7 +14,23 @@
   "exports": {
     ".": {
       "import": "./dist/kong-icons.es.js",
-      "require": "./dist/kong-icons.umd.js"
+      "require": "./dist/kong-icons.cjs.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./solid": {
+      "import": "./dist/kong-icons.solid.es.js",
+      "require": "./dist/kong-icons.solid.cjs.js",
+      "types": "./dist/types/components/solid/index.d.ts"
+    },
+    "./multi-color": {
+      "import": "./dist/kong-icons.multi-color.es.js",
+      "require": "./dist/kong-icons.multi-color.cjs.js",
+      "types": "./dist/types/components/multi-color/index.d.ts"
+    },
+    "./flags": {
+      "import": "./dist/kong-icons.flags.es.js",
+      "require": "./dist/kong-icons.flags.cjs.js",
+      "types": "./dist/types/components/flags/index.d.ts"
     },
     "./package.json": "./package.json",
     "./dist/*": "./dist/*"
@@ -24,7 +40,8 @@
   },
   "scripts": {
     "build": "rimraf './src/components' && yarn stylelint && yarn lint && yarn build:components",
-    "build:components": "rimraf './dist' && yarn generate && yarn typecheck && vite build && rimraf ./dist/style.css && vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
+    "build:components": "rimraf './dist' && yarn generate && yarn typecheck && vite build && rimraf ./dist/style.css && yarn build:types",
+    "build:types": "vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
     "build:visualize": "BUILD_VISUALIZER=true rimraf ./dist && yarn generate && vite build -m production",
     "generate": "ts-node -P './scripts/tsconfig.json' './scripts/generate.ts' && yarn fix:generated",
     "update-component-list": "ts-node -P './scripts/tsconfig.json' './scripts/component-list.ts' && yarn fix:generated",
