@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path, { join } from 'path'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { getSubdirectories } from './scripts/utilities'
 
 // Include the rollup-plugin-visualizer if the BUILD_VISUALIZER env var is set to "true"
 const buildVisualizerPlugin = process.env.BUILD_VISUALIZER
@@ -13,20 +12,6 @@ const buildVisualizerPlugin = process.env.BUILD_VISUALIZER
     gzipSize: true,
   })
   : undefined
-
-const getEntryPoints = () => {
-  // Initialize the entryPoints object with the default export already configured
-  const entryPoints = {
-    default: path.resolve(__dirname, 'src/index.ts'),
-  }
-  const componentDirectories = getSubdirectories(path.resolve('./src/components'))
-
-  for (const dir of componentDirectories) {
-    entryPoints[dir] = path.resolve(__dirname, `src/components/${dir}/index.ts`)
-  }
-
-  return entryPoints
-}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -51,9 +36,9 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: getEntryPoints(),
+      entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'KongIcons',
-      fileName: (format, entryName) => entryName === 'default' ? `kong-icons.${format}.js` : `kong-icons.${entryName}.${format}.js`,
+      fileName: (format) => `kong-icons.${format}.js`,
     },
     emptyOutDir: true,
     minify: true,
