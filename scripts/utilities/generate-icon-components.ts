@@ -5,6 +5,7 @@ import { get as emoji } from 'node-emoji'
 import {
   createComponentFromSvg,
   getAllFiles,
+  getSubdirectories,
   getDeletedComponentList,
   storeComponentList,
   TS_FILE_HEADER,
@@ -62,7 +63,8 @@ export default async function generate() {
     fs.writeFileSync(componentsIndex, TS_FILE_HEADER, 'utf8')
 
     // Loop through each subdirectory and create an export
-    for (const subdirectory of ['solid', 'multi-color', 'flags']) {
+    const svgSubdirectories = getSubdirectories(path.resolve('./svg'))
+    for (const subdirectory of svgSubdirectories) {
       const subdirectoryPath = path.resolve(`./svg/${subdirectory}`)
       // Ensure path exists
       if (!fs.existsSync(subdirectoryPath)) {
