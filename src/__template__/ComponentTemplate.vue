@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 /** {%%ICON_COMPONENT_FILE_HEADER%%} */
 import { computed } from 'vue'
-import { v4 as uuidv4 } from 'uuid'
 import { KUI_ICON_SIZE_50 } from '@kong/design-tokens'
 
 const props = defineProps({
@@ -83,9 +82,6 @@ const rootElementStyles = computed((): Record<string, string> => ({
   lineHeight: '0',
   width: iconSize.value,
 }))
-
-// Compute a unique ID for the title element for a11y
-const titleId = computed((): string => `{%%KONG_COMPONENT_ICON_CLASS%%}-${uuidv4()}`)
 </script>
 
 <template>
@@ -98,7 +94,6 @@ const titleId = computed((): string => `{%%KONG_COMPONENT_ICON_CLASS%%}-${uuidv4
   >
     <svg
       :aria-hidden="decorative ? 'true' : undefined"
-      :aria-labelledby="title ? titleId : undefined"
       data-testid="kui-icon-svg-{%%KONG_COMPONENT_ICON_CLASS%%}"
       fill="none"
       height="100%"
@@ -109,7 +104,6 @@ const titleId = computed((): string => `{%%KONG_COMPONENT_ICON_CLASS%%}-${uuidv4
     >
       <title
         v-if="title"
-        :id="titleId"
         data-testid="kui-icon-svg-title"
       >{{ title }}</title>
       {%%ICON_SVG_INNER_HTML%%}
