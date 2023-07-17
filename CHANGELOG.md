@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Kong/icons/compare/v1.0.0...v1.0.1) (2023-07-17)
+
+
+### Bug Fixes
+
+* remove unneeded declaration file ([09c913c](https://github.com/Kong/icons/commit/09c913cf1a044cfbcdb508dcc3ee915fe64340fc))
+
 # 1.0.0 (2023-07-17)
 
 
