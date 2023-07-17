@@ -1,0 +1,162 @@
+{
+  "name": "@kong/icons",
+  "version": "0.0.1",
+  "description": "Kong Icon Library",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/kong-icons.umd.js",
+  "module": "./dist/kong-icons.es.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types",
+  "exports": {
+    ".": {
+      "import": "./dist/kong-icons.es.js",
+      "require": "./dist/kong-icons.umd.js"
+    },
+    "./package.json": "./package.json",
+    "./dist/*": "./dist/*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rimraf './src/components' && yarn stylelint && yarn lint && yarn build:components",
+    "build:components": "rimraf './dist' && yarn generate && yarn typecheck && vite build && rimraf ./dist/style.css && vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
+    "build:visualize": "BUILD_VISUALIZER=true rimraf ./dist && yarn generate && vite build -m production",
+    "generate": "ts-node -P './scripts/tsconfig.json' './scripts/generate.ts' && yarn fix:generated",
+    "update-component-list": "ts-node -P './scripts/tsconfig.json' './scripts/component-list.ts' && yarn fix:generated",
+    "dev": "USE_SANDBOX=true vite",
+    "test": "FORCE_COLOR=1 vitest run",
+    "test:open": "vitest --ui",
+    "typecheck": "vue-tsc -p './tsconfig.build.json' --noEmit",
+    "lint": "eslint '**/*.{js,ts,vue}'",
+    "lint:fix": "eslint '**/*.{js,ts,vue}' --fix",
+    "lint:fix:generated": "eslint './src/components/**/*.{ts,vue}' './src/component-list.ts' './src/temp-generated-component-list.ts' --fix",
+    "stylelint": "stylelint './src/**/*.{css,scss,vue}'",
+    "stylelint:fix": "stylelint './src/**/*.{css,scss,vue}' --fix",
+    "stylelint:fix:generated": "stylelint './src/components/**/*.vue' --fix",
+    "fix:generated": "yarn lint:fix:generated && yarn stylelint:fix:generated",
+    "semantic-release": "semantic-release",
+    "commit": "cz"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.22.5",
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
+    "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
+    "@evilmartians/lefthook": "^1.4.3",
+    "@kong/design-tokens": "^1.6.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/jsdom": "^21.1.1",
+    "@types/node": "^20.4.0",
+    "@types/node-emoji": "^2.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitest/ui": "^0.33.0",
+    "@vue/test-utils": "^2.4.0",
+    "autoprefixer": "^10.4.14",
+    "c8": "^8.0.0",
+    "cheerio": "^1.0.0-rc.12",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.44.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.15.1",
+    "jsdom": "^22.1.0",
+    "node-emoji": "^2.1.0",
+    "picocolors": "^1.0.0",
+    "postcss-html": "^1.5.0",
+    "rimraf": "^5.0.1",
+    "rollup-plugin-visualizer": "^5.9.2",
+    "sass": "^1.63.6",
+    "semantic-release": "^21.0.7",
+    "stylelint": "^15.10.1",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recommended-scss": "^12.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-order": "^6.0.3",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.7",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.1",
+    "vitest": "^0.33.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4",
+    "vue-tsc": "^1.8.4"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.4"
+  },
+  "homepage": "https://icons.konghq.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kong/icons.git"
+  },
+  "author": {
+    "name": "Kong Inc.",
+    "url": "https://konghq.com/"
+  },
+  "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "main",
+      "next",
+      "next-major",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json",
+            "src/component-list.ts"
+          ]
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  },
+  "engines": {
+    "node": ">=16.19.0"
+  },
+  "volta": {
+    "node": "18.16.1",
+    "yarn": "1.22.17"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira",
+      "skipScope": false,
+      "jiraOptional": true,
+      "jiraLocation": "post-description",
+      "jiraPrepend": "[",
+      "jiraAppend": "]"
+    }
+  }
+}

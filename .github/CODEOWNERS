@@ -1,0 +1,24 @@
+# These owners will be the default owners for everything in
+# the repo. They will be requested for review whenever someone
+# opens a PR, unless a later match takes precedence.
+* @adamdehaven @jillztom @Kong/team-core-ui
+
+# Workflows & CI
+/.github/ @adamdehaven @jillztom
+/lefthook.yml @adamdehaven @jillztom
+
+# Generate scripts
+/scripts/ @adamdehaven @jillztom
+
+# SVG source files
+/svg/ @adamdehaven @jillztom
+
+# Existing component list
+/src/component-list.ts @adamdehaven @jillztom
+
+# ================================================
+# Renovate Bot approvals
+# Allow Kongponents BOT to approve dependency updates
+# These rules MUST remain at the bottom as the last entry
+package.json @kongponents-bot @Kong/team-core-ui @adamdehaven @jillztom
+yarn.lock @kongponents-bot @Kong/team-core-ui @adamdehaven @jillztom

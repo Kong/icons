@@ -1,0 +1,22 @@
+node_modules
+.DS_Store
+dist
+bin
+*.local
+bundle-analyzer
+
+# Build files - yes, these should be ignored
+src/components/**
+src/temp-generated-component-list.ts
+
+# Temp files
+
+.temp
+.cache
+.idea
+.husky
+
+docs/.vitepress/.temp
+docs/.vitepress/.cache
+docs/.vitepress/cache
+docs/.vitepress/dist
