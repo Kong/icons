@@ -2,7 +2,7 @@
  * @description Capitalize a string.
  * @param {string} str
  */
-export function capitalize(str: string): string {
+export const capitalize = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
@@ -19,7 +19,7 @@ function hasSymbols(str: string) {
  * @param {string} str Text to be converted
  * @return {string} Converted string
  */
-export function pascalCase(str: string): string {
+export const pascalCase = (str: string): string => {
   return capitalize(camelCase(str))
 }
 
@@ -28,7 +28,7 @@ export function pascalCase(str: string): string {
  * @param {string} str Text to be converted
  * @return {string} Converted string
  */
-export function camelCase(str: string): string {
+export const camelCase = (str: string): string => {
   const modifiedInputString = kebabCase(str)
   if (isPascalCase(modifiedInputString)) {
     return modifiedInputString.charAt(0).toLowerCase() + modifiedInputString.slice(1)
@@ -40,7 +40,7 @@ export function camelCase(str: string): string {
  * @description Checks whether the given string is PascalCase.
  * @param {string} str
  */
-export function isPascalCase(str: string): boolean {
+export const isPascalCase = (str: string): boolean => {
   if (
     hasSymbols(str) ||
     /^[a-z]/u.exec(str) ||
@@ -56,7 +56,7 @@ export function isPascalCase(str: string): boolean {
  * @param {string} str - The string to kebab-case.
  * @return {string} Lowercase and kebab-case version of the input string.
  */
-export function kebabCase(str: string = ''): string {
+export const kebabCase = (str: string = ''): string => {
   if (!str || str.trim() === '') {
     return ''
   }
