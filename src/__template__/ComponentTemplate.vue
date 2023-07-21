@@ -32,15 +32,19 @@ const props = defineProps({
   size: {
     type: [Number, String],
     required: false,
-    default: 24, // KUI_ICON_SIZE_50
-    validator: (sizeValue: number): boolean => {
+    default: KUI_ICON_SIZE_50, // if setting to the imported const fails, just pass a number of 24 as the default.
+    validator: (sizeValue: number | string): boolean => {
       if (typeof sizeValue === 'number' && sizeValue > 0) {
         return true
       }
 
       if (typeof sizeValue === 'string') {
-        const sizeNumber = Number(sizeValue)
-        return Number.isInteger(sizeNumber) && sizeNumber > 0
+        // Strip `px` from the string
+        const sanitizedSize = String(sizeValue).replace(/px/gi, '')
+        const sizeNumber = Number(sanitizedSize)
+        if (sizeNumber && !isNaN(sizeNumber) && Number.isInteger(sizeNumber) && sizeNumber > 0) {
+          return true
+        }
       }
 
       return false
@@ -60,10 +64,13 @@ const iconSize = computed((): string => {
     return `${props.size}px`
   }
 
-  const sizeNumber = Number(props.size)
-  // If props.size is a string, ensure the string converts 1:1 to a number, and ensure it's greater than zero
-  if (typeof props.size === 'string' && sizeNumber && Number.isInteger(sizeNumber) && sizeNumber > 0) {
-    return `${props.size}px`
+  if (typeof props.size === 'string') {
+    // Strip `px` from the string
+    const sanitizedSize = String(props.size).replace(/px/gi, '')
+    const sizeNumber = Number(sanitizedSize)
+    if (sizeNumber && !isNaN(sizeNumber) && Number.isInteger(sizeNumber) && sizeNumber > 0) {
+      return `${sizeNumber}px`
+    }
   }
 
   // Return the default icon size

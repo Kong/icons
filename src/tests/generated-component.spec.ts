@@ -201,9 +201,22 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
         expect(iconWrapperStyles.height).toBe(`${size}px`)
       })
 
-      it('console.warns if the size prop cannot be coverted to a number', () => {
+      it('converts a string with `px` suffix to a valid icon size', () => {
         const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
         const size = '64px'
+
+        mount(component, {
+          props: {
+            size,
+          },
+        })
+
+        expect(consoleSpy).not.toHaveBeenCalledOnce()
+      })
+
+      it('console.warns if the size prop cannot be coverted to a number', () => {
+        const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
+        const size = '64units'
 
         mount(component, {
           props: {
