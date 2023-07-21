@@ -116,7 +116,7 @@ Source SVG files **must**:
 
 - be stored in the `/svg/` directory
   - All solid (single-color) icon SVG files **must** be placed in the `/svg/solid/` directory
-  - All flag icon SVG files **must** be named following the format `flag-{country code}.svg` and **must** be placed in the `/svg/flags/` directory
+  - All flag icon SVG files **must** be named following the format `{country code}.svg` and **must** be placed in the `/svg/flags/` directory. All country codes must be two-character strings.
   - All multi-color SVG files **must** be placed in the `/svg/multi-color/` directory
 - have a **unique**, `kebab-case` filename, regardless of the `/svg/*` subdirectory they are located in
 - have a default size of `24px` when they are exported
