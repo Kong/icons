@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Kong/icons/compare/v1.0.1...v1.0.2) (2023-07-21)
+
+
+### Bug Fixes
+
+* **size:** update size prop and validator ([#14](https://github.com/Kong/icons/issues/14)) ([4dd1ac2](https://github.com/Kong/icons/commit/4dd1ac288022b5d8a642bf4f2c3a6954c3583a0f))
+
 ## [1.0.1](https://github.com/Kong/icons/compare/v1.0.0...v1.0.1) (2023-07-17)
 
 
