@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Kong/icons/compare/v1.0.2...v1.1.0) (2023-07-24)
+
+
+### Features
+
+* rename tag prop to as ([#17](https://github.com/Kong/icons/issues/17)) ([8004cda](https://github.com/Kong/icons/commit/8004cdaa2f4400fcfb13f15b372508bf8201e929))
+
 ## [1.0.2](https://github.com/Kong/icons/compare/v1.0.1...v1.0.2) (2023-07-21)
 
 
