@@ -94,13 +94,19 @@ As a convenience, you may pass the size as a `number`, e.g. `24` or as a string 
 
 When utilizing a `string`, do not pass any units along with the value.
 
-#### `tag`
+#### `as`
 
 - type: `String`
 - required: `false`
 - default: `'span'`
 
 The HTML tag to use in place of the default wrapper `<span>` tag.
+
+##### Example
+
+```html
+<CloseIcon as="button" />
+```
 
 ## Contributing & Local Development
 
