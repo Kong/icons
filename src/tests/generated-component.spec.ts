@@ -228,25 +228,27 @@ describe(`Icon Components (randomly testing '${component.__name}.vue')`, () => {
       })
     })
 
-    describe('tag', () => {
-      it('defaults to a `span` tag when the tag prop is not provided', () => {
+    describe('as', () => {
+      it('defaults to a `span` tag when the as prop is not provided', () => {
         const wrapper = mount(component)
         const iconWrapper = wrapper.find('span.kui-icon')
 
         expect(iconWrapper.exists()).toBe(true)
       })
 
-      it('customizes the HTML wrapper element if the tag prop is provided', () => {
-        const tag = 'section'
+      it('customizes the HTML wrapper element if the as prop is provided', () => {
+        const as = 'button'
         const wrapper = mount(component, {
           props: {
-            tag,
+            as,
           },
         })
-        const spanWrapper = wrapper.find('span.kui-icon')
-        const iconWrapper = wrapper.find(`${tag}.kui-icon`)
 
+        // Look for default element
+        const spanWrapper = wrapper.find('span.kui-icon')
         expect(spanWrapper.exists()).toBe(false)
+
+        const iconWrapper = wrapper.find(`${as}.kui-icon`)
         expect(iconWrapper.exists()).toBe(true)
       })
     })

@@ -13,7 +13,7 @@ for (const [componentName, component] of Object.entries(importedComponents)) {
           display: 'inline-flex',
           decorative: false,
           size: 32,
-          tag: 'span',
+          as: 'span',
         },
       })
 

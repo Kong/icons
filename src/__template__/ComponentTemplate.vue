@@ -51,7 +51,7 @@ const props = defineProps({
     },
   },
   /** The HTML tag to utilize for the icon's wrapper element. Defaults to `span` */
-  tag: {
+  as: {
     type: String,
     required: false,
     default: 'span',
@@ -93,7 +93,7 @@ const rootElementStyles = computed((): Record<string, string> => ({
 
 <template>
   <component
-    :is="tag"
+    :is="as"
     :aria-hidden="decorative ? 'true' : undefined"
     class="kui-icon {%%KONG_COMPONENT_ICON_CLASS%%}"
     data-testid="kui-icon-wrapper-{%%KONG_COMPONENT_ICON_CLASS%%}"
