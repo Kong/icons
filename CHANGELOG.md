@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Kong/icons/compare/v1.1.0...v1.1.1) (2023-08-07)
+
+
+### Bug Fixes
+
+* use xml ([a5643b8](https://github.com/Kong/icons/commit/a5643b88fe9a890e0a1238d9a291d03814e3b039))
+
 # [1.1.0](https://github.com/Kong/icons/compare/v1.0.2...v1.1.0) (2023-07-24)
 
 
