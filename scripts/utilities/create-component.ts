@@ -29,7 +29,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
 
   // Load the SVG file as XML
   const $cheerio = load(svgFile, {
-    xmlMode: true,
+    xml: true,
   })
 
   // If a `/svg/solid/` icon, modify element attributes as needed to standardize
