@@ -80,6 +80,7 @@ export default [
   'PortalIcon.vue',
   'PresentationIcon.vue',
   'ProfileIcon.vue',
+  'ProgressIcon.vue',
   'RedoIcon.vue',
   'RuntimeCompositeIcon.vue',
   'RuntimeDedicatedCloudIcon.vue',

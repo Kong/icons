@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Kong/icons/compare/v1.1.2...v1.2.0) (2023-08-16)
+
+
+### Features
+
+* **solid:** add progress icon ([#30](https://github.com/Kong/icons/issues/30)) ([545f3bf](https://github.com/Kong/icons/commit/545f3bfef764146075597fa90286c24699a8731c))
+
 ## [1.1.2](https://github.com/Kong/icons/compare/v1.1.1...v1.1.2) (2023-08-16)
 
 
