@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Kong/icons/compare/v1.1.1...v1.1.2) (2023-08-16)
+
+
+### Bug Fixes
+
+* rename files ([8395aff](https://github.com/Kong/icons/commit/8395aff85f71203a77bb42a1aab1651840ea81fe))
+
 ## [1.1.1](https://github.com/Kong/icons/compare/v1.1.0...v1.1.1) (2023-08-07)
 
 
