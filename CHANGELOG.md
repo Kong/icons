@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/Kong/icons/compare/v1.2.0...v1.2.1) (2023-08-18)
+
+
+### Bug Fixes
+
+* engines min ([976babf](https://github.com/Kong/icons/commit/976babffd91af422dec6bc3371ed0873a1858114))
+* test snapshot ([b8facca](https://github.com/Kong/icons/commit/b8faccac2453cc00384e61f428a07d67be4ae2f9))
+
 # [1.2.0](https://github.com/Kong/icons/compare/v1.1.2...v1.2.0) (2023-08-16)
 
 
