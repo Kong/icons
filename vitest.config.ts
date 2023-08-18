@@ -6,9 +6,6 @@ export default mergeConfig(viteConfig, defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    deps: {
-      registerNodeLoader: true, // Ensure modules are imported properly
-    },
     include: ['**/*.spec.ts'],
     exclude: [
       './dist/**',
