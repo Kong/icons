@@ -74,6 +74,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "PortalIcon.vue",
   "PresentationIcon.vue",
   "ProfileIcon.vue",
+  "ProgressIcon.vue",
   "RedoIcon.vue",
   "RuntimeCompositeIcon.vue",
   "RuntimeDedicatedCloudIcon.vue",
