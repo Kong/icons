@@ -1389,6 +1389,11 @@
     js-beautify "1.14.9"
     vue-component-type-helpers "1.8.4"
 
+"@vue/tsconfig@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@vue/tsconfig/-/tsconfig-0.4.0.tgz#f01e2f6089b5098136fb084a0dd0cdd4533b72b0"
+  integrity sha512-CPuIReonid9+zOG/CGTT05FXrPYATEqoDGNrEaqS4hwcw5BUNM2FguC0mOwJD4Jr16UpRVl9N0pY3P+srIbqmg==
+
 "@vue/typescript@1.8.8":
   version "1.8.8"
   resolved "https://registry.yarnpkg.com/@vue/typescript/-/typescript-1.8.8.tgz#8efb375d448862134492a044f4e96afada547500"
