@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/Kong/icons/compare/v1.2.1...v1.2.2) (2023-08-22)
+
+
+### Bug Fixes
+
+* **tsconfig:** extend @vue/tsconfig ([#31](https://github.com/Kong/icons/issues/31)) ([5e01f63](https://github.com/Kong/icons/commit/5e01f633cb486d2f47bf5dc70d94e789495b87c2))
+
 ## [1.2.1](https://github.com/Kong/icons/compare/v1.2.0...v1.2.1) (2023-08-18)
 
 
