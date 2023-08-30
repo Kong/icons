@@ -6272,7 +6272,7 @@ saxes@^6.0.0:
   dependencies:
     xmlchars "^2.2.0"
 
-semantic-release@^21.0.8:
+semantic-release@^21.0.9:
   version "21.1.1"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-21.1.1.tgz#b1a0735fe5037699b26f81ec9e7e8a2fb89d5972"
   integrity sha512-OCIazQnaCHdq1F6zfmKS0P7jZakYq0weiqW2mxUWo4H2CDnxelUoa/0Bs/dQatoHc6JFh6lG2HWpusdl93bFcw==
