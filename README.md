@@ -125,8 +125,8 @@ Source SVG files **must**:
   - All flag icon SVG files **must** be named following the format `{country code}.svg` and **must** be placed in the `/svg/flags/` directory. All country codes must be two-character strings.
   - All multi-color SVG files **must** be placed in the `/svg/multi-color/` directory
 - have a **unique**, `kebab-case` filename, regardless of the `/svg/*` subdirectory they are located in
-  - you don't need to add the word `icon` in the end of filename
-  - the resulting exported icon name will be title-cased filename with word `Icon` in the end (e.g. `kebab-case.svg -> KebabCaseIcon`)
+  - file names **must** not include the word `icon` (it is automatically added during component generation)
+  - the resulting exported icon name will be a PascalCase file with an added `Icon` suffix (e.g. `kebab-case.svg -> KebabCaseIcon`)
 - have a default size of `24px` when they are exported
 - be sourced from and approved of by Kong's Design team
 
