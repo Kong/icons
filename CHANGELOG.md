@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Kong/icons/compare/v1.2.2...v1.3.0) (2023-08-31)
+
+
+### Features
+
+* trigger release ([#42](https://github.com/Kong/icons/issues/42)) ([75e6233](https://github.com/Kong/icons/commit/75e62334dc6f2da849ad766d097ad0d6ebed1c5b))
+
 ## [1.2.2](https://github.com/Kong/icons/compare/v1.2.1...v1.2.2) (2023-08-22)
 
 
