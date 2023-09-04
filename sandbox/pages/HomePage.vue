@@ -1,16 +1,22 @@
 <template>
   <div class="sandbox-header">
-    <router-link
-      class="home-link"
-      :to="{ name: 'home'}"
-    >
-      <h1>
-        Kong Icons Sandbox
-      </h1>
-    </router-link>
+    <h1>
+      <a
+        class="home-link"
+        href="https://github.com/Kong/icons"
+        target="_blank"
+        title="View on GitHub"
+      >Kong Icons
+        <component
+          :is="iconComponents.ExternalLinkIcon"
+          as="span"
+          display="inline-block"
+          :size="16"
+        />
+      </a>
+    </h1>
     <div class="search">
       <input
-        id="icon-filter"
         v-model="query"
         placeholder="Search icons"
         type="search"
@@ -52,34 +58,38 @@ const filteredComponents = computed(() => {
     })
   }
 
-  if (!query.value) {
+  if (!query.value || query.value?.toLowerCase() === 'icon') {
     return allComponents
   }
 
-  return allComponents.filter((icon: any) => icon.name.toLowerCase().includes(query.value))
+  return allComponents.filter((icon: any) => icon.name.toLowerCase().includes(query.value.replace(/icon/gi, '')))
 })
 </script>
 
 <style lang="scss" scoped>
-@import './../styles/sandbox-variables';
+$header-height: 80px;
+$content-max-width: 1800px;
 
 .sandbox-header {
   align-items: center;
+  background-color: #fff;
   border-bottom: 1px solid lightgray;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .25);
   display: inline-flex;
+  height: $header-height;
   justify-content: space-between;
+  left: 0;
   padding: 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
   width: 100%;
-
-  @media only screen and (min-width: $viewport-xl) {
-    border: none;
-  }
 
   h1 {
     font-size: 18px;
     margin: 0;
 
-    @media only screen and (min-width: $viewport-md) {
+    @media (min-width: $kui-breakpoint-phablet) {
       font-size: 24px;
     }
   }
@@ -87,6 +97,7 @@ const filteredComponents = computed(() => {
 
 .sandbox-layout {
   display: flex;
+  margin-top: $header-height;
   padding: 20px;
 }
 
@@ -94,35 +105,68 @@ const filteredComponents = computed(() => {
   min-height: 50vh;
   width: 100%;
 
-  @media only screen and (min-width: $viewport-xl) {
-    border: 1px solid lightgray;
+  @media (min-width: $kui-breakpoint-laptop) {
     padding: 20px;
   }
 }
 
 .home-link {
-  color: #000;
+  color: $kui-color-text-primary-strong;
+  outline: none;
   text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $kui-color-text-primary;
+  }
+
+  &:hover {
+    color: $kui-color-text-primary-stronger;
+  }
 }
 
 .search {
+  max-width: 300px;
+  width: 100%;
+
   input {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: none;
     font-size: 14px;
     height: 40px;
-    max-width: 200px;
     padding: 4px 8px;
     width: 100%;
   }
 }
 
 .icon-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-items: stretch;
+  display: grid;
+  gap: $kui-space-50;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: $content-max-width;
+  width: 100%;
+
+  @media (min-width: $kui-breakpoint-mobile) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (min-width: $kui-breakpoint-tablet) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @media (min-width: $kui-breakpoint-laptop) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  @media (min-width: $kui-breakpoint-desktop) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
 }
 
 p {
