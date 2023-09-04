@@ -34,21 +34,26 @@ export default defineConfig({
       },
     },
   },
+  base: process.env.GITHUB_PAGES ? '/icons/' : '/',
   build: {
-    lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'KongIcons',
-      fileName: (format) => `kong-icons.${format}.js`,
-    },
+    lib: process.env.USE_SANDBOX
+      ? undefined
+      : {
+        entry: path.resolve(__dirname, 'src/index.ts'),
+        name: 'KongIcons',
+        fileName: (format) => `kong-icons.${format}.js`,
+      },
     emptyOutDir: true,
     minify: true,
     sourcemap: true,
     rollupOptions: {
-      external: ['vue'],
+      external: process.env.USE_SANDBOX ? undefined : ['vue'],
       output: {
-        globals: {
-          vue: 'Vue',
-        },
+        globals: process.env.USE_SANDBOX
+          ? undefined
+          : {
+            vue: 'Vue',
+          },
         exports: 'named',
       },
       plugins: [
