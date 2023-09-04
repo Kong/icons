@@ -140,7 +140,7 @@ $content-max-width: 1800px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: none;
-    font-size: 14px;
+    font-size: 16px;
     height: 40px;
     padding: 4px 8px;
     width: 100%;
