@@ -6,9 +6,17 @@ on:
 jobs:
   commitlint:
     if: ${{ github.actor != 'dependabot[bot]' && github.actor != 'renovate[bot]' }}
+    name: Commitlint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      # See https://github.com/wagoid/commitlint-github-action/issues/560
+      - name: Remove tsconfig
+        run: rm tsconfig.json
+
       - uses: wagoid/commitlint-github-action@v5.4.3
+        with:
+          configFile: commitlint.config.cjs
