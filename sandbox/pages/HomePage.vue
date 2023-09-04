@@ -17,7 +17,7 @@
     </h1>
     <div class="search">
       <input
-        v-model="query"
+        v-model.trim="query"
         placeholder="Search icons"
         type="search"
       >
@@ -62,7 +62,7 @@ const filteredComponents = computed(() => {
     return allComponents
   }
 
-  return allComponents.filter((icon: any) => icon.name.toLowerCase().includes(query.value.replace(/icon/gi, '')))
+  return allComponents.filter((icon: any) => icon.name.toLowerCase().includes(query.value.toLowerCase().replace(/icon/gi, '')))
 })
 </script>
 
