@@ -4,6 +4,7 @@ exports[`generate > \`/src/components/index.ts\` file > matches the snapshot 1`]
 
 exports[`generate > does not remove icons from the previous build 1`] = `
 [
+  "AddChartIcon.vue",
   "AddCircleIcon.vue",
   "AddIcon.vue",
   "ArrowDownIcon.vue",
@@ -18,6 +19,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "BotIcon.vue",
   "BrainIcon.vue",
   "CalIcon.vue",
+  "ChartDataIcon.vue",
   "CheckCircleIcon.vue",
   "CheckIcon.vue",
   "CheckSmallIcon.vue",
@@ -30,13 +32,16 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "ClockIcon.vue",
   "CloseIcon.vue",
   "CloudIcon.vue",
+  "CloudUploadIcon.vue",
   "CogIcon.vue",
   "CollapseIcon.vue",
   "CollapsePanelIcon.vue",
   "ConnectionsIcon.vue",
   "CopyIcon.vue",
   "DangerCircleIcon.vue",
+  "DangerIcon.vue",
   "DashboardIcon.vue",
+  "DataReportIcon.vue",
   "DeployIcon.vue",
   "DevPortalIcon.vue",
   "DisabledIcon.vue",
@@ -76,6 +81,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "ProfileIcon.vue",
   "ProgressIcon.vue",
   "RedoIcon.vue",
+  "ResponseIcon.vue",
   "RuntimeCompositeIcon.vue",
   "RuntimeDedicatedCloudIcon.vue",
   "RuntimeHybridIcon.vue",
@@ -91,8 +97,10 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "TableIcon.vue",
   "TeammateIcon.vue",
   "TrashIcon.vue",
+  "VisibilityIcon.vue",
   "VitalsIcon.vue",
   "WarningIcon.vue",
+  "WarningOutlineIcon.vue",
   "WorldIcon.vue",
 ]
 `;
