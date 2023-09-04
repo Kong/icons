@@ -115,6 +115,7 @@ $content-max-width: 1800px;
   outline: none;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
+  white-space: nowrap;
 
   &:focus {
     outline: none;
@@ -134,6 +135,7 @@ $content-max-width: 1800px;
   width: 100%;
 
   input {
+    background: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: none;
