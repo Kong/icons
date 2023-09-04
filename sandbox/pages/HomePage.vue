@@ -112,6 +112,7 @@ $content-max-width: 1800px;
 
 .home-link {
   color: $kui-color-text-primary-strong;
+  margin-right: $kui-space-70;
   outline: none;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
