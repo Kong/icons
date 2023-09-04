@@ -45,8 +45,6 @@ jobs:
         env:
           # Tell the script to use the sandbox directory
           USE_SANDBOX: true
-          # Tell Vite that we are deploying to GitHub Pages (sets the `base` path in the vite config)
-          GITHUB_PAGES: true
         run: yarn build:sandbox
 
       - name: Setup Pages

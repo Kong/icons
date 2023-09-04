@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 export default createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/icons'),
   routes: [
     {
       path: '/',
       name: 'home',
-      meta: { title: 'Kong Icons Sandbox' },
+      meta: { title: '@kong/icons' },
       component: () => import('./pages/HomePage.vue'),
     },
   ],

@@ -134,18 +134,22 @@ Source SVG files **must**:
 
 This repository includes a Vue sandbox app (see the `/sandbox` directory) to allow you to experiment with icons.
 
-Before running the local dev server, you will need to run the generate command.
-
-> **Note**: You must regenerate the icons and restart the sandbox if you make changes to files outside of the `/sandbox/` directory.
+The `yarn dev` command will automatically call the `generate` command to generate the icon components.
 
 To compile the icon components and start the sandbox:
 
 ```sh
-# Generate the Icon Components
-yarn generate
-
-# Start the sandbox
+# Generate the Icon Components and start the sandbox
 yarn dev
+```
+
+#### Build and Preview the Development Sandbox
+
+To run a local preview of the Sandbox site that will be deployed to GitHub Pages:
+
+```sh
+yarn build:sandbox
+yarn preview:sandbox
 ```
 
 ### Lint and fix

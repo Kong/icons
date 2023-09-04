@@ -34,7 +34,7 @@ export default defineConfig({
       },
     },
   },
-  base: process.env.GITHUB_PAGES ? '/icons/' : '/',
+  base: process.env.USE_SANDBOX ? '/icons/' : '/',
   build: {
     lib: process.env.USE_SANDBOX
       ? undefined
@@ -48,14 +48,14 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       external: process.env.USE_SANDBOX ? undefined : ['vue'],
-      output: {
-        globals: process.env.USE_SANDBOX
-          ? undefined
-          : {
+      output: process.env.USE_SANDBOX
+        ? undefined
+        : {
+          globals: {
             vue: 'Vue',
           },
-        exports: 'named',
-      },
+          exports: 'named',
+        },
       plugins: [
         // visualizer must remain last in the list of plugins
         buildVisualizerPlugin,
