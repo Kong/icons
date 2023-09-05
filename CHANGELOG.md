@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Kong/icons/compare/v1.3.0...v1.4.0) (2023-09-05)
+
+
+### Features
+
+* add new icons ([#48](https://github.com/Kong/icons/issues/48)) ([607f87b](https://github.com/Kong/icons/commit/607f87bd731a5656f6a0c74c04fec310ad485b4e))
+
 # [1.3.0](https://github.com/Kong/icons/compare/v1.2.2...v1.3.0) (2023-08-31)
 
 
