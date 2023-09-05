@@ -5,8 +5,8 @@ import pc from 'picocolors'
 import { COMPONENT_FILE_HEADER, kebabCase, pascalCase, capitalize, getIconType } from './index'
 
 export default function createComponentFromSvg(pathToSvg: string, svgFileName: string): string {
-  // @ts-ignore
-  let svgFile: string, componentTemplate: string
+  let svgFile: string
+  let componentTemplate: string
 
   // Get the SVG source file
   try {
@@ -20,9 +20,9 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
   // Determine the top-level subdirectory within `/svg/`
   const iconSubdirectory = getIconType(pathToSvg)
 
-  // The lowercase, kebab-case name of the svg
+  // The lowercase, kebab-case name of the svg, e.g. `add-icon`
   const name = kebabCase(`${iconSubdirectory === 'flags' ? 'Flag' : ''}${capitalize(svgFileName).replace(/([a-zA-Z]+)icon/gi, '$1')}Icon`).replace(/\.svg/, '')
-  // The PascalCase component name, without the extension
+  // The PascalCase component name, without the extension, e.g. `AddIcon`
   const componentName = `${pascalCase(name).replace(/\.vue$/gi, '')}`
   // Convert the name to pascal case, ensure the string `Icon.vue` is at the end of the component name
   const componentFilenameWithExtension = `${componentName}.vue`
@@ -46,16 +46,17 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
   // Get the innerHTML of the <svg> element, stripping any leading or trailing newlines
   const svgInnerHtml = String($cheerio('svg').html() || '').replace(/^\n+|\n+$/g, '')
 
-  // Import the component template and replace placeholder strings
+  // Import the component template
   try {
+    // Replace placeholder strings in component template
     componentTemplate = fs.readFileSync(path.resolve('./src/__template__/ComponentTemplate.vue'), 'utf8')
       // Replace the file header first so it can be parsed by other replacements
       .replace(/\/\*\* {%%ICON_COMPONENT_FILE_HEADER%%} \*\//g, COMPONENT_FILE_HEADER)
       .replace(/{%%ICON_SVG_INNER_HTML%%}/g, svgInnerHtml)
       .replace(/{%%KONG_COMPONENT_ICON_CLASS%%}/g, name)
-      .replace(/{%%KONG_COMPONENT_FILENAME%%}/g, componentFilenameWithExtension)
+      .replace(/{%%KONG_GENERATED_FILENAME%%}/g, componentFilenameWithExtension)
   } catch (err: any) {
-    console.log(pc.red('createComponentFromSvg: could not import and parse the component template'), err)
+    console.log(pc.red('createComponentFromSvg: could not import and parse the component templates'), err)
     console.log('')
     process.exit(1)
   }

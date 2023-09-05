@@ -2,7 +2,7 @@
 
 Kong's open-source, Vue icon component library, partially sourced from [Google's Material Symbols](https://fonts.google.com/icons).
 
-Vue components are generated from SVG source files located in the `/svg/` directory.
+**View all available icons: <http://kong.github.io/icons/>**
 
 - [Usage](#usage)
   - [Installation](#installation)
@@ -10,6 +10,7 @@ Vue components are generated from SVG source files located in the `/svg/` direct
   - [Component Props](#component-props)
 - [Contributing \& Local Development](#contributing--local-development)
   - [SVG file requirements](#svg-file-requirements)
+  - [Add a new icon](#add-a-new-icon)
   - [Development Sandbox](#development-sandbox)
   - [Lint and fix](#lint-and-fix)
   - [Testing](#testing)
@@ -116,19 +117,32 @@ To get started, install the package dependencies
 yarn install --frozen-lockfile
 ```
 
+The exported Vue components are generated from SVG source files located in the `/svg/` child directories.
+
 ### SVG file requirements
 
 Source SVG files **must**:
 
+- have a **unique**, lowercase and kebab-case filename, regardless of the `/svg/*` subdirectory they are located in
+  - file names **must** not include the word `icon` (the suffix is automatically added during component generation)
+  - the resulting exported icon name will be a PascalCase file with an added `Icon` suffix (e.g. `kebab-case.svg -> KebabCaseIcon.vue`)
 - be stored in the `/svg/` directory
   - All solid (single-color) icon SVG files **must** be placed in the `/svg/solid/` directory
   - All flag icon SVG files **must** be named following the format `{country code}.svg` and **must** be placed in the `/svg/flags/` directory. All country codes must be two-character strings.
   - All multi-color SVG files **must** be placed in the `/svg/multi-color/` directory
-- have a **unique**, `kebab-case` filename, regardless of the `/svg/*` subdirectory they are located in
-  - file names **must** not include the word `icon` (it is automatically added during component generation)
-  - the resulting exported icon name will be a PascalCase file with an added `Icon` suffix (e.g. `kebab-case.svg -> KebabCaseIcon`)
 - have a default size of `24px` when they are exported
 - be sourced from and approved of by Kong's Design team
+
+### Add a new icon
+
+To add a new SVG:
+
+1. Ensure the SVG has been exported from the Design team (do **not** create custom SVG files)
+2. Ensure the filename is lowercase and kebab-case
+3. Place the SVG file into the corresponding `/svg/*` subdirectory.
+4. Locally, run `yarn generate` to create the corresponding Vue component
+5. Locally, run `yarn test -u` to run the tests and update the test snapshots
+6. [Commit your changes](#committing-changes) and push up a Pull Request for review
 
 ### Development Sandbox
 
