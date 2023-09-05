@@ -81,20 +81,20 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     process.exit(1)
   }
 
-  // Write the Component Test template to the spec file
-  try {
-    fs.writeFileSync(path.resolve(`./src/components/${iconSubdirectory}/${componentTestFilenameWithExtension}`), componentTestTemplate, 'utf8')
-  } catch (err: any) {
-    console.log(pc.red('createComponentFromSvg: could not write the component tests to the new .spec.ts file'), err)
-    console.log('')
-    process.exit(1)
-  }
-
   try {
     // Add the component export to the `/src/components/index.ts` file
     fs.appendFileSync(path.resolve(`./src/components/${iconSubdirectory}/index.ts`), `export { default as ${componentName} } from './${componentFilenameWithExtension}'\n`)
   } catch (err: any) {
     console.log(pc.red('createComponentFromSvg: could add the component export to `/src/components/index.ts`'), err)
+    console.log('')
+    process.exit(1)
+  }
+
+  // Write the Component Test template to the spec file
+  try {
+    fs.writeFileSync(path.resolve(`./src/tests/components/${componentTestFilenameWithExtension}`), componentTestTemplate, 'utf8')
+  } catch (err: any) {
+    console.log(pc.red('createComponentFromSvg: could not write the component tests to the new .spec.ts file'), err)
     console.log('')
     process.exit(1)
   }
