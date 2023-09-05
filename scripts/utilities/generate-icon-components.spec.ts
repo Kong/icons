@@ -45,10 +45,10 @@ describe('generate', () => {
       expect(allSvgFiles.length).toEqual(Object.keys(importedComponents).length)
     })
 
-    it('matches the snapshot', async () => {
-      const { default: componentExports } = await import(path.resolve('./src/components/index.ts'))
+    it('has exports that match the previous snapshot', async () => {
+      const componentExports = await import(path.resolve('./src/components/index.ts'))
 
-      expect(componentExports).toMatchSnapshot()
+      expect(Object.keys(componentExports)).toMatchSnapshot()
     })
   })
 
@@ -58,6 +58,9 @@ describe('generate', () => {
       expect(componentListFile).toEqual(true)
 
       const { default: componentList } = await import(path.resolve('./src/component-list.ts'))
+
+      console.log('componentList', componentList)
+
       expect(typeof componentList).toEqual('object')
       expect(componentList.length).toBeGreaterThan(0)
       expect(componentList[0]).toContain('.vue')
