@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`generate > \`/src/components/index.ts\` file > matches the snapshot 1`] = `
+exports[`generate > \`/src/components/index.ts\` file > has exports that match the previous snapshot 1`] = `
 [
   "FlagEuIcon",
   "FlagUsIcon",
