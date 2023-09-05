@@ -11,6 +11,8 @@ export default mergeConfig(viteConfig, defineConfig({
       './dist/**',
       './sandbox/**',
       'node_modules',
+      // Exclude template files
+      './src/__template__/**',
     ],
     // The tests will only successfully run after the `yarn generate` script has been run.
     // This `globalSetup` entry generates all comopnents before running the tests
