@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/Kong/icons/compare/v1.4.0...v1.4.1) (2023-09-07)
+
+
+### Bug Fixes
+
+* versioning ([#50](https://github.com/Kong/icons/issues/50)) ([447b9b1](https://github.com/Kong/icons/commit/447b9b167e2fedbb4137be3773e8311eac4064b0))
+
 # [1.4.0](https://github.com/Kong/icons/compare/v1.3.0...v1.4.0) (2023-09-05)
 
 
