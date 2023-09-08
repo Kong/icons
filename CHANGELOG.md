@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/Kong/icons/compare/v1.4.1...v1.4.2) (2023-09-08)
+
+
+### Bug Fixes
+
+* renovate config ([#52](https://github.com/Kong/icons/issues/52)) ([33350fe](https://github.com/Kong/icons/commit/33350fe33b5c4cd8d798eeadc7d652dc12ce5f53))
+
 ## [1.4.1](https://github.com/Kong/icons/compare/v1.4.0...v1.4.1) (2023-09-07)
 
 
