@@ -11,7 +11,7 @@
 /scripts/ @adamdehaven @jillztom
 
 # SVG source files
-/svg/ @adamdehaven @jillztom
+/svg/ @Kong/team-core-ui
 
 # Existing component list
 /src/component-list.ts @adamdehaven @jillztom
