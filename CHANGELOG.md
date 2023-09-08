@@ -1,3 +1,11 @@
+## [1.4.3](https://github.com/Kong/icons/compare/v1.4.2...v1.4.3) (2023-09-08)
+
+
+### Bug Fixes
+
+* node version ([032415e](https://github.com/Kong/icons/commit/032415efd709446964388d036ea54e6bf047e094))
+* node version ([236d994](https://github.com/Kong/icons/commit/236d9942c7fe0ab319146d91ba7b267c8672448d))
+
 ## [1.4.2](https://github.com/Kong/icons/compare/v1.4.1...v1.4.2) (2023-09-08)
 
 
