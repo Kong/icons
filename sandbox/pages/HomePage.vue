@@ -1,39 +1,50 @@
 <template>
-  <div class="sandbox-header">
-    <h1>
-      <a
-        class="home-link"
-        href="https://github.com/Kong/icons"
-        target="_blank"
-        title="View on GitHub"
-      >Kong Icons
-        <component
-          :is="iconComponents.ExternalLinkIcon"
-          as="span"
-          display="inline-block"
-          :size="16"
-        />
-      </a>
-    </h1>
-    <div class="search">
-      <input
-        v-model.trim="query"
-        placeholder="Search icons"
-        type="search"
-      >
-    </div>
-  </div>
+  <PageHeader @search="(query: string) => searchQuery = query" />
   <div class="sandbox-layout">
     <div class="sandbox-container">
-      <div
-        v-if="filteredComponents.length"
-        class="icon-container"
-      >
-        <SandboxIcon
-          v-for="(icon, idx) in filteredComponents"
-          :key="`icon-${idx}`"
-          :icon="icon.component"
-        />
+      <div v-if="filteredComponents.length">
+        <!-- Solid Icons -->
+        <div
+          v-if="filteredComponents.filter((icon) => icon.type === 'solid').length"
+          class="icon-container"
+        >
+          <h2>Solid Icons</h2>
+          <div class="icon-grid">
+            <SandboxIcon
+              v-for="(icon, idx) in filteredComponents.filter((icon) => icon.type === 'solid')"
+              :key="`icon-${idx}`"
+              :icon="icon.component"
+            />
+          </div>
+        </div>
+        <!-- Multi-Color Icons -->
+        <div
+          v-if="filteredComponents.filter((icon) => icon.type === 'multi-color').length"
+          class="icon-container"
+        >
+          <h2>Multi-Color Icons</h2>
+          <div class="icon-grid">
+            <SandboxIcon
+              v-for="(icon, idx) in filteredComponents.filter((icon) => icon.type === 'multi-color')"
+              :key="`icon-${idx}`"
+              :icon="icon.component"
+            />
+          </div>
+        </div>
+        <!-- Flag Icons -->
+        <div
+          v-if="filteredComponents.filter((icon) => icon.type === 'flags').length"
+          class="icon-container"
+        >
+          <h2>Flag Icons</h2>
+          <div class="icon-grid">
+            <SandboxIcon
+              v-for="(icon, idx) in filteredComponents.filter((icon) => icon.type === 'flags')"
+              :key="`icon-${idx}`"
+              :icon="icon.component"
+            />
+          </div>
+        </div>
       </div>
       <p v-else>
         No icons match your query. Try searching again.
@@ -44,56 +55,55 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import PageHeader from '../components/PageHeader.vue'
 import SandboxIcon from '../components/SandboxIcon.vue'
-import * as iconComponents from '../../src/components'
+import * as solidIcons from '../../src/components/solid'
+import * as multiColorIcons from '../../src/components/multi-color'
+import * as flagIcons from '../../src/components/flags'
 
-const query = ref('')
+const searchQuery = ref('')
+
 const filteredComponents = computed(() => {
   const allComponents = []
 
-  for (const [key, val] of Object.entries(iconComponents)) {
+  // solid icons
+  for (const [key, val] of Object.entries(solidIcons)) {
     allComponents.push({
+      type: 'solid',
       name: key,
       component: val,
     })
   }
 
-  if (!query.value || query.value?.toLowerCase() === 'icon') {
+  // multi-color icons
+  for (const [key, val] of Object.entries(multiColorIcons)) {
+    allComponents.push({
+      type: 'multi-color',
+      name: key,
+      component: val,
+    })
+  }
+
+  // flags
+  for (const [key, val] of Object.entries(flagIcons)) {
+    allComponents.push({
+      type: 'flags',
+      name: key,
+      component: val,
+    })
+  }
+
+  if (!searchQuery.value || searchQuery.value?.toLowerCase() === 'icon') {
     return allComponents
   }
 
-  return allComponents.filter((icon: any) => icon.name.toLowerCase().includes(query.value.toLowerCase().replace(/icon/gi, '')))
+  return allComponents.filter((icon: any) => icon.name.toLowerCase().includes(searchQuery.value.toLowerCase().replace(/icon/gi, '')))
 })
 </script>
 
 <style lang="scss" scoped>
 $header-height: 80px;
 $content-max-width: 1800px;
-
-.sandbox-header {
-  align-items: center;
-  background-color: #fff;
-  border-bottom: 1px solid lightgray;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .25);
-  display: inline-flex;
-  height: $header-height;
-  justify-content: space-between;
-  left: 0;
-  padding: 20px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-
-  h1 {
-    font-size: 18px;
-    margin: 0;
-
-    @media (min-width: $kui-breakpoint-phablet) {
-      font-size: 24px;
-    }
-  }
-}
 
 .sandbox-layout {
   display: flex;
@@ -110,49 +120,27 @@ $content-max-width: 1800px;
   }
 }
 
-.home-link {
-  color: $kui-color-text-primary-strong;
-  margin-right: $kui-space-70;
-  outline: none;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-  white-space: nowrap;
-
-  &:focus {
-    outline: none;
-  }
-
-  &:focus-visible {
-    outline: 1px solid $kui-color-text-primary;
-  }
-
-  &:hover {
-    color: $kui-color-text-primary-stronger;
-  }
-}
-
-.search {
-  max-width: 300px;
-  width: 100%;
-
-  input {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: none;
-    font-size: 16px;
-    height: 40px;
-    padding: 4px 8px;
-    width: 100%;
-  }
-}
-
 .icon-container {
+  border-bottom: $kui-border-width-10 solid $kui-color-border;
+  margin-bottom: $kui-space-70;
+
+  &:first-of-type {
+    padding-top: $kui-space-0;
+  }
+
+  &:last-of-type {
+    border-bottom: none;
+    margin-bottom: $kui-space-0;
+  }
+}
+
+.icon-grid {
   display: grid;
   gap: $kui-space-50;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: 0 auto;
+  margin: 0 auto $kui-space-50;
   max-width: $content-max-width;
+  padding-bottom: $kui-space-70;
   width: 100%;
 
   @media (min-width: $kui-breakpoint-mobile) {
@@ -170,6 +158,11 @@ $content-max-width: 1800px;
   @media (min-width: $kui-breakpoint-desktop) {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
+}
+
+h2 {
+  color: $kui-color-text;
+  margin-top: $kui-space-0;
 }
 
 p {
