@@ -53,6 +53,12 @@ jobs:
         - name: Update component-list.ts
           run: yarn update-component-list
 
+        # Since everything was successful, update the Vitest snapshot files to compare
+        # against for future runs. Since the snapshot files are modified here in the CI, they are written back
+        # to the repository via the `/package.json` file `@semantic-release/git` => `assets` config
+        - name: Update test snapshots
+          run: yarn test -u
+
         - name: Semantic Release
           uses: cycjimmy/semantic-release-action@v3
           env:

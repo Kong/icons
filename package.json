@@ -141,7 +141,8 @@
           "assets": [
             "CHANGELOG.md",
             "package.json",
-            "src/component-list.ts"
+            "src/component-list.ts",
+            "scripts/utilities/__snapshots__/generate-icon-components.spec.ts.snap"
           ]
         }
       ],
