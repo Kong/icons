@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/Kong/icons/compare/v1.5.0...v1.6.0) (2023-09-20)
+
+
+### Features
+
+* add world-private icon ([#69](https://github.com/Kong/icons/issues/69)) ([0998c42](https://github.com/Kong/icons/commit/0998c42e9ddfc050ca28d2e0baf03744f8679ead))
+
 # [1.5.0](https://github.com/Kong/icons/compare/v1.4.3...v1.5.0) (2023-09-13)
 
 

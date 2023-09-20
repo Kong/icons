@@ -124,4 +124,5 @@ export default [
   'WarningOutlineIcon.vue',
   'WorkspacesIcon.vue',
   'WorldIcon.vue',
+  'WorldPrivateIcon.vue',
 ]
