@@ -42,7 +42,9 @@ watch(query, (searchQuery: string) => {
   emit('search', searchQuery)
 
   if (searchQuery) {
-    router.push({ name: 'home', query: { search: searchQuery } })
+    if (searchQuery !== route.query.search) {
+      router.push({ name: 'home', query: { search: searchQuery } })
+    }
   } else {
     router.push({ name: 'home' })
   }
