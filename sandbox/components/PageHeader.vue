@@ -25,8 +25,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { ExternalLinkIcon } from '@/components'
+import { useRoute, useRouter } from 'vue-router'
+
+const route = useRoute()
+const router = useRouter()
 
 const emit = defineEmits<{
   (e: 'search', value: string): void
@@ -36,7 +40,19 @@ const query = ref('')
 
 watch(query, (searchQuery: string) => {
   emit('search', searchQuery)
+
+  if (searchQuery) {
+    router.push({ name: 'home', query: { search: searchQuery } })
+  } else {
+    router.push({ name: 'home' })
+  }
 }, { immediate: true })
+
+onMounted(() => {
+  if (route.query.search) {
+    query.value = route.query.search as string
+  }
+})
 </script>
 
 <style lang="scss" scoped>
