@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Kong/icons/compare/v1.6.0...v1.7.0) (2023-09-29)
+
+
+### Features
+
+* animates ProgressIcon ([#82](https://github.com/Kong/icons/issues/82)) ([0861cd9](https://github.com/Kong/icons/commit/0861cd9e019d8b59a22faad71843b029195d1eda))
+
 # [1.6.0](https://github.com/Kong/icons/compare/v1.5.0...v1.6.0) (2023-09-20)
 
 
