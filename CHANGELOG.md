@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/Kong/icons/compare/v1.7.0...v1.7.1) (2023-09-29)
+
+
+### Bug Fixes
+
+* **sandbox:** add debounce and persist route query params ([#85](https://github.com/Kong/icons/issues/85)) ([ebc9b76](https://github.com/Kong/icons/commit/ebc9b7660d7b19ee2afd02a28e83a0c6f20801a1))
+
 # [1.7.0](https://github.com/Kong/icons/compare/v1.6.0...v1.7.0) (2023-09-29)
 
 
