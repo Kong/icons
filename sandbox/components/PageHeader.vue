@@ -28,6 +28,7 @@
 import { onMounted, ref, watch } from 'vue'
 import { ExternalLinkIcon } from '@/components'
 import { useRoute, useRouter } from 'vue-router'
+import { debounce } from '../utilities'
 
 const route = useRoute()
 const router = useRouter()
@@ -38,21 +39,24 @@ const emit = defineEmits<{
 
 const query = ref('')
 
-watch(query, (searchQuery: string) => {
+const handleQueryUpdate = debounce((searchQuery: string) => {
   emit('search', searchQuery)
 
   if (searchQuery) {
-    if (searchQuery !== route.query.search) {
-      router.push({ name: 'home', query: { search: searchQuery } })
-    }
+    router.push({ name: 'home', query: { q: searchQuery } })
   } else {
     router.push({ name: 'home' })
   }
+}, 1000)
+
+watch(query, (searchQuery: string) => {
+  handleQueryUpdate(searchQuery)
 }, { immediate: true })
 
 onMounted(() => {
-  if (route.query.search) {
-    query.value = route.query.search as string
+  if (route.query.q) {
+    query.value = route.query.q as string
+    emit('search', route.query.q)
   }
 })
 </script>
