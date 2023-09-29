@@ -42,10 +42,10 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
       path?.attr('stroke', 'currentColor')
     }
     // Add animation for ProgressIcon
-    if (name === 'progress') {
+    if (name === 'progress-icon') {
       // Add transform origin
       path.attr('transform-origin', 'center')
-      $cheerio().append('<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="1.5s" repeatCount="indefinite" />')
+      $cheerio('svg').append('<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="1.5s" repeatCount="indefinite" />')
     }
   }
 
