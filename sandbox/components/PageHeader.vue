@@ -47,7 +47,7 @@ const handleQueryUpdate = debounce((searchQuery: string) => {
   } else {
     router.push({ name: 'home' })
   }
-}, 1000)
+}, 500)
 
 watch(query, (searchQuery: string) => {
   handleQueryUpdate(searchQuery)
@@ -56,7 +56,7 @@ watch(query, (searchQuery: string) => {
 onMounted(() => {
   if (route.query.q) {
     query.value = route.query.q as string
-    emit('search', route.query.q)
+    emit('search', query.value)
   }
 })
 </script>
