@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/Kong/icons/compare/v1.7.1...v1.7.2) (2023-10-02)
+
+
+### Bug Fixes
+
+* add au icon ([#88](https://github.com/Kong/icons/issues/88)) ([44931b3](https://github.com/Kong/icons/commit/44931b3647a3e01eaf49e847a2f75162c8411579))
+
 ## [1.7.1](https://github.com/Kong/icons/compare/v1.7.0...v1.7.1) (2023-09-29)
 
 

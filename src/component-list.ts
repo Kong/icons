@@ -63,6 +63,7 @@ export default [
   'FeedbackIcon.vue',
   'FileEmptyIcon.vue',
   'FilterIcon.vue',
+  'FlagAuIcon.vue',
   'FlagEuIcon.vue',
   'FlagIcon.vue',
   'FlagUsIcon.vue',
