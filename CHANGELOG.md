@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/Kong/icons/compare/v1.7.2...v1.7.3) (2023-10-03)
+
+
+### Bug Fixes
+
+* add new flags and refresh icon ([#90](https://github.com/Kong/icons/issues/90)) ([fa12f8d](https://github.com/Kong/icons/commit/fa12f8df96d005935d8d10448ffc7fed03856800))
+
 ## [1.7.2](https://github.com/Kong/icons/compare/v1.7.1...v1.7.2) (2023-10-02)
 
 

@@ -78,6 +78,7 @@ $header-height: 80px;
   right: 0;
   top: 0;
   width: 100%;
+  z-index: 1;
 
   h1 {
     font-size: 18px;
