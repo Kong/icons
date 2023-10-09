@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@babel/types": "^7.22.19",
-    "@commitlint/cli": "^17.7.1",
+    "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
     "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
     "@evilmartians/lefthook": "^1.5.0",
@@ -55,7 +55,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/jsdom": "^21.1.3",
-    "@types/node": "^20.7.0",
+    "@types/node": "^20.7.1",
     "@types/node-emoji": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
@@ -78,9 +78,9 @@
     "jsdom": "^22.1.0",
     "node-emoji": "^2.1.0",
     "picocolors": "^1.0.0",
-    "postcss": "^8.4.30",
+    "postcss": "^8.4.31",
     "postcss-html": "^1.5.0",
-    "rimraf": "^5.0.4",
+    "rimraf": "^5.0.5",
     "rollup-plugin-visualizer": "^5.9.2",
     "sass": "^1.68.0",
     "semantic-release": "^21.1.2",
@@ -96,7 +96,7 @@
     "vitest": "0.34.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",
-    "vue-tsc": "^1.8.14"
+    "vue-tsc": "^1.8.15"
   },
   "peerDependencies": {
     "vue": "^3.3.4"
