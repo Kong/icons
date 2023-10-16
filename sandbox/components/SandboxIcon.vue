@@ -19,7 +19,7 @@ const props = defineProps({
   },
 })
 
-const iconName = computed((): string => props.icon?.__name || '')
+const iconName = computed((): string => String(props.icon?.__name || '').replace(/icon/i, ''))
 </script>
 
 <style lang="scss" scoped>
