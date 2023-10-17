@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/Kong/icons/compare/v1.7.3...v1.7.4) (2023-10-17)
+
+
+### Bug Fixes
+
+* add new icons and update workspaces icon ([#105](https://github.com/Kong/icons/issues/105)) ([fefea07](https://github.com/Kong/icons/commit/fefea077d847b3ce5bae7178096a398b3590a86f))
+
 ## [1.7.3](https://github.com/Kong/icons/compare/v1.7.2...v1.7.3) (2023-10-03)
 
 
