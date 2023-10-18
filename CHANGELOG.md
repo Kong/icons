@@ -1,3 +1,10 @@
+## [1.7.5](https://github.com/Kong/icons/compare/v1.7.4...v1.7.5) (2023-10-18)
+
+
+### Reverts
+
+* remove icon from name in sandbox ([6f36522](https://github.com/Kong/icons/commit/6f365227ad3912bf82013764985aba4aa2ee5078))
+
 ## [1.7.4](https://github.com/Kong/icons/compare/v1.7.3...v1.7.4) (2023-10-17)
 
 
