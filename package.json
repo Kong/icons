@@ -96,7 +96,7 @@
     "vitest": "0.34.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",
-    "vue-tsc": "^1.8.16"
+    "vue-tsc": "^1.8.18"
   },
   "peerDependencies": {
     "vue": "^3.3.4"
@@ -150,7 +150,7 @@
     ]
   },
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=18.17.1"
   },
   "volta": {
     "node": "18.18.0",
