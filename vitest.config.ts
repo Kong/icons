@@ -12,6 +12,14 @@ export default mergeConfig(viteConfig, defineConfig({
       './sandbox/**',
       'node_modules',
     ],
+    deps: {
+      optimizer: {
+        web: {
+          // https://github.com/vitest-dev/vitest/issues/4074
+          exclude: ['vue'],
+        },
+      },
+    },
     // The tests will only successfully run after the `yarn generate` script has been run.
     // This `globalSetup` entry generates all comopnents before running the tests
     globalSetup: [
