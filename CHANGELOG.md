@@ -1,3 +1,10 @@
+## [1.7.7](https://github.com/Kong/icons/compare/v1.7.6...v1.7.7) (2023-10-23)
+
+
+### Bug Fixes
+
+* **menu:** add menu icon ([#115](https://github.com/Kong/icons/issues/115)) ([c3bc188](https://github.com/Kong/icons/commit/c3bc188d17d3b76c9451a964c5c8d19b45bc8279))
+
 ## [1.7.6](https://github.com/Kong/icons/compare/v1.7.5...v1.7.6) (2023-10-18)
 
 

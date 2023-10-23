@@ -97,6 +97,7 @@ export default [
   'KongIcon.vue',
   'ListIcon.vue',
   'LockIcon.vue',
+  'MenuIcon.vue',
   'MeshIcon.vue',
   'MoreHorizontalIcon.vue',
   'MoreIcon.vue',
