@@ -93,6 +93,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "KongIcon",
   "ListIcon",
   "LockIcon",
+  "MenuIcon",
   "MeshIcon",
   "MoreHorizontalIcon",
   "MoreIcon",
