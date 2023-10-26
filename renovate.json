@@ -4,6 +4,8 @@
   ],
   "packageRules": [
     {
+      "groupName": "node engines range",
+      "groupSlug": "node-engines",
       "matchPackageNames": [
         "node"
       ],
