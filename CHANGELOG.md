@@ -1,3 +1,10 @@
+## [1.7.8](https://github.com/Kong/icons/compare/v1.7.7...v1.7.8) (2023-10-26)
+
+
+### Bug Fixes
+
+* **package:** accept node 18.17.0 ([#119](https://github.com/Kong/icons/issues/119)) ([0333ca7](https://github.com/Kong/icons/commit/0333ca70b6a51e3eb0509f50abe6c283e2cd79e8))
+
 ## [1.7.7](https://github.com/Kong/icons/compare/v1.7.6...v1.7.7) (2023-10-23)
 
 
