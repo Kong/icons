@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/Kong/icons/compare/v1.7.8...v1.8.0) (2023-11-06)
+
+
+### Features
+
+* add icons for analytics teams [MA-2243] ([#133](https://github.com/Kong/icons/issues/133)) ([70c3194](https://github.com/Kong/icons/commit/70c3194c4ffd7fa1c0ab6c9a91c07c8d120d9fd1))
+
 ## [1.7.8](https://github.com/Kong/icons/compare/v1.7.7...v1.7.8) (2023-10-26)
 
 
