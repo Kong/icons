@@ -10,7 +10,7 @@ Kong's open-source, Vue icon component library, partially sourced from [Google's
   - [Component Props](#component-props)
 - [Contributing \& Local Development](#contributing--local-development)
   - [SVG file requirements](#svg-file-requirements)
-  - [Add a new icon](#add-a-new-icon)
+  - [Adding a new icon](#adding-a-new-icon)
   - [Development Sandbox](#development-sandbox)
   - [Lint and fix](#lint-and-fix)
   - [Testing](#testing)
@@ -133,11 +133,12 @@ Source SVG files **must**:
 - have a default size of `24px` when they are exported
 - be sourced from and approved of by Kong's Design team
 
-### Add a new icon
+### Adding a new icon
 
 To add a new SVG:
 
 1. Ensure the SVG has been exported from the Design team (do **not** create custom SVG files)
+   1. Icons **must** follow the viewbox and color guidelines to match the standard of existing icons. New icons can be requested on Slack in `#ask-kong-design-system`
 2. Ensure the filename is lowercase and kebab-case
 3. Place the SVG file into the corresponding `/svg/*` subdirectory.
 4. Locally, run `yarn generate` to create the corresponding Vue component
