@@ -97,6 +97,7 @@ export default [
   'IncreaseIcon.vue',
   'IndeterminateSmallIcon.vue',
   'InfoIcon.vue',
+  'KongGradientIcon.vue',
   'KongIcon.vue',
   'ListIcon.vue',
   'LockIcon.vue',

@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/Kong/icons/compare/v1.8.0...v1.8.1) (2023-11-29)
+
+
+### Bug Fixes
+
+* add kong-gradient icon ([#155](https://github.com/Kong/icons/issues/155)) ([dcaeb35](https://github.com/Kong/icons/commit/dcaeb35a147d7ffb674dfe706e587a36f54bde1c))
+
 # [1.8.0](https://github.com/Kong/icons/compare/v1.7.8...v1.8.0) (2023-11-06)
 
 
