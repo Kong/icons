@@ -20,6 +20,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "AzureIcon",
   "GoogleCloudIcon",
   "GoogleIcon",
+  "KongGradientIcon",
   "RuntimeCompositeIcon",
   "RuntimeDedicatedCloudIcon",
   "RuntimeHybridIcon",
