@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/Kong/icons/compare/v1.8.1...v1.8.2) (2023-11-30)
+
+
+### Bug Fixes
+
+* remove bad icon ([b84b466](https://github.com/Kong/icons/commit/b84b46670ea1bd7057e60eba747edce660a50cff))
+
 ## [1.8.1](https://github.com/Kong/icons/compare/v1.8.0...v1.8.1) (2023-11-29)
 
 
