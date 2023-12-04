@@ -1,3 +1,10 @@
+## [1.8.3](https://github.com/Kong/icons/compare/v1.8.2...v1.8.3) (2023-12-04)
+
+
+### Bug Fixes
+
+* add insights icon and snapshots ([#160](https://github.com/Kong/icons/issues/160)) ([5653c8c](https://github.com/Kong/icons/commit/5653c8c92d6b2d6d1bb462547e84ccb00c95f513))
+
 ## [1.8.2](https://github.com/Kong/icons/compare/v1.8.1...v1.8.2) (2023-11-30)
 
 
