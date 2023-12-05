@@ -94,12 +94,12 @@
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vitest": "0.34.6",
-    "vue": "^3.3.8",
+    "vue": "^3.3.9",
     "vue-router": "^4.2.5",
     "vue-tsc": "^1.8.22"
   },
   "peerDependencies": {
-    "vue": "^3.3.8"
+    "vue": "^3.3.9"
   },
   "homepage": "https://icons.konghq.com/",
   "repository": {
