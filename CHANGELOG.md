@@ -1,3 +1,10 @@
+## [1.8.5](https://github.com/Kong/icons/compare/v1.8.4...v1.8.5) (2023-12-20)
+
+
+### Bug Fixes
+
+* exports ([b3fef43](https://github.com/Kong/icons/commit/b3fef433af7626bd261c1cba0add4bab2dbd4b23))
+
 ## [1.8.4](https://github.com/Kong/icons/compare/v1.8.3...v1.8.4) (2023-12-20)
 
 
