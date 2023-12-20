@@ -1,3 +1,10 @@
+## [1.8.6](https://github.com/Kong/icons/compare/v1.8.5...v1.8.6) (2023-12-20)
+
+
+### Bug Fixes
+
+* editor icons ([#180](https://github.com/Kong/icons/issues/180)) ([3678266](https://github.com/Kong/icons/commit/36782666d3ecee6057d8b6505fe5b7851226e980))
+
 ## [1.8.5](https://github.com/Kong/icons/compare/v1.8.4...v1.8.5) (2023-12-20)
 
 
