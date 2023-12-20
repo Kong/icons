@@ -14,7 +14,8 @@
   "exports": {
     ".": {
       "import": "./dist/kong-icons.es.js",
-      "require": "./dist/kong-icons.umd.js"
+      "require": "./dist/kong-icons.umd.js",
+      "types": "./dist/types/index.d.ts"
     },
     "./package.json": "./package.json",
     "./dist/*": "./dist/*"
