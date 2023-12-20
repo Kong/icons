@@ -1,3 +1,10 @@
+## [1.8.7](https://github.com/Kong/icons/compare/v1.8.6...v1.8.7) (2023-12-20)
+
+
+### Bug Fixes
+
+* add markdown and html icons ([#181](https://github.com/Kong/icons/issues/181)) ([5ef3c1e](https://github.com/Kong/icons/commit/5ef3c1e2127c8d706cb191580e82b900a52699dd))
+
 ## [1.8.6](https://github.com/Kong/icons/compare/v1.8.5...v1.8.6) (2023-12-20)
 
 
