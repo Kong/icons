@@ -1,3 +1,10 @@
+## [1.8.8](https://github.com/Kong/icons/compare/v1.8.7...v1.8.8) (2023-12-21)
+
+
+### Bug Fixes
+
+* add platform icons [KHCP-10145] ([#182](https://github.com/Kong/icons/issues/182)) ([9fb9e24](https://github.com/Kong/icons/commit/9fb9e246f74ebc03b626329ef9d0d221cf51272d))
+
 ## [1.8.7](https://github.com/Kong/icons/compare/v1.8.6...v1.8.7) (2023-12-20)
 
 
