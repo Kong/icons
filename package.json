@@ -61,7 +61,7 @@
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
     "@vitejs/plugin-vue": "^4.5.2",
-    "@vitest/ui": "^1.0.4",
+    "@vitest/ui": "^1.1.0",
     "@vue/test-utils": "^2.4.3",
     "@vue/tsconfig": "^0.4.0",
     "autoprefixer": "^10.4.16",
@@ -95,12 +95,12 @@
     "typescript": "^5.2.2",
     "vite": "^5.0.10",
     "vitest": "1.0.4",
-    "vue": "^3.3.12",
+    "vue": "^3.3.13",
     "vue-router": "^4.2.5",
-    "vue-tsc": "^1.8.25"
+    "vue-tsc": "^1.8.26"
   },
   "peerDependencies": {
-    "vue": "^3.3.12"
+    "vue": "^3.3.13"
   },
   "homepage": "https://icons.konghq.com/",
   "repository": {
