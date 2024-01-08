@@ -1,3 +1,10 @@
+## [1.8.10](https://github.com/Kong/icons/compare/v1.8.9...v1.8.10) (2024-01-08)
+
+
+### Bug Fixes
+
+* github pages ([30a8ed9](https://github.com/Kong/icons/commit/30a8ed96539a1ec716ca05bf8faf3885eab42e82))
+
 ## [1.8.9](https://github.com/Kong/icons/compare/v1.8.8...v1.8.9) (2024-01-08)
 
 
