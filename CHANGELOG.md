@@ -1,3 +1,10 @@
+## [1.8.11](https://github.com/Kong/icons/compare/v1.8.10...v1.8.11) (2024-01-10)
+
+
+### Bug Fixes
+
+* peerDependencies ([df64639](https://github.com/Kong/icons/commit/df64639879d6ba71b7ce5120d93003003782c173))
+
 ## [1.8.10](https://github.com/Kong/icons/compare/v1.8.9...v1.8.10) (2024-01-08)
 
 
