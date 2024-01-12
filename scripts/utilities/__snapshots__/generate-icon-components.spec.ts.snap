@@ -215,6 +215,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "DangerCircleIcon.vue",
   "DangerIcon.vue",
   "DashboardIcon.vue",
+  "DataObjectIcon.vue",
   "DataReportIcon.vue",
   "DecreaseIcon.vue",
   "DeployIcon.vue",
