@@ -1,3 +1,12 @@
+## [1.8.12](https://github.com/Kong/icons/compare/v1.8.11...v1.8.12) (2024-01-12)
+
+
+### Bug Fixes
+
+* add operator icon ([#205](https://github.com/Kong/icons/issues/205)) ([6432286](https://github.com/Kong/icons/commit/6432286291ee6982fb62f1f6af144758e518e40a))
+* rename icon ([7c9a991](https://github.com/Kong/icons/commit/7c9a9912df297303ac374d661bdc6b31b561fda0))
+* tests ([2c19005](https://github.com/Kong/icons/commit/2c190057b19ed2c5c14a920a62fc640962750d22))
+
 ## [1.8.11](https://github.com/Kong/icons/compare/v1.8.10...v1.8.11) (2024-01-10)
 
 
