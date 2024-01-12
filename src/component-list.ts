@@ -58,6 +58,7 @@ export default [
   'DangerCircleIcon.vue',
   'DangerIcon.vue',
   'DashboardIcon.vue',
+  'DataObjectIcon.vue',
   'DataReportIcon.vue',
   'DecreaseIcon.vue',
   'DeployIcon.vue',
