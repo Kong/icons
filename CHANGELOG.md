@@ -1,3 +1,10 @@
+## [1.8.13](https://github.com/Kong/icons/compare/v1.8.12...v1.8.13) (2024-01-18)
+
+
+### Bug Fixes
+
+* add new icons for search and networks nav item ([#211](https://github.com/Kong/icons/issues/211)) ([a723e7f](https://github.com/Kong/icons/commit/a723e7f1172d8ccbd6bf2056e99b1acf95fa6deb))
+
 ## [1.8.12](https://github.com/Kong/icons/compare/v1.8.11...v1.8.12) (2024-01-12)
 
 
