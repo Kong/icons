@@ -28,8 +28,8 @@
     "build": "yarn delete:generated && yarn stylelint && yarn lint && yarn build:components",
     "build:components": "yarn generate && yarn typecheck && vite build && rimraf ./dist/style.css && vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
     "build:visualize": "yarn generate && cross-env BUILD_VISUALIZER=true vite build -m production",
-    "generate": "yarn delete:generated && ts-node -P './scripts/tsconfig.json' './scripts/generate.ts' && yarn fix:generated",
-    "update-component-list": "ts-node -P './scripts/tsconfig.json' './scripts/component-list.ts' && yarn fix:generated",
+    "generate": "yarn delete:generated && npx --yes tsx --tsconfig './scripts/tsconfig.json' './scripts/generate.ts' && yarn fix:generated",
+    "update-component-list": "npx --yes tsx --tsconfig './scripts/tsconfig.json' './scripts/component-list.ts' && yarn fix:generated",
     "delete:generated": "rimraf './src/components' && rimraf './dist'",
     "build:sandbox": "yarn generate && yarn typecheck && cross-env USE_SANDBOX=true vite build",
     "preview:sandbox": "cross-env USE_SANDBOX=true vite preview",
@@ -75,12 +75,12 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-vue": "^9.19.2",
-    "jsdom": "^23.0.1",
+    "eslint-plugin-vue": "^9.20.1",
+    "jsdom": "^23.2.0",
     "node-emoji": "^2.1.3",
     "picocolors": "^1.0.0",
     "postcss": "^8.4.33",
-    "postcss-html": "^1.5.0",
+    "postcss-html": "^1.6.0",
     "rimraf": "^5.0.5",
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.69.7",
@@ -90,11 +90,10 @@
     "stylelint-config-recommended-scss": "^14.0.0",
     "stylelint-config-recommended-vue": "^1.5.0",
     "stylelint-order": "^6.0.4",
-    "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.8",
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
-    "vitest": "^1.1.3",
+    "vitest": "^1.2.0",
     "vue": "^3.4.13",
     "vue-router": "^4.2.5",
     "vue-tsc": "^1.8.27"
@@ -154,7 +153,7 @@
     "node": ">=18.17.0"
   },
   "volta": {
-    "node": "18.18.2",
+    "node": "20.11.0",
     "yarn": "1.22.21"
   },
   "config": {
