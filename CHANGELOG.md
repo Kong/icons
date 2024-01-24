@@ -1,3 +1,10 @@
+## [1.8.14](https://github.com/Kong/icons/compare/v1.8.13...v1.8.14) (2024-01-24)
+
+
+### Bug Fixes
+
+* **icons:** add new icons ([#213](https://github.com/Kong/icons/issues/213)) ([f010594](https://github.com/Kong/icons/commit/f010594585bd948d1f5b04ae68cf9f9c4acde40b))
+
 ## [1.8.13](https://github.com/Kong/icons/compare/v1.8.12...v1.8.13) (2024-01-18)
 
 
