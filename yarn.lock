@@ -583,10 +583,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@kong/design-tokens@^1.12.4":
-  version "1.12.4"
-  resolved "https://registry.yarnpkg.com/@kong/design-tokens/-/design-tokens-1.12.4.tgz#3469d408f8af42c71f03646eb741e666bdf72911"
-  integrity sha512-ldBWJbpNLU34OR0d+ptErp/FJrwc8GK8nUZjUmu9zy69ebjztcNAoULgc8MXS+bjzwGZ8U/v8Vmbhh3WFQq0gA==
+"@kong/design-tokens@^1.12.6":
+  version "1.12.6"
+  resolved "https://registry.yarnpkg.com/@kong/design-tokens/-/design-tokens-1.12.6.tgz#43abe4fcb125ea08aa59b2265b93aab2f727556b"
+  integrity sha512-2Fbck+Gt2+si2csRZ2XRw1mZ30dIY5ncSsK+eTapWirwjW1rPSwHEICpw7etsf8uf34X4voHGVoI7tJmlULDtA==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
