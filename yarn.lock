@@ -1558,10 +1558,10 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-20.4.0.tgz"
   integrity sha512-jfT7iTf/4kOQ9S7CHV9BIyRaQqHu67mOjsIQBC3BKZvzvUB6zLxEwJ6sBE3ozcvP8kF6Uk5PXN0Q+c0dfhGX0g==
 
-"@types/node@^20.11.10":
-  version "20.11.16"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.16.tgz#4411f79411514eb8e2926f036c86c9f0e4ec6708"
-  integrity sha512-gKb0enTmRCzXSSUJDq6/sPcqrfCv2mkkG6Jt/clpn5eiCbKTY+SgZUxo+p8ZKMof5dCp9vHQUAB7wOUTod22wQ==
+"@types/node@^20.11.16":
+  version "20.11.17"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.17.tgz#cdd642d0e62ef3a861f88ddbc2b61e32578a9292"
+  integrity sha512-QmgQZGWu1Yw9TDyAP9ZzpFJKynYNeOvwMJmaxABfieQoVoiVOS6MN1WSpqpRcbeA5+RW82kraAVxCCJg+780Qw==
   dependencies:
     undici-types "~5.26.4"
 
@@ -1858,15 +1858,15 @@
   resolved "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.5.0.tgz"
   integrity sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==
 
-"@vue/devtools-core@^7.0.13":
-  version "7.0.13"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-core/-/devtools-core-7.0.13.tgz#c561cb445074bcdbd90177d3b6c085ec3a229380"
-  integrity sha512-cSnzDqR5TUyZ08XKHRFadLUHt+SJudU5W43+ImUKhes1BfQ/I6/SVjA9hepXxsMsHFDs7OgV8loopjsnZEojaA==
+"@vue/devtools-core@^7.0.14":
+  version "7.0.14"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-core/-/devtools-core-7.0.14.tgz#b29c6cc5d0eacd3d5995e2fb9d9abfb7c09d68c0"
+  integrity sha512-EFOp2irw6lQ9G08g/Mn8r2ycn56wHyfbq12iIpqcLZSn3KvidwE8FnB45836ZWDOwW6iOfNed3jklMUWyKhq6w==
   dependencies:
-    "@vue/devtools-kit" "^7.0.13"
-    "@vue/devtools-schema" "^7.0.13"
-    "@vue/devtools-shared" "^7.0.13"
-    birpc "^0.2.14"
+    "@vue/devtools-kit" "^7.0.14"
+    "@vue/devtools-schema" "^7.0.14"
+    "@vue/devtools-shared" "^7.0.14"
+    birpc "^0.2.15"
     fast-glob "^3.3.2"
     image-meta "^0.2.0"
     mitt "^3.0.1"
@@ -1876,27 +1876,27 @@
     vite-hot-client "^0.2.3"
     vite-plugin-inspect "^0.8.3"
 
-"@vue/devtools-kit@^7.0.13":
-  version "7.0.13"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-kit/-/devtools-kit-7.0.13.tgz#a19fcbb24756caae618eb98abb1c104bce7bb4d7"
-  integrity sha512-u1Ocu+epsQR67iwKF/eiPrmTDdh7DWnt11VjAw0/61wBDuhKrC9tipw33KCl4tTVrCXg0PJp4b38koGiNCn2dQ==
+"@vue/devtools-kit@^7.0.14":
+  version "7.0.14"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-kit/-/devtools-kit-7.0.14.tgz#39635f3478f0048d97df9b3dcceeae27a7ae3eec"
+  integrity sha512-wAAJazr4hI0aVRpgWOCVPw+NzMQdthhnprHHIg4njp1MkKrpCNGQ7MtQbZF1AltAA7xpMCGyyt+0kYH0FqTiPg==
   dependencies:
-    "@vue/devtools-schema" "^7.0.13"
-    "@vue/devtools-shared" "^7.0.13"
+    "@vue/devtools-schema" "^7.0.14"
+    "@vue/devtools-shared" "^7.0.14"
     hookable "^5.5.3"
     mitt "^3.0.1"
     perfect-debounce "^1.0.0"
     speakingurl "^14.0.1"
 
-"@vue/devtools-schema@^7.0.13":
-  version "7.0.13"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-schema/-/devtools-schema-7.0.13.tgz#9fa2fe51370fa79803079d067b52643fbbd7da96"
-  integrity sha512-sDGPPPbi8OZHJMifWl+BQaAlpnkDfsSqcd8s3Uk9dYzHceO63BQjvi/qi1Ru4F+U/eJSuNWv4l/VhiqUNQ5ndw==
+"@vue/devtools-schema@^7.0.14":
+  version "7.0.14"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-schema/-/devtools-schema-7.0.14.tgz#5b638859918a71c218108d0e8b39000e2813f1f2"
+  integrity sha512-tpUeCLVrdHX+KzWMLTAwx/vAPFbo6jAUi7sr6Q+0mBIqIVSSIxNr5wEhegiFvYva+OtDeM2OrT+f7/X/5bvZNg==
 
-"@vue/devtools-shared@^7.0.13":
-  version "7.0.13"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-shared/-/devtools-shared-7.0.13.tgz#331fa6b6810392145c20b5d3f4d5c25ef0dc1257"
-  integrity sha512-nSkUV4czv2UyloDXZwhpDoZic2/lcf3x2VRhK6xiCJY3cmO0+fL7qRDYDZYn11KwyLZngc7uiWF1f3AD0jyxVQ==
+"@vue/devtools-shared@^7.0.14":
+  version "7.0.14"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-shared/-/devtools-shared-7.0.14.tgz#7f2aee9c25a027d59962da90689d231a73a0e589"
+  integrity sha512-79RP1NDakBVWou9rDpVnT1WMjTbL1lJKm6YEOodjQ0dq5ehf0wsRbeYDhgAlnjehWRzTq5GAYFBFUPYBs0/QpA==
   dependencies:
     rfdc "^1.3.1"
 
@@ -2353,7 +2353,7 @@ binary-extensions@^2.0.0, binary-extensions@^2.2.0:
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-birpc@^0.2.14:
+birpc@^0.2.14, birpc@^0.2.15:
   version "0.2.15"
   resolved "https://registry.yarnpkg.com/birpc/-/birpc-0.2.15.tgz#979e812d9281872e13f60d0a1676b0551d5967af"
   integrity sha512-LuZgWLW6DB1zenkfJuF4/kfSZdazOR2xaMSzeqgvfbNIwECwV1AJso9wpNje79uaRU86Obbujv4qtDnwoOLQww==
@@ -7854,10 +7854,10 @@ stylelint-scss@^6.0.0:
     postcss-selector-parser "^6.0.13"
     postcss-value-parser "^4.2.0"
 
-stylelint@^16.2.0:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-16.2.0.tgz#60678f64d7660350fdd06415fd449f332b4fcbf6"
-  integrity sha512-gwqU5AkIb52wrAzzn+359S3NIJDMl02TXLUaV2tzA/L6jUdpTwNt+MCxHlc8+Hb2bUHlYVo92YeSIryF2gJthA==
+stylelint@^16.2.1:
+  version "16.2.1"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-16.2.1.tgz#895d6d42523c5126ec0895f0ca2a58febeb77e89"
+  integrity sha512-SfIMGFK+4n7XVAyv50CpVfcGYWG4v41y6xG7PqOgQSY8M/PgdK0SQbjWFblxjJZlN9jNq879mB4BCZHJRIJ1hA==
   dependencies:
     "@csstools/css-parser-algorithms" "^2.5.0"
     "@csstools/css-tokenizer" "^2.2.3"
@@ -8448,15 +8448,15 @@ vite-plugin-inspect@^0.8.3:
     picocolors "^1.0.0"
     sirv "^2.0.4"
 
-vite-plugin-vue-devtools@^7.0.13:
-  version "7.0.13"
-  resolved "https://registry.yarnpkg.com/vite-plugin-vue-devtools/-/vite-plugin-vue-devtools-7.0.13.tgz#93a7f5da3e500ceeb87757a4dc69b4e13a78d2af"
-  integrity sha512-mV+lonRg7C+PA1cIAeSuGM+VUeqhZWRGNuXc+SZ7R+S2GzK40V0hNn/7K7GmZ6w4tlIIEVyLrKEDbilsPX85pw==
+vite-plugin-vue-devtools@^7.0.14:
+  version "7.0.14"
+  resolved "https://registry.yarnpkg.com/vite-plugin-vue-devtools/-/vite-plugin-vue-devtools-7.0.14.tgz#b136130c839106338d312065be2a577876d06f77"
+  integrity sha512-6dr2qlLXgD5Kc4/ct4W/9IK2DYs/448j6Uird90LUACC5P8FULZmw9QbISYUtJusMhXgksqtirWesCImDS2aqQ==
   dependencies:
-    "@vue/devtools-core" "^7.0.13"
-    "@vue/devtools-kit" "^7.0.13"
-    "@vue/devtools-shared" "^7.0.13"
-    birpc "^0.2.14"
+    "@vue/devtools-core" "^7.0.14"
+    "@vue/devtools-kit" "^7.0.14"
+    "@vue/devtools-shared" "^7.0.14"
+    birpc "^0.2.15"
     execa "^8.0.1"
     sirv "^2.0.4"
     vite-plugin-inspect "^0.8.3"
