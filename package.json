@@ -75,7 +75,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-vue": "^9.20.1",
+    "eslint-plugin-vue": "^9.21.1",
     "jsdom": "^23.2.0",
     "node-emoji": "^2.1.3",
     "picocolors": "^1.0.0",
