@@ -797,10 +797,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-"@evilmartians/lefthook@^1.6.4":
-  version "1.6.5"
-  resolved "https://registry.yarnpkg.com/@evilmartians/lefthook/-/lefthook-1.6.5.tgz#9b569da17ea86097ded9d600fb56c24643fac279"
-  integrity sha512-OtHskXpEdDE4UNMLqtlkEdNOmg80Yy1aq7aqo6s6rVi9MUpksGkVNL3oS4oBdpjJhGwkSordBpclbQrHIUhjkg==
+"@evilmartians/lefthook@^1.6.5":
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/@evilmartians/lefthook/-/lefthook-1.6.6.tgz#811308240e2e668770cf186f3a8038cbe24b2086"
+  integrity sha512-utdo+0gf1KOdtkWd709exejQhXzyh6WnK7+OkpZyCBfdwg6OC3omfeXe0HEKEQiyGCCeWYpRrjhY8cAaddqMrw==
 
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
@@ -8567,10 +8567,10 @@ vite@^5.0.0:
   optionalDependencies:
     fsevents "~2.3.3"
 
-vite@^5.1.4:
-  version "5.1.4"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-5.1.4.tgz#14e9d3e7a6e488f36284ef13cebe149f060bcfb6"
-  integrity sha512-n+MPqzq+d9nMVTKyewqw6kSt+R3CkvF9QAKY8obiQn8g1fwTscKxyfaYnC632HtBXAQGc1Yjomphwn1dtwGAHg==
+vite@^5.1.5:
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-5.1.6.tgz#706dae5fab9e97f57578469eef1405fc483943e4"
+  integrity sha512-yYIAZs9nVfRJ/AiOLCA91zzhjsHUgMjB+EigzFb6W2XTLO8JixBCKCjvhKZaye+NKYHCrkv3Oh50dH9EdLU2RA==
   dependencies:
     esbuild "^0.19.3"
     postcss "^8.4.35"
