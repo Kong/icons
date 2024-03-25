@@ -912,10 +912,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-"@evilmartians/lefthook@^1.6.5":
-  version "1.6.6"
-  resolved "https://registry.yarnpkg.com/@evilmartians/lefthook/-/lefthook-1.6.6.tgz#811308240e2e668770cf186f3a8038cbe24b2086"
-  integrity sha512-utdo+0gf1KOdtkWd709exejQhXzyh6WnK7+OkpZyCBfdwg6OC3omfeXe0HEKEQiyGCCeWYpRrjhY8cAaddqMrw==
+"@evilmartians/lefthook@^1.6.6":
+  version "1.6.7"
+  resolved "https://registry.yarnpkg.com/@evilmartians/lefthook/-/lefthook-1.6.7.tgz#37b570e380d652c361eacfb3e8347d632fd123ed"
+  integrity sha512-nRCNWUl4xxkIwzChkARezEGuIcm6l2aywDPR3C4f8bGTzDJhVtEPcByqrOqPJ9emS7MnYz9WKI/NFdIsph/apw==
 
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
@@ -1739,7 +1739,7 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-20.4.0.tgz"
   integrity sha512-jfT7iTf/4kOQ9S7CHV9BIyRaQqHu67mOjsIQBC3BKZvzvUB6zLxEwJ6sBE3ozcvP8kF6Uk5PXN0Q+c0dfhGX0g==
 
-"@types/node@^20.11.26":
+"@types/node@^20.11.27":
   version "20.11.30"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.30.tgz#9c33467fc23167a347e73834f788f4b9f399d66f"
   integrity sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==
@@ -2081,33 +2081,33 @@
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.6.1.tgz#7c14346383751d9f6ad4bea0963245b30220ef83"
   integrity sha512-LgPscpE3Vs0x96PzSSB4IGVSZXZBZHpfxs+ZA1d+VEPwHdOXowy/Y2CsvCAIFrf+ssVU1pD1jidj505EpUnfbA==
 
-"@vue/devtools-core@^7.0.16":
-  version "7.0.16"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-core/-/devtools-core-7.0.16.tgz#564d4374e05abb8b5baa8e835ee96d183296b4f5"
-  integrity sha512-GGHZSvQcVyBYzkBOOBwA+xKtG2DCA7InFxjbaTfUERRDPFWFOOBdf1xe1FtiZRkU+vHnF8NqKnz+78HpnzD02w==
+"@vue/devtools-core@^7.0.20":
+  version "7.0.20"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-core/-/devtools-core-7.0.20.tgz#90bc7500233e1606cc3165186b8df44601517ddc"
+  integrity sha512-JefAn0ljTUPtoEJ47PjEfcLQb9BVt3OH1R6aD8qZ7bNYwZH+xystXpVJ3pW+1iDnOXjfpLgc3bsHUZoxlfobpw==
   dependencies:
-    "@vue/devtools-kit" "^7.0.16"
-    "@vue/devtools-shared" "^7.0.16"
+    "@vue/devtools-kit" "^7.0.20"
+    "@vue/devtools-shared" "^7.0.20"
     mitt "^3.0.1"
     nanoid "^3.3.4"
     pathe "^1.1.2"
     vite-hot-client "^0.2.3"
 
-"@vue/devtools-kit@^7.0.16":
-  version "7.0.16"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-kit/-/devtools-kit-7.0.16.tgz#83f906078c6a7dc74db4c24859c3989f17c9741f"
-  integrity sha512-IA8SSGiZbNgOi4wLT3mRvd71Q9KE0KvMfGk6haa2GZ6bL2K/xMA8Fvvj3o1maspfUXrGcCXutaqbLqbGx/espQ==
+"@vue/devtools-kit@^7.0.20":
+  version "7.0.20"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-kit/-/devtools-kit-7.0.20.tgz#e8502bd275004654100a29e2b98ef0e0c904bd0d"
+  integrity sha512-FgFuPuqrhQ51rR/sVi52FnGgrxJ3X1bvNra/SkBzPhxJVhfyL5w2YUJZI1FgCvtLAyPSomJNdvlG415ZbJsr6w==
   dependencies:
-    "@vue/devtools-shared" "^7.0.16"
+    "@vue/devtools-shared" "^7.0.20"
     hookable "^5.5.3"
     mitt "^3.0.1"
     perfect-debounce "^1.0.0"
     speakingurl "^14.0.1"
 
-"@vue/devtools-shared@^7.0.16":
-  version "7.0.16"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-shared/-/devtools-shared-7.0.16.tgz#a18ea93d5aa60ca4e1df83d3116b663582899e09"
-  integrity sha512-Lew4FrGjDjmanaUWSueNE1Rre83k7jQpttc17MaoVw0eARWU5DgZ1F/g9GNUMZXVjbP9rwE+LL3gd9XfXCfkvA==
+"@vue/devtools-shared@^7.0.20":
+  version "7.0.20"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-shared/-/devtools-shared-7.0.20.tgz#270d4f1095f7c536ebc4b3eeb89be9a8e195a608"
+  integrity sha512-E6CiCaYr6ZWOCYJgWodXcPCXxB12vgbUA1X1sG0F1tK5Bo5I35GJuTR8LBJLFHV0VpwLWvyrIi9drT1ZbuJxlg==
   dependencies:
     rfdc "^1.3.1"
 
@@ -2173,13 +2173,13 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.4.21.tgz#de526a9059d0a599f0b429af7037cd0c3ed7d5a1"
   integrity sha512-PuJe7vDIi6VYSinuEbUIQgMIRZGgM8e4R+G+/dQTk0X1NEdvgvvgv7m+rfmDH1gZzyA1OjjoWskvHlfRNfQf3g==
 
-"@vue/test-utils@^2.4.4":
-  version "2.4.4"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.4.4.tgz#36ba31f90332fb25a5ab2e553652c21d33057094"
-  integrity sha512-8jkRxz8pNhClAf4Co4ZrpAoFISdvT3nuSkUlY6Ys6rmTpw3DMWG/X3mw3gQ7QJzgCZO9f+zuE2kW57fi09MW7Q==
+"@vue/test-utils@^2.4.5":
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.4.5.tgz#010aa4debe6602d83dc75f233b397092742105a2"
+  integrity sha512-oo2u7vktOyKUked36R93NB7mg2B+N7Plr8lxp2JBGwr18ch6EggFjixSCdIVVLkT6Qr0z359Xvnafc9dcKyDUg==
   dependencies:
     js-beautify "^1.14.9"
-    vue-component-type-helpers "^1.8.21"
+    vue-component-type-helpers "^2.0.0"
 
 "@vue/tsconfig@^0.5.1":
   version "0.5.1"
@@ -8773,14 +8773,14 @@ vite-plugin-inspect@^0.8.3:
     picocolors "^1.0.0"
     sirv "^2.0.4"
 
-vite-plugin-vue-devtools@^7.0.16:
-  version "7.0.16"
-  resolved "https://registry.yarnpkg.com/vite-plugin-vue-devtools/-/vite-plugin-vue-devtools-7.0.16.tgz#fc88de141162df5622c628be6c723ea2a6011902"
-  integrity sha512-M7TPQhTGlz33TdHkZRSwe4ZfA+aAsy3vlvnOqxVtPCj9aEtaqhgKgbQidImAMd6BgTgSwZ/ga/iHWhwABDrdNQ==
+vite-plugin-vue-devtools@^7.0.17:
+  version "7.0.20"
+  resolved "https://registry.yarnpkg.com/vite-plugin-vue-devtools/-/vite-plugin-vue-devtools-7.0.20.tgz#5f502a7641cd2792f2e5ca6ff2cfcacfcaee7aec"
+  integrity sha512-b7C57JVekRxqJPLqmrze48dSEG4+1f0nOHP3PetV1Csn/KhEuDNUWX/B5W/ppxv36Tilx86nozwQopYFG/5ndw==
   dependencies:
-    "@vue/devtools-core" "^7.0.16"
-    "@vue/devtools-kit" "^7.0.16"
-    "@vue/devtools-shared" "^7.0.16"
+    "@vue/devtools-core" "^7.0.20"
+    "@vue/devtools-kit" "^7.0.20"
+    "@vue/devtools-shared" "^7.0.20"
     execa "^8.0.1"
     sirv "^2.0.4"
     vite-plugin-inspect "^0.8.3"
@@ -8849,10 +8849,10 @@ vitest@^1.3.1:
     vite-node "1.3.1"
     why-is-node-running "^2.2.2"
 
-vue-component-type-helpers@^1.8.21:
-  version "1.8.22"
-  resolved "https://registry.yarnpkg.com/vue-component-type-helpers/-/vue-component-type-helpers-1.8.22.tgz#24c1f324885e5652c7bcc5d9cbd76800b0af3809"
-  integrity sha512-LK3wJHs3vJxHG292C8cnsRusgyC5SEZDCzDCD01mdE/AoREFMl2tzLRuzwyuEsOIz13tqgBcnvysN3Lxsa14Fw==
+vue-component-type-helpers@^2.0.0:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/vue-component-type-helpers/-/vue-component-type-helpers-2.0.7.tgz#f142e82440da61fa81671ac2f35fd87146248897"
+  integrity sha512-7e12Evdll7JcTIocojgnCgwocX4WzIYStGClBQ+QuWPinZo/vQolv2EMq4a3lg16TKfwWafLimG77bxb56UauA==
 
 vue-eslint-parser@^9.4.2:
   version "9.4.2"
