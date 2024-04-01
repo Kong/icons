@@ -137,6 +137,7 @@ export default [
   'ProgressIcon.vue',
   'RedoIcon.vue',
   'RefreshIcon.vue',
+  'RegexIcon.vue',
   'RemoveIcon.vue',
   'ResponseIcon.vue',
   'RocketIcon.vue',

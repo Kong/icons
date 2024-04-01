@@ -1,3 +1,10 @@
+## [1.8.15](https://github.com/Kong/icons/compare/v1.8.14...v1.8.15) (2024-04-01)
+
+
+### Bug Fixes
+
+* **regex:** add regex icon ([#268](https://github.com/Kong/icons/issues/268)) ([80e293a](https://github.com/Kong/icons/commit/80e293ac04a5090a8ffa69716fc1e65455d56e45))
+
 ## [1.8.14](https://github.com/Kong/icons/compare/v1.8.13...v1.8.14) (2024-01-24)
 
 
