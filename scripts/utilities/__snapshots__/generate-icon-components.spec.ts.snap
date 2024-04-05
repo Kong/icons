@@ -160,6 +160,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "UnderlineIcon",
   "UnfoldMoreIcon",
   "UploadIcon",
+  "ViewColumnsIcon",
   "VisibilityIcon",
   "VitalsIcon",
   "WarningOutlineIcon",
