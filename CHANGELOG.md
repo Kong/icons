@@ -1,3 +1,10 @@
+## [1.8.16](https://github.com/Kong/icons/compare/v1.8.15...v1.8.16) (2024-04-05)
+
+
+### Bug Fixes
+
+* **table-columns, table-rows:** add icons ([#274](https://github.com/Kong/icons/issues/274)) ([126a8af](https://github.com/Kong/icons/commit/126a8af33f9a48defb5e22ca09eecf13e4bfa698))
+
 ## [1.8.15](https://github.com/Kong/icons/compare/v1.8.14...v1.8.15) (2024-04-01)
 
 
