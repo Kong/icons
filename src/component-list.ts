@@ -113,6 +113,7 @@ export default [
   'KeyboardReturnIcon.vue',
   'KongIcon.vue',
   'LinkIcon.vue',
+  'LinkedServicesIcon.vue',
   'LinuxIcon.vue',
   'ListIcon.vue',
   'ListOrderedIcon.vue',

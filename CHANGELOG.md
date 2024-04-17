@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/Kong/icons/compare/v1.8.16...v1.9.0) (2024-04-17)
+
+
+### Features
+
+* linked services icon ([#278](https://github.com/Kong/icons/issues/278)) ([f4d1ca7](https://github.com/Kong/icons/commit/f4d1ca7f920be88efd277de48240c25674a09ff5))
+
 ## [1.8.16](https://github.com/Kong/icons/compare/v1.8.15...v1.8.16) (2024-04-05)
 
 
