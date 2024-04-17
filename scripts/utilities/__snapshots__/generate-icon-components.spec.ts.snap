@@ -111,6 +111,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "KeyboardReturnIcon",
   "KongIcon",
   "LinkIcon",
+  "LinkedServicesIcon",
   "ListOrderedIcon",
   "ListUnorderedIcon",
   "ListIcon",
