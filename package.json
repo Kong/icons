@@ -58,8 +58,8 @@
     "@types/jsdom": "^21.1.6",
     "@types/node": "^20.11.30",
     "@types/node-emoji": "^2.1.0",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitest/ui": "^1.4.0",
     "@vue/test-utils": "^2.4.5",
@@ -75,7 +75,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-vue": "^9.23.0",
+    "eslint-plugin-vue": "^9.24.1",
     "jsdom": "^24.0.0",
     "node-emoji": "^2.1.3",
     "picocolors": "^1.0.0",
@@ -83,7 +83,7 @@
     "postcss-html": "^1.6.0",
     "rimraf": "^5.0.5",
     "rollup-plugin-visualizer": "^5.12.0",
-    "sass": "^1.72.0",
+    "sass": "^1.74.1",
     "semantic-release": "^22.0.12",
     "stylelint": "^16.3.0",
     "stylelint-config-html": "^1.1.0",
@@ -154,7 +154,7 @@
     "node": ">=18.17.0"
   },
   "volta": {
-    "node": "20.11.1",
+    "node": "20.12.1",
     "yarn": "1.22.22"
   },
   "config": {
