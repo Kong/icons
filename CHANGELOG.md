@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/Kong/icons/compare/v1.9.0...v1.9.1) (2024-04-23)
+
+
+### Bug Fixes
+
+* add email icon ([#283](https://github.com/Kong/icons/issues/283)) ([f082877](https://github.com/Kong/icons/commit/f082877171bea80c154649d40b4df183ce8f13d4))
+
 # [1.9.0](https://github.com/Kong/icons/compare/v1.8.16...v1.9.0) (2024-04-17)
 
 

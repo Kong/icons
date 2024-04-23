@@ -236,6 +236,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "DownloadIcon.vue",
   "DragIcon.vue",
   "EditIcon.vue",
+  "EmailIcon.vue",
   "EqualIcon.vue",
   "ExpandIcon.vue",
   "ExternalLinkIcon.vue",

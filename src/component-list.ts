@@ -70,6 +70,7 @@ export default [
   'DownloadIcon.vue',
   'DragIcon.vue',
   'EditIcon.vue',
+  'EmailIcon.vue',
   'EqualIcon.vue',
   'ExpandIcon.vue',
   'ExternalLinkIcon.vue',
