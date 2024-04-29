@@ -95,8 +95,8 @@
     "vite": "^5.2.9",
     "vite-plugin-vue-devtools": "^7.0.27",
     "vitest": "^1.5.0",
-    "vue": "^3.4.22",
-    "vue-router": "^4.3.0",
+    "vue": "^3.4.23",
+    "vue-router": "^4.3.2",
     "vue-tsc": "^2.0.13"
   },
   "peerDependencies": {
