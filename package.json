@@ -97,7 +97,7 @@
     "vitest": "^1.5.0",
     "vue": "^3.4.23",
     "vue-router": "^4.3.2",
-    "vue-tsc": "^2.0.13"
+    "vue-tsc": "^2.0.14"
   },
   "peerDependencies": {
     "vue": ">= 3.3.4 < 4"
