@@ -1906,7 +1906,7 @@
   dependencies:
     tinyspy "^2.2.0"
 
-"@vitest/ui@^1.5.3":
+"@vitest/ui@^1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@vitest/ui/-/ui-1.6.0.tgz#ffcc97ebcceca7fec840c29ab68632d0cd01db93"
   integrity sha512-k3Lyo+ONLOgylctiGovRKy7V4+dIN2yxstX3eY5cWFXH6WP+ooVX79YSyi0GagdTQzLmT43BF27T0s6dOIPBXA==
@@ -8621,7 +8621,7 @@ vite@^5.2.11:
   optionalDependencies:
     fsevents "~2.3.3"
 
-vitest@^1.5.3:
+vitest@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vitest/-/vitest-1.6.0.tgz#9d5ad4752a3c451be919e412c597126cffb9892f"
   integrity sha512-H5r/dN06swuFnzNFhq/dnz37bPXnq8xB2xB5JOVk8K09rUtoeNN+LHWkoQ0A/i3hvbUKKcCei9KpbxqHMLhLLA==
