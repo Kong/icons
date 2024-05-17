@@ -1,16 +1,48 @@
 <template>
-  <span class="sandbox-icon">
+  <span
+    class="sandbox-icon"
+    @mouseleave="showCopyImport = false"
+    @mouseover="showCopyImport = true"
+  >
+    <div
+      v-if="showCopyImport"
+      class="copy-import-container"
+    >
+      <KClipboardProvider v-slot="{ copyToClipboard }">
+        <KTooltip
+          placement="bottomStart"
+          :popover-timeout="300"
+          :text="importTooltipText"
+        >
+          <button
+            class="copy-import"
+            @click="() => {
+              copyToClipboard(`import { ${iconName} } from '@kong/icons'`)
+              onCopyImportClick()
+            }"
+          >
+            <DataObjectIcon size="16" />
+          </button>
+        </KTooltip>
+      </KClipboardProvider>
+    </div>
+
     <component
       :is="icon"
       size="40"
       :title="iconName"
     />
-    <span class="icon-name">{{ iconName }}</span>
+    <KCopy
+      class="icon-name"
+      :monospace="false"
+      :text="iconName"
+    />
   </span>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
+import { DataObjectIcon } from '../../src/components/solid'
 
 const props = defineProps({
   icon: {
@@ -20,6 +52,22 @@ const props = defineProps({
 })
 
 const iconName = computed((): string => props.icon?.__name || '')
+
+const showCopyImport = ref<boolean>(false)
+
+const importTooltipInitial = 'Copy import'
+const importTooltipText = ref<string>(importTooltipInitial)
+
+const onCopyImportClick = () => {
+  importTooltipText.value = 'Copied!'
+}
+
+watch(importTooltipText, () => {
+  // change tooltip text back to original after 3 seconds
+  setTimeout(() => {
+    importTooltipText.value = importTooltipInitial
+  }, 3000)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -32,14 +80,44 @@ const iconName = computed((): string => props.icon?.__name || '')
   flex-direction: column;
   justify-content: center;
   padding: 16px 8px;
+  position: relative;
+}
+
+.copy-import-container {
+  left: 8px;
+  position: absolute;
+  top: 8px;
+
+  .copy-import {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    color: #333;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover {
+      color: #292929;
+    }
+  }
 }
 
 .icon-name {
-  color: #333;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
   margin-top: 12px;
-  padding: 2px 4px;
+
+  :deep(.copy-text) {
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  :deep(.text-icon-wrapper) {
+    color: #333;
+
+    &:hover {
+      color: #292929;
+    }
+  }
 }
 </style>
