@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/Kong/icons/compare/v1.9.1...v1.9.2) (2024-05-22)
+
+
+### Bug Fixes
+
+* add runtime-serverless icon ([#306](https://github.com/Kong/icons/issues/306)) ([376486e](https://github.com/Kong/icons/commit/376486e9126a5aba6a2967c2507e52fffe4578c0))
+
 ## [1.9.1](https://github.com/Kong/icons/compare/v1.9.0...v1.9.1) (2024-04-23)
 
 

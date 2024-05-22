@@ -314,6 +314,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "RuntimeDedicatedCloudIcon.vue",
   "RuntimeHybridIcon.vue",
   "RuntimeKicIcon.vue",
+  "RuntimeServerlessIcon.vue",
   "RuntimesIcon.vue",
   "SearchIcon.vue",
   "SecurityIcon.vue",

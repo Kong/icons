@@ -147,6 +147,7 @@ export default [
   'RuntimeDedicatedCloudIcon.vue',
   'RuntimeHybridIcon.vue',
   'RuntimeKicIcon.vue',
+  'RuntimeServerlessIcon.vue',
   'RuntimesIcon.vue',
   'SearchIcon.vue',
   'SecurityIcon.vue',
