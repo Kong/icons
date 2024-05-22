@@ -28,6 +28,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "RuntimeDedicatedCloudIcon",
   "RuntimeHybridIcon",
   "RuntimeKicIcon",
+  "RuntimeServerlessIcon",
   "AddChartIcon",
   "AddCircleIcon",
   "AddIcon",
