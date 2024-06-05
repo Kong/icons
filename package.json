@@ -4,7 +4,7 @@
   "description": "Kong Icon Library",
   "license": "Apache-2.0",
   "type": "module",
-  "main": "./dist/kong-icons.umd.js",
+  "main": "./dist/kong-icons.cjs",
   "module": "./dist/kong-icons.es.js",
   "files": [
     "dist"
@@ -14,7 +14,7 @@
   "exports": {
     ".": {
       "import": "./dist/kong-icons.es.js",
-      "require": "./dist/kong-icons.umd.js",
+      "require": "./dist/kong-icons.cjs",
       "types": "./dist/types/index.d.ts"
     },
     "./package.json": "./package.json",
