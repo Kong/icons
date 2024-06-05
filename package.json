@@ -1,10 +1,10 @@
 {
   "name": "@kong/icons",
-  "version": "1.9.2",
+  "version": "1.10.0",
   "description": "Kong Icon Library",
   "license": "Apache-2.0",
   "type": "module",
-  "main": "./dist/kong-icons.umd.js",
+  "main": "./dist/kong-icons.cjs",
   "module": "./dist/kong-icons.es.js",
   "files": [
     "dist"
@@ -14,7 +14,7 @@
   "exports": {
     ".": {
       "import": "./dist/kong-icons.es.js",
-      "require": "./dist/kong-icons.umd.js",
+      "require": "./dist/kong-icons.cjs",
       "types": "./dist/types/index.d.ts"
     },
     "./package.json": "./package.json",
@@ -85,7 +85,7 @@
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.77.2",
     "semantic-release": "^22.0.12",
-    "stylelint": "^16.5.0",
+    "stylelint": "^16.6.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recommended-scss": "^14.0.0",
     "stylelint-config-recommended-vue": "^1.5.0",
