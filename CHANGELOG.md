@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/Kong/icons/compare/v1.9.2...v1.10.0) (2024-06-05)
+
+
+### Features
+
+* **packaging:** support tree shaking ([#316](https://github.com/Kong/icons/issues/316)) ([c9533d9](https://github.com/Kong/icons/commit/c9533d95dd0d7b02145731a98d0d4899d0857288))
+
 ## [1.9.2](https://github.com/Kong/icons/compare/v1.9.1...v1.9.2) (2024-05-22)
 
 
