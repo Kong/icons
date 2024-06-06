@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/Kong/icons/compare/v1.11.0...v1.12.0) (2024-06-06)
+
+
+### Features
+
+* **flags:** add new flags from Figma [MA-2937] ([#315](https://github.com/Kong/icons/issues/315)) ([66058a3](https://github.com/Kong/icons/commit/66058a3a09433eab7f536f4bb90c5b73abb81185))
+
 # [1.11.0](https://github.com/Kong/icons/compare/v1.10.0...v1.11.0) (2024-06-06)
 
 
