@@ -5,7 +5,7 @@ import router from './router'
 const app = createApp(App)
 
 router.beforeEach((to, from, next) => {
-  // @ts-ignore
+  // @ts-ignore: property title exists
   document.title = to.meta.title
   next()
 })

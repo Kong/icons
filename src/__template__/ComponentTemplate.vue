@@ -112,7 +112,9 @@ const rootElementStyles = computed((): Record<string, string> => ({
       <title
         v-if="title"
         data-testid="kui-icon-svg-title"
-      >{{ title }}</title>
+      >
+        {{ title }}
+      </title>
       {%%ICON_SVG_INNER_HTML%%}
     </svg>
   </component>
