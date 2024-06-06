@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/Kong/icons/compare/v1.10.0...v1.11.0) (2024-06-06)
+
+
+### Features
+
+* **eslint:** eslint v9 and shared configs [KHCP-11627] ([#318](https://github.com/Kong/icons/issues/318)) ([91fef1e](https://github.com/Kong/icons/commit/91fef1eaf8dfc46f2577d914bf1821d8707f723f))
+
 # [1.10.0](https://github.com/Kong/icons/compare/v1.9.2...v1.10.0) (2024-06-05)
 
 
