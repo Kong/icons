@@ -43,7 +43,14 @@ export default defineConfig({
       : {
         entry: path.resolve(__dirname, 'src/index.ts'),
         name: 'KongIcons',
-        fileName: (format) => `kong-icons.${format}.js`,
+        fileName: (format) => {
+          if (format === 'cjs') {
+            return 'kong-icons.cjs'
+          } else {
+            return `kong-icons.${format}.js`
+          }
+        },
+        formats: ['es', 'cjs'],
       },
     emptyOutDir: true,
     minify: true,
@@ -57,6 +64,9 @@ export default defineConfig({
             vue: 'Vue',
           },
           exports: 'named',
+          preserveModules: true,
+          preserveModulesRoot: 'src',
+          inlineDynamicImports: false,
         },
       plugins: [
         // visualizer must remain last in the list of plugins

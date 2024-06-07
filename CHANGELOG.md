@@ -1,3 +1,38 @@
+## [1.12.1](https://github.com/Kong/icons/compare/v1.12.0...v1.12.1) (2024-06-07)
+
+
+### Bug Fixes
+
+* semantic release action version ([3113ea5](https://github.com/Kong/icons/commit/3113ea554b1883ffe20d32f1053e22b93db04ac3))
+
+# [1.12.0](https://github.com/Kong/icons/compare/v1.11.0...v1.12.0) (2024-06-06)
+
+
+### Features
+
+* **flags:** add new flags from Figma [MA-2937] ([#315](https://github.com/Kong/icons/issues/315)) ([66058a3](https://github.com/Kong/icons/commit/66058a3a09433eab7f536f4bb90c5b73abb81185))
+
+# [1.11.0](https://github.com/Kong/icons/compare/v1.10.0...v1.11.0) (2024-06-06)
+
+
+### Features
+
+* **eslint:** eslint v9 and shared configs [KHCP-11627] ([#318](https://github.com/Kong/icons/issues/318)) ([91fef1e](https://github.com/Kong/icons/commit/91fef1eaf8dfc46f2577d914bf1821d8707f723f))
+
+# [1.10.0](https://github.com/Kong/icons/compare/v1.9.2...v1.10.0) (2024-06-05)
+
+
+### Features
+
+* **packaging:** support tree shaking ([#316](https://github.com/Kong/icons/issues/316)) ([c9533d9](https://github.com/Kong/icons/commit/c9533d95dd0d7b02145731a98d0d4899d0857288))
+
+## [1.9.2](https://github.com/Kong/icons/compare/v1.9.1...v1.9.2) (2024-05-22)
+
+
+### Bug Fixes
+
+* add runtime-serverless icon ([#306](https://github.com/Kong/icons/issues/306)) ([376486e](https://github.com/Kong/icons/commit/376486e9126a5aba6a2967c2507e52fffe4578c0))
+
 ## [1.9.1](https://github.com/Kong/icons/compare/v1.9.0...v1.9.1) (2024-04-23)
 
 
