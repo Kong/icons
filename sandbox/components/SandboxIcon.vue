@@ -10,7 +10,7 @@
     >
       <KClipboardProvider v-slot="{ copyToClipboard }">
         <KTooltip
-          placement="bottomStart"
+          placement="bottomEnd"
           :popover-timeout="300"
           :text="importTooltipText"
         >
@@ -84,8 +84,8 @@ watch(importTooltipText, () => {
 }
 
 .copy-import-container {
-  left: 8px;
   position: absolute;
+  right: 8px;
   top: 8px;
 
   .copy-import {
