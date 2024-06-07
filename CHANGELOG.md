@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/Kong/icons/compare/v1.12.0...v1.12.1) (2024-06-07)
+
+
+### Bug Fixes
+
+* semantic release action version ([3113ea5](https://github.com/Kong/icons/commit/3113ea554b1883ffe20d32f1053e22b93db04ac3))
+
 # [1.12.0](https://github.com/Kong/icons/compare/v1.11.0...v1.12.0) (2024-06-06)
 
 
