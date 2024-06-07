@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/Kong/icons/compare/v1.12.1...v1.12.2) (2024-06-07)
+
+
+### Bug Fixes
+
+* **sandbox:** add copy icon name and import functionality ([#303](https://github.com/Kong/icons/issues/303)) ([16f1dcc](https://github.com/Kong/icons/commit/16f1dcce2ef3b3bfee9ab02f1ddac397a8cc57e5))
+
 ## [1.12.1](https://github.com/Kong/icons/compare/v1.12.0...v1.12.1) (2024-06-07)
 
 

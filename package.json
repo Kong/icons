@@ -1,6 +1,6 @@
 {
   "name": "@kong/icons",
-  "version": "1.12.1",
+  "version": "1.12.2",
   "description": "Kong Icon Library",
   "license": "Apache-2.0",
   "type": "module",
