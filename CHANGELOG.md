@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/Kong/icons/compare/v1.12.2...v1.13.0) (2024-06-07)
+
+
+### Features
+
+* **flags:** more country flags ([#320](https://github.com/Kong/icons/issues/320)) ([7de2c9c](https://github.com/Kong/icons/commit/7de2c9c7a2d1502b7a24e7de533860c5d967e937))
+
 ## [1.12.2](https://github.com/Kong/icons/compare/v1.12.1...v1.12.2) (2024-06-07)
 
 
