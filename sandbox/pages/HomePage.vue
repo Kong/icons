@@ -60,6 +60,7 @@ import SandboxIcon from '../components/SandboxIcon.vue'
 import * as solidIcons from '../../src/components/solid'
 import * as multiColorIcons from '../../src/components/multi-color'
 import * as flagIcons from '../../src/components/flags'
+import { COUNTRY_CODES } from '../constants/countries'
 
 const searchQuery = ref('')
 
@@ -72,6 +73,7 @@ const filteredComponents = computed(() => {
       type: 'solid',
       name: key,
       component: val,
+      keyword: '',
     })
   }
 
@@ -81,15 +83,32 @@ const filteredComponents = computed(() => {
       type: 'multi-color',
       name: key,
       component: val,
+      keyword: '',
     })
   }
 
   // flags
   for (const [key, val] of Object.entries(flagIcons)) {
+    interface Country {
+      code: string
+      name: string
+    }
+
+    // Create a map of 2 letter code to country name
+    const countryMap: Map<string, { name: string }> = COUNTRY_CODES.reduce((
+      map: Map<string, { name: string }>,
+      country: Country,
+    ) => map.set(country.code, { name: country.name }), new Map())
+
+    // Grab 2-letter country code from icon name
+    const match = /Flag(.*?)Icon/.exec(key) || ''
+    const countryCode = match[1].toUpperCase()
+
     allComponents.push({
       type: 'flags',
       name: key,
       component: val,
+      keyword: countryMap.has(countryCode) ? countryMap.get(countryCode)?.name : '',
     })
   }
 
@@ -97,7 +116,12 @@ const filteredComponents = computed(() => {
     return allComponents
   }
 
-  return allComponents.filter((icon: any) => icon.name.toLowerCase().includes(searchQuery.value.toLowerCase().replace(/icon/gi, '')))
+  const searchTerm = searchQuery.value.toLowerCase().replace(/icon/gi, '')
+
+  return allComponents.filter((icon: any) => {
+    return icon.name.toLowerCase().includes(searchTerm) ||
+      icon?.keyword?.toLowerCase().includes(searchTerm)
+  })
 })
 </script>
 
