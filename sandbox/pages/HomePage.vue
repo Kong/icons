@@ -62,6 +62,11 @@ import * as multiColorIcons from '../../src/components/multi-color'
 import * as flagIcons from '../../src/components/flags'
 import { COUNTRY_CODES } from '../constants/countries'
 
+interface Country {
+  code: string
+  name: string
+}
+
 const searchQuery = ref('')
 
 const filteredComponents = computed(() => {
@@ -73,7 +78,7 @@ const filteredComponents = computed(() => {
       type: 'solid',
       name: key,
       component: val,
-      keyword: '',
+      keywords: [],
     })
   }
 
@@ -83,17 +88,12 @@ const filteredComponents = computed(() => {
       type: 'multi-color',
       name: key,
       component: val,
-      keyword: '',
+      keywords: [],
     })
   }
 
   // flags
   for (const [key, val] of Object.entries(flagIcons)) {
-    interface Country {
-      code: string
-      name: string
-    }
-
     // Create a map of 2 letter code to country name
     const countryMap: Map<string, { name: string }> = COUNTRY_CODES.reduce((
       map: Map<string, { name: string }>,
@@ -108,7 +108,7 @@ const filteredComponents = computed(() => {
       type: 'flags',
       name: key,
       component: val,
-      keyword: countryMap.has(countryCode) ? countryMap.get(countryCode)?.name : '',
+      keywords: countryMap.has(countryCode) ? [countryMap.get(countryCode)?.name.toLowerCase()] : [],
     })
   }
 
@@ -119,8 +119,7 @@ const filteredComponents = computed(() => {
   const searchTerm = searchQuery.value.toLowerCase().replace(/icon/gi, '')
 
   return allComponents.filter((icon: any) => {
-    return icon.name.toLowerCase().includes(searchTerm) ||
-      icon?.keyword?.toLowerCase().includes(searchTerm)
+    return icon.name.toLowerCase().includes(searchTerm) || icon?.keywords.some((country: string) => country.includes(searchTerm))
   })
 })
 </script>
