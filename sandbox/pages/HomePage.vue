@@ -69,12 +69,12 @@ interface Country {
 
 const searchQuery = ref('')
 
-const filteredComponents = computed(() => {
-  const allComponents = []
+const allComponents = computed(() => {
+  const componentList = []
 
   // solid icons
   for (const [key, val] of Object.entries(solidIcons)) {
-    allComponents.push({
+    componentList.push({
       type: 'solid',
       name: key,
       component: val,
@@ -84,7 +84,7 @@ const filteredComponents = computed(() => {
 
   // multi-color icons
   for (const [key, val] of Object.entries(multiColorIcons)) {
-    allComponents.push({
+    componentList.push({
       type: 'multi-color',
       name: key,
       component: val,
@@ -104,7 +104,7 @@ const filteredComponents = computed(() => {
     const match = /Flag(.*?)Icon/.exec(key) || ''
     const countryCode = match[1].toUpperCase()
 
-    allComponents.push({
+    componentList.push({
       type: 'flags',
       name: key,
       component: val,
@@ -112,13 +112,17 @@ const filteredComponents = computed(() => {
     })
   }
 
+  return componentList
+})
+
+const filteredComponents = computed(() => {
   if (!searchQuery.value || searchQuery.value?.toLowerCase() === 'icon') {
-    return allComponents
+    return allComponents.value
   }
 
   const searchTerm = searchQuery.value.toLowerCase().replace(/icon/gi, '')
 
-  return allComponents.filter((icon: any) => {
+  return allComponents.value.filter((icon: any) => {
     return icon.name.toLowerCase().includes(searchTerm) || icon?.keywords.some((country: string) => country.includes(searchTerm))
   })
 })

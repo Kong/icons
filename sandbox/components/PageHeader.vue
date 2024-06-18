@@ -47,7 +47,7 @@ const handleQueryUpdate = debounce((searchQuery: string) => {
   } else {
     router.push({ name: 'home' })
   }
-}, 500)
+}, 200)
 
 watch(query, (searchQuery: string) => {
   handleQueryUpdate(searchQuery)
