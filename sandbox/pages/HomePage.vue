@@ -42,6 +42,7 @@
               v-for="(icon, idx) in filteredComponents.filter((icon) => icon.type === 'flags')"
               :key="`icon-${idx}`"
               :icon="icon.component"
+              :title="icon.title"
             />
           </div>
         </div>
@@ -103,12 +104,14 @@ const allComponents = computed(() => {
     // Grab 2-letter country code from icon name
     const match = /Flag(.*?)Icon/.exec(key) || ''
     const countryCode = match[1].toUpperCase()
+    const countryMatch = countryMap.has(countryCode)
 
     componentList.push({
       type: 'flags',
       name: key,
       component: val,
-      keywords: countryMap.has(countryCode) ? [countryMap.get(countryCode)?.name.toLowerCase()] : [],
+      keywords: countryMatch ? [countryMap.get(countryCode)?.name.toLowerCase()] : [],
+      title: countryMatch ? countryMap.get(countryCode)?.name : '',
     })
   }
 
