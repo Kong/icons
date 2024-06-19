@@ -37,6 +37,10 @@
       :monospace="false"
       :text="iconName"
     />
+    <span
+      v-if="title"
+      class="icon-title"
+    >{{ title }}</span>
   </span>
 </template>
 
@@ -48,6 +52,11 @@ const props = defineProps({
   icon: {
     type: Object,
     required: true,
+  },
+  title: {
+    type: String,
+    required: false,
+    default: null,
   },
 })
 
@@ -119,5 +128,12 @@ watch(importTooltipText, () => {
       color: #292929;
     }
   }
+}
+
+.icon-title {
+  color: #999;
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 4px;
 }
 </style>

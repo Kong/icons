@@ -42,6 +42,7 @@
               v-for="(icon, idx) in filteredComponents.filter((icon) => icon.type === 'flags')"
               :key="`icon-${idx}`"
               :icon="icon.component"
+              :title="icon.title"
             />
           </div>
         </div>
@@ -60,44 +61,73 @@ import SandboxIcon from '../components/SandboxIcon.vue'
 import * as solidIcons from '../../src/components/solid'
 import * as multiColorIcons from '../../src/components/multi-color'
 import * as flagIcons from '../../src/components/flags'
+import { COUNTRY_CODES } from '../constants/countries'
+
+interface Country {
+  code: string
+  name: string
+}
 
 const searchQuery = ref('')
 
-const filteredComponents = computed(() => {
-  const allComponents = []
+const allComponents = computed(() => {
+  const componentList = []
 
   // solid icons
   for (const [key, val] of Object.entries(solidIcons)) {
-    allComponents.push({
+    componentList.push({
       type: 'solid',
       name: key,
       component: val,
+      keywords: [],
     })
   }
 
   // multi-color icons
   for (const [key, val] of Object.entries(multiColorIcons)) {
-    allComponents.push({
+    componentList.push({
       type: 'multi-color',
       name: key,
       component: val,
+      keywords: [],
     })
   }
 
   // flags
   for (const [key, val] of Object.entries(flagIcons)) {
-    allComponents.push({
+    // Create a map of 2 letter code to country name
+    const countryMap: Map<string, { name: string }> = COUNTRY_CODES.reduce((
+      map: Map<string, { name: string }>,
+      country: Country,
+    ) => map.set(country.code, { name: country.name }), new Map())
+
+    // Grab 2-letter country code from icon name
+    const match = /Flag(.*?)Icon/.exec(key) || ''
+    const countryCode = match[1].toUpperCase()
+    const countryMatch = countryMap.has(countryCode)
+
+    componentList.push({
       type: 'flags',
       name: key,
       component: val,
+      keywords: countryMatch ? [countryMap.get(countryCode)?.name.toLowerCase()] : [],
+      title: countryMatch ? countryMap.get(countryCode)?.name : '',
     })
   }
 
+  return componentList
+})
+
+const filteredComponents = computed(() => {
   if (!searchQuery.value || searchQuery.value?.toLowerCase() === 'icon') {
-    return allComponents
+    return allComponents.value
   }
 
-  return allComponents.filter((icon: any) => icon.name.toLowerCase().includes(searchQuery.value.toLowerCase().replace(/icon/gi, '')))
+  const searchTerm = searchQuery.value.toLowerCase().replace(/icon/gi, '')
+
+  return allComponents.value.filter((icon: any) => {
+    return icon.name.toLowerCase().includes(searchTerm) || icon?.keywords.some((country: string) => country.includes(searchTerm))
+  })
 })
 </script>
 
