@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/Kong/icons/compare/v1.13.0...v1.14.0) (2024-06-19)
+
+
+### Features
+
+* **sandbox:** make icons searchable by keyword ([#322](https://github.com/Kong/icons/issues/322)) ([7580bc8](https://github.com/Kong/icons/commit/7580bc8a27670fd1cad864102bc6f05b70e4bb9c))
+
 # [1.13.0](https://github.com/Kong/icons/compare/v1.12.2...v1.13.0) (2024-06-07)
 
 
