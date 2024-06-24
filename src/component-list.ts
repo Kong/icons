@@ -390,6 +390,7 @@ export default [
   'VitalsIcon.vue',
   'WarningIcon.vue',
   'WarningOutlineIcon.vue',
+  'WidgetsIcon.vue',
   'WindowsIcon.vue',
   'WorkspacesIcon.vue',
   'WorldIcon.vue',

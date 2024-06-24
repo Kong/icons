@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/Kong/icons/compare/v1.14.0...v1.14.1) (2024-06-24)
+
+
+### Bug Fixes
+
+* add widget icon ([#329](https://github.com/Kong/icons/issues/329)) ([2258058](https://github.com/Kong/icons/commit/22580584e2cc91ab78830afed07435b96a159508))
+
 # [1.14.0](https://github.com/Kong/icons/compare/v1.13.0...v1.14.0) (2024-06-19)
 
 
