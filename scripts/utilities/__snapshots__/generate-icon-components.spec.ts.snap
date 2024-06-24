@@ -383,6 +383,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "VitalsIcon",
   "WarningOutlineIcon",
   "WarningIcon",
+  "WidgetsIcon",
   "WorkspacesIcon",
   "WorldPrivateIcon",
   "WorldIcon",
