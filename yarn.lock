@@ -1904,7 +1904,7 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-20.4.0.tgz"
   integrity sha512-jfT7iTf/4kOQ9S7CHV9BIyRaQqHu67mOjsIQBC3BKZvzvUB6zLxEwJ6sBE3ozcvP8kF6Uk5PXN0Q+c0dfhGX0g==
 
-"@types/node@^20.14.7":
+"@types/node@^20.14.8":
   version "20.14.9"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.14.9.tgz#12e8e765ab27f8c421a1820c99f5f313a933b420"
   integrity sha512-06OCtnTXtWOZBJlRApleWndH4JsRVs1pDCc8dLSQp+7PpUpX3ePdHyeNSFTeSe7FtKyQkrlPvHwJOW3SLd8Oyg==
@@ -8307,7 +8307,7 @@ vite-plugin-inspect@^0.8.4:
     picocolors "^1.0.0"
     sirv "^2.0.4"
 
-vite-plugin-vue-devtools@^7.3.3:
+vite-plugin-vue-devtools@^7.3.4:
   version "7.3.5"
   resolved "https://registry.yarnpkg.com/vite-plugin-vue-devtools/-/vite-plugin-vue-devtools-7.3.5.tgz#e938fe75fcbd34fcb6bfbb2d21d6bc1c6bcba27d"
   integrity sha512-6omLXTfYu0bmSmncPSbj4mdMPB3t5dAZkUyriJikahGEnvv5gynHlydDsJShHT6l/5dCkvmSesSji/2a6FfutQ==
@@ -8456,7 +8456,7 @@ vue-template-compiler@^2.7.14:
     de-indent "^1.0.2"
     he "^1.2.0"
 
-vue-tsc@^2.0.21:
+vue-tsc@^2.0.22:
   version "2.0.24"
   resolved "https://registry.yarnpkg.com/vue-tsc/-/vue-tsc-2.0.24.tgz#9938185492833baeda22b6c85a7ba316d4fd4873"
   integrity sha512-1qi4P8L7yS78A7OJ7CDDxUIZPD6nVxoQEgX3DkRZNi1HI1qOfzOJwQlNpmwkogSVD6S/XcanbW9sktzpSxz6rA==
@@ -8465,7 +8465,7 @@ vue-tsc@^2.0.21:
     "@vue/language-core" "2.0.24"
     semver "^7.5.4"
 
-vue@^3.4.29:
+vue@^3.4.30:
   version "3.4.31"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.4.31.tgz#83a3c4dab8302b0e974b0d4b92a2f6a6378ae797"
   integrity sha512-njqRrOy7W3YLAlVqSKpBebtZpDVg21FPoaq1I7f/+qqBThK9ChAIjkRWgeP6Eat+8C+iia4P3OYqpATP21BCoQ==
