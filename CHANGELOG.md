@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/Kong/icons/compare/v1.14.1...v1.14.2) (2024-07-08)
+
+
+### Bug Fixes
+
+* add language icons ([#344](https://github.com/Kong/icons/issues/344)) ([6b89de4](https://github.com/Kong/icons/commit/6b89de43ccfd34dafc108c60cebb6f16d20abda9))
+
 ## [1.14.1](https://github.com/Kong/icons/compare/v1.14.0...v1.14.1) (2024-06-24)
 
 
