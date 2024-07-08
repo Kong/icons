@@ -1082,10 +1082,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@kong/design-tokens@^1.14.0":
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/@kong/design-tokens/-/design-tokens-1.14.0.tgz#ca661ed7ecbd0e03b58b13f6a6ac12625f18478d"
-  integrity sha512-hWBHlUeg4KFIPOQb6UOlhqal9SizH7456zswLLoEQ1oKIkT8afar0HDOQmIGpqjr5W0Gl1JlWvLOTfVf/FWVKQ==
+"@kong/design-tokens@^1.15.1":
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/@kong/design-tokens/-/design-tokens-1.15.1.tgz#08a8247c70c98597eb8454e28c9a6d8d31d8d1b7"
+  integrity sha512-dDgAZIF3nFENKcMHHFDZg62W/Tkrt6YRS+BF61nWOImTV/zuhpupUF4FBvrcWc/QdilI/nSMwNDYEqpOO/gMyA==
 
 "@kong/eslint-config-kong-ui@^1.1.1":
   version "1.1.1"
