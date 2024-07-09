@@ -70,7 +70,7 @@
     "commitizen": "^4.3.0",
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^9.5.0",
+    "eslint": "^9.6.0",
     "jsdom": "^24.1.0",
     "node-emoji": "^2.1.3",
     "picocolors": "^1.0.1",
