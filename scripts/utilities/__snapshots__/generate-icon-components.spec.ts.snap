@@ -796,6 +796,8 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "TasklistIcon.vue",
   "TeamIcon.vue",
   "TeammateIcon.vue",
+  "ThumbDownIcon.vue",
+  "ThumbUpIcon.vue",
   "TrashIcon.vue",
   "TrendDownIcon.vue",
   "TrendUpIcon.vue",

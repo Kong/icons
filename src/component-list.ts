@@ -396,6 +396,8 @@ export default [
   'TasklistIcon.vue',
   'TeamIcon.vue',
   'TeammateIcon.vue',
+  'ThumbDownIcon.vue',
+  'ThumbUpIcon.vue',
   'TrashIcon.vue',
   'TrendDownIcon.vue',
   'TrendUpIcon.vue',

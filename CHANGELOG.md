@@ -1,3 +1,10 @@
+## [1.14.3](https://github.com/Kong/icons/compare/v1.14.2...v1.14.3) (2024-07-12)
+
+
+### Bug Fixes
+
+* add thumbup, thumbdown icon ([#350](https://github.com/Kong/icons/issues/350)) ([a5a1686](https://github.com/Kong/icons/commit/a5a1686f245710264ad490c8d42b08bccfc347c4))
+
 ## [1.14.2](https://github.com/Kong/icons/compare/v1.14.1...v1.14.2) (2024-07-08)
 
 
