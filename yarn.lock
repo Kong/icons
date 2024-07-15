@@ -976,7 +976,7 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.4.tgz#1d459cee5031893a08a0e064c406ad2130cced7c"
   integrity sha512-dWO2pw8hhi+WrXq1YJy2yCuWoL20PddgGaqTgVe4cOS9Q6qklXCiA1tJEqX6BEwRNSCP84/afac9hd4MS+zEUA==
 
-"@floating-ui/vue@^1.0.7":
+"@floating-ui/vue@^1.1.0":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@floating-ui/vue/-/vue-1.1.1.tgz#008abc526108f3b01f005a7948f4f75e147d6321"
   integrity sha512-cyawjk9etPZPl/RVtMRnWrwtAhWbPVSrRVYARgOzhLIqxr0k2up1APrrFjqP9QwRQ0AwjKSvbWg4YC6jESutow==
@@ -1082,10 +1082,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@kong/design-tokens@^1.15.1":
-  version "1.15.1"
-  resolved "https://registry.yarnpkg.com/@kong/design-tokens/-/design-tokens-1.15.1.tgz#08a8247c70c98597eb8454e28c9a6d8d31d8d1b7"
-  integrity sha512-dDgAZIF3nFENKcMHHFDZg62W/Tkrt6YRS+BF61nWOImTV/zuhpupUF4FBvrcWc/QdilI/nSMwNDYEqpOO/gMyA==
+"@kong/design-tokens@^1.15.2":
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/@kong/design-tokens/-/design-tokens-1.15.2.tgz#3ae4a089782d52bb6ec504edaebfc68899ef2ffd"
+  integrity sha512-ZdaYSm0WjX+ioLqWeWqkq2Jw/NbKFHNGkigFLZSH+Y9XaBY0T/5PiI93zOPL+K2oi3YSBX+61Sh6YUDyoPZlyw==
 
 "@kong/eslint-config-kong-ui@^1.1.1":
   version "1.1.1"
@@ -1106,18 +1106,18 @@
     typescript-eslint "^7.12.0"
     vue-eslint-parser "^9.4.3"
 
-"@kong/icons@^1.14.1":
-  version "1.14.1"
-  resolved "https://registry.yarnpkg.com/@kong/icons/-/icons-1.14.1.tgz#a6e63e3fc62023a3f19604fb67c4b33415facc1d"
-  integrity sha512-2FbzPWQnHa5URm5jSw/JnRiJUDwVi5oSNLPg22LxckJoQ4wD0Q6i71CCG9I2HJ/Cd95a43eGfm2M9BCAHKPlwg==
+"@kong/icons@^1.14.2":
+  version "1.14.3"
+  resolved "https://registry.yarnpkg.com/@kong/icons/-/icons-1.14.3.tgz#ca416daec9bc19656c6bac1baff81785ae576b85"
+  integrity sha512-pY88KCDUCciWWc+0aJ41jvWNe6Xr0oRMWT3jfu997roWLSEQLSk4iSwusC4OAtP/coJRiTFlUP5JsTxeG8YzTg==
 
-"@kong/kongponents@9.0.7":
-  version "9.0.7"
-  resolved "https://registry.yarnpkg.com/@kong/kongponents/-/kongponents-9.0.7.tgz#7cc766cf790a400a29b2f8be2257428df0ba0697"
-  integrity sha512-H3Y+izKdEXl9bfOj2cBFQWXQyx/F/bZhOida8dAq9X7iEP6S3BLq9TLwQXa+Xe15cMKKX9tyOdSG3eDnt5Wr+g==
+"@kong/kongponents@9.0.10":
+  version "9.0.10"
+  resolved "https://registry.yarnpkg.com/@kong/kongponents/-/kongponents-9.0.10.tgz#8554c435fdbde088c8e746b9a9308e59ae0861a7"
+  integrity sha512-G58M8MROjxbweEP1wbA9D/5ZNsZ4dc8ptdpDgjbBPr3jFS2T0IwNdZddW2epiArUDnG30qkZL9Z+65lWcf8BVw==
   dependencies:
-    "@floating-ui/vue" "^1.0.7"
-    "@kong/icons" "^1.14.1"
+    "@floating-ui/vue" "^1.1.0"
+    "@kong/icons" "^1.14.2"
     "@popperjs/core" "^2.11.8"
     date-fns "^2.30.0"
     date-fns-tz "^2.0.1"
