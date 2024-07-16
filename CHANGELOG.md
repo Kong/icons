@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/Kong/icons/compare/v1.14.3...v1.15.0) (2024-07-16)
+
+
+### Features
+
+* add hashicorp icon ([#355](https://github.com/Kong/icons/issues/355)) ([c8263a4](https://github.com/Kong/icons/commit/c8263a488363538e2c99c9075595e36598c4302b))
+
 ## [1.14.3](https://github.com/Kong/icons/compare/v1.14.2...v1.14.3) (2024-07-12)
 
 

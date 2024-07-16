@@ -313,6 +313,7 @@ export default [
   'GoogleIcon.vue',
   'GraduationIcon.vue',
   'GridIcon.vue',
+  'HashicorpIcon.vue',
   'HelpIcon.vue',
   'HistoryIcon.vue',
   'HtmlIcon.vue',
