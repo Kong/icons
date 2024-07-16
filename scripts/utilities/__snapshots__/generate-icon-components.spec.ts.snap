@@ -251,6 +251,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "DockerIcon",
   "GoogleCloudIcon",
   "GoogleIcon",
+  "HashicorpIcon",
   "InsomniaIcon",
   "LinuxIcon",
   "WindowsIcon",
