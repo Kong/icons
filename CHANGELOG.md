@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/Kong/icons/compare/v1.15.0...v1.15.1) (2024-07-18)
+
+
+### Bug Fixes
+
+* add flex-shrink 0 ([#357](https://github.com/Kong/icons/issues/357)) ([363e0f6](https://github.com/Kong/icons/commit/363e0f69d9b34d6dafb7dccba1d7e8c317c581b0))
+
 # [1.15.0](https://github.com/Kong/icons/compare/v1.14.3...v1.15.0) (2024-07-16)
 
 
