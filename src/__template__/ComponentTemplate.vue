@@ -85,6 +85,7 @@ const rootElementStyles = computed((): Record<string, string> => ({
   boxSizing: 'border-box',
   color: props.color,
   display: props.display,
+  flexShrink: '0',
   height: iconSize.value,
   lineHeight: '0',
   width: iconSize.value,
