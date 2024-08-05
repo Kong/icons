@@ -60,7 +60,7 @@
     "@types/jsdom": "^21.1.7",
     "@types/node": "^20.14.10",
     "@types/node-emoji": "^2.1.0",
-    "@vitejs/plugin-vue": "^5.0.5",
+    "@vitejs/plugin-vue": "^5.1.0",
     "@vitest/ui": "^2.0.1",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.5.1",
@@ -149,7 +149,7 @@
     "node": ">=18.17.0"
   },
   "volta": {
-    "node": "20.15.0",
+    "node": "20.16.0",
     "yarn": "1.22.22"
   },
   "config": {
