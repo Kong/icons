@@ -80,7 +80,7 @@
     "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.77.6",
     "semantic-release": "^22.0.12",
-    "stylelint": "^16.7.0",
+    "stylelint": "^16.8.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-config-recommended-vue": "^1.5.0",
