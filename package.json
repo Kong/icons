@@ -24,14 +24,14 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "yarn generate && USE_SANDBOX=true vite",
-    "build": "yarn delete:generated && yarn stylelint && yarn lint && yarn build:components",
-    "build:components": "yarn generate && yarn typecheck && vite build && rimraf ./dist/style.css && vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
-    "build:visualize": "yarn generate && cross-env BUILD_VISUALIZER=true vite build -m production",
-    "generate": "yarn delete:generated && npx --yes tsx --tsconfig './scripts/tsconfig.json' './scripts/generate.ts' && yarn fix:generated",
-    "update-component-list": "npx --yes tsx --tsconfig './scripts/tsconfig.json' './scripts/component-list.ts' && yarn fix:generated",
+    "dev": "pnpm generate && USE_SANDBOX=true vite",
+    "build": "pnpm delete:generated && pnpm stylelint && pnpm lint && pnpm build:components",
+    "build:components": "pnpm generate && pnpm typecheck && vite build && rimraf ./dist/style.css && vue-tsc -p './tsconfig.build.json' --emitDeclarationOnly && tsc-alias -p './tsconfig.build.json'",
+    "build:visualize": "pnpm generate && cross-env BUILD_VISUALIZER=true vite build -m production",
+    "generate": "pnpm delete:generated && npx --yes tsx --tsconfig './scripts/tsconfig.json' './scripts/generate.ts' && pnpm fix:generated",
+    "update-component-list": "npx --yes tsx --tsconfig './scripts/tsconfig.json' './scripts/component-list.ts' && pnpm fix:generated",
     "delete:generated": "rimraf './src/components' && rimraf './dist'",
-    "build:sandbox": "yarn generate && yarn typecheck && cross-env USE_SANDBOX=true vite build",
+    "build:sandbox": "pnpm generate && pnpm typecheck && cross-env USE_SANDBOX=true vite build",
     "preview:sandbox": "cross-env USE_SANDBOX=true vite preview",
     "test": "cross-env FORCE_COLOR=1 vitest run",
     "test:open": "vitest --ui",
@@ -42,7 +42,7 @@
     "stylelint": "stylelint './src/**/*.{css,scss,vue}'",
     "stylelint:fix": "stylelint './src/**/*.{css,scss,vue}' --fix",
     "stylelint:fix:generated": "stylelint './src/components/**/*.vue' --fix",
-    "fix:generated": "yarn lint:fix:generated && yarn stylelint:fix:generated",
+    "fix:generated": "pnpm lint:fix:generated && pnpm stylelint:fix:generated",
     "semantic-release": "semantic-release",
     "commit": "cz"
   },
@@ -145,12 +145,13 @@
       "@semantic-release/github"
     ]
   },
+  "packageManager": "pnpm@9.7.0",
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=18.17.0",
+    "pnpm": ">=9.7.0"
   },
   "volta": {
-    "node": "20.16.0",
-    "yarn": "1.22.22"
+    "node": "20.16.0"
   },
   "config": {
     "commitizen": {

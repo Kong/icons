@@ -25,7 +25,7 @@ Kong's open-source, Vue icon component library, partially sourced from [Google's
 Install the `@kong/icons` package in your host project.
 
 ```sh
-yarn add @kong/icons
+pnpm add @kong/icons
 ```
 
 ### Import
@@ -114,7 +114,7 @@ The HTML tag to use in place of the default wrapper `<span>` tag.
 To get started, install the package dependencies
 
 ```sh
-yarn install --frozen-lockfile
+pnpm install --frozen-lockfile
 ```
 
 The exported Vue components are generated from SVG source files located in the `/svg/` child directories.
@@ -141,21 +141,21 @@ To add a new SVG:
    1. Icons **must** follow the viewbox and color guidelines to match the standard of existing icons. New icons can be requested on Slack in `#ask-kong-design-system`
 2. Ensure the filename is lowercase and kebab-case
 3. Place the SVG file into the corresponding `/svg/*` subdirectory.
-4. Locally, run `yarn generate` to create the corresponding Vue component
-5. Locally, run `yarn test -u` to run the tests and update the test snapshots
+4. Locally, run `pnpm generate` to create the corresponding Vue component
+5. Locally, run `pnpm test -u` to run the tests and update the test snapshots
 6. [Commit your changes](#committing-changes) and push up a Pull Request for review
 
 ### Development Sandbox
 
 This repository includes a Vue sandbox app (see the `/sandbox` directory) to allow you to experiment with icons.
 
-The `yarn dev` command will automatically call the `generate` command to generate the icon components.
+The `pnpm dev` command will automatically call the `generate` command to generate the icon components.
 
 To compile the icon components and start the sandbox:
 
 ```sh
 # Generate the Icon Components and start the sandbox
-yarn dev
+pnpm dev
 ```
 
 #### Build and Preview the Development Sandbox
@@ -163,8 +163,8 @@ yarn dev
 To run a local preview of the Sandbox site that will be deployed to GitHub Pages:
 
 ```sh
-yarn build:sandbox
-yarn preview:sandbox
+pnpm build:sandbox
+pnpm preview:sandbox
 ```
 
 ### Lint and fix
@@ -173,10 +173,10 @@ Lint package files, and optionally auto-fix detected issues.
 
 ```sh
 # Lint only
-yarn lint
+pnpm lint
 
 # Lint and fix
-yarn lint:fix
+pnpm lint:fix
 ```
 
 ### Testing
@@ -187,23 +187,23 @@ The Vitest settings are pre-configured to regenerate the icon components before 
 
 ```sh
 # Run tests
-yarn test
+pnpm test
 
 # Run tests in the Vitest UI
-yarn test:open
+pnpm test:open
 
 # Update test snapshots
-yarn test -u
+pnpm test -u
 ```
 
-When SVG files are added or removed, this will cause the test(s) that compare snapshots to fail. If the snapshot change is expected, run `yarn test -u` to update the test snapshots accordingly, then commit those changes to your branch.
+When SVG files are added or removed, this will cause the test(s) that compare snapshots to fail. If the snapshot change is expected, run `pnpm test -u` to update the test snapshots accordingly, then commit those changes to your branch.
 
 ### Build for production
 
 Process the `/svg/` directory, generate the icon components and associated files, and build for production.
 
 ```sh
-yarn build
+pnpm build
 ```
 
 ### Committing Changes
@@ -217,7 +217,7 @@ This repo uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.
 It is **highly recommended** to use the following command in order to create your commits:
 
 ```sh
-yarn commit
+pnpm commit
 ```
 
 This will trigger the Commitizen interactive prompt for building your commit message.

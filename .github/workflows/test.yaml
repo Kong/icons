@@ -42,14 +42,16 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Setup PNPM with Dependencies
+        uses: ./.github/actions/setup-pnpm-with-dependencies/
+        with:
+          force-install: true
 
       - name: Lint and Build
-        run: yarn build
+        run: pnpm build
 
       - name: Unit and Component Tests
-        run: yarn test
+        run: pnpm test
 
       - name: Publish package preview
         id: package-preview
@@ -67,7 +69,7 @@ jobs:
 
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 
-          yarn version --prerelease --preid ${preid} --allow-branch ${{ github.head_ref }} --no-git-tag-version --yes --amend
+          pnpm version prerelease --preid ${preid} --no-git-tag-version --yes --amend
 
           package_version=$(jq -r ".version" package.json)
           package=@kong/icons@"${package_version}"
@@ -87,7 +89,7 @@ jobs:
             exit -1
           fi
 
-          npm_instructions="yarn add @$(echo ${pkg}|cut -d'@' -f2)@${tag}"
+          npm_instructions="pnpm add @$(echo ${pkg}|cut -d'@' -f2)@${tag}"
 
           echo "npm_instructions<<EOF" >> $GITHUB_OUTPUT
           echo -e "$npm_instructions" >> $GITHUB_OUTPUT

@@ -6,7 +6,7 @@ import * as importedComponents from '../../src/components'
 
 /**
  * The tests in this file will only successfully run after
- * the `yarn build` (or `yarn generate`) script has been run.
+ * the `pnpm build` (or `pnpm generate`) script has been run.
  *
  * See the `vitest.config.ts` `globalSetup` configuration.
  */
