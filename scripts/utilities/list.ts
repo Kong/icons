@@ -68,7 +68,7 @@ export const updateComponentList = async (displayHeader: boolean = true) => {
   try {
     const componentsPath = path.resolve('./src/components')
     if (!fs.existsSync(componentsPath)) {
-      console.error(pc.red('You must run `yarn generate` before updating the component list.'))
+      console.error(pc.red('You must run `pnpm generate` before updating the component list.'))
       console.log('')
       process.exit(1)
     }

@@ -40,24 +40,26 @@ jobs:
           with:
             node-version-file: '.nvmrc'
 
-        - name: Install dependencies
-          run: yarn install --frozen-lockfile
+        - name: Setup PNPM with Dependencies
+          uses: ./.github/actions/setup-pnpm-with-dependencies/
+          with:
+            force-install: true
 
         - name: Build
           # Since we lint in the Tests job, we can just build the components here
-          run: yarn build:components
+          run: pnpm build:components
 
         # Since everything was successful, update the src/component-list.ts file to compare
         # against in future runs. Since this file is modified here in the CI, it is written back
         # to the repository via the `/package.json` file `@semantic-release/git` => `assets` config
         - name: Update component-list.ts
-          run: yarn update-component-list
+          run: pnpm update-component-list
 
         # Since everything was successful, update the Vitest snapshot files to compare
         # against for future runs. Since the snapshot files are modified here in the CI, they are written back
         # to the repository via the `/package.json` file `@semantic-release/git` => `assets` config
         - name: Update test snapshots
-          run: yarn test -u
+          run: pnpm test -u
 
         - name: Semantic Release
           uses: cycjimmy/semantic-release-action@v4

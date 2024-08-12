@@ -123,7 +123,7 @@ export default async function generate() {
         console.error(pc.red(`- '${component}'`))
       }
       console.log('')
-      console.error('If this is intentional, run `yarn update-component-list` and')
+      console.error('If this is intentional, run `pnpm update-component-list` and')
       console.error('commit the changes to your branch.')
       console.log('')
       console.error(`In most cases, removing a component is a ${pc.bold('breaking change')} and`)

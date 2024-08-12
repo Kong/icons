@@ -10,7 +10,7 @@
     >
       <KClipboardProvider v-slot="{ copyToClipboard }">
         <KTooltip
-          placement="bottomEnd"
+          placement="bottom-end"
           :popover-timeout="300"
           :text="importTooltipText"
         >

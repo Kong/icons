@@ -38,14 +38,16 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Setup PNPM with Dependencies
+        uses: ./.github/actions/setup-pnpm-with-dependencies/
+        with:
+          force-install: true
 
       - name: Build Sandbox
         env:
           # Tell the script to use the sandbox directory
           USE_SANDBOX: true
-        run: yarn build:sandbox
+        run: pnpm build:sandbox
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

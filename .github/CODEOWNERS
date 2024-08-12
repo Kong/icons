@@ -16,9 +16,8 @@
 # Existing component list
 /src/component-list.ts @adamdehaven @jillztom
 
-# ================================================
-# Renovate Bot approvals
-# Allow Kongponents BOT to approve dependency updates
+# Renovate approvals
+# Allow Kongponents BOT to approve renovate updates
 # These rules MUST remain at the bottom as the last entry
-package.json @kongponents-bot @Kong/team-core-ui @adamdehaven @jillztom
-yarn.lock @kongponents-bot @Kong/team-core-ui @adamdehaven @jillztom
+package.json @kongponents-bot @adamdehaven @jillztom @portikM
+pnpm-lock.yaml @kongponents-bot @Kong/team-core-ui

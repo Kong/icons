@@ -19,7 +19,7 @@ export default mergeConfig(viteConfig, defineConfig({
         },
       },
     },
-    // The tests will only successfully run after the `yarn generate` script has been run.
+    // The tests will only successfully run after the `pnpm generate` script has been run.
     // This `globalSetup` entry generates all comopnents before running the tests
     globalSetup: [
       './scripts/utilities/generate-icon-components.ts',
