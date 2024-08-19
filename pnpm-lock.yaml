@@ -24,14 +24,14 @@ importers:
         specifier: ^1.7.11
         version: 1.7.12
       '@kong/design-tokens':
-        specifier: ^1.15.3
-        version: 1.17.0
+        specifier: ^1.17.2
+        version: 1.17.2
       '@kong/eslint-config-kong-ui':
         specifier: ^1.1.1
         version: 1.1.1(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4)
       '@kong/kongponents':
-        specifier: 9.1.7
-        version: 9.1.7(axios@1.7.3)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))
+        specifier: 9.1.8
+        version: 9.1.8(axios@1.7.3)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@22.0.12(typescript@5.5.4))
@@ -634,9 +634,9 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@kong/design-tokens@1.17.0':
-    resolution: {integrity: sha512-vH2NXEUy2vYgfX6gyIGlVVlHhGTcnk3eNaClSL2Dp5GM8Y5sZL5x8LXeg3EHTdANjCQEKpyNQ5MD+DiKMj7fAg==}
-    engines: {node: '>=18.20.4'}
+  '@kong/design-tokens@1.17.2':
+    resolution: {integrity: sha512-979FHvvqPkjdUmbUL7Q2+z04GiVLXqu+OgucD3krAczuTWGfbFG6mOzbO6QIZ7/YlFMbe/N7TH85yJ+YfA/uUg==}
+    engines: {node: '>=18.19.1', pnpm: '>=9.7.0'}
 
   '@kong/eslint-config-kong-ui@1.1.1':
     resolution: {integrity: sha512-L66Nqif4KcWlaSX9xb9WToMh9JbcxGrRb6tF1hz36GsZZaBsk6cHdVKVXUjPA7jgtkE1aUHpzQO1IM/UMLQCQg==}
@@ -650,8 +650,8 @@ packages:
     peerDependencies:
       vue: '>= 3.3.4 < 4'
 
-  '@kong/kongponents@9.1.7':
-    resolution: {integrity: sha512-zzgIaS4PIoxKO4Vno+ytkdzo6CsBLM53IU5WOXe/yNEyppJfkMt9H+Kwp+MbIZcTE1HiAaTIFl51pLOc4O0oMA==}
+  '@kong/kongponents@9.1.8':
+    resolution: {integrity: sha512-8yPWN850YsREnlwrMwu8uP4oBwsVGR+nGYLoIvzUn/Swqp5mtTS0IlvXhonquZbCvaI4lAV+YavqD9FKUdye4Q==}
     engines: {node: '>=v16.20.2 || >=18.12.1 || >=20.14.0'}
     peerDependencies:
       axios: ^1.7.2
@@ -4420,7 +4420,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@kong/design-tokens@1.17.0': {}
+  '@kong/design-tokens@1.17.2': {}
 
   '@kong/eslint-config-kong-ui@1.1.1(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4)':
     dependencies:
@@ -4446,7 +4446,7 @@ snapshots:
     dependencies:
       vue: 3.4.37(typescript@5.5.4)
 
-  '@kong/kongponents@9.1.7(axios@1.7.3)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))':
+  '@kong/kongponents@9.1.8(axios@1.7.3)(vue-router@4.4.3(vue@3.4.37(typescript@5.5.4)))(vue@3.4.37(typescript@5.5.4))':
     dependencies:
       '@floating-ui/vue': 1.1.4(vue@3.4.37(typescript@5.5.4))
       '@kong/icons': 1.15.1(vue@3.4.37(typescript@5.5.4))
