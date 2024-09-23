@@ -56,7 +56,10 @@ const props = defineProps({
     required: false,
     default: 'span',
   },
-  /** A boolean to enable prefixing any internal SVGs with a unique string; useful when there are potentially multiple SVG instances on the same page and the SVG utilizes IDs and references internally (e.g. in the `<defs>` tag. Typically only set to false during snapshot testing. Defaults to `true`. */
+  /** A boolean to enable prefixing any internal SVG ids with a unique string; useful when there are potentially multiple SVG instances on the same page and the SVG utilizes ids and references internally (e.g. in the `<defs>` tag).
+   * Typically only set to false during snapshot testing.
+   * Defaults to `true`.
+   */
   randomizeIds: {
     type: Boolean,
     default: true,
@@ -99,13 +102,7 @@ const rootElementStyles = computed((): Record<string, string> => ({
 }))
 
 /**
- * Prefixes all IDs within the <defs> section of an SVG element and updates all references to these IDs. This is useful to avoid ID conflicts when embedding multiple SVGs in a document.
- *
- * The function performs the following steps:
- * 1. Finds all direct children of the <defs> element that have an `id` attribute and prefixes their IDs with a random string.
- * 2. Updates all references to these prefixed IDs in attributes like `url(#id)`, `href`, `xlink:href`, etc.
- *
- * The prefix is a random string generated using `Math.random().toString(36).substring(2, 12)` which should be sufficient for most use-cases.
+ * Prefix all ids within the SVG element and update all corresponding references to these ids. This is useful to avoid id conflicts when utilizing multiple instances of the same SVG in the DOM.
  *
  * @param {SVGElement} svgElement - The SVG element whose potential IDs need to be prefixed.
  */
@@ -120,7 +117,7 @@ const prefixSvgIds = (svgElement: SVGElement): void => {
   const idMap: Record<string, string> = {}
 
   if (defsElement) {
-    // Step 1: Prefix all direct children of <defs> that have an `id`
+    // Prefix all direct children of <defs> that have an `id`
     defsElement.querySelectorAll('[id]').forEach((element) => {
       const originalId = element.getAttribute('id')
       const newId = `${Math.random().toString(36).substring(2, 12)}-${originalId}`
@@ -128,15 +125,15 @@ const prefixSvgIds = (svgElement: SVGElement): void => {
       // Map old id to new id
       idMap[originalId!] = newId
 
-      // Update the element's ID with the new prefixed ID
+      // Update the element's id with the new prefixed id
       element.setAttribute('id', newId)
     })
   }
 
-  // Step 2: Update all references to these prefixed IDs in attributes like `url(#id)`, `href`, `xlink:href`
+  // Update all references to these prefixed ids in attributes like `url(#id)`, `href`, `xlink:href`
   const referencingAttributes = ['fill', 'stroke', 'filter', 'mask', 'clip-path', 'xlink:href', 'href']
 
-  // Function to update references to IDs in attributes
+  // Function to update references to ids in attributes
   const updateReferences = (element: Element): void => {
     referencingAttributes.forEach((attr) => {
       const attrValue = element.getAttribute(attr)
@@ -156,7 +153,7 @@ const prefixSvgIds = (svgElement: SVGElement): void => {
     })
   }
 
-  // Traverse all elements in the SVG to update ID references
+  // Traverse all elements in the SVG to update id references
   svgElement.querySelectorAll('*').forEach((element) => {
     updateReferences(element)
   })
