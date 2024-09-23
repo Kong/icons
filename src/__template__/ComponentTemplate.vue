@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 /** {%%ICON_COMPONENT_FILE_HEADER%%} */
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { KUI_ICON_SIZE_50 } from '@kong/design-tokens'
 
 const props = defineProps({
@@ -58,6 +58,8 @@ const props = defineProps({
   },
 })
 
+const svgElement = ref<SVGElement | null>(null)
+
 const iconSize = computed((): string => {
   // If props.size is a number, ensure it's greater than zero
   if (typeof props.size === 'number' && props.size > 0) {
@@ -90,6 +92,76 @@ const rootElementStyles = computed((): Record<string, string> => ({
   lineHeight: '0',
   width: iconSize.value,
 }))
+
+/**
+ * Prefixes all IDs within the <defs> section of an SVG element and updates all references to these IDs. This is useful to avoid ID conflicts when embedding multiple SVGs in a document.
+ *
+ * The function performs the following steps:
+ * 1. Finds all direct children of the <defs> element that have an `id` attribute and prefixes their IDs with a random string.
+ * 2. Updates all references to these prefixed IDs in attributes like `url(#id)`, `href`, `xlink:href`, etc.
+ *
+ * The prefix is a random string generated using `Math.random().toString(36).substring(2, 12)` which should be sufficient for most use-cases.
+ *
+ * @param {SVGElement} svgElement - The SVG element whose potential IDs need to be prefixed.
+ */
+const prefixSvgIds = (svgElement: SVGElement): void => {
+  if (!svgElement) {
+    return
+  }
+
+  const defsElement = svgElement.querySelector('defs')
+
+  // Prepare a map to store the original and new IDs for quick lookups
+  const idMap: Record<string, string> = {}
+
+  if (defsElement) {
+    // Step 1: Prefix all direct children of <defs> that have an `id`
+    defsElement.querySelectorAll('[id]').forEach((element) => {
+      const originalId = element.getAttribute('id')
+      const newId = `${Math.random().toString(36).substring(2, 12)}-${originalId}`
+
+      // Map old id to new id
+      idMap[originalId!] = newId
+
+      // Update the element's ID with the new prefixed ID
+      element.setAttribute('id', newId)
+    })
+  }
+
+  // Step 2: Update all references to these prefixed IDs in attributes like `url(#id)`, `href`, `xlink:href`
+  const referencingAttributes = ['fill', 'stroke', 'filter', 'mask', 'clip-path', 'xlink:href', 'href']
+
+  // Function to update references to IDs in attributes
+  const updateReferences = (element: Element): void => {
+    referencingAttributes.forEach((attr) => {
+      const attrValue = element.getAttribute(attr)
+      if (attrValue) {
+        // Match any url(#id) or href="#id" references
+        const updatedValue = attrValue.replace(/url\(#([^)]+)\)/g, (match, id) => {
+          return idMap[id] ? `url(#${idMap[id]})` : match
+        }).replace(/#([^\s]+)/g, (match, id) => {
+          return idMap[id] ? `#${idMap[id]}` : match
+        })
+
+        // If the value changed, update the attribute
+        if (updatedValue !== attrValue) {
+          element.setAttribute(attr, updatedValue)
+        }
+      }
+    })
+  }
+
+  // Traverse all elements in the SVG to update ID references
+  svgElement.querySelectorAll('*').forEach((element) => {
+    updateReferences(element)
+  })
+}
+
+onMounted(() => {
+  if (svgElement.value) {
+    prefixSvgIds(svgElement.value)
+  }
+})
 </script>
 
 <template>
@@ -101,6 +173,7 @@ const rootElementStyles = computed((): Record<string, string> => ({
     :style="rootElementStyles"
   >
     <svg
+      ref="svgElement"
       :aria-hidden="decorative ? 'true' : undefined"
       data-testid="kui-icon-svg-{%%KONG_COMPONENT_ICON_CLASS%%}"
       fill="none"
