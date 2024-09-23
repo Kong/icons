@@ -730,6 +730,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "InsomniaIcon.vue",
   "ItalicIcon.vue",
   "KeyboardReturnIcon.vue",
+  "KongGradientIcon.vue",
   "KongIcon.vue",
   "LanguageBashIcon.vue",
   "LanguageCIcon.vue",

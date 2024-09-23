@@ -56,6 +56,11 @@ const props = defineProps({
     required: false,
     default: 'span',
   },
+  /** A boolean to enable prefixing any internal SVGs with a unique string; useful when there are potentially multiple SVG instances on the same page and the SVG utilizes IDs and references internally (e.g. in the `<defs>` tag. Typically only set to false during snapshot testing. Defaults to `true`. */
+  randomizeIds: {
+    type: Boolean,
+    default: true,
+  },
 })
 
 const svgElement = ref<SVGElement | null>(null)
@@ -158,7 +163,7 @@ const prefixSvgIds = (svgElement: SVGElement): void => {
 }
 
 onMounted(() => {
-  if (svgElement.value) {
+  if (props.randomizeIds && svgElement.value) {
     prefixSvgIds(svgElement.value)
   }
 })

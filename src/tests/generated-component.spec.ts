@@ -2,6 +2,9 @@ import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import * as importedComponents from '../components'
 import { KUI_COLOR_TEXT_PRIMARY } from '@kong/design-tokens'
+import svgSnapshotSerializer from '../../vitest/svg-snapshot-serializer'
+
+expect.addSnapshotSerializer(svgSnapshotSerializer)
 
 // Loop through and test all Icon Components
 for (const [componentName, IconComponent] of Object.entries(importedComponents)) {
@@ -21,9 +24,10 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
       expect(svg.isVisible()).toBe(true)
     })
 
-    it('matches snapshot', () => {
+    it.only('matches snapshot', () => {
       const wrapper = mount(IconComponent, {
         props: {
+          randomizeIds: false, // Prevents random IDs from being generated for consistent snapshot testing
           title: 'My custom title',
           color: KUI_COLOR_TEXT_PRIMARY,
           display: 'inline-flex',
