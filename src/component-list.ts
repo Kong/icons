@@ -328,6 +328,7 @@ export default [
   'InsomniaIcon.vue',
   'ItalicIcon.vue',
   'KeyboardReturnIcon.vue',
+  'KongGradientIcon.vue',
   'KongIcon.vue',
   'LanguageBashIcon.vue',
   'LanguageCIcon.vue',

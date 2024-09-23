@@ -1,3 +1,10 @@
+## [1.15.2](https://github.com/Kong/icons/compare/v1.15.1...v1.15.2) (2024-09-23)
+
+
+### Bug Fixes
+
+* **multicolor:** add kong gradient icon ([#390](https://github.com/Kong/icons/issues/390)) ([3821d01](https://github.com/Kong/icons/commit/3821d018c5fbba2dc1c55b97c15be61d315315ad))
+
 ## [1.15.1](https://github.com/Kong/icons/compare/v1.15.0...v1.15.1) (2024-07-18)
 
 
