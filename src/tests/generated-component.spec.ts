@@ -2,14 +2,12 @@ import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import * as importedComponents from '../components'
 import { KUI_COLOR_TEXT_PRIMARY } from '@kong/design-tokens'
-import svgSnapshotSerializer from '../../vitest/svg-snapshot-serializer'
-
-expect.addSnapshotSerializer(svgSnapshotSerializer)
 
 // Loop through and test all Icon Components
 for (const [componentName, IconComponent] of Object.entries(importedComponents)) {
   describe(`${componentName}.vue`, () => {
     it('has proper default structure', () => {
+      // @ts-ignore: dynamic component
       const wrapper = mount(IconComponent)
 
       expect(wrapper.exists()).toBe(true)
@@ -24,7 +22,8 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
       expect(svg.isVisible()).toBe(true)
     })
 
-    it.only('matches snapshot', () => {
+    it('matches snapshot', () => {
+      // @ts-ignore: dynamic component interface
       const wrapper = mount(IconComponent, {
         props: {
           randomizeIds: false, // Prevents random IDs from being generated for consistent snapshot testing
