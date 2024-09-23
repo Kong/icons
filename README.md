@@ -142,7 +142,7 @@ To add a new SVG:
 2. Ensure the filename is lowercase and kebab-case
 3. Place the SVG file into the corresponding `/svg/*` subdirectory.
 4. Locally, run `pnpm generate` to create the corresponding Vue component
-5. Locally, run `pnpm test -u` to run the tests and update the test snapshots
+5. Locally, run `pnpm test -- -u` to run the tests and update the test snapshots
 6. [Commit your changes](#committing-changes) and push up a Pull Request for review
 
 ### Development Sandbox
