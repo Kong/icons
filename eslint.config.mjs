@@ -6,7 +6,7 @@ export default [
   {
     files: ['src/__template__/ComponentTemplate.vue'],
     rules: {
-      'vue/no-v-html': 'off', // Set the rule level for 'vue/no-v-html'
+      'vue/no-v-html': 'off',
     },
   },
 ]
