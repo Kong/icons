@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 /** {%%ICON_COMPONENT_FILE_HEADER%%} */
-import { computed, ref, onMounted } from 'vue'
+import { computed, ref } from 'vue'
 import { KUI_ICON_SIZE_50 } from '@kong/design-tokens'
 
 const props = defineProps({
