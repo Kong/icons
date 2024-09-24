@@ -56,7 +56,8 @@ const props = defineProps({
     required: false,
     default: 'span',
   },
-  /** A boolean to enable prefixing any internal SVG ids with a unique string; useful when there are potentially multiple SVG instances on the same page and the SVG utilizes ids and references internally (e.g. in the `<defs>` tag).
+  /** 
+   * A boolean to enable prefixing any internal SVG ids with a unique string; useful when there are potentially multiple SVG instances on the same page and the SVG utilizes ids and references internally (e.g. in the `<defs>` tag).
    * Typically only set to false during snapshot testing.
    * Defaults to `true`.
    */
