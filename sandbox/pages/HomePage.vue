@@ -4,7 +4,7 @@
     <div class="sandbox-container">
       <div v-if="filteredComponents.length">
         <!-- Solid Icons -->
-        <div
+        <!-- <div
           v-if="filteredComponents.filter((icon) => icon.type === 'solid').length"
           class="icon-container"
         >
@@ -16,7 +16,7 @@
               :icon="icon.component"
             />
           </div>
-        </div>
+        </div> -->
         <!-- Multi-Color Icons -->
         <div
           v-if="filteredComponents.filter((icon) => icon.type === 'multi-color').length"
@@ -25,14 +25,19 @@
           <h2>Multi-Color Icons</h2>
           <div class="icon-grid">
             <SandboxIcon
-              v-for="(icon, idx) in filteredComponents.filter((icon) => icon.type === 'multi-color')"
+              v-for="(icon, idx) in filteredComponents.filter((icon) => icon.type === 'multi-color' && icon.name.includes('Gradient'))"
+              :key="`icon-${idx}`"
+              :icon="icon.component"
+            />
+            <SandboxIcon
+              v-for="(icon, idx) in filteredComponents.filter((icon) => icon.type === 'multi-color' && icon.name.includes('Gradient'))"
               :key="`icon-${idx}`"
               :icon="icon.component"
             />
           </div>
         </div>
         <!-- Flag Icons -->
-        <div
+        <!-- <div
           v-if="filteredComponents.filter((icon) => icon.type === 'flags').length"
           class="icon-container"
         >
@@ -45,7 +50,7 @@
               :title="icon.title"
             />
           </div>
-        </div>
+        </div> -->
       </div>
       <p v-else>
         No icons match your query. Try searching again.

@@ -56,18 +56,7 @@ const props = defineProps({
     required: false,
     default: 'span',
   },
-  /**
-   * A boolean to enable prefixing any internal SVG ids with a unique string; useful when there are potentially multiple SVG instances on the same page and the SVG utilizes ids and references internally (e.g. in the `<defs>` tag).
-   * Typically only set to false during snapshot testing.
-   * Defaults to `true`.
-   */
-  randomizeIds: {
-    type: Boolean,
-    default: true,
-  },
 })
-
-const svgElement = ref<SVGElement | null>(null)
 
 const iconSize = computed((): string => {
   // If props.size is a number, ensure it's greater than zero
@@ -103,68 +92,40 @@ const rootElementStyles = computed((): Record<string, string> => ({
 }))
 
 /**
- * Prefix all ids within the SVG element and update all corresponding references to these ids. This is useful to avoid id conflicts when utilizing multiple instances of the same SVG in the DOM.
+ * Prefix all SVG IDs in the given SVG string with a random prefix to ensure uniqueness.
  *
- * @param {SVGElement} svgElement - The SVG element whose potential IDs need to be prefixed.
+ * This function performs the following steps:
+ * 1. Generates a random prefix.
+ * 2. Replaces all `id` attributes in the SVG string with the new prefixed IDs.
+ * 3. Updates all ID references (e.g., `url(#id)`, `href="#id"`, etc.) to use the new prefixed IDs.
+ *
+ * @param {string} svgString - The SVG string in which to prefix IDs.
+ * @returns {string} - The SVG string with prefixed IDs.
  */
-const prefixSvgIds = (svgElement: SVGElement): void => {
-  if (!svgElement) {
-    return
-  }
-
-  const defsElement = svgElement.querySelector('defs')
-
-  // Prepare a map to store the original and new IDs for quick lookups
+const prefixSvgIdsInString = (svgString: string): string => {
   const idMap: Record<string, string> = {}
+  const randomPrefix = Math.random().toString(36).substring(2, 12)
 
-  if (defsElement) {
-    // Prefix all direct children of <defs> that have an `id`
-    defsElement.querySelectorAll('[id]').forEach((element) => {
-      const originalId = element.getAttribute('id')
-      const newId = `${Math.random().toString(36).substring(2, 12)}-${originalId}`
-
-      // Map old id to new id
-      idMap[originalId!] = newId
-
-      // Update the element's id with the new prefixed id
-      element.setAttribute('id', newId)
-    })
-  }
-
-  // Update all references to these prefixed ids in attributes like `url(#id)`, `href`, `xlink:href`
-  const referencingAttributes = ['fill', 'stroke', 'filter', 'mask', 'clip-path', 'xlink:href', 'href']
-
-  // Function to update references to ids in attributes
-  const updateReferences = (element: Element): void => {
-    referencingAttributes.forEach((attr) => {
-      const attrValue = element.getAttribute(attr)
-      if (attrValue) {
-        // Match any url(#id) or href="#id" references
-        const updatedValue = attrValue.replace(/url\(#([^)]+)\)/g, (match, id) => {
-          return idMap[id] ? `url(#${idMap[id]})` : match
-        }).replace(/#([^\s]+)/g, (match, id) => {
-          return idMap[id] ? `#${idMap[id]}` : match
-        })
-
-        // If the value changed, update the attribute
-        if (updatedValue !== attrValue) {
-          element.setAttribute(attr, updatedValue)
-        }
-      }
-    })
-  }
-
-  // Traverse all elements in the SVG to update id references
-  svgElement.querySelectorAll('*').forEach((element) => {
-    updateReferences(element)
+  // Replace IDs in the SVG string
+  const updatedSvgString = svgString.replace(/id="([^"]+)"/g, (match, originalId) => {
+    const newId = `${randomPrefix}-${originalId}`
+    idMap[originalId] = newId
+    return `id="${newId}"`
   })
+
+  // Replace ID references (e.g., url(#id), href="#id", etc.)
+  const processedSvgString = updatedSvgString
+    .replace(/url\(#([^)]+)\)/g, (match, originalId) => idMap[originalId] ? `url(#${idMap[originalId]})` : match)
+    .replace(/#([^\s]+)/g, (match, originalId) => idMap[originalId] ? `#${idMap[originalId]}` : match)
+
+  // Return the processed SVG string
+  return processedSvgString
 }
 
-onMounted(() => {
-  if (props.randomizeIds && svgElement.value) {
-    prefixSvgIds(svgElement.value)
-  }
-})
+// Initially set `svgOriginalContent` to a template string. We will then do a dynamic replacement of any ids in the SVG string.
+// eslint-disable-next-line @stylistic/quotes
+const svgOriginalContent = ref<string>(`{%%ICON_SVG_INNER_HTML%%}`)
+const svgProcessedContent = computed((): string => prefixSvgIdsInString(svgOriginalContent.value))
 </script>
 
 <template>
@@ -176,7 +137,6 @@ onMounted(() => {
     :style="rootElementStyles"
   >
     <svg
-      ref="svgElement"
       :aria-hidden="decorative ? 'true' : undefined"
       data-testid="kui-icon-svg-{%%KONG_COMPONENT_ICON_CLASS%%}"
       fill="none"
@@ -192,14 +152,16 @@ onMounted(() => {
       >
         {{ title }}
       </title>
-      {%%ICON_SVG_INNER_HTML%%}
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <g v-html="svgProcessedContent" />
     </svg>
   </component>
 </template>
 
 <style lang="scss" scoped>
 /**
- * We are adding styles inline to avoid additional stylesheet imports in the host application/component.
- * Do not add styles into this component file.
+ * !Important: Do not add styles into this component file.
+ *
+ * We are adding styles inline to avoid additional stylesheet imports in the consuming application/component.
  */
 </style>
