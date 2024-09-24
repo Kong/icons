@@ -26,7 +26,7 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
       // @ts-ignore: dynamic component interface
       const wrapper = mount(IconComponent, {
         props: {
-          randomizeIds: false, // Prevents random IDs from being generated for consistent snapshot testing
+          staticIds: true, // Prevents random IDs from being generated for consistent snapshot testing
           title: 'My custom title',
           color: KUI_COLOR_TEXT_PRIMARY,
           display: 'inline-flex',

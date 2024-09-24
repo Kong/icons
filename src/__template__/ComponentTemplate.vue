@@ -57,13 +57,13 @@ const props = defineProps({
     default: 'span',
   },
   /**
-   * A boolean to enable prefixing any internal SVG ids with a unique string; useful when there are potentially multiple SVG instances on the same page and the SVG utilizes ids and references internally (e.g. in the `<defs>` tag).
-   * Typically only set to false during snapshot testing.
-   * Defaults to `true`.
+   * A boolean to disable prefixing any internal SVG ids with a unique string which is done to resolve the potential for multiple SVG instances on the same page and the SVG utilizing the same ids and references internally (e.g. in the `<defs>` tag).
+   * Typically only set to `true` during snapshot testing.
+   * Defaults to `false`.
    */
-  randomizeIds: {
+  staticIds: {
     type: Boolean,
-    default: true,
+    default: false,
   },
 })
 
@@ -133,7 +133,7 @@ const prefixSvgIdsInString = (svgString: string): string => {
 // eslint-disable-next-line @stylistic/quotes
 const svgOriginalContent = `{%%ICON_SVG_INNER_HTML%%}`
 const svgTitleContent = props.title ? `<title data-testid="kui-icon-svg-title">${props.title}</title>` : ''
-const svgProcessedContent = `${svgTitleContent}${props.randomizeIds ? prefixSvgIdsInString(svgOriginalContent) : svgOriginalContent}`
+const svgProcessedContent = `${svgTitleContent}${!props.staticIds ? prefixSvgIdsInString(svgOriginalContent) : svgOriginalContent}`
 </script>
 
 <template>
