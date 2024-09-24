@@ -22,7 +22,7 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
       expect(svg.isVisible()).toBe(true)
     })
 
-    it('matches snapshot', () => {
+    it('matches snapshot', async () => {
       // @ts-ignore: dynamic component interface
       const wrapper = mount(IconComponent, {
         props: {
@@ -36,7 +36,7 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
         },
       })
 
-      expect(wrapper.html()).toMatchFileSnapshot(`./__snapshots__/${componentName}.html`)
+      await expect(wrapper.html()).toMatchFileSnapshot(`./__snapshots__/${componentName}.html`)
     })
 
     describe('wrapper element', () => {

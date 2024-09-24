@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 /** {%%ICON_COMPONENT_FILE_HEADER%%} */
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { KUI_ICON_SIZE_50 } from '@kong/design-tokens'
 
 const props = defineProps({
@@ -144,7 +144,6 @@ const svgProcessedContent = `${svgTitleContent}${props.randomizeIds ? prefixSvgI
     data-testid="kui-icon-wrapper-{%%KONG_COMPONENT_ICON_CLASS%%}"
     :style="rootElementStyles"
   >
-    <!-- eslint-disable vue/no-v-html -->
     <svg
       :aria-hidden="decorative ? 'true' : undefined"
       data-testid="kui-icon-svg-{%%KONG_COMPONENT_ICON_CLASS%%}"
@@ -156,7 +155,6 @@ const svgProcessedContent = `${svgTitleContent}${props.randomizeIds ? prefixSvgI
       xmlns="http://www.w3.org/2000/svg"
       v-html="svgProcessedContent"
     />
-  <!-- eslint-enable vue/no-v-html -->
   </component>
 </template>
 
