@@ -129,16 +129,11 @@ const prefixSvgIdsInString = (svgString: string): string => {
   return processedSvgString
 }
 
-// Initially set `svgOriginalContent` to a template string. We will then do a dynamic replacement of any ids in the SVG string.
+// The `svgOriginalContent` template string will be replaced with the SVG innerHTML in the generate script.
 // eslint-disable-next-line @stylistic/quotes
-const svgOriginalContent = ref<string>(`{%%ICON_SVG_INNER_HTML%%}`)
-const svgProcessedContent = computed((): string => {
-  if (props.randomizeIds) {
-    return prefixSvgIdsInString(svgOriginalContent.value)
-  }
-
-  return svgOriginalContent.value
-})
+const svgOriginalContent = `{%%ICON_SVG_INNER_HTML%%}`
+const svgTitleContent = props.title ? `<title data-testid="kui-icon-svg-title">${props.title}</title>` : ''
+const svgProcessedContent = `${svgTitleContent}${props.randomizeIds ? prefixSvgIdsInString(svgOriginalContent) : svgOriginalContent}`
 </script>
 
 <template>
@@ -149,6 +144,7 @@ const svgProcessedContent = computed((): string => {
     data-testid="kui-icon-wrapper-{%%KONG_COMPONENT_ICON_CLASS%%}"
     :style="rootElementStyles"
   >
+    <!-- eslint-disable vue/no-v-html -->
     <svg
       :aria-hidden="decorative ? 'true' : undefined"
       data-testid="kui-icon-svg-{%%KONG_COMPONENT_ICON_CLASS%%}"
@@ -158,16 +154,9 @@ const svgProcessedContent = computed((): string => {
       viewBox="0 0 24 24"
       width="100%"
       xmlns="http://www.w3.org/2000/svg"
-    >
-      <title
-        v-if="title"
-        data-testid="kui-icon-svg-title"
-      >
-        {{ title }}
-      </title>
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <g v-html="svgProcessedContent" />
-    </svg>
+      v-html="svgProcessedContent"
+    />
+  <!-- eslint-enable vue/no-v-html -->
   </component>
 </template>
 
