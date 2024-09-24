@@ -56,6 +56,15 @@ const props = defineProps({
     required: false,
     default: 'span',
   },
+  /**
+   * A boolean to enable prefixing any internal SVG ids with a unique string; useful when there are potentially multiple SVG instances on the same page and the SVG utilizes ids and references internally (e.g. in the `<defs>` tag).
+   * Typically only set to false during snapshot testing.
+   * Defaults to `true`.
+   */
+  randomizeIds: {
+    type: Boolean,
+    default: true,
+  },
 })
 
 const iconSize = computed((): string => {
@@ -125,7 +134,13 @@ const prefixSvgIdsInString = (svgString: string): string => {
 // Initially set `svgOriginalContent` to a template string. We will then do a dynamic replacement of any ids in the SVG string.
 // eslint-disable-next-line @stylistic/quotes
 const svgOriginalContent = ref<string>(`{%%ICON_SVG_INNER_HTML%%}`)
-const svgProcessedContent = computed((): string => prefixSvgIdsInString(svgOriginalContent.value))
+const svgProcessedContent = computed((): string => {
+  if (props.randomizeIds) {
+    return prefixSvgIdsInString(svgOriginalContent.value)
+  }
+
+  return svgOriginalContent.value
+})
 </script>
 
 <template>
