@@ -123,9 +123,7 @@ const prefixSvgIdsInString = (svgString: string): string => {
   })
 
   // Replace ID references (e.g., url(#id), href="#id", etc.)
-  const processedSvgString = updatedSvgString
-    .replace(/url\(#([^)]+)\)/g, (match, originalId) => idMap[originalId] ? `url(#${idMap[originalId]})` : match)
-    .replace(/#([^\s]+)/g, (match, originalId) => idMap[originalId] ? `#${idMap[originalId]}` : match)
+  const processedSvgString = updatedSvgString.replace(/#([^\s^")]+)/g, (match, originalId) => idMap[originalId] ? `#${idMap[originalId]}` : match)
 
   // Return the processed SVG string
   return processedSvgString
