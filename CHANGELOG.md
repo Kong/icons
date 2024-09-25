@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/Kong/icons/compare/v1.15.2...v1.16.0) (2024-09-25)
+
+
+### Features
+
+* **ids:** prefix all ids and references with a unique string [KHCP-13216] ([#391](https://github.com/Kong/icons/issues/391)) ([9ca7461](https://github.com/Kong/icons/commit/9ca74613308707ba9621d497d51da7aa217e09a0))
+
 ## [1.15.2](https://github.com/Kong/icons/compare/v1.15.1...v1.15.2) (2024-09-23)
 
 
