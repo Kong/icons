@@ -129,10 +129,19 @@ const prefixSvgIdsInString = (svgString: string): string => {
   return processedSvgString
 }
 
+const escapeHtml = (str: string): string => {
+  return str
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+    .replace(/`/g, '&#039;')
+}
+
 // The `svgOriginalContent` template string will be replaced with the SVG innerHTML in the generate script.
 // eslint-disable-next-line @stylistic/quotes
 const svgOriginalContent = `{%%ICON_SVG_INNER_HTML%%}`
-const svgTitleContent = props.title ? `<title data-testid="kui-icon-svg-title">${props.title}</title>` : ''
+const svgTitleContent = props.title ? `<title data-testid="kui-icon-svg-title">${escapeHtml(props.title)}</title>` : ''
 const svgProcessedContent = `${svgTitleContent}${!props.staticIds ? prefixSvgIdsInString(svgOriginalContent) : svgOriginalContent}`
 </script>
 
