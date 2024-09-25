@@ -158,7 +158,7 @@ const svgProcessedContent = `${svgTitleContent}${!props.staticIds ? prefixSvgIds
   </component>
 </template>
 
-<style lang="scss" scoped>
+<style>
 /**
  * !Important: Do not add styles into this component file.
  *
