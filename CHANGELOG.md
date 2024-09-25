@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/Kong/icons/compare/v1.16.0...v1.17.0) (2024-09-25)
+
+
+### Features
+
+* **svg:** add visibility-off icon ([#394](https://github.com/Kong/icons/issues/394)) ([6ebc16e](https://github.com/Kong/icons/commit/6ebc16eff8e27d58f167005afacab34e051aded2))
+
 # [1.16.0](https://github.com/Kong/icons/compare/v1.15.2...v1.16.0) (2024-09-25)
 
 

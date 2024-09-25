@@ -407,6 +407,7 @@ export default [
   'UnfoldMoreIcon.vue',
   'UploadIcon.vue',
   'VisibilityIcon.vue',
+  'VisibilityOffIcon.vue',
   'VitalsIcon.vue',
   'WarningIcon.vue',
   'WarningOutlineIcon.vue',
