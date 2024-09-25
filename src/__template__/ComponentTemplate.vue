@@ -129,13 +129,16 @@ const prefixSvgIdsInString = (svgString: string): string => {
   return processedSvgString
 }
 
-const escapeHtml = (str: string): string => {
-  return str
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;')
-    .replace(/`/g, '&#039;')
+const escapeHtml = (str: string) => {
+  const htmlEntities: { [key: string]: string } = {
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+    '`': '&#039;',
+  }
+
+  return str.replace(/[<>"'`]/g, (match) => htmlEntities[match])
 }
 
 // The `svgOriginalContent` template string will be replaced with the SVG innerHTML in the generate script.
