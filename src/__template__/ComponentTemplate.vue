@@ -56,6 +56,15 @@ const props = defineProps({
     required: false,
     default: 'span',
   },
+  /**
+   * A boolean to disable prefixing any internal SVG ids with a unique string which is done to resolve the potential for multiple SVG instances on the same page and the SVG utilizing the same ids and references internally (e.g. in the `<defs>` tag).
+   * Typically only set to `true` during snapshot testing.
+   * Defaults to `false`.
+   */
+  staticIds: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const iconSize = computed((): string => {
@@ -90,6 +99,53 @@ const rootElementStyles = computed((): Record<string, string> => ({
   lineHeight: '0',
   width: iconSize.value,
 }))
+
+/**
+ * Prefix all SVG IDs in the given SVG string with a random prefix to ensure uniqueness.
+ *
+ * This function performs the following steps:
+ * 1. Generates a random prefix.
+ * 2. Replaces all `id` attributes in the SVG string with the new prefixed IDs.
+ * 3. Updates all ID references (e.g., `url(#id)`, `href="#id"`, etc.) to use the new prefixed IDs.
+ *
+ * @param {string} svgString - The SVG string in which to prefix IDs.
+ * @returns {string} - The SVG string with prefixed IDs.
+ */
+const prefixSvgIdsInString = (svgString: string): string => {
+  const idMap: Record<string, string> = {}
+  const randomPrefix = Math.random().toString(36).substring(2, 12)
+
+  // Replace IDs in the SVG string
+  const updatedSvgString = svgString.replace(/id="([^"]+)"/g, (match, originalId) => {
+    const newId = `${randomPrefix}-${originalId}`
+    idMap[originalId] = newId
+    return `id="${newId}"`
+  })
+
+  // Replace ID references (e.g., url(#id), href="#id", etc.)
+  const processedSvgString = updatedSvgString.replace(/#([^\s^")]+)/g, (match, originalId) => idMap[originalId] ? `#${idMap[originalId]}` : match)
+
+  // Return the processed SVG string
+  return processedSvgString
+}
+
+const escapeHtml = (str: string) => {
+  const htmlEntities: { [key: string]: string } = {
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+    '`': '&#039;',
+  }
+
+  return str.replace(/[<>"'`]/g, (match) => htmlEntities[match])
+}
+
+// The `svgOriginalContent` template string will be replaced with the SVG innerHTML in the generate script.
+// eslint-disable-next-line @stylistic/quotes
+const svgOriginalContent = `{%%ICON_SVG_INNER_HTML%%}`
+const svgTitleContent = props.title ? `<title data-testid="kui-icon-svg-title">${escapeHtml(props.title)}</title>` : ''
+const svgProcessedContent = `${svgTitleContent}${!props.staticIds ? prefixSvgIdsInString(svgOriginalContent) : svgOriginalContent}`
 </script>
 
 <template>
@@ -109,21 +165,15 @@ const rootElementStyles = computed((): Record<string, string> => ({
       viewBox="0 0 24 24"
       width="100%"
       xmlns="http://www.w3.org/2000/svg"
-    >
-      <title
-        v-if="title"
-        data-testid="kui-icon-svg-title"
-      >
-        {{ title }}
-      </title>
-      {%%ICON_SVG_INNER_HTML%%}
-    </svg>
+      v-html="svgProcessedContent"
+    />
   </component>
 </template>
 
-<style lang="scss" scoped>
+<style>
 /**
- * We are adding styles inline to avoid additional stylesheet imports in the host application/component.
- * Do not add styles into this component file.
+ * !Important: Do not add styles into this component file.
+ *
+ * We are adding styles inline to avoid additional stylesheet imports in the consuming application/component.
  */
 </style>
