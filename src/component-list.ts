@@ -411,6 +411,7 @@ export default [
   'VitalsIcon.vue',
   'WarningIcon.vue',
   'WarningOutlineIcon.vue',
+  'WavingHandIcon.vue',
   'WidgetsIcon.vue',
   'WindowsIcon.vue',
   'WorkspacesIcon.vue',

@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/Kong/icons/compare/v1.17.0...v1.18.0) (2024-09-26)
+
+
+### Features
+
+* **svg:** add waving-hand ([#395](https://github.com/Kong/icons/issues/395)) ([5906e22](https://github.com/Kong/icons/commit/5906e22f0bc7e2fc87e270b9e8b2b89cfc4a5241))
+
 # [1.17.0](https://github.com/Kong/icons/compare/v1.16.0...v1.17.0) (2024-09-25)
 
 
