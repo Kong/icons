@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/Kong/icons/compare/v1.18.0...v1.18.1) (2024-09-30)
+
+
+### Bug Fixes
+
+* icon snapshot ([4681c1f](https://github.com/Kong/icons/commit/4681c1f0813d3c40c8d7275bd44c8ca4f6a6dba9))
+
 # [1.18.0](https://github.com/Kong/icons/compare/v1.17.0...v1.18.0) (2024-09-26)
 
 
