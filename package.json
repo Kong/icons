@@ -144,13 +144,13 @@
       "@semantic-release/github"
     ]
   },
-  "packageManager": "pnpm@9.11.0",
+  "packageManager": "pnpm@9.12.0",
   "engines": {
     "node": ">=18.17.0",
-    "pnpm": ">=9.11.0"
+    "pnpm": ">=9.12.0"
   },
   "volta": {
-    "node": "20.17.0"
+    "node": "20.18.0"
   },
   "config": {
     "commitizen": {
