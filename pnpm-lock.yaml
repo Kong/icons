@@ -99,7 +99,7 @@ importers:
         specifier: ^5.12.0
         version: 5.12.0(rollup@4.20.0)
       sass:
-        specifier: ^1.79.6
+        specifier: ^1.80.1
         version: 1.80.3
       semantic-release:
         specifier: ^22.0.12
