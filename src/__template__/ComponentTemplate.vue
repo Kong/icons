@@ -98,6 +98,7 @@ const rootElementStyles = computed((): Record<string, string> => ({
   height: iconSize.value,
   lineHeight: '0',
   width: iconSize.value,
+  pointerEvents: props.decorative ? 'none' : 'all',
 }))
 
 /**
