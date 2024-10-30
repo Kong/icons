@@ -81,7 +81,7 @@ Set the CSS `display` property for the icon wrapper element.
 - required: `false`
 - default: `false`
 
-Whether the SVG is meaningful to the page, or just complimentary. Utilized to expose or hide the SVG from screen readers.
+Whether the SVG is meaningful to the page, or just complimentary. Utilized to expose or hide the SVG from screen readers and enable or disable pointer events.
 
 #### `size`
 

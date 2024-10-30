@@ -90,7 +90,7 @@ const iconSize = computed((): string => {
  * We are adding styles inline to avoid additional stylesheet imports in the host application/component.
  * All of the properties should be mapped to component props for customization.
  */
-const rootElementStyles = computed((): Record<string, string> => ({
+const rootElementStyles = computed((): Record<string, string | undefined> => ({
   boxSizing: 'border-box',
   color: props.color,
   display: props.display,
@@ -98,6 +98,7 @@ const rootElementStyles = computed((): Record<string, string> => ({
   height: iconSize.value,
   lineHeight: '0',
   width: iconSize.value,
+  pointerEvents: props.decorative ? 'none' : undefined,
 }))
 
 /**
@@ -155,6 +156,7 @@ const svgProcessedContent = `${svgTitleContent}${!props.staticIds ? prefixSvgIds
     class="kui-icon {%%KONG_COMPONENT_ICON_CLASS%%}"
     data-testid="kui-icon-wrapper-{%%KONG_COMPONENT_ICON_CLASS%%}"
     :style="rootElementStyles"
+    :tabindex="decorative ? '-1' : undefined"
   >
     <svg
       :aria-hidden="decorative ? 'true' : undefined"
