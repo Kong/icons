@@ -156,6 +156,7 @@ const svgProcessedContent = `${svgTitleContent}${!props.staticIds ? prefixSvgIds
     class="kui-icon {%%KONG_COMPONENT_ICON_CLASS%%}"
     data-testid="kui-icon-wrapper-{%%KONG_COMPONENT_ICON_CLASS%%}"
     :style="rootElementStyles"
+    :tabindex="decorative ? '-1' : undefined"
   >
     <svg
       :aria-hidden="decorative ? 'true' : undefined"
