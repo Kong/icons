@@ -1,3 +1,10 @@
+## [1.18.2](https://github.com/Kong/icons/compare/v1.18.1...v1.18.2) (2024-10-30)
+
+
+### Bug Fixes
+
+* **template:** add pointer events rule ([#429](https://github.com/Kong/icons/issues/429)) ([24772ee](https://github.com/Kong/icons/commit/24772ee8ea25a0affffcf0c8c5c71146989322d0))
+
 ## [1.18.1](https://github.com/Kong/icons/compare/v1.18.0...v1.18.1) (2024-09-30)
 
 
