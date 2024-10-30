@@ -98,7 +98,7 @@ const rootElementStyles = computed((): Record<string, string> => ({
   height: iconSize.value,
   lineHeight: '0',
   width: iconSize.value,
-  ...(props.decorative && { pointerEvents: 'none' }),
+  ...(props.decorative && { pointerEvents: 'none' }), // If the icon is decorative, disable pointer events
 }))
 
 /**
@@ -164,7 +164,6 @@ const svgProcessedContent = `${svgTitleContent}${!props.staticIds ? prefixSvgIds
       fill="none"
       height="100%"
       role="img"
-      :tabindex="decorative ? '-1' : undefined"
       viewBox="0 0 24 24"
       width="100%"
       xmlns="http://www.w3.org/2000/svg"
