@@ -309,6 +309,7 @@ export default [
   'FlagZwIcon.vue',
   'ForwardIcon.vue',
   'GatewayIcon.vue',
+  'GithubIcon.vue',
   'GoogleCloudIcon.vue',
   'GoogleIcon.vue',
   'GraduationIcon.vue',

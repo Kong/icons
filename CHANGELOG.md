@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/Kong/icons/compare/v1.18.2...v1.19.0) (2024-11-05)
+
+
+### Features
+
+* add github icon ([#435](https://github.com/Kong/icons/issues/435)) ([322354d](https://github.com/Kong/icons/commit/322354dc8621cacd0976a91dfe0e9ef9b47a7301))
+
 ## [1.18.2](https://github.com/Kong/icons/compare/v1.18.1...v1.18.2) (2024-10-30)
 
 
