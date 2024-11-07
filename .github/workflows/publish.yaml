@@ -59,7 +59,7 @@ jobs:
         # against for future runs. Since the snapshot files are modified here in the CI, they are written back
         # to the repository via the `/package.json` file `@semantic-release/git` => `assets` config
         - name: Update test snapshots
-          run: pnpm test -u
+          run: pnpm test -- --update
 
         - name: Semantic Release
           uses: cycjimmy/semantic-release-action@v4
