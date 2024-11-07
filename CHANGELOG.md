@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/Kong/icons/compare/v1.19.0...v1.19.1) (2024-11-07)
+
+
+### Bug Fixes
+
+* update notification icon ([#437](https://github.com/Kong/icons/issues/437)) ([e7868a9](https://github.com/Kong/icons/commit/e7868a9d7a5b3523983d6d82840b6f1bcd48bb44))
+
 # [1.19.0](https://github.com/Kong/icons/compare/v1.18.2...v1.19.0) (2024-11-05)
 
 
