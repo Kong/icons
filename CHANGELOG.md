@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/Kong/icons/compare/v1.19.1...v1.20.0) (2024-11-18)
+
+
+### Features
+
+* **icons:** location-on and key icon ([#446](https://github.com/Kong/icons/issues/446)) ([56aae62](https://github.com/Kong/icons/commit/56aae62504124e734ea7ac0e9c8b1e51e9e6a25f))
+
 ## [1.19.1](https://github.com/Kong/icons/compare/v1.19.0...v1.19.1) (2024-11-07)
 
 
