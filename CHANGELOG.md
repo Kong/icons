@@ -1,3 +1,10 @@
+## [1.20.1](https://github.com/Kong/icons/compare/v1.20.0...v1.20.1) (2024-12-09)
+
+
+### Bug Fixes
+
+* fix escape map and share it across function calls ([#457](https://github.com/Kong/icons/issues/457)) ([b1cd030](https://github.com/Kong/icons/commit/b1cd0303a556b9bdb4fe729c6f7a972e7bc62138))
+
 # [1.20.0](https://github.com/Kong/icons/compare/v1.19.1...v1.20.0) (2024-11-18)
 
 
