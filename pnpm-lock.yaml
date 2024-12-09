@@ -30,8 +30,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(eslint@9.15.0(jiti@1.21.6))(typescript@5.6.3)
       '@kong/kongponents':
-        specifier: 9.14.17
-        version: 9.14.17(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
+        specifier: 9.14.20
+        version: 9.14.20(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@22.0.12(typescript@5.6.3))
@@ -695,8 +695,8 @@ packages:
     peerDependencies:
       vue: '>= 3.3.4 < 4'
 
-  '@kong/kongponents@9.14.17':
-    resolution: {integrity: sha512-CmGDGILeVLTWjyEorLE2ct4p2nRrdIEC66VIk4fMTz4QqBjAvi822Bp95HQuIm3WqDOTRiTSSOq2/tykzMQa2w==}
+  '@kong/kongponents@9.14.20':
+    resolution: {integrity: sha512-WH6sriUay88QilM4HeWDPA99W6v3PBybDyXXLBoGjkmzCjDYVywLoHSARm7oErXjz17OpslG0yDgf4hqHuD5gA==}
     engines: {node: '>=v16.20.2 || >=18.12.1 || >=20.14.0'}
     peerDependencies:
       axios: ^1.7.7
@@ -2919,11 +2919,6 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nanoid@5.0.7:
-    resolution: {integrity: sha512-oLxFY2gd2IqnjcYyOXD8XGCftpGtZP2AbHbOkthDkvRywH5ayNtPVy9YlOPcHckXzbLTCHpkb7FB+yuxKV13pQ==}
-    engines: {node: ^18 || >=20}
-    hasBin: true
-
   nanoid@5.0.9:
     resolution: {integrity: sha512-Aooyr6MXU6HpvvWXKoVoXwKMs/KyVakWwg7xQfv5/S/RIgJMy0Ifa45H9qqYy7pTCszrHzP21Uk4PZq2HpEM8Q==}
     engines: {node: ^18 || >=20}
@@ -4813,7 +4808,7 @@ snapshots:
     dependencies:
       vue: 3.5.13(typescript@5.6.3)
 
-  '@kong/kongponents@9.14.17(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))':
+  '@kong/kongponents@9.14.20(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))':
     dependencies:
       '@floating-ui/vue': 1.1.5(vue@3.5.13(typescript@5.6.3))
       '@kong/icons': 1.18.1(vue@3.5.13(typescript@5.6.3))
@@ -4823,7 +4818,7 @@ snapshots:
       date-fns-tz: 2.0.1(date-fns@2.30.0)
       focus-trap: 7.6.0
       focus-trap-vue: 4.0.3(focus-trap@7.6.0)(vue@3.5.13(typescript@5.6.3))
-      nanoid: 5.0.7
+      nanoid: 5.0.9
       sortablejs: 1.15.3
       swrv: 1.0.4(vue@3.5.13(typescript@5.6.3))
       v-calendar: 3.1.2(@popperjs/core@2.11.8)(vue@3.5.13(typescript@5.6.3))
@@ -7244,8 +7239,6 @@ snapshots:
   mylas@2.1.13: {}
 
   nanoid@3.3.7: {}
-
-  nanoid@5.0.7: {}
 
   nanoid@5.0.9: {}
 
