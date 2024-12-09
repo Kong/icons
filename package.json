@@ -58,7 +58,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^20.17.7",
+    "@types/node": "^22.9.3",
     "@vitejs/plugin-vue": "^5.2.0",
     "@vitest/ui": "^2.1.5",
     "@vue/test-utils": "^2.4.6",
@@ -150,7 +150,7 @@
     "pnpm": ">=9.14.2"
   },
   "volta": {
-    "node": "20.18.1"
+    "node": "22.11.0"
   },
   "config": {
     "commitizen": {
