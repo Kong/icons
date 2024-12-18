@@ -13,10 +13,11 @@
   "typings": "dist/types",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/kong-icons.es.js",
-      "require": "./dist/kong-icons.cjs",
-      "types": "./dist/types/index.d.ts"
+      "require": "./dist/kong-icons.cjs"
     },
+    "./dist/style.css": "./dist/kong-icons.css",
     "./package.json": "./package.json",
     "./dist/*": "./dist/*"
   },
@@ -86,7 +87,7 @@
     "stylelint-order": "^6.0.4",
     "tsc-alias": "^1.8.10",
     "typescript": "^5.6.3",
-    "vite": "^5.4.11",
+    "vite": "^6.0.2",
     "vite-plugin-vue-devtools": "^7.6.7",
     "vitest": "^2.1.8",
     "vue": "^3.5.13",
