@@ -13,10 +13,11 @@
   "typings": "dist/types",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/kong-icons.es.js",
-      "require": "./dist/kong-icons.cjs",
-      "types": "./dist/types/index.d.ts"
+      "require": "./dist/kong-icons.cjs"
     },
+    "./style.css": "./dist/kong-icons.css",
     "./package.json": "./package.json",
     "./dist/*": "./dist/*"
   },
