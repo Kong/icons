@@ -327,6 +327,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "FileEmptyIcon",
   "FilterIcon",
   "FlagIcon",
+  "FolderIcon",
   "ForwardIcon",
   "GatewayIcon",
   "GraduationIcon",
