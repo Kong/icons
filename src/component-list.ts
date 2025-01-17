@@ -307,6 +307,7 @@ export default [
   'FlagZaIcon.vue',
   'FlagZmIcon.vue',
   'FlagZwIcon.vue',
+  'FolderIcon.vue',
   'ForwardIcon.vue',
   'GatewayIcon.vue',
   'GithubIcon.vue',

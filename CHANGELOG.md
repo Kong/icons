@@ -1,3 +1,10 @@
+## [1.20.2](https://github.com/Kong/icons/compare/v1.20.1...v1.20.2) (2025-01-17)
+
+
+### Bug Fixes
+
+* add folder icon ([#493](https://github.com/Kong/icons/issues/493)) ([a05e55b](https://github.com/Kong/icons/commit/a05e55b90f3fdd427deefb6ff5c09c3c2b497a2e))
+
 ## [1.20.1](https://github.com/Kong/icons/compare/v1.20.0...v1.20.1) (2024-12-09)
 
 

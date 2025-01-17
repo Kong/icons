@@ -715,6 +715,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "FlagZaIcon.vue",
   "FlagZmIcon.vue",
   "FlagZwIcon.vue",
+  "FolderIcon.vue",
   "ForwardIcon.vue",
   "GatewayIcon.vue",
   "GithubIcon.vue",
