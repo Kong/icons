@@ -30,8 +30,8 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.6.3)
       '@kong/kongponents':
-        specifier: 9.14.30
-        version: 9.14.30(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
+        specifier: 9.17.2
+        version: 9.17.2(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@22.0.12(typescript@5.6.3))
@@ -908,6 +908,7 @@ packages:
 
   '@evilmartians/lefthook@1.8.5':
     resolution: {integrity: sha512-TuAL6W+bj2DqYxqm5JnFi3s7RnjpU/IUxxHFZWUHNytZ+HDQfkceogo+1DlSBFXFva2V21CSaDkeWJJHOmmECw==}
+    cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -985,8 +986,8 @@ packages:
     peerDependencies:
       vue: '>= 3.3.4 < 4'
 
-  '@kong/kongponents@9.14.30':
-    resolution: {integrity: sha512-4/NZtHN51uM6nUdIit1c+k+84OEuiM2IXoyy8lMjYbRHzHy7oBmlKhptSKi8p2w/ifK88GhA5VhasnwejuRYvg==}
+  '@kong/kongponents@9.17.2':
+    resolution: {integrity: sha512-MubCcJugGdf80K2MoZQkk10gfKBZIEUqggWrAJin+y41VH2cCLmizm5iPnsQMCZpw/dgfpirBqOr6zlMWSQVQw==}
     engines: {node: '>=v16.20.2 || >=18.12.1 || >=20.14.0'}
     peerDependencies:
       axios: ^1.7.7
@@ -4254,6 +4255,26 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
+  virtua@0.39.3:
+    resolution: {integrity: sha512-Ep3aiJXSGPm1UUniThr5mGDfG0upAleP7pqQs5mvvCgM1wPhII1ZKa7eNCWAJRLkC+InpXKokKozyaaj/aMYOQ==}
+    peerDependencies:
+      react: '>=16.14.0'
+      react-dom: '>=16.14.0'
+      solid-js: '>=1.0'
+      svelte: '>=5.0'
+      vue: '>=3.2'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      solid-js:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
+
   vite-hot-client@0.2.4:
     resolution: {integrity: sha512-a1nzURqO7DDmnXqabFOliz908FRmIppkBKsJthS8rbe8hBEXwEwe4C3Pp33Z1JoFCYfVL4kTOMLKk0ZZxREIeA==}
     peerDependencies:
@@ -5308,7 +5329,7 @@ snapshots:
     dependencies:
       vue: 3.5.13(typescript@5.6.3)
 
-  '@kong/kongponents@9.14.30(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))':
+  '@kong/kongponents@9.17.2(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))':
     dependencies:
       '@floating-ui/vue': 1.1.5(vue@3.5.13(typescript@5.6.3))
       '@kong/icons': 1.18.1(vue@3.5.13(typescript@5.6.3))
@@ -5318,15 +5339,21 @@ snapshots:
       date-fns-tz: 2.0.1(date-fns@2.30.0)
       focus-trap: 7.6.0
       focus-trap-vue: 4.0.3(focus-trap@7.6.0)(vue@3.5.13(typescript@5.6.3))
+      lodash-es: 4.17.21
       nanoid: 5.0.9
       sortablejs: 1.15.3
       swrv: 1.0.4(vue@3.5.13(typescript@5.6.3))
       v-calendar: 3.1.2(@popperjs/core@2.11.8)(vue@3.5.13(typescript@5.6.3))
+      virtua: 0.39.3(vue@3.5.13(typescript@5.6.3))
       vue: 3.5.13(typescript@5.6.3)
       vue-draggable-next: 2.2.1(sortablejs@1.15.3)(vue@3.5.13(typescript@5.6.3))
       vue-router: 4.4.5(vue@3.5.13(typescript@5.6.3))
     transitivePeerDependencies:
       - '@vue/composition-api'
+      - react
+      - react-dom
+      - solid-js
+      - svelte
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -8700,6 +8727,10 @@ snapshots:
     dependencies:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
+
+  virtua@0.39.3(vue@3.5.13(typescript@5.6.3)):
+    optionalDependencies:
+      vue: 3.5.13(typescript@5.6.3)
 
   vite-hot-client@0.2.4(vite@6.0.7(@types/node@22.10.5)(jiti@2.4.2)(sass@1.83.4)(tsx@4.19.2)):
     dependencies:
