@@ -16,6 +16,7 @@ Kong's open-source, Vue icon component library, partially sourced from [Google's
   - [Testing](#testing)
   - [Build for production](#build-for-production)
   - [Committing Changes](#committing-changes)
+  - [Approvals](#approvals)
   - [Package Publishing](#package-publishing)
 
 ## Usage
@@ -230,6 +231,14 @@ This will trigger the Commitizen interactive prompt for building your commit mes
 - A `pre-push` hook is used that runs `eslint` before allowing you to push your changes to the repository
 
 Additionally, CI will use `commitlint` to validate the commits associated with a PR in the `Lint and Validate` job.
+
+### Approvals
+
+- All pull requests require review and approval from authorized team members.
+- Automated approvals through workflows are strictly prohibited.
+  - There is an exception for automated pull request approvals originating from generated dependency updates that satisfy status checks and other requirements.
+- Protected branches require at least one approval from code owners.
+- All status checks must pass before a pull request may be merged.
 
 ### Package Publishing
 
