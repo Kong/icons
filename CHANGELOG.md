@@ -1,3 +1,10 @@
+## [1.20.3](https://github.com/Kong/icons/compare/v1.20.2...v1.20.3) (2025-01-28)
+
+
+### Bug Fixes
+
+* updated feedback icon ([#507](https://github.com/Kong/icons/issues/507)) ([7a8157b](https://github.com/Kong/icons/commit/7a8157ba3e1a492a5a4c25402881c1354f98c6e0))
+
 ## [1.20.2](https://github.com/Kong/icons/compare/v1.20.1...v1.20.2) (2025-01-17)
 
 
