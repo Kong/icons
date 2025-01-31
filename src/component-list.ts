@@ -62,6 +62,7 @@ export default [
   'DataReportIcon.vue',
   'DecreaseIcon.vue',
   'DeployIcon.vue',
+  'DesignIcon.vue',
   'DevPortalIcon.vue',
   'DisabledIcon.vue',
   'DockerIcon.vue',

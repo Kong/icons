@@ -1,3 +1,10 @@
+## [1.20.4](https://github.com/Kong/icons/compare/v1.20.3...v1.20.4) (2025-01-31)
+
+
+### Bug Fixes
+
+* add design icon ([#510](https://github.com/Kong/icons/issues/510)) ([584d2ca](https://github.com/Kong/icons/commit/584d2cabe3dbc8dda82606d9025ff93f79efe998))
+
 ## [1.20.3](https://github.com/Kong/icons/compare/v1.20.2...v1.20.3) (2025-01-28)
 
 
