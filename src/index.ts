@@ -1,2 +1,3 @@
 // Export all components
-export * from './component-list'
+// @ts-ignore - The `./components` directory is generated at build time.
+export * from './components'
