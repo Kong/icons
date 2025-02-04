@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/Kong/icons/compare/v1.21.0...v1.21.1) (2025-02-04)
+
+
+### Bug Fixes
+
+* **release:** revert export file ([b5fa160](https://github.com/Kong/icons/commit/b5fa1605049820dccabb76225c44e0775c898e41))
+
 # [1.21.0](https://github.com/Kong/icons/compare/v1.20.4...v1.21.0) (2025-02-04)
 
 
