@@ -39,14 +39,21 @@ export default async function generate() {
       process.exit(0)
     }
 
-    // Check if there are duplicate SVG filenames
+    // Check if there are duplicate SVG filenames in the "flags" and "multi-color" directories
     const uniqueFilenames = new Set<string>()
     for (const filepath of svgFiles) {
+      const parentDir = path.basename(path.dirname(filepath))
+      // Do not need to check for duplicates in the "flags" directory since they are prefixed with `Flag*`
+      if (parentDir === 'flags') {
+        continue
+      }
+
       const name = basename(filepath)
       if (!uniqueFilenames.has(name)) {
         uniqueFilenames.add(name)
       } else {
-        console.log(pc.red(`Duplicate SVG filename '${name}' found. All SVG source files must have a unique name.`))
+        console.log(pc.red(`Duplicate SVG filename '${name}' found.`))
+        console.log(pc.red('All SVG source files in the "svg/solid" and "svg/multi-color" directories must have a unique filename.'))
         console.log('')
         process.exit(1)
       }
