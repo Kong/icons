@@ -30,8 +30,8 @@ importers:
         specifier: ^1.2.4
         version: 1.2.4(eslint@9.18.0(jiti@2.4.2))(typescript@5.6.3)
       '@kong/kongponents':
-        specifier: 9.18.5
-        version: 9.18.5(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
+        specifier: 9.20.0
+        version: 9.20.0(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@22.0.12(typescript@5.6.3))
@@ -1017,8 +1017,8 @@ packages:
     peerDependencies:
       vue: '>= 3.3.4 < 4'
 
-  '@kong/kongponents@9.18.5':
-    resolution: {integrity: sha512-SNoaBeSXqgWlUa5dPMwshKtaRAuYtvcwUwkVgmeadUEHs8QHSeqmbqmzwtsONpGUchwsCtxr43XjEtH1tjfaFg==}
+  '@kong/kongponents@9.20.0':
+    resolution: {integrity: sha512-Df3gvcNJW0BdS6q8YxRPPbL36LdIewvhUJJBItqoTNQQWDrciVl8Oh4QG4mDca7BrxJ0C/fro5i9APMynjG1gA==}
     engines: {node: '>=v16.20.2 || >=18.12.1 || >=20.14.0'}
     peerDependencies:
       axios: ^1.7.9
@@ -4081,8 +4081,8 @@ packages:
   svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
 
-  swrv@1.0.4:
-    resolution: {integrity: sha512-zjEkcP8Ywmj+xOJW3lIT65ciY/4AL4e/Or7Gj0MzU3zBJNMdJiT8geVZhINavnlHRMMCcJLHhraLTAiDOTmQ9g==}
+  swrv@1.1.0:
+    resolution: {integrity: sha512-pjllRDr2s0iTwiE5Isvip51dZGR7GjLH1gCSVyE8bQnbAx6xackXsFdojau+1O5u98yHF5V73HQGOFxKUXO9gQ==}
     peerDependencies:
       vue: '>=3.2.26 < 4'
 
@@ -5402,7 +5402,7 @@ snapshots:
     dependencies:
       vue: 3.5.13(typescript@5.6.3)
 
-  '@kong/kongponents@9.18.5(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))':
+  '@kong/kongponents@9.20.0(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))':
     dependencies:
       '@floating-ui/vue': 1.1.6(vue@3.5.13(typescript@5.6.3))
       '@kong/icons': 1.20.4(vue@3.5.13(typescript@5.6.3))
@@ -5415,7 +5415,7 @@ snapshots:
       lodash-es: 4.17.21
       nanoid: 5.0.9
       sortablejs: 1.15.6
-      swrv: 1.0.4(vue@3.5.13(typescript@5.6.3))
+      swrv: 1.1.0(vue@3.5.13(typescript@5.6.3))
       v-calendar: 3.1.2(@popperjs/core@2.11.8)(vue@3.5.13(typescript@5.6.3))
       virtua: 0.39.3(vue@3.5.13(typescript@5.6.3))
       vue: 3.5.13(typescript@5.6.3)
@@ -8623,7 +8623,7 @@ snapshots:
 
   svg-tags@1.0.0: {}
 
-  swrv@1.0.4(vue@3.5.13(typescript@5.6.3)):
+  swrv@1.1.0(vue@3.5.13(typescript@5.6.3)):
     dependencies:
       vue: 3.5.13(typescript@5.6.3)
 
