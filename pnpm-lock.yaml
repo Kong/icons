@@ -30,8 +30,8 @@ importers:
         specifier: ^1.2.4
         version: 1.2.4(eslint@9.19.0(jiti@2.4.2))(typescript@5.6.3)
       '@kong/kongponents':
-        specifier: 9.20.0
-        version: 9.20.0(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
+        specifier: 9.20.1
+        version: 9.20.1(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@22.0.12(typescript@5.6.3))
@@ -805,6 +805,7 @@ packages:
 
   '@evilmartians/lefthook@1.8.5':
     resolution: {integrity: sha512-TuAL6W+bj2DqYxqm5JnFi3s7RnjpU/IUxxHFZWUHNytZ+HDQfkceogo+1DlSBFXFva2V21CSaDkeWJJHOmmECw==}
+    cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -876,14 +877,14 @@ packages:
     peerDependencies:
       eslint: '>= 9.17.0'
 
-  '@kong/icons@1.20.4':
-    resolution: {integrity: sha512-HeC+gSuh7zHaeYISVlmZ4O1zVijYxWGp0Pvz4itXPNichhUEploXRX85fxUETrw1oAzvZIHJjAaU7Oa2GN3idQ==}
+  '@kong/icons@1.21.1':
+    resolution: {integrity: sha512-WS0/ibjEQTDbZ+IBJzQOuqAMKPUsybvEgRXE7wrVU2Jss1oE1iiyZ6ZbpmqKZoKpsQIpZWQqxcoBprnH3ZY13w==}
     engines: {node: '>=18.17.0', pnpm: '>=9.14.4'}
     peerDependencies:
       vue: '>= 3.3.4 < 4'
 
-  '@kong/kongponents@9.20.0':
-    resolution: {integrity: sha512-Df3gvcNJW0BdS6q8YxRPPbL36LdIewvhUJJBItqoTNQQWDrciVl8Oh4QG4mDca7BrxJ0C/fro5i9APMynjG1gA==}
+  '@kong/kongponents@9.20.1':
+    resolution: {integrity: sha512-HE3/ezqPOsl/JdyE1R7qIUWTyj5b0Nqyni81OnmHKXmx/koZ5g2a6AuMeeBOJ5UJ5P72DLKYrZ8VUSOIoO/y+g==}
     engines: {node: '>=v16.20.2 || >=18.12.1 || >=20.14.0'}
     peerDependencies:
       axios: ^1.7.9
@@ -5103,14 +5104,14 @@ snapshots:
       - supports-color
       - typescript
 
-  '@kong/icons@1.20.4(vue@3.5.13(typescript@5.6.3))':
+  '@kong/icons@1.21.1(vue@3.5.13(typescript@5.6.3))':
     dependencies:
       vue: 3.5.13(typescript@5.6.3)
 
-  '@kong/kongponents@9.20.0(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))':
+  '@kong/kongponents@9.20.1(axios@1.7.3)(vue-router@4.4.5(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))':
     dependencies:
       '@floating-ui/vue': 1.1.6(vue@3.5.13(typescript@5.6.3))
-      '@kong/icons': 1.20.4(vue@3.5.13(typescript@5.6.3))
+      '@kong/icons': 1.21.1(vue@3.5.13(typescript@5.6.3))
       '@popperjs/core': 2.11.8
       axios: 1.7.3
       date-fns: 2.30.0
