@@ -228,6 +228,7 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
           })
 
           expect(consoleSpy).not.toHaveBeenCalledOnce()
+          consoleSpy.mockReset()
         })
 
         it('console.warns if the size prop cannot be coverted to a number', () => {
@@ -241,6 +242,7 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
           })
 
           expect(consoleSpy).toHaveBeenCalledOnce()
+          consoleSpy.mockReset()
         })
       })
 
