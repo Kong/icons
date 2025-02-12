@@ -48,8 +48,8 @@ importers:
         specifier: ^5.2.1
         version: 5.2.1(vite@6.0.11(@types/node@22.10.10)(jiti@2.4.2)(sass@1.83.4)(tsx@4.19.2))(vue@3.5.13(typescript@5.6.3))
       '@vitest/ui':
-        specifier: ^2.1.9
-        version: 2.1.9(vitest@3.0.5)
+        specifier: ^3.0.4
+        version: 3.0.5(vitest@3.0.5)
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
@@ -136,7 +136,7 @@ importers:
         version: 7.6.8(rollup@4.28.1)(vite@6.0.11(@types/node@22.10.10)(jiti@2.4.2)(sass@1.83.4)(tsx@4.19.2))(vue@3.5.13(typescript@5.6.3))
       vitest:
         specifier: ^3.0.5
-        version: 3.0.5(@types/node@22.10.10)(@vitest/ui@2.1.9)(jiti@2.4.2)(jsdom@26.0.0)(sass@1.83.4)(tsx@4.19.2)
+        version: 3.0.5(@types/node@22.10.10)(@vitest/ui@3.0.5)(jiti@2.4.2)(jsdom@26.0.0)(sass@1.83.4)(tsx@4.19.2)
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.6.3)
@@ -1346,9 +1346,6 @@ packages:
       vite:
         optional: true
 
-  '@vitest/pretty-format@2.1.9':
-    resolution: {integrity: sha512-KhRIdGV2U9HOUzxfiHmY8IFHTdqtOhIzCpd8WRdJiE7D/HUcZVD0EgQCVjm+Q9gkUXWgBvMmTtZgIG48wq7sOQ==}
-
   '@vitest/pretty-format@3.0.5':
     resolution: {integrity: sha512-CjUtdmpOcm4RVtB+up8r2vVDLR16Mgm/bYdkGFe3Yj/scRfCpbSi2W/BDSDcFK7ohw8UXvjMbOp9H4fByd/cOA==}
 
@@ -1361,13 +1358,10 @@ packages:
   '@vitest/spy@3.0.5':
     resolution: {integrity: sha512-5fOzHj0WbUNqPK6blI/8VzZdkBlQLnT25knX0r4dbZI9qoZDf3qAdjoMmDcLG5A83W6oUUFJgUd0EYBc2P5xqg==}
 
-  '@vitest/ui@2.1.9':
-    resolution: {integrity: sha512-izzd2zmnk8Nl5ECYkW27328RbQ1nKvkm6Bb5DAaz1Gk59EbLkiCMa6OLT0NoaAYTjOFS6N+SMYW1nh4/9ljPiw==}
+  '@vitest/ui@3.0.5':
+    resolution: {integrity: sha512-gw2noso6WI+2PeMVCZFntdATS6xl9qhQcbhkPQ9sOmx/Xn0f4Bx4KDSbD90jpJPF0l5wOzSoGCmKyVR3W612mg==}
     peerDependencies:
-      vitest: 2.1.9
-
-  '@vitest/utils@2.1.9':
-    resolution: {integrity: sha512-v0psaMSkNJ3A2NMrUEHFRzJtDPFn+/VWZ5WxImB21T9fjucJRmS7xCS3ppEnARb9y11OAzaD+P2Ps+b+BGX5iQ==}
+      vitest: 3.0.5
 
   '@vitest/utils@3.0.5':
     resolution: {integrity: sha512-N9AX0NUoUtVwKwy21JtwzaqR5L5R5A99GAbrHfCCXK1lp593i/3AZAXhSP43wRQuxYsflrdzEfXZFo1reR1Nkg==}
@@ -2363,6 +2357,9 @@ packages:
 
   flatted@3.3.1:
     resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==}
+
+  flatted@3.3.2:
+    resolution: {integrity: sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA==}
 
   focus-trap-vue@4.0.3:
     resolution: {integrity: sha512-cIX5rybkCAlNZ4IHYJ3nCFIsipDDljJHHjtTO2IgYWkVYg7X9ipUVdab3HzYp88kmHgMwjcB71LYnXRRsF6ZqQ==}
@@ -3957,10 +3954,6 @@ packages:
   tinypool@1.0.2:
     resolution: {integrity: sha512-al6n+QEANGFOMf/dmUMsuS5/r9B06uwlyNjZZql/zv8J7ybHCgoihBNORZCY2mzUuAnomQa2JdhyHKzZxPCrFA==}
     engines: {node: ^18.0.0 || >=20.0.0}
-
-  tinyrainbow@1.2.0:
-    resolution: {integrity: sha512-weEDEq7Z5eTHPDh4xjX789+fHfF+P8boiFB+0vbWzpbnbsEr/GRaohi/uMKxg8RZMXnl1ItAi/IUHWMsjDV7kQ==}
-    engines: {node: '>=14.0.0'}
 
   tinyrainbow@2.0.0:
     resolution: {integrity: sha512-op4nsTR47R6p0vMUUoYl/a+ljLFVtlfaXkLQmqfLR1qHma1h/ysYk4hEXZ880bf2CYgTskvTa/e196Vd5dDQXw==}
@@ -5656,10 +5649,6 @@ snapshots:
     optionalDependencies:
       vite: 6.0.11(@types/node@22.10.10)(jiti@2.4.2)(sass@1.83.4)(tsx@4.19.2)
 
-  '@vitest/pretty-format@2.1.9':
-    dependencies:
-      tinyrainbow: 1.2.0
-
   '@vitest/pretty-format@3.0.5':
     dependencies:
       tinyrainbow: 2.0.0
@@ -5679,22 +5668,16 @@ snapshots:
     dependencies:
       tinyspy: 3.0.2
 
-  '@vitest/ui@2.1.9(vitest@3.0.5)':
+  '@vitest/ui@3.0.5(vitest@3.0.5)':
     dependencies:
-      '@vitest/utils': 2.1.9
+      '@vitest/utils': 3.0.5
       fflate: 0.8.2
-      flatted: 3.3.1
-      pathe: 1.1.2
+      flatted: 3.3.2
+      pathe: 2.0.2
       sirv: 3.0.0
       tinyglobby: 0.2.10
-      tinyrainbow: 1.2.0
-      vitest: 3.0.5(@types/node@22.10.10)(@vitest/ui@2.1.9)(jiti@2.4.2)(jsdom@26.0.0)(sass@1.83.4)(tsx@4.19.2)
-
-  '@vitest/utils@2.1.9':
-    dependencies:
-      '@vitest/pretty-format': 2.1.9
-      loupe: 3.1.3
-      tinyrainbow: 1.2.0
+      tinyrainbow: 2.0.0
+      vitest: 3.0.5(@types/node@22.10.10)(@vitest/ui@3.0.5)(jiti@2.4.2)(jsdom@26.0.0)(sass@1.83.4)(tsx@4.19.2)
 
   '@vitest/utils@3.0.5':
     dependencies:
@@ -6865,6 +6848,8 @@ snapshots:
       keyv: 4.5.4
 
   flatted@3.3.1: {}
+
+  flatted@3.3.2: {}
 
   focus-trap-vue@4.0.3(focus-trap@7.6.4)(vue@3.5.13(typescript@5.6.3)):
     dependencies:
@@ -8372,8 +8357,6 @@ snapshots:
 
   tinypool@1.0.2: {}
 
-  tinyrainbow@1.2.0: {}
-
   tinyrainbow@2.0.0: {}
 
   tinyspy@3.0.2: {}
@@ -8601,7 +8584,7 @@ snapshots:
       sass: 1.83.4
       tsx: 4.19.2
 
-  vitest@3.0.5(@types/node@22.10.10)(@vitest/ui@2.1.9)(jiti@2.4.2)(jsdom@26.0.0)(sass@1.83.4)(tsx@4.19.2):
+  vitest@3.0.5(@types/node@22.10.10)(@vitest/ui@3.0.5)(jiti@2.4.2)(jsdom@26.0.0)(sass@1.83.4)(tsx@4.19.2):
     dependencies:
       '@vitest/expect': 3.0.5
       '@vitest/mocker': 3.0.5(vite@6.0.11(@types/node@22.10.10)(jiti@2.4.2)(sass@1.83.4)(tsx@4.19.2))
@@ -8625,7 +8608,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.10.10
-      '@vitest/ui': 2.1.9(vitest@3.0.5)
+      '@vitest/ui': 3.0.5(vitest@3.0.5)
       jsdom: 26.0.0
     transitivePeerDependencies:
       - jiti
