@@ -143,7 +143,7 @@ To add a new SVG:
 2. Ensure the filename is lowercase and kebab-case
 3. Place the SVG file into the corresponding `/svg/*` subdirectory.
 4. Locally, run `pnpm generate` to create the corresponding Vue component
-5. Locally, run `pnpm test -- --update` to run the tests and update the test snapshots
+5. Locally, run `pnpm test --update` to run the tests and update the test snapshots
 6. [Commit your changes](#committing-changes) and push up a Pull Request for review
 
 ### Development Sandbox
@@ -194,10 +194,10 @@ pnpm test
 pnpm test:open
 
 # Update test snapshots
-pnpm test -- --update
+pnpm test --update
 ```
 
-When SVG files are added or removed, this will cause the test(s) that compare snapshots to fail. If the snapshot change is expected, run `pnpm test -- --update` to update the test snapshots accordingly, then commit those changes to your branch.
+When SVG files are added or removed, this will cause the test(s) that compare snapshots to fail. If the snapshot change is expected, run `pnpm test --update` to update the test snapshots accordingly, then commit those changes to your branch.
 
 ### Build for production
 
