@@ -63,6 +63,7 @@ export default [
   'DashboardIcon.vue',
   'DataObjectIcon.vue',
   'DataReportIcon.vue',
+  'DataUsageIcon.vue',
   'DecreaseIcon.vue',
   'DeployIcon.vue',
   'DesignIcon.vue',

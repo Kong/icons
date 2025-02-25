@@ -1,3 +1,10 @@
+## [1.21.2](https://github.com/Kong/icons/compare/v1.21.1...v1.21.2) (2025-02-25)
+
+
+### Bug Fixes
+
+* add data-usage icon ([#535](https://github.com/Kong/icons/issues/535)) ([246eea7](https://github.com/Kong/icons/commit/246eea7d3f014e05af238611bcdb923206e95d0e))
+
 ## [1.21.1](https://github.com/Kong/icons/compare/v1.21.0...v1.21.1) (2025-02-04)
 
 
