@@ -312,6 +312,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "DashboardIcon",
   "DataObjectIcon",
   "DataReportIcon",
+  "DataUsageIcon",
   "DecreaseIcon",
   "DeployIcon",
   "DesignIcon",
