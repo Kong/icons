@@ -49,17 +49,17 @@
   },
   "devDependencies": {
     "@babel/types": "^7.26.8",
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
-    "@evilmartians/lefthook": "^1.8.5",
+    "@evilmartians/lefthook": "^1.10.10",
     "@kong/design-tokens": "^1.17.3",
     "@kong/eslint-config-kong-ui": "^1.2.5",
     "@kong/kongponents": "9.21.6",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.10.10",
+    "@types/node": "^22.13.2",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/ui": "^3.0.5",
     "@vue/test-utils": "^2.4.6",
@@ -72,28 +72,28 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.20.1",
     "jsdom": "^26.0.0",
-    "node-emoji": "^2.1.3",
+    "node-emoji": "^2.2.0",
     "picocolors": "^1.1.1",
-    "postcss": "^8.4.49",
-    "postcss-html": "^1.7.0",
+    "postcss": "^8.5.2",
+    "postcss-html": "^1.8.0",
     "rimraf": "^6.0.1",
-    "rollup-plugin-visualizer": "^5.12.0",
-    "sass": "^1.83.4",
+    "rollup-plugin-visualizer": "^5.14.0",
+    "sass": "^1.84.0",
     "semantic-release": "^22.0.12",
-    "stylelint": "^16.10.0",
+    "stylelint": "^16.14.1",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recommended-scss": "^14.1.0",
-    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-recommended-vue": "^1.6.0",
     "stylelint-order": "^6.0.4",
     "tsc-alias": "^1.8.10",
     "tsx": "^4.19.2",
-    "typescript": "^5.6.3",
-    "vite": "^6.0.11",
-    "vite-plugin-vue-devtools": "^7.6.8",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vite-plugin-vue-devtools": "^7.7.2",
     "vitest": "^3.0.5",
     "vue": "^3.5.13",
-    "vue-router": "^4.4.5",
-    "vue-tsc": "^2.1.10"
+    "vue-router": "^4.5.0",
+    "vue-tsc": "^2.2.0"
   },
   "peerDependencies": {
     "vue": ">= 3.3.4 < 4"
@@ -146,13 +146,13 @@
       "@semantic-release/github"
     ]
   },
-  "packageManager": "pnpm@10.1.0",
+  "packageManager": "pnpm@10.3.0",
   "engines": {
     "node": ">=18.17.0",
     "pnpm": ">=9.14.4 || >=10.1.0"
   },
   "volta": {
-    "node": "22.11.0"
+    "node": "22.14.0"
   },
   "config": {
     "commitizen": {
