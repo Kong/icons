@@ -146,7 +146,7 @@
       "@semantic-release/github"
     ]
   },
-  "packageManager": "pnpm@10.3.0",
+  "packageManager": "pnpm@10.4.0",
   "engines": {
     "node": ">=18.17.0",
     "pnpm": ">=9.14.4 || >=10.1.0"
