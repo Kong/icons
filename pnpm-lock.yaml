@@ -42,7 +42,7 @@ importers:
         specifier: ^21.1.7
         version: 21.1.7
       '@types/node':
-        specifier: ^22.13.2
+        specifier: ^22.13.4
         version: 22.13.5
       '@vitejs/plugin-vue':
         specifier: ^5.2.1
@@ -99,7 +99,7 @@ importers:
         specifier: ^5.14.0
         version: 5.14.0(rollup@4.34.8)
       sass:
-        specifier: ^1.84.0
+        specifier: ^1.85.0
         version: 1.85.1
       semantic-release:
         specifier: ^22.0.12
