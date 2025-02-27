@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@babel/types':
-        specifier: ^7.26.8
+        specifier: ^7.26.9
         version: 7.26.9
       '@commitlint/cli':
         specifier: ^19.7.1
