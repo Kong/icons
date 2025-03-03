@@ -54,7 +54,7 @@
     "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
     "@evilmartians/lefthook": "^1.10.10",
     "@kong/design-tokens": "^1.17.3",
-    "@kong/eslint-config-kong-ui": "^1.2.5",
+    "@kong/eslint-config-kong-ui": "^1.2.6",
     "@kong/kongponents": "9.22.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
