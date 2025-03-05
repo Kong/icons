@@ -30,8 +30,8 @@ importers:
         specifier: ^1.2.6
         version: 1.2.6(eslint@9.20.1(jiti@2.4.2))(typescript@5.7.3)
       '@kong/kongponents':
-        specifier: 9.22.0
-        version: 9.22.0(axios@1.7.3)(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
+        specifier: 9.22.1
+        version: 9.22.1(axios@1.7.3)(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@22.0.12(typescript@5.7.3))
@@ -726,14 +726,14 @@ packages:
     peerDependencies:
       eslint: '>= 9.18.0'
 
-  '@kong/icons@1.21.1':
-    resolution: {integrity: sha512-WS0/ibjEQTDbZ+IBJzQOuqAMKPUsybvEgRXE7wrVU2Jss1oE1iiyZ6ZbpmqKZoKpsQIpZWQqxcoBprnH3ZY13w==}
-    engines: {node: '>=18.17.0', pnpm: '>=9.14.4'}
+  '@kong/icons@1.21.2':
+    resolution: {integrity: sha512-gTqtvJ/G4KoR0WGctb7CChJTAOmDAwG2nG8Oz66Yyu6/GYlR25PDwVDanWcWmpbOl0zvjrIgEPunndYNK/QIeQ==}
+    engines: {node: '>=18.17.0', pnpm: '>=9.14.4 || >=10.1.0'}
     peerDependencies:
       vue: '>= 3.3.4 < 4'
 
-  '@kong/kongponents@9.22.0':
-    resolution: {integrity: sha512-t4SJ5l5ROvItG+M05K3vawVLEYmfH3CcJdCE+tka6x0gfviIP6V9/i4ZtyUBN2QTkTGbaAWNgpTS1kskXFt7tg==}
+  '@kong/kongponents@9.22.1':
+    resolution: {integrity: sha512-DpkaI5PDmPcoIUlsM0G+j4hSQJcI5mbhJZGHuJYEc8bbo/36vjzCffoGaajPQiWwG8ncD7a1S6yMFSUOH+fskQ==}
     engines: {node: '>=v16.20.2 || >=18.12.1 || >=20.14.0'}
     peerDependencies:
       axios: ^1.7.9
@@ -4876,14 +4876,14 @@ snapshots:
       - supports-color
       - typescript
 
-  '@kong/icons@1.21.1(vue@3.5.13(typescript@5.7.3))':
+  '@kong/icons@1.21.2(vue@3.5.13(typescript@5.7.3))':
     dependencies:
       vue: 3.5.13(typescript@5.7.3)
 
-  '@kong/kongponents@9.22.0(axios@1.7.3)(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))':
+  '@kong/kongponents@9.22.1(axios@1.7.3)(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))':
     dependencies:
       '@floating-ui/vue': 1.1.6(vue@3.5.13(typescript@5.7.3))
-      '@kong/icons': 1.21.1(vue@3.5.13(typescript@5.7.3))
+      '@kong/icons': 1.21.2(vue@3.5.13(typescript@5.7.3))
       '@popperjs/core': 2.11.8
       axios: 1.7.3
       date-fns: 2.30.0
