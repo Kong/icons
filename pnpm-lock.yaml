@@ -21,7 +21,7 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(@types/node@22.13.5)(typescript@5.7.3)
       '@evilmartians/lefthook':
-        specifier: ^1.10.10
+        specifier: ^1.10.11
         version: 1.11.0
       '@kong/design-tokens':
         specifier: ^1.17.3
@@ -42,7 +42,7 @@ importers:
         specifier: ^21.1.7
         version: 21.1.7
       '@types/node':
-        specifier: ^22.13.4
+        specifier: ^22.13.5
         version: 22.13.5
       '@vitejs/plugin-vue':
         specifier: ^5.2.1
