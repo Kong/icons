@@ -30,8 +30,8 @@ importers:
         specifier: ^1.2.6
         version: 1.2.6(eslint@9.21.0(jiti@2.4.2))(typescript@5.8.2)
       '@kong/kongponents':
-        specifier: 9.24.1
-        version: 9.24.1(axios@1.7.3)(vue-router@4.5.0(vue@3.5.13(typescript@5.8.2)))(vue@3.5.13(typescript@5.8.2))
+        specifier: 9.24.2
+        version: 9.24.2(axios@1.7.3)(vue-router@4.5.0(vue@3.5.13(typescript@5.8.2)))(vue@3.5.13(typescript@5.8.2))
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@22.0.12(typescript@5.8.2))
@@ -736,8 +736,8 @@ packages:
     peerDependencies:
       vue: '>= 3.3.4 < 4'
 
-  '@kong/kongponents@9.24.1':
-    resolution: {integrity: sha512-e4q+wHT1r9xwq9MNuUvenLDeU2PMlcZku9OvRY9NCaiu87KmwXY+R7GQlCEaT6/yS9RTk5XGFI6vvqkSt254FQ==}
+  '@kong/kongponents@9.24.2':
+    resolution: {integrity: sha512-Si+pxKC2vT5U/7XnQ5zKFyDItlnlisDG/gJfPSurtJyD3rfgYUHRFXg9RgzM4Jcr6lkV4FNa/JsdKBN1hKdcGw==}
     engines: {node: '>=v16.20.2 || >=18.12.1 || >=20.14.0'}
     peerDependencies:
       axios: ^1.7.9
@@ -3936,8 +3936,8 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  virtua@0.40.0:
-    resolution: {integrity: sha512-B/9Mk8wCWukcC5bLxCCt6DBytTOydnPRVQfqLAnC+ybsD47A6oarxFLOF2h3++CtR0bTShsGaHIgnIePQCQLtA==}
+  virtua@0.40.3:
+    resolution: {integrity: sha512-rfl6VohBFoT0U64fVdOGag2p0D+YZbki7HQ5bjFZObStWBaWjjataIHFDjl4KuSr3yHBMgGd/+Va7W4Z2Y0LRg==}
     peerDependencies:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
@@ -4886,7 +4886,7 @@ snapshots:
     dependencies:
       vue: 3.5.13(typescript@5.8.2)
 
-  '@kong/kongponents@9.24.1(axios@1.7.3)(vue-router@4.5.0(vue@3.5.13(typescript@5.8.2)))(vue@3.5.13(typescript@5.8.2))':
+  '@kong/kongponents@9.24.2(axios@1.7.3)(vue-router@4.5.0(vue@3.5.13(typescript@5.8.2)))(vue@3.5.13(typescript@5.8.2))':
     dependencies:
       '@floating-ui/vue': 1.1.6(vue@3.5.13(typescript@5.8.2))
       '@kong/icons': 1.21.2(vue@3.5.13(typescript@5.8.2))
@@ -4901,7 +4901,7 @@ snapshots:
       sortablejs: 1.15.6
       swrv: 1.1.0(vue@3.5.13(typescript@5.8.2))
       v-calendar: 3.1.2(@popperjs/core@2.11.8)(vue@3.5.13(typescript@5.8.2))
-      virtua: 0.40.0(vue@3.5.13(typescript@5.8.2))
+      virtua: 0.40.3(vue@3.5.13(typescript@5.8.2))
       vue: 3.5.13(typescript@5.8.2)
       vue-draggable-next: 2.2.1(sortablejs@1.15.6)(vue@3.5.13(typescript@5.8.2))
       vue-router: 4.5.0(vue@3.5.13(typescript@5.8.2))
@@ -8193,7 +8193,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  virtua@0.40.0(vue@3.5.13(typescript@5.8.2)):
+  virtua@0.40.3(vue@3.5.13(typescript@5.8.2)):
     optionalDependencies:
       vue: 3.5.13(typescript@5.8.2)
 
