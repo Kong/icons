@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/Kong/icons/compare/v1.21.2...v1.22.0) (2025-03-25)
+
+
+### Features
+
+* **icons:** gradient icons ([#571](https://github.com/Kong/icons/issues/571)) ([51b7882](https://github.com/Kong/icons/commit/51b78824ae7e9591b595902bc0a21fe96f7d53b5))
+
 ## [1.21.2](https://github.com/Kong/icons/compare/v1.21.1...v1.21.2) (2025-02-25)
 
 
