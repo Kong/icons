@@ -1,3 +1,10 @@
+## [1.22.1](https://github.com/Kong/icons/compare/v1.22.0...v1.22.1) (2025-03-27)
+
+
+### Bug Fixes
+
+* **pnpm:** approve builds ([#576](https://github.com/Kong/icons/issues/576)) ([82c18f2](https://github.com/Kong/icons/commit/82c18f2edb621dea7b6dbe81587512fd8fbc9326))
+
 # [1.22.0](https://github.com/Kong/icons/compare/v1.21.2...v1.22.0) (2025-03-25)
 
 
