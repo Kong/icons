@@ -163,5 +163,12 @@
       "jiraPrepend": "[",
       "jiraAppend": "]"
     }
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@evilmartians/lefthook",
+      "esbuild",
+      "vue-demi"
+    ]
   }
 }
