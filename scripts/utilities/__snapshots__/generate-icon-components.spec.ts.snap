@@ -472,6 +472,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "CloudIcon.vue",
   "CloudUploadIcon.vue",
   "CodeIcon.vue",
+  "CodeSnippetIcon.vue",
   "CodeblockIcon.vue",
   "CogIcon.vue",
   "CogModeIcon.vue",

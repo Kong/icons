@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/Kong/icons/compare/v1.22.1...v1.23.0) (2025-04-10)
+
+
+### Features
+
+* code-snippet ([#590](https://github.com/Kong/icons/issues/590)) ([27bba28](https://github.com/Kong/icons/commit/27bba28c392d379a06dd7c3e559c3bfe7f2b3285))
+
 ## [1.22.1](https://github.com/Kong/icons/compare/v1.22.0...v1.22.1) (2025-03-27)
 
 

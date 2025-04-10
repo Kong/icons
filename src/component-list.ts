@@ -50,6 +50,7 @@ export default [
   'CloudIcon.vue',
   'CloudUploadIcon.vue',
   'CodeIcon.vue',
+  'CodeSnippetIcon.vue',
   'CodeblockIcon.vue',
   'CogIcon.vue',
   'CogModeIcon.vue',
