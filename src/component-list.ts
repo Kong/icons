@@ -372,6 +372,7 @@ export default [
   'MoreIcon.vue',
   'NetworkIcon.vue',
   'NotificationIcon.vue',
+  'NumericValueIcon.vue',
   'OrganizationIcon.vue',
   'OverviewIcon.vue',
   'PeopleIcon.vue',

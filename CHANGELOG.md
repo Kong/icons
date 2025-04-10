@@ -1,3 +1,10 @@
+## [1.23.1](https://github.com/Kong/icons/compare/v1.23.0...v1.23.1) (2025-04-10)
+
+
+### Bug Fixes
+
+* add numeric value icon ([#592](https://github.com/Kong/icons/issues/592)) ([5f7c62a](https://github.com/Kong/icons/commit/5f7c62afcfd6be9b0ddc9163e4ae93a51379d32f))
+
 # [1.23.0](https://github.com/Kong/icons/compare/v1.22.1...v1.23.0) (2025-04-10)
 
 
