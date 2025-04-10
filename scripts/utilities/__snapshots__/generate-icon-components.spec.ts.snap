@@ -373,6 +373,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "MoreIcon",
   "NetworkIcon",
   "NotificationIcon",
+  "NumericValueIcon",
   "OrganizationIcon",
   "OverviewIcon",
   "PeopleIcon",
