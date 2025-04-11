@@ -42,7 +42,7 @@ importers:
         specifier: ^21.1.7
         version: 21.1.7
       '@types/node':
-        specifier: ^22.13.13
+        specifier: ^22.13.14
         version: 22.14.0
       '@vitejs/plugin-vue':
         specifier: ^5.2.3
@@ -105,7 +105,7 @@ importers:
         specifier: ^22.0.12
         version: 22.0.12(typescript@5.8.2)
       stylelint:
-        specifier: ^16.16.0
+        specifier: ^16.17.0
         version: 16.17.0(typescript@5.8.2)
       stylelint-config-html:
         specifier: ^1.1.0
@@ -120,8 +120,8 @@ importers:
         specifier: ^6.0.4
         version: 6.0.4(stylelint@16.17.0(typescript@5.8.2))
       tsc-alias:
-        specifier: ^1.8.11
-        version: 1.8.11
+        specifier: ^1.8.13
+        version: 1.8.15
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
@@ -2270,6 +2270,9 @@ packages:
     resolution: {integrity: sha512-kVCxPF3vQM/N0B1PmoqVUqgHP+EeVjmZSQn+1oCRPxd2P21P2F19lIgbR3HBosbB1PUhOAoctJnfEn2GbN2eZA==}
     engines: {node: '>=18'}
 
+  get-tsconfig@4.10.0:
+    resolution: {integrity: sha512-kGzZ3LWWQcGIAmg6iWvXn0ei6WDtV26wzHRMwDSzmAbcXrTEXxHy6IehI6/4eT6VRKyMP1eF1VqwrVUmE/LR7A==}
+
   get-tsconfig@4.8.1:
     resolution: {integrity: sha512-k9PN+cFBmaLWtVz29SkUoqU5O0slLuHJXt/2P+tMVFT+phsSGXGkp9t3rQIqdz0e+06EHNGs3oM6ZX1s2zHxRg==}
 
@@ -3854,8 +3857,9 @@ packages:
     peerDependencies:
       typescript: '>=4.8.4'
 
-  tsc-alias@1.8.11:
-    resolution: {integrity: sha512-2DuEQ58A9Rj2NE2c1+/qaGKlshni9MCK95MJzRGhQG0CYLw0bE/ACgbhhTSf/p1svLelwqafOd8stQate2bYbg==}
+  tsc-alias@1.8.15:
+    resolution: {integrity: sha512-yKLVx8ddUurRwhVcS6JFF2ZjksOX2ZWDRIdgt+PQhJBDegIdAdilptiHsuAbx9UFxa16GFrxeKQ2kTcGvR6fkQ==}
+    engines: {node: '>=16.20.2'}
     hasBin: true
 
   tslib@2.6.3:
@@ -6663,6 +6667,10 @@ snapshots:
       '@sec-ant/readable-stream': 0.4.1
       is-stream: 4.0.1
 
+  get-tsconfig@4.10.0:
+    dependencies:
+      resolve-pkg-maps: 1.0.0
+
   get-tsconfig@4.8.1:
     dependencies:
       resolve-pkg-maps: 1.0.0
@@ -8158,10 +8166,11 @@ snapshots:
     dependencies:
       typescript: 5.8.2
 
-  tsc-alias@1.8.11:
+  tsc-alias@1.8.15:
     dependencies:
       chokidar: 3.6.0
       commander: 9.5.0
+      get-tsconfig: 4.10.0
       globby: 11.1.0
       mylas: 2.1.13
       normalize-path: 3.0.0
