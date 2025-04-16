@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/Kong/icons/compare/v1.23.1...v1.24.0) (2025-04-16)
+
+
+### Features
+
+* add ai platform icons ([#597](https://github.com/Kong/icons/issues/597)) ([4bb4967](https://github.com/Kong/icons/commit/4bb49678dfad1cad0c034e6f0637a097727d96c8))
+
 ## [1.23.1](https://github.com/Kong/icons/compare/v1.23.0...v1.23.1) (2025-04-10)
 
 
