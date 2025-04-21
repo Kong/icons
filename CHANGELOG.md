@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/Kong/icons/compare/v1.24.0...v1.25.0) (2025-04-21)
+
+
+### Features
+
+* panel open and close icons ([#602](https://github.com/Kong/icons/issues/602)) ([2b7486f](https://github.com/Kong/icons/commit/2b7486f47a63a1669a9e72dab5ba32ba8231f92d))
+
 # [1.24.0](https://github.com/Kong/icons/compare/v1.23.1...v1.24.0) (2025-04-16)
 
 
