@@ -1,3 +1,10 @@
+## [1.25.1](https://github.com/Kong/icons/compare/v1.25.0...v1.25.1) (2025-04-22)
+
+
+### Bug Fixes
+
+* add conjour ([#604](https://github.com/Kong/icons/issues/604)) ([e5ca5b4](https://github.com/Kong/icons/commit/e5ca5b4372aba28c598840ae58e0fc60e94b1108))
+
 # [1.25.0](https://github.com/Kong/icons/compare/v1.24.0...v1.25.0) (2025-04-21)
 
 

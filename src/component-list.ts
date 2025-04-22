@@ -60,6 +60,7 @@ export default [
   'CollapseIcon.vue',
   'CollapsePanelIcon.vue',
   'ColorsIcon.vue',
+  'ConjourIcon.vue',
   'ConnectionsIcon.vue',
   'CopyIcon.vue',
   'DangerCircleIcon.vue',
