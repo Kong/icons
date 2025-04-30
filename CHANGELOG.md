@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/Kong/icons/compare/v1.25.1...v1.26.0) (2025-04-30)
+
+
+### Features
+
+* **icons:** add mail and event gradient ([#611](https://github.com/Kong/icons/issues/611)) ([7989d30](https://github.com/Kong/icons/commit/7989d305024c21cccc8ca81bbcdfc2e0ced92b25))
+
 ## [1.25.1](https://github.com/Kong/icons/compare/v1.25.0...v1.25.1) (2025-04-22)
 
 
