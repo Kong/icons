@@ -30,8 +30,8 @@ importers:
         specifier: ^1.2.7
         version: 1.2.7(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)
       '@kong/kongponents':
-        specifier: 9.29.10
-        version: 9.29.10(vue-router@4.5.0(vue@3.5.13(typescript@5.8.3)))(vue@3.5.13(typescript@5.8.3))
+        specifier: 9.29.11
+        version: 9.29.11(vue-router@4.5.0(vue@3.5.13(typescript@5.8.3)))(vue@3.5.13(typescript@5.8.3))
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@22.0.12(typescript@5.8.3))
@@ -744,14 +744,14 @@ packages:
     peerDependencies:
       eslint: '>= 9.23.0'
 
-  '@kong/icons@1.25.1':
-    resolution: {integrity: sha512-3VFRxe93YfkADVj0LQe3/JWcCyr4kW/AbOB0KMCek+JEpUbSvrQN1rSQOUoF9dxjMGpJyKNh1pr9Eh0XJhgfsg==}
+  '@kong/icons@1.26.0':
+    resolution: {integrity: sha512-qyCkogdcJlsjcYIObbOGctcCpqZG3D4wT83T2uAKAM4bTiFC91DeZvhe4O8HfS84OxEbym6IagkAA58I1Cek6A==}
     engines: {node: '>=18.17.0', pnpm: '>=9.14.4 || >=10.1.0'}
     peerDependencies:
       vue: '>= 3.3.4 < 4'
 
-  '@kong/kongponents@9.29.10':
-    resolution: {integrity: sha512-jYqMDgItWUB9rbmBQOt6I337CTjZJYqlcGnEVFOmvX0KY0fuvtOk+JHuS+86at8tJm1HSN8n8G35yLNy4sr7PQ==}
+  '@kong/kongponents@9.29.11':
+    resolution: {integrity: sha512-GldxGHsGSEJkj41KMGnonA8P1vzbQ0AuauibHcAA8wfPEywCu43ypb8i6UgdU5gXVUK0US3LQredyMALRHwO9w==}
     engines: {node: '>=v16.20.2 || >=18.12.1 || >=20.14.0'}
     peerDependencies:
       vue: '>= 3.5.0 < 4'
@@ -4884,14 +4884,14 @@ snapshots:
       - supports-color
       - typescript
 
-  '@kong/icons@1.25.1(vue@3.5.13(typescript@5.8.3))':
+  '@kong/icons@1.26.0(vue@3.5.13(typescript@5.8.3))':
     dependencies:
       vue: 3.5.13(typescript@5.8.3)
 
-  '@kong/kongponents@9.29.10(vue-router@4.5.0(vue@3.5.13(typescript@5.8.3)))(vue@3.5.13(typescript@5.8.3))':
+  '@kong/kongponents@9.29.11(vue-router@4.5.0(vue@3.5.13(typescript@5.8.3)))(vue@3.5.13(typescript@5.8.3))':
     dependencies:
       '@floating-ui/vue': 1.1.6(vue@3.5.13(typescript@5.8.3))
-      '@kong/icons': 1.25.1(vue@3.5.13(typescript@5.8.3))
+      '@kong/icons': 1.26.0(vue@3.5.13(typescript@5.8.3))
       '@popperjs/core': 2.11.8
       date-fns: 2.30.0
       date-fns-tz: 2.0.1(date-fns@2.30.0)
