@@ -78,9 +78,9 @@
     "postcss-html": "^1.8.0",
     "rimraf": "^6.0.1",
     "rollup-plugin-visualizer": "^5.14.0",
-    "sass": "^1.86.3",
+    "sass": "^1.87.0",
     "semantic-release": "^22.0.12",
-    "stylelint": "^16.18.0",
+    "stylelint": "^16.19.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-config-recommended-vue": "^1.6.0",
@@ -146,13 +146,13 @@
       "@semantic-release/github"
     ]
   },
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.9.0",
   "engines": {
     "node": ">=18.17.0",
     "pnpm": ">=9.14.4 || >=10.1.0"
   },
   "volta": {
-    "node": "22.14.0"
+    "node": "22.15.0"
   },
   "config": {
     "commitizen": {
