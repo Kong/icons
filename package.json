@@ -59,7 +59,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.15.1",
+    "@types/node": "^22.15.2",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vitest/ui": "^3.1.2",
     "@vue/test-utils": "^2.4.6",
@@ -80,7 +80,7 @@
     "rollup-plugin-visualizer": "^5.14.0",
     "sass": "^1.87.0",
     "semantic-release": "^22.0.12",
-    "stylelint": "^16.19.0",
+    "stylelint": "^16.19.1",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-config-recommended-vue": "^1.6.0",
@@ -92,7 +92,7 @@
     "vite-plugin-vue-devtools": "^7.7.5",
     "vitest": "^3.1.2",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0",
+    "vue-router": "^4.5.1",
     "vue-tsc": "^2.2.10"
   },
   "peerDependencies": {
