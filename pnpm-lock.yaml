@@ -30,8 +30,8 @@ importers:
         specifier: ^1.2.7
         version: 1.2.7(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)
       '@kong/kongponents':
-        specifier: 9.31.2
-        version: 9.31.2(vue-router@4.5.0(vue@3.5.13(typescript@5.8.3)))(vue@3.5.13(typescript@5.8.3))
+        specifier: 9.31.4
+        version: 9.31.4(vue-router@4.5.0(vue@3.5.13(typescript@5.8.3)))(vue@3.5.13(typescript@5.8.3))
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@22.0.12(typescript@5.8.3))
@@ -750,8 +750,8 @@ packages:
     peerDependencies:
       vue: '>= 3.3.4 < 4'
 
-  '@kong/kongponents@9.31.2':
-    resolution: {integrity: sha512-KzWU/DUxSpuZMZ3jeaV1Mq72bw2Xf3q9TRv1nbtiUhfqgXCslqhgLocXkxAGkQ7bAJ3YhLBFe2B8ffaax7ivbg==}
+  '@kong/kongponents@9.31.4':
+    resolution: {integrity: sha512-ovWzVv8idof6YUqB67Pxmj0U1Lpx80e5+19ogeVOY5bzI5nrOL3840No6Aef3PqdDcnGzv5Xy6Lk2v7iePpUXg==}
     engines: {node: '>=v16.20.2 || >=18.12.1 || >=20.14.0'}
     peerDependencies:
       vue: '>= 3.5.0 < 4'
@@ -4889,7 +4889,7 @@ snapshots:
     dependencies:
       vue: 3.5.13(typescript@5.8.3)
 
-  '@kong/kongponents@9.31.2(vue-router@4.5.0(vue@3.5.13(typescript@5.8.3)))(vue@3.5.13(typescript@5.8.3))':
+  '@kong/kongponents@9.31.4(vue-router@4.5.0(vue@3.5.13(typescript@5.8.3)))(vue@3.5.13(typescript@5.8.3))':
     dependencies:
       '@floating-ui/vue': 1.1.6(vue@3.5.13(typescript@5.8.3))
       '@kong/icons': 1.26.0(vue@3.5.13(typescript@5.8.3))
