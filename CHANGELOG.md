@@ -1,3 +1,10 @@
+# [1.28.0](https://github.com/Kong/icons/compare/v1.27.0...v1.28.0) (2025-05-15)
+
+
+### Features
+
+* new icons ([#630](https://github.com/Kong/icons/issues/630)) ([6192d9e](https://github.com/Kong/icons/commit/6192d9eca44a09c66aace566a5c1a4b46984308b))
+
 # [1.27.0](https://github.com/Kong/icons/compare/v1.26.0...v1.27.0) (2025-05-15)
 
 
