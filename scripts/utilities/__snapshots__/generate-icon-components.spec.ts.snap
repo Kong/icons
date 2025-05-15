@@ -280,6 +280,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "AddChartIcon",
   "AddCircleIcon",
   "AddIcon",
+  "AiSparkIcon",
   "AnalyticsIcon",
   "ArrowDownIcon",
   "ArrowLeftIcon",
