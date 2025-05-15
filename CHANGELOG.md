@@ -1,3 +1,10 @@
+# [1.27.0](https://github.com/Kong/icons/compare/v1.26.0...v1.27.0) (2025-05-15)
+
+
+### Features
+
+* **icons:** add AI Spark icon ([#629](https://github.com/Kong/icons/issues/629)) ([50d1740](https://github.com/Kong/icons/commit/50d17404a8939153bdc55e708dff6ac2e17a91ba))
+
 # [1.26.0](https://github.com/Kong/icons/compare/v1.25.1...v1.26.0) (2025-04-30)
 
 

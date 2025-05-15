@@ -419,6 +419,7 @@ export default [
   'ServiceHubIcon.vue',
   'ServicesIcon.vue',
   'SharedIcon.vue',
+  'SparklesIcon.vue',
   'StackIcon.vue',
   'StrikethroughIcon.vue',
   'SubscriptIcon.vue',

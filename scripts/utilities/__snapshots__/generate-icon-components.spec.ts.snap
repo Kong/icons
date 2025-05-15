@@ -858,6 +858,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "ServiceHubIcon.vue",
   "ServicesIcon.vue",
   "SharedIcon.vue",
+  "SparklesIcon.vue",
   "StackIcon.vue",
   "StrikethroughIcon.vue",
   "SubscriptIcon.vue",
