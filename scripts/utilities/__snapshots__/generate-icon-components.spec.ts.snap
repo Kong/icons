@@ -422,6 +422,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "ServiceHubIcon",
   "ServicesIcon",
   "SharedIcon",
+  "SparklesIcon",
   "StackIcon",
   "StrikethroughIcon",
   "SubscriptIcon",
