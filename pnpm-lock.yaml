@@ -27,7 +27,7 @@ importers:
         specifier: ^1.17.4
         version: 1.17.4
       '@kong/eslint-config-kong-ui':
-        specifier: ^1.2.8
+        specifier: ^1.2.9
         version: 1.2.9(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)
       '@kong/kongponents':
         specifier: 9.32.1
@@ -647,10 +647,6 @@ packages:
 
   '@eslint/eslintrc@3.3.1':
     resolution: {integrity: sha512-gtF186CXhIl1p4pJNGZw8Yc6RlshoePRvE0X91oPGb3vZ8pM3qOS9W9NGPat9LziaBV7XrJWGylNQXkGcnM3IQ==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@eslint/js@9.25.1':
-    resolution: {integrity: sha512-dEIwmjntEx8u3Uvv+kr3PDeeArL8Hw07H9kyYxCjnM9pBjfEhk6uLXSchxxzgiwtRhhzVzqmUSDFBOi1TuZ7qg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@9.26.0':
@@ -5015,8 +5011,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/js@9.25.1': {}
-
   '@eslint/js@9.26.0': {}
 
   '@eslint/object-schema@2.1.6': {}
@@ -5099,7 +5093,7 @@ snapshots:
     dependencies:
       '@eslint/compat': 1.2.4(eslint@9.26.0(jiti@2.4.2))
       '@eslint/eslintrc': 3.3.1
-      '@eslint/js': 9.25.1
+      '@eslint/js': 9.26.0
       '@stylistic/eslint-plugin': 4.2.0(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)
       eslint: 9.26.0(jiti@2.4.2)
       eslint-plugin-cypress: 3.6.0(eslint@9.26.0(jiti@2.4.2))
