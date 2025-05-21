@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/Kong/icons/compare/v1.28.0...v1.29.0) (2025-05-21)
+
+
+### Features
+
+* **icons:** add money icon ([#635](https://github.com/Kong/icons/issues/635)) ([b070911](https://github.com/Kong/icons/commit/b0709113e40a5ae70861b9b7105de717a38f17ca))
+
 # [1.28.0](https://github.com/Kong/icons/compare/v1.27.0...v1.28.0) (2025-05-15)
 
 

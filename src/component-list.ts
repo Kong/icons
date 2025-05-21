@@ -383,6 +383,7 @@ export default [
   'MeshIcon.vue',
   'MetaLlamaIcon.vue',
   'MistralIcon.vue',
+  'MoneyIcon.vue',
   'MoreHorizontalIcon.vue',
   'MoreIcon.vue',
   'NetworkIcon.vue',
