@@ -82,7 +82,7 @@
     "semantic-release": "^22.0.12",
     "stylelint": "^16.19.1",
     "stylelint-config-html": "^1.1.0",
-    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-config-recommended-scss": "^15.0.0",
     "stylelint-config-recommended-vue": "^1.6.0",
     "stylelint-order": "^7.0.0",
     "tsc-alias": "^1.8.16",
