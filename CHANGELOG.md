@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/Kong/icons/compare/v1.29.0...v1.30.0) (2025-06-05)
+
+
+### Features
+
+* add dice icon ([#654](https://github.com/Kong/icons/issues/654)) ([2d147e4](https://github.com/Kong/icons/commit/2d147e48d745d6bbdf891ea9d6600989ff11e44e))
+
 # [1.29.0](https://github.com/Kong/icons/compare/v1.28.0...v1.29.0) (2025-05-21)
 
 

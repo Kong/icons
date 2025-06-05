@@ -75,6 +75,7 @@ export default [
   'DeployIcon.vue',
   'DesignIcon.vue',
   'DevPortalIcon.vue',
+  'DiceIcon.vue',
   'DisabledIcon.vue',
   'DockerIcon.vue',
   'DocumentIcon.vue',
