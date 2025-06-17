@@ -400,6 +400,7 @@ export default [
   'PanelOpenRightIcon.vue',
   'PeopleIcon.vue',
   'PhoneIcon.vue',
+  'PinIcon.vue',
   'PlugIcon.vue',
   'PortalIcon.vue',
   'PresentationIcon.vue',

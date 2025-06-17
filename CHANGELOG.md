@@ -1,3 +1,10 @@
+# [1.31.0](https://github.com/Kong/icons/compare/v1.30.0...v1.31.0) (2025-06-17)
+
+
+### Features
+
+* add pin icon ([#664](https://github.com/Kong/icons/issues/664)) ([84ac707](https://github.com/Kong/icons/commit/84ac70702a4c07ae63123cf63ef3da6b6f79a517))
+
 # [1.30.0](https://github.com/Kong/icons/compare/v1.29.0...v1.30.0) (2025-06-05)
 
 
