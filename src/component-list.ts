@@ -44,6 +44,7 @@ export default [
   'ChevronLeftIcon.vue',
   'ChevronRightIcon.vue',
   'ChevronUpIcon.vue',
+  'CleaningIcon.vue',
   'ClearIcon.vue',
   'ClipboardIcon.vue',
   'ClockIcon.vue',

@@ -497,6 +497,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "ChevronLeftIcon.vue",
   "ChevronRightIcon.vue",
   "ChevronUpIcon.vue",
+  "CleaningIcon.vue",
   "ClearIcon.vue",
   "ClipboardIcon.vue",
   "ClockIcon.vue",

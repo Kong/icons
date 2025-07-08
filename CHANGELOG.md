@@ -1,3 +1,10 @@
+# [1.32.0](https://github.com/Kong/icons/compare/v1.31.0...v1.32.0) (2025-07-08)
+
+
+### Features
+
+* add cleaning icon ([#679](https://github.com/Kong/icons/issues/679)) ([a905d00](https://github.com/Kong/icons/commit/a905d00d0d157f442e6c24daf194f1a3d6ae1ec4))
+
 # [1.31.0](https://github.com/Kong/icons/compare/v1.30.0...v1.31.0) (2025-06-17)
 
 
