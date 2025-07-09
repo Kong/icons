@@ -1,3 +1,10 @@
+# [1.33.0](https://github.com/Kong/icons/compare/v1.32.0...v1.33.0) (2025-07-09)
+
+
+### Features
+
+* add swap sort icon ([#680](https://github.com/Kong/icons/issues/680)) ([2c926d2](https://github.com/Kong/icons/commit/2c926d2473757b8c6b893e62d8ec2b6be465cffb))
+
 # [1.32.0](https://github.com/Kong/icons/compare/v1.31.0...v1.32.0) (2025-07-08)
 
 

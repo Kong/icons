@@ -439,6 +439,7 @@ export default [
   'SubscriptIcon.vue',
   'SuperscriptIcon.vue',
   'SupportIcon.vue',
+  'SwapSortIcon.vue',
   'TableColumnsIcon.vue',
   'TableIcon.vue',
   'TableRowsIcon.vue',
