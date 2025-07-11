@@ -48,7 +48,7 @@
     "commit": "cz"
   },
   "devDependencies": {
-    "@babel/types": "^7.27.6",
+    "@babel/types": "^7.27.7",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
@@ -59,7 +59,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.15.33",
+    "@types/node": "^22.15.34",
     "@vitejs/plugin-vue": "^5.2.4",
     "@vitest/ui": "^3.2.4",
     "@vue/test-utils": "^2.4.6",
@@ -83,7 +83,7 @@
     "stylelint": "^16.21.0",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recommended-scss": "^15.0.1",
-    "stylelint-config-recommended-vue": "^1.6.0",
+    "stylelint-config-recommended-vue": "^1.6.1",
     "stylelint-order": "^7.0.0",
     "tsc-alias": "^1.8.16",
     "tsx": "^4.20.3",
@@ -146,7 +146,7 @@
       "@semantic-release/github"
     ]
   },
-  "packageManager": "pnpm@10.12.3",
+  "packageManager": "pnpm@10.12.4",
   "engines": {
     "node": ">=18.17.0",
     "pnpm": ">=9.14.4 || >=10.1.0"
