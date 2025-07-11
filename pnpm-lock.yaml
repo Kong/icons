@@ -24,14 +24,14 @@ importers:
         specifier: ^1.11.14
         version: 1.11.14
       '@kong/design-tokens':
-        specifier: ^1.17.4
-        version: 1.17.4
+        specifier: ^1.17.5
+        version: 1.17.5
       '@kong/eslint-config-kong-ui':
         specifier: ^1.3.1
         version: 1.5.1(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3)
       '@kong/kongponents':
-        specifier: 9.35.8
-        version: 9.35.8(vue-router@4.5.1(vue@3.5.17(typescript@5.8.3)))(vue@3.5.17(typescript@5.8.3))
+        specifier: 9.35.11
+        version: 9.35.11(vue-router@4.5.1(vue@3.5.17(typescript@5.8.3)))(vue@3.5.17(typescript@5.8.3))
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@22.0.12(typescript@5.8.3))
@@ -740,9 +740,9 @@ packages:
   '@keyv/serialize@1.0.3':
     resolution: {integrity: sha512-qnEovoOp5Np2JDGonIDL6Ayihw0RhnRh6vxPuHo4RDn1UOzwEo4AeIfpL6UGIrsceWrCMiVPgwRjbHu4vYFc3g==}
 
-  '@kong/design-tokens@1.17.4':
-    resolution: {integrity: sha512-3BrKJvwlQ27jrVQIE+cJ9baTVz6cvxO5f7vw0UWOiXz/E23z5ZOGDpUMiyK7q3Jks9t3x8OsMx3BKPRu87TPnw==}
-    engines: {node: '>=20.18.3', pnpm: '>=9.14.4 || >=10.1.0'}
+  '@kong/design-tokens@1.17.5':
+    resolution: {integrity: sha512-RYm7cNgDComDm3RYfSTTmHJm9seSi1Pv6DG+D/8WKBN+QarCcVifB7G9hFojTC+/4EDZzWLu2DtIyn3W3wu+vw==}
+    engines: {node: '>=20.19.2', pnpm: '>=9.14.4 || >=10.1.0'}
 
   '@kong/eslint-config-kong-ui@1.5.1':
     resolution: {integrity: sha512-x9kGPrOsxJVCvVYoL8iX5KC6Xa7SqaDiKYkwBDr24bUeWXQ3ZSUvNNt1qupWUoRywekBl8UCEeIO/pjrhIYTmA==}
@@ -756,8 +756,8 @@ packages:
     peerDependencies:
       vue: '>= 3.3.4 < 4'
 
-  '@kong/kongponents@9.35.8':
-    resolution: {integrity: sha512-FR72GekTWx6ouXI9d+qOgWtLP7PIu4rwkX7QIHCaFW47N8gLTCL5NrpA0Ce8ok9+7BhYWrpElvIqgIWUdl109Q==}
+  '@kong/kongponents@9.35.11':
+    resolution: {integrity: sha512-wFkkZTfaYApWSl+s6PG0tP6XvG0yGiB8+APFOKGJXw/YytzPx79AdH6eWJ4CjwBdN9L8vxpypjkfDwrz9w4qpw==}
     engines: {node: '>=v16.20.2 || >=18.12.1 || >=20.14.0 || >=22.14.0', pnpm: '>=9.11.0 || >=10.10.0'}
     peerDependencies:
       vue: '>= 3.5.0 < 4'
@@ -4912,7 +4912,7 @@ snapshots:
     dependencies:
       buffer: 6.0.3
 
-  '@kong/design-tokens@1.17.4': {}
+  '@kong/design-tokens@1.17.5': {}
 
   '@kong/eslint-config-kong-ui@1.5.1(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3)':
     dependencies:
@@ -4937,7 +4937,7 @@ snapshots:
     dependencies:
       vue: 3.5.17(typescript@5.8.3)
 
-  '@kong/kongponents@9.35.8(vue-router@4.5.1(vue@3.5.17(typescript@5.8.3)))(vue@3.5.17(typescript@5.8.3))':
+  '@kong/kongponents@9.35.11(vue-router@4.5.1(vue@3.5.17(typescript@5.8.3)))(vue@3.5.17(typescript@5.8.3))':
     dependencies:
       '@floating-ui/vue': 1.1.6(vue@3.5.17(typescript@5.8.3))
       '@kong/icons': 1.31.0(vue@3.5.17(typescript@5.8.3))
