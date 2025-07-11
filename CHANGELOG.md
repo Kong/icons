@@ -1,3 +1,10 @@
+## [1.33.1](https://github.com/Kong/icons/compare/v1.33.0...v1.33.1) (2025-07-11)
+
+
+### Bug Fixes
+
+* **progress-icon:** cross-browser spin ([#683](https://github.com/Kong/icons/issues/683)) ([54aa95a](https://github.com/Kong/icons/commit/54aa95a191c3a945f6fd9b58140928b5f849960e))
+
 # [1.33.0](https://github.com/Kong/icons/compare/v1.32.0...v1.33.0) (2025-07-09)
 
 
