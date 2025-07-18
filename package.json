@@ -52,14 +52,14 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
-    "@evilmartians/lefthook": "^1.11.14",
+    "@evilmartians/lefthook": "^1.11.16",
     "@kong/design-tokens": "^1.17.5",
     "@kong/eslint-config-kong-ui": "^1.3.1",
     "@kong/kongponents": "9.35.11",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.15.34",
+    "@types/node": "^22.15.35",
     "@vitejs/plugin-vue": "^5.2.4",
     "@vitest/ui": "^3.2.4",
     "@vue/test-utils": "^2.4.6",
@@ -80,7 +80,7 @@
     "rollup-plugin-visualizer": "^6.0.3",
     "sass": "^1.89.2",
     "semantic-release": "^22.0.12",
-    "stylelint": "^16.21.0",
+    "stylelint": "^16.21.1",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-recommended-scss": "^15.0.1",
     "stylelint-config-recommended-vue": "^1.6.1",
@@ -93,7 +93,7 @@
     "vitest": "^3.2.4",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1",
-    "vue-tsc": "^2.2.10"
+    "vue-tsc": "^2.2.12"
   },
   "peerDependencies": {
     "vue": ">= 3.3.4 < 4"
