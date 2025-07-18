@@ -27,6 +27,10 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.KONGPONENTS_BOT_PAT }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN_PUBLIC_PUBLISH }}
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@c6295a65d1254861815972266d5933fd6e532bdf # v2.11.1
+        with:
+          egress-policy: audit
       - name: Remove preview consumption comment
         if: ${{ github.event_name == 'pull_request' && env.GITHUB_TOKEN != '' }}
         uses: marocchino/sticky-pull-request-comment@52423e01640425a022ef5fd42c6fb5f633a02728 # v2.9.1
