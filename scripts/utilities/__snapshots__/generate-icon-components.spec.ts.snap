@@ -447,6 +447,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "TrendUpIcon",
   "TvIcon",
   "UnderlineIcon",
+  "UnfoldLessIcon",
   "UnfoldMoreIcon",
   "UploadIcon",
   "VisibilityOffIcon",
