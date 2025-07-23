@@ -1,3 +1,10 @@
+## [1.33.2](https://github.com/Kong/icons/compare/v1.33.1...v1.33.2) (2025-07-23)
+
+
+### Bug Fixes
+
+* add unfold less icon ([#690](https://github.com/Kong/icons/issues/690)) ([8db1317](https://github.com/Kong/icons/commit/8db131750e0fd7813e4454f70ac2e405958fdfa2))
+
 ## [1.33.1](https://github.com/Kong/icons/compare/v1.33.0...v1.33.1) (2025-07-11)
 
 

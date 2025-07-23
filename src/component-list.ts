@@ -454,6 +454,7 @@ export default [
   'TrendUpIcon.vue',
   'TvIcon.vue',
   'UnderlineIcon.vue',
+  'UnfoldLessIcon.vue',
   'UnfoldMoreIcon.vue',
   'UploadIcon.vue',
   'VisibilityIcon.vue',
