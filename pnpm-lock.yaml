@@ -42,7 +42,7 @@ importers:
         specifier: ^21.1.7
         version: 21.1.7
       '@types/node':
-        specifier: ^22.16.4
+        specifier: ^22.16.5
         version: 22.16.5
       '@vitejs/plugin-vue':
         specifier: ^6.0.0
@@ -129,7 +129,7 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
       vite:
-        specifier: ^7.0.4
+        specifier: ^7.0.5
         version: 7.0.6(@types/node@22.16.5)(jiti@2.4.2)(sass@1.89.2)(tsx@4.20.3)
       vite-plugin-vue-devtools:
         specifier: ^7.7.7
@@ -5095,7 +5095,7 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.7
       estree-walker: 2.0.2
-      picomatch: 4.0.2
+      picomatch: 4.0.3
     optionalDependencies:
       rollup: 4.40.1
 
