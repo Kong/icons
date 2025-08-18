@@ -790,6 +790,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "GraduationIcon.vue",
   "GrafanaIcon.vue",
   "GridIcon.vue",
+  "GrokIcon.vue",
   "HashicorpIcon.vue",
   "HelpIcon.vue",
   "HistoryIcon.vue",

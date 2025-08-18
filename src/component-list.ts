@@ -334,6 +334,7 @@ export default [
   'GraduationIcon.vue',
   'GrafanaIcon.vue',
   'GridIcon.vue',
+  'GrokIcon.vue',
   'HashicorpIcon.vue',
   'HelpIcon.vue',
   'HistoryIcon.vue',

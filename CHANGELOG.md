@@ -1,3 +1,10 @@
+# [1.34.0](https://github.com/Kong/icons/compare/v1.33.2...v1.34.0) (2025-08-18)
+
+
+### Features
+
+* **add grok icon:** add grok icon ([#719](https://github.com/Kong/icons/issues/719)) ([01a8d77](https://github.com/Kong/icons/commit/01a8d779f345c0a804c42776e648adbabc782551))
+
 ## [1.33.2](https://github.com/Kong/icons/compare/v1.33.1...v1.33.2) (2025-07-23)
 
 
