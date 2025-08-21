@@ -131,7 +131,12 @@
           "changelogFile": "CHANGELOG.md"
         }
       ],
-      "@semantic-release/npm",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
       [
         "@semantic-release/git",
         {
@@ -152,7 +157,7 @@
     "pnpm": ">=9.14.4 || >=10.1.0"
   },
   "volta": {
-    "node": "22.18.0"
+    "node": "24.6.0"
   },
   "config": {
     "commitizen": {
