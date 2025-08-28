@@ -1,3 +1,10 @@
+# [1.35.0](https://github.com/Kong/icons/compare/v1.34.0...v1.35.0) (2025-08-28)
+
+
+### Features
+
+* **add-new-platform-icons:** add auth0 and okta to platform icons ([#727](https://github.com/Kong/icons/issues/727)) ([5504432](https://github.com/Kong/icons/commit/5504432d7b8cf9582fb6a69433f68124556f824b))
+
 # [1.34.0](https://github.com/Kong/icons/compare/v1.33.2...v1.34.0) (2025-08-18)
 
 
