@@ -1,3 +1,10 @@
+# [1.36.0](https://github.com/Kong/icons/compare/v1.35.0...v1.36.0) (2025-09-04)
+
+
+### Features
+
+* **om-icons-and-extras:** add icons for open meter and others ([#733](https://github.com/Kong/icons/issues/733)) ([72ebbfd](https://github.com/Kong/icons/commit/72ebbfda64ac67ef76c9d300395f0cd13921339a))
+
 # [1.35.0](https://github.com/Kong/icons/compare/v1.34.0...v1.35.0) (2025-08-28)
 
 
