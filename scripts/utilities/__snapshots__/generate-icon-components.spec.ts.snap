@@ -254,6 +254,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "AzureIcon",
   "CohereIcon",
   "ConjourIcon",
+  "CurityIcon",
   "DatadogIcon",
   "DockerIcon",
   "DynatraceIcon",
