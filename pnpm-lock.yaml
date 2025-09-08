@@ -123,7 +123,7 @@ importers:
         specifier: ^1.8.16
         version: 1.8.16
       tsx:
-        specifier: ^4.20.4
+        specifier: ^4.20.5
         version: 4.20.5
       typescript:
         specifier: ^5.9.2
