@@ -1,3 +1,10 @@
+# [1.37.0](https://github.com/Kong/icons/compare/v1.36.0...v1.37.0) (2025-09-08)
+
+
+### Features
+
+* **platforms:** add new curity icon ([#738](https://github.com/Kong/icons/issues/738)) ([0179a1e](https://github.com/Kong/icons/commit/0179a1ebb32ffd9d786c08c94afda8d9028a255b))
+
 # [1.36.0](https://github.com/Kong/icons/compare/v1.35.0...v1.36.0) (2025-09-04)
 
 

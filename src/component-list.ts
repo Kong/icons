@@ -67,6 +67,7 @@ export default [
   'ConjourIcon.vue',
   'ConnectionsIcon.vue',
   'CopyIcon.vue',
+  'CurityIcon.vue',
   'DangerCircleIcon.vue',
   'DangerIcon.vue',
   'DashboardIcon.vue',
