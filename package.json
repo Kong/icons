@@ -19,7 +19,8 @@
     },
     "./dist/style.css": "./dist/kong-icons.css",
     "./package.json": "./package.json",
-    "./dist/*": "./dist/*"
+    "./dist/*": "./dist/*",
+    "./svg/*": "./svg/*"
   },
   "publishConfig": {
     "access": "public"
