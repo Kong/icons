@@ -1,3 +1,10 @@
+# [1.38.0](https://github.com/Kong/icons/compare/v1.37.0...v1.38.0) (2025-09-17)
+
+
+### Features
+
+* **misc-new-icons:** add icons for openmeter, datakit, api gateway ([#750](https://github.com/Kong/icons/issues/750)) ([e61dfd1](https://github.com/Kong/icons/commit/e61dfd1f01ea6da4741ca94350a9d442cfec3732))
+
 # [1.37.0](https://github.com/Kong/icons/compare/v1.36.0...v1.37.0) (2025-09-08)
 
 
