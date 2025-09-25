@@ -42,7 +42,7 @@ importers:
         specifier: ^21.1.7
         version: 21.1.7
       '@types/node':
-        specifier: ^22.18.1
+        specifier: ^22.18.3
         version: 22.18.5
       '@vitejs/plugin-vue':
         specifier: ^6.0.1
