@@ -1,3 +1,10 @@
+# [1.39.0](https://github.com/Kong/icons/compare/v1.38.0...v1.39.0) (2025-09-30)
+
+
+### Features
+
+* add slack, swaggerhub, and traceable icons ([#768](https://github.com/Kong/icons/issues/768)) ([2a0684a](https://github.com/Kong/icons/commit/2a0684a1261cd816229c2ebbb83b342083b17a68))
+
 # [1.38.0](https://github.com/Kong/icons/compare/v1.37.0...v1.38.0) (2025-09-17)
 
 
