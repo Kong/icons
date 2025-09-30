@@ -262,6 +262,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "GithubIcon",
   "GitlabIcon",
   "GoogleCloudIcon",
+  "GoogleVertexIcon",
   "GoogleIcon",
   "GrafanaIcon",
   "GrokIcon",
