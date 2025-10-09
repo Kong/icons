@@ -70,7 +70,7 @@
     "commitizen": "^4.3.1",
     "cross-env": "^10.1.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^9.35.0",
+    "eslint": "^9.37.0",
     "jsdom": "^26.1.0",
     "node-emoji": "^2.2.0",
     "picocolors": "^1.1.1",
@@ -157,7 +157,7 @@
     "pnpm": ">=9.14.4 || >=10.1.0"
   },
   "volta": {
-    "node": "24.9.0"
+    "node": "24.10.0"
   },
   "config": {
     "commitizen": {
