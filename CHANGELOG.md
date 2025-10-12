@@ -1,3 +1,24 @@
+# [1.39.0](https://github.com/Kong/icons/compare/v1.38.0...v1.39.0) (2025-09-30)
+
+
+### Features
+
+* add slack, swaggerhub, and traceable icons ([#768](https://github.com/Kong/icons/issues/768)) ([2a0684a](https://github.com/Kong/icons/commit/2a0684a1261cd816229c2ebbb83b342083b17a68))
+
+# [1.38.0](https://github.com/Kong/icons/compare/v1.37.0...v1.38.0) (2025-09-17)
+
+
+### Features
+
+* **misc-new-icons:** add icons for openmeter, datakit, api gateway ([#750](https://github.com/Kong/icons/issues/750)) ([e61dfd1](https://github.com/Kong/icons/commit/e61dfd1f01ea6da4741ca94350a9d442cfec3732))
+
+# [1.37.0](https://github.com/Kong/icons/compare/v1.36.0...v1.37.0) (2025-09-08)
+
+
+### Features
+
+* **platforms:** add new curity icon ([#738](https://github.com/Kong/icons/issues/738)) ([0179a1e](https://github.com/Kong/icons/commit/0179a1ebb32ffd9d786c08c94afda8d9028a255b))
+
 # [1.36.0](https://github.com/Kong/icons/compare/v1.35.0...v1.36.0) (2025-09-04)
 
 
