@@ -1,35 +1,32 @@
 <template>
-  <span
-    class="sandbox-icon"
-    @mouseleave="showCopyImport = false"
-    @mouseover="showCopyImport = true"
-  >
-    <div
-      v-if="showCopyImport"
-      class="copy-import-container"
-    >
+  <div class="sandbox-icon">
+    <div class="actions-container">
       <KClipboardProvider v-slot="{ copyToClipboard }">
         <KTooltip
           placement="bottom-end"
           :popover-timeout="300"
           :text="importTooltipText"
         >
-          <button
+          <KButton
+            appearance="secondary"
+            aria-label="Copy import statement"
             class="copy-import"
-            @click="() => {
-              copyToClipboard(`import { ${iconName} } from '@kong/icons'`)
-              onCopyImportClick()
-            }"
+            size="small"
+            @click="handleCopy(copyToClipboard)"
           >
-            <DataObjectIcon size="16" />
-          </button>
+            <DataObjectIcon
+              decorative
+              :size="KUI_ICON_SIZE_30"
+            />
+          </KButton>
         </KTooltip>
       </KClipboardProvider>
     </div>
 
     <component
       :is="icon"
-      size="40"
+      decorative
+      :size="KUI_ICON_SIZE_70"
       :title="iconName"
     />
     <KCopy
@@ -40,85 +37,85 @@
     <span
       v-if="title"
       class="icon-title"
-    >{{ title }}</span>
-  </span>
+    >
+      {{ title }}
+    </span>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, ref } from 'vue'
+import { KUI_ICON_SIZE_30, KUI_ICON_SIZE_70 } from '@kong/design-tokens'
 import { DataObjectIcon } from '../../src/components/solid'
 
-const props = defineProps({
-  icon: {
-    type: Object,
-    required: true,
-  },
-  title: {
-    type: String,
-    required: false,
-    default: null,
-  },
-})
+const {
+  icon,
+  title = null,
+} = defineProps<{
+  icon: Record<string, any>
+  title?: string
+}>()
 
-const iconName = computed((): string => props.icon?.__name || '')
+const iconName = computed((): string => icon?.__name || '')
 
-const showCopyImport = ref<boolean>(false)
+const importTooltipText = ref<string>('Copy import')
 
-const importTooltipInitial = 'Copy import'
-const importTooltipText = ref<string>(importTooltipInitial)
-
-const onCopyImportClick = () => {
+const handleCopy = (copyToClipboard: (text: string) => void) => {
+  copyToClipboard(`import { ${iconName.value} } from '@kong/icons'`)
   importTooltipText.value = 'Copied!'
-}
-
-watch(importTooltipText, () => {
-  // change tooltip text back to original after 3 seconds
   setTimeout(() => {
-    importTooltipText.value = importTooltipInitial
+    importTooltipText.value = 'Copy import'
   }, 3000)
-})
+}
 </script>
 
 <style lang="scss" scoped>
 .sandbox-icon {
   align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #0044f4;
+  border: $kui-border-width-10 solid $kui-color-border-neutral-weaker;
+  border-radius: $kui-border-radius-20;
+  color: $kui-color-text-info;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  padding: 16px 8px;
+  padding: $kui-space-60 $kui-space-40;
   position: relative;
-}
 
-.copy-import-container {
-  position: absolute;
-  right: 8px;
-  top: 8px;
+  &:hover {
+    border-color: $kui-color-border-neutral-weak;
 
-  .copy-import {
-    background-color: transparent;
-    border: none;
-    color: inherit;
-    color: #333;
-    cursor: pointer;
-    padding: 0;
-
-    &:hover {
-      color: #292929;
+    .actions-container {
+      opacity: 1;
+      pointer-events: all;
     }
   }
 }
 
+.actions-container {
+  display: flex;
+  opacity: 0;
+  padding: $kui-space-40;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.2s ease-in;
+  width: 100%;
+
+  .copy-import {
+    position: absolute;
+    right: 8px;
+  }
+}
+
 .icon-name {
-  margin-top: 12px;
+  margin-top: $kui-space-50;
 
   :deep(.copy-text) {
     color: #333;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
+    font-family: $kui-font-family-text;
+    font-size: $kui-font-size-30;
+    font-weight: $kui-font-weight-medium;
   }
 
   :deep(.text-icon-wrapper) {
@@ -132,8 +129,8 @@ watch(importTooltipText, () => {
 
 .icon-title {
   color: #999;
-  font-size: 14px;
+  font-size: $kui-font-size-30;
   font-weight: 300;
-  margin-top: 4px;
+  margin-top: $kui-space-20;
 }
 </style>
