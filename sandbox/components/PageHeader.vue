@@ -1,64 +1,58 @@
 <template>
-  <div class="sandbox-header">
+  <div
+    class="sandbox-header"
+    :class="{ scrolling: scrollY > 7 }"
+  >
     <h1>
-      <a
+      <KExternalLink
         class="home-link"
         href="https://github.com/Kong/icons"
-        target="_blank"
         title="View on GitHub"
-      >Kong Icons
-        <ExternalLinkIcon
-          as="span"
-          display="inline-block"
-          :size="16"
-        />
-      </a>
+      >
+        <KongIcon decorative />
+        Kong Icons
+      </KExternalLink>
     </h1>
     <div class="search">
-      <input
+      <KInput
         v-model.trim="query"
+        aria-label="Search icons"
         placeholder="Search icons"
         type="search"
       >
+        <template #before>
+          <SearchIcon decorative />
+        </template>
+      </KInput>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
-import { ExternalLinkIcon } from '@/components'
 import { useRoute, useRouter } from 'vue-router'
-import { debounce } from '../utilities'
+import { useWindowScroll, watchDebounced } from '@vueuse/core'
+import { KongIcon, SearchIcon } from '../../src/components/solid'
+
+const query = defineModel('search', {
+  type: String,
+  required: true,
+})
 
 const route = useRoute()
 const router = useRouter()
+const { y: scrollY } = useWindowScroll()
 
-const emit = defineEmits<{
-  (e: 'search', value: string): void
-}>()
-
-const query = ref('')
-
-const handleQueryUpdate = debounce((searchQuery: string) => {
-  emit('search', searchQuery)
-
-  if (searchQuery) {
-    router.push({ name: 'home', query: { q: searchQuery } })
-  } else {
-    router.push({ name: 'home' })
+watchDebounced(query, (searchQuery) => {
+  if (route.query?.q !== query.value) {
+    router.replace({ name: 'home', query: { q: searchQuery || undefined } })
   }
-}, 200)
-
-watch(query, (searchQuery: string) => {
-  handleQueryUpdate(searchQuery)
-}, { immediate: true })
-
-onMounted(() => {
-  if (route.query.q) {
-    query.value = route.query.q as string
-    emit('search', query.value)
-  }
+}, {
+  debounce: 200,
 })
+
+if (route.query.q) {
+  query.value = String(route.query.q)
+}
 </script>
 
 <style lang="scss" scoped>
@@ -66,44 +60,47 @@ $header-height: 80px;
 
 .sandbox-header {
   align-items: center;
-  background-color: #fff;
-  border-bottom: 1px solid lightgray;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .25);
+  background-color: $kui-color-background;
+  border-bottom: $kui-border-width-10 solid $kui-color-border-neutral-weaker;
   display: inline-flex;
   height: $header-height;
   justify-content: space-between;
   left: 0;
-  padding: 20px;
+  padding: $kui-space-70;
   position: fixed;
   right: 0;
   top: 0;
+  transition: box-shadow 0.3s ease;
   width: 100%;
   z-index: 1;
 
+  &.scrolling {
+    box-shadow: $kui-shadow;
+  }
+
   h1 {
-    font-size: 18px;
-    margin: 0;
+    font-size: $kui-font-size-50;
+    margin: $kui-space-0;
 
     @media (min-width: $kui-breakpoint-phablet) {
-      font-size: 24px;
+      font-size: $kui-font-size-70;
     }
   }
 }
 
 .home-link {
   color: $kui-color-text-primary-strong;
+  display: flex;
+  font-weight: $kui-font-weight-bold;
+  gap: $kui-space-20;
   margin-right: $kui-space-70;
-  outline: none;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-  white-space: nowrap;
 
   &:focus {
     outline: none;
   }
 
   &:focus-visible {
-    outline: 1px solid $kui-color-text-primary;
+    outline: $kui-border-width-10 solid $kui-color-text-primary;
   }
 
   &:hover {
@@ -114,16 +111,5 @@ $header-height: 80px;
 .search {
   max-width: 300px;
   width: 100%;
-
-  input {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: none;
-    font-size: 16px;
-    height: 40px;
-    padding: 4px 8px;
-    width: 100%;
-  }
 }
 </style>
