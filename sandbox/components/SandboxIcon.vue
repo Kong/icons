@@ -8,7 +8,7 @@
           :text="importTooltipText"
         >
           <KButton
-            appearance="secondary"
+            appearance="tertiary"
             aria-label="Copy import statement"
             class="copy-import"
             size="small"

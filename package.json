@@ -34,7 +34,6 @@
     "delete:generated": "rimraf './src/components' && rimraf './dist'",
     "build:sandbox": "pnpm generate && pnpm typecheck && cross-env USE_SANDBOX=true vite build",
     "preview:sandbox": "cross-env USE_SANDBOX=true vite preview",
-    "dev:sandbox": "cross-env USE_SANDBOX=true vite",
     "test": "cross-env FORCE_COLOR=1 vitest run",
     "test:open": "vitest --ui",
     "typecheck": "vue-tsc -p './tsconfig.build.json' --noEmit",
