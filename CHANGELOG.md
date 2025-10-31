@@ -1,3 +1,10 @@
+## [1.39.1](https://github.com/Kong/icons/compare/v1.39.0...v1.39.1) (2025-10-31)
+
+
+### Bug Fixes
+
+* **packaging:** disable sourcemap in vite build config [KHCP-18467] ([#785](https://github.com/Kong/icons/issues/785)) ([813ca12](https://github.com/Kong/icons/commit/813ca127336d56586344610a1e193f49c4e5f3fc))
+
 # [1.39.0](https://github.com/Kong/icons/compare/v1.38.0...v1.39.0) (2025-09-30)
 
 
