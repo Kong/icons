@@ -57,7 +57,7 @@ export default defineConfig({
       },
     emptyOutDir: true,
     minify: true,
-    sourcemap: true,
+    sourcemap: false,
     rollupOptions: {
       external: process.env.USE_SANDBOX ? undefined : ['vue'],
       output: process.env.USE_SANDBOX
