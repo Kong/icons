@@ -1,3 +1,10 @@
+# [1.40.0](https://github.com/Kong/icons/compare/v1.39.1...v1.40.0) (2025-11-18)
+
+
+### Features
+
+* new solid and platform icons plus small update ([#789](https://github.com/Kong/icons/issues/789)) ([2f67f02](https://github.com/Kong/icons/commit/2f67f022f43546b932ba11981ad69dfe66d469f9))
+
 ## [1.39.1](https://github.com/Kong/icons/compare/v1.39.0...v1.39.1) (2025-10-31)
 
 
