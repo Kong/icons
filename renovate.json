@@ -1,18 +1,6 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "Kong/public-shared-renovate//scoped/frontend/base"
-  ],
-  "packageRules": [
-    {
-      "groupName": "node engines range",
-      "groupSlug": "node-engines",
-      "matchPackageNames": [
-        "node"
-      ],
-      "matchDepTypes": [
-        "engines"
-      ],
-      "enabled": false
-    }
   ]
 }
