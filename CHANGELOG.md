@@ -1,3 +1,10 @@
+## [1.40.1](https://github.com/Kong/icons/compare/v1.40.0...v1.40.1) (2025-11-20)
+
+
+### Bug Fixes
+
+* **renovate:** update renovate config ([#790](https://github.com/Kong/icons/issues/790)) ([0a68872](https://github.com/Kong/icons/commit/0a688728c07ccaa83f3f8b7f84b6a45f56058f09))
+
 # [1.40.0](https://github.com/Kong/icons/compare/v1.39.1...v1.40.0) (2025-11-18)
 
 
