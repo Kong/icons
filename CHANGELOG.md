@@ -1,3 +1,10 @@
+## [1.40.3](https://github.com/Kong/icons/compare/v1.40.2...v1.40.3) (2025-11-25)
+
+
+### Bug Fixes
+
+* bumping semantic-release [KHCP-17673] ([5cf0022](https://github.com/Kong/icons/commit/5cf002265de08511e69a55202bad924f650d683b))
+
 ## [1.40.2](https://github.com/Kong/icons/compare/v1.40.1...v1.40.2) (2025-11-25)
 
 
