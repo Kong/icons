@@ -1,3 +1,10 @@
+## [1.40.2](https://github.com/Kong/icons/compare/v1.40.1...v1.40.2) (2025-11-25)
+
+
+### Bug Fixes
+
+* back to publishing using semantic-release [KHCP-17673] ([#791](https://github.com/Kong/icons/issues/791)) ([66aad99](https://github.com/Kong/icons/commit/66aad99dce07b01713a1c1ea17c41d0f14c9a35a))
+
 ## [1.40.1](https://github.com/Kong/icons/compare/v1.40.0...v1.40.1) (2025-11-20)
 
 
