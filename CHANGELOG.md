@@ -1,3 +1,10 @@
+# [1.41.0](https://github.com/Kong/icons/compare/v1.40.3...v1.41.0) (2025-11-28)
+
+
+### Features
+
+* add database and cerebras icons ([#796](https://github.com/Kong/icons/issues/796)) ([642c1c3](https://github.com/Kong/icons/commit/642c1c38b13fad7fafa4615d2a8013e2cc4f47e6))
+
 ## [1.40.3](https://github.com/Kong/icons/compare/v1.40.2...v1.40.3) (2025-11-25)
 
 
