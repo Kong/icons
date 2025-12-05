@@ -99,7 +99,7 @@
   "peerDependencies": {
     "vue": ">= 3.3.4 < 4"
   },
-  "homepage": "https://icons.konghq.com/",
+  "homepage": "https://kong.github.io/icons/",
   "repository": {
     "type": "git",
     "url": "https://github.com/Kong/icons.git"
