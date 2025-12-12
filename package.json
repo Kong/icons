@@ -79,7 +79,7 @@
     "postcss-html": "^1.8.0",
     "rimraf": "^6.0.1",
     "rollup-plugin-visualizer": "^6.0.5",
-    "sass": "^1.93.3",
+    "sass": "^1.95.0",
     "semantic-release": "^25.0.2",
     "stylelint": "^16.26.1",
     "stylelint-config-html": "^1.1.0",
@@ -147,7 +147,7 @@
       "@semantic-release/github"
     ]
   },
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.25.0",
   "engines": {
     "node": ">=18.17.0",
     "pnpm": ">=9.14.4 || >=10.1.0"
