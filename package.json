@@ -61,7 +61,7 @@
     "@types/jsdom": "^21.1.7",
     "@types/node": "^24.10.4",
     "@vitejs/plugin-vue": "^6.0.3",
-    "@vitest/ui": "^4.0.15",
+    "@vitest/ui": "^4.0.16",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
     "@vueuse/core": "^14.1.0",
@@ -91,7 +91,7 @@
     "typescript": "^5.9.3",
     "vite": "^7.3.0",
     "vite-plugin-vue-devtools": "^8.0.5",
-    "vitest": "^4.0.15",
+    "vitest": "^4.0.16",
     "vue": "^3.5.25",
     "vue-router": "^4.6.4",
     "vue-tsc": "^3.1.8"
