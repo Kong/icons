@@ -79,7 +79,7 @@
     "postcss-html": "^1.8.0",
     "rimraf": "^6.1.2",
     "rollup-plugin-visualizer": "^6.0.5",
-    "sass": "^1.96.0",
+    "sass": "^1.97.1",
     "semantic-release": "^25.0.2",
     "stylelint": "^16.26.1",
     "stylelint-config-html": "^1.1.0",
@@ -94,7 +94,7 @@
     "vitest": "^4.0.16",
     "vue": "^3.5.25",
     "vue-router": "^4.6.4",
-    "vue-tsc": "^3.1.8"
+    "vue-tsc": "^3.2.1"
   },
   "peerDependencies": {
     "vue": ">= 3.3.4 < 4"
@@ -147,13 +147,13 @@
       "@semantic-release/github"
     ]
   },
-  "packageManager": "pnpm@10.25.0",
+  "packageManager": "pnpm@10.26.1",
   "engines": {
     "node": ">=18.17.0",
     "pnpm": ">=9.14.4 || >=10.1.0"
   },
   "volta": {
-    "node": "24.11.1"
+    "node": "24.12.0"
   },
   "config": {
     "commitizen": {
