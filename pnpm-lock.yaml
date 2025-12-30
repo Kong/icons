@@ -21,8 +21,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(@types/node@24.10.4)(typescript@5.9.3)
       '@evilmartians/lefthook':
-        specifier: ^2.0.12
-        version: 2.0.12
+        specifier: ^2.0.13
+        version: 2.0.13
       '@kong/design-tokens':
         specifier: ^1.18.0
         version: 1.18.0
@@ -693,8 +693,8 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@evilmartians/lefthook@2.0.12':
-    resolution: {integrity: sha512-SSsBw9f1ow0rz3tKhQYcalIO2V+VOcZGTFg7CkYAUVTW4q87KORfpjehJZ3bpSYxLaDV8Xkv0gaXbi9pr5Br/w==}
+  '@evilmartians/lefthook@2.0.13':
+    resolution: {integrity: sha512-Kpsd8NNQw4PrxP41OqwvM0oAP8y70Fslir7uU9fUBdl6JcGGpKlFNlFj87/5OJO95VHxKm8rFvg5mbkv4cCTFw==}
     cpu: [x64, arm64, ia32]
     os: [darwin, linux, win32]
     hasBin: true
@@ -4331,6 +4331,7 @@ packages:
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@4.0.0:
     resolution: {integrity: sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==}
@@ -5067,7 +5068,7 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@evilmartians/lefthook@2.0.12': {}
+  '@evilmartians/lefthook@2.0.13': {}
 
   '@fastify/busboy@2.1.1': {}
 
