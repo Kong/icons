@@ -52,7 +52,7 @@
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
     "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
-    "@evilmartians/lefthook": "^2.0.12",
+    "@evilmartians/lefthook": "^2.0.13",
     "@kong/design-tokens": "^1.18.0",
     "@kong/eslint-config-kong-ui": "^1.5.1",
     "@kong/kongponents": "9.48.4",
