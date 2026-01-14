@@ -1,3 +1,10 @@
+# [1.42.0](https://github.com/Kong/icons/compare/v1.41.0...v1.42.0) (2026-01-14)
+
+
+### Features
+
+* add filled thumb up and down icons for KAi ([#823](https://github.com/Kong/icons/issues/823)) ([1ee9a7c](https://github.com/Kong/icons/commit/1ee9a7cf8fd227bc58067bccedc8b1abb98fa148))
+
 # [1.41.0](https://github.com/Kong/icons/compare/v1.40.3...v1.41.0) (2025-11-28)
 
 
