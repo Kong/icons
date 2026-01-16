@@ -63,7 +63,7 @@
     "@vitejs/plugin-vue": "^6.0.3",
     "@vitest/ui": "^4.0.16",
     "@vue/test-utils": "^2.4.6",
-    "@vue/tsconfig": "^0.7.0",
+    "@vue/tsconfig": "^0.8.1",
     "@vueuse/core": "^14.1.0",
     "autoprefixer": "^10.4.23",
     "c8": "^10.1.3",
