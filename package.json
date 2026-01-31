@@ -52,7 +52,7 @@
     "@commitlint/cli": "^20.3.1",
     "@commitlint/config-conventional": "^20.3.1",
     "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
-    "@evilmartians/lefthook": "^2.0.15",
+    "@evilmartians/lefthook": "^2.0.16",
     "@kong/design-tokens": "^1.18.0",
     "@kong/eslint-config-kong-ui": "^1.5.1",
     "@kong/kongponents": "9.48.4",
@@ -94,7 +94,7 @@
     "vitest": "^4.0.18",
     "vue": "^3.5.27",
     "vue-router": "^4.6.4",
-    "vue-tsc": "^3.2.3"
+    "vue-tsc": "^3.2.4"
   },
   "peerDependencies": {
     "vue": ">= 3.3.4 < 4"
@@ -147,7 +147,7 @@
       "@semantic-release/github"
     ]
   },
-  "packageManager": "pnpm@10.28.0",
+  "packageManager": "pnpm@10.28.2",
   "engines": {
     "node": ">=18.17.0",
     "pnpm": ">=9.14.4 || >=10.1.0"
