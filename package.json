@@ -150,7 +150,7 @@
   "packageManager": "pnpm@10.28.2",
   "engines": {
     "node": ">=18.17.0",
-    "pnpm": ">=10.28.2 >=10.28.2"
+    "pnpm": ">=10.28.2"
   },
   "volta": {
     "node": "24.13.0"
