@@ -1,7 +1,8 @@
 import fs from 'fs'
 import path from 'path'
-import { load } from 'cheerio'
 import pc from 'picocolors'
+import { load } from 'cheerio'
+import { optimize } from 'svgo'
 import { COMPONENT_FILE_HEADER, kebabCase, pascalCase, capitalize, getIconType } from './index'
 
 export default function createComponentFromSvg(pathToSvg: string, svgFileName: string): string {
@@ -11,6 +12,51 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
   // Get the SVG source file
   try {
     svgFile = fs.readFileSync(path.resolve(pathToSvg), 'utf8')
+
+    // Optimize the SVG with SVGO
+    const optimizedSvg = optimize(svgFile, {
+      multipass: true,
+      plugins: [
+        'preset-default',
+        'removeDoctype',
+        'removeXMLProcInst',
+        'removeComments',
+        'removeMetadata',
+        'removeEditorsNSData',
+        'cleanupAttrs',
+        'mergeStyles',
+        'inlineStyles',
+        'minifyStyles',
+        'cleanupIds',
+        'removeUselessDefs',
+        'cleanupNumericValues',
+        'convertColors',
+        'removeUnknownsAndDefaults',
+        'removeNonInheritableGroupAttrs',
+        'removeUselessStrokeAndFill',
+        'removeViewBox',
+        'cleanupEnableBackground',
+        'removeHiddenElems',
+        'removeEmptyText',
+        'convertShapeToPath',
+        'convertEllipseToCircle',
+        'moveElemsAttrsToGroup',
+        'moveGroupAttrsToElems',
+        'collapseGroups',
+        'convertPathData',
+        'convertTransform',
+        'removeEmptyAttrs',
+        'removeEmptyContainers',
+        'mergePaths',
+        'removeUnusedNS',
+        'sortAttrs',
+        'sortDefsChildren',
+        'removeTitle',
+        'removeDesc',
+      ],
+    })
+
+    svgFile = optimizedSvg.data
   } catch (err: any) {
     console.log(pc.red('createComponentFromSvg: could not read the svg source file'), err)
     console.log('')
