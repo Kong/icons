@@ -1,3 +1,10 @@
+# [1.43.0](https://github.com/Kong/icons/compare/v1.42.0...v1.43.0) (2026-02-18)
+
+
+### Features
+
+* add pin-outline icon and mcp server icon ([#833](https://github.com/Kong/icons/issues/833)) ([8980640](https://github.com/Kong/icons/commit/8980640d3c8669ef7ede25cf70b03b2ac72d0bce))
+
 # [1.42.0](https://github.com/Kong/icons/compare/v1.41.0...v1.42.0) (2026-01-14)
 
 
