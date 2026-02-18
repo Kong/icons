@@ -1,55 +1,46 @@
 <template>
-  <PageHeader @search="(query: string) => searchQuery = query" />
+  <PageHeader v-model:search="searchQuery" />
   <div class="sandbox-layout">
     <div class="sandbox-container">
-      <div v-if="filteredComponents.length">
-        <!-- Solid Icons -->
+      <template v-if="hasResults">
         <div
-          v-if="filteredComponents.filter((icon) => icon.type === 'solid').length"
+          v-for="(icons, type) in groupedComponents"
+          :key="type"
           class="icon-container"
         >
-          <h2>Solid Icons</h2>
+          <h2>
+            {{ formatType(type) }} Icons
+            <span class="counts">
+              ({{ icons.length }})
+            </span>
+          </h2>
+
           <div class="icon-grid">
             <SandboxIcon
-              v-for="(icon, idx) in filteredComponents.filter((icon) => icon.type === 'solid')"
-              :key="`icon-${idx}`"
-              :icon="icon.component"
-            />
-          </div>
-        </div>
-        <!-- Multi-Color Icons -->
-        <div
-          v-if="filteredComponents.filter((icon) => icon.type === 'multi-color').length"
-          class="icon-container"
-        >
-          <h2>Multi-Color Icons</h2>
-          <div class="icon-grid">
-            <SandboxIcon
-              v-for="(icon, idx) in filteredComponents.filter((icon) => icon.type === 'multi-color')"
-              :key="`icon-${idx}`"
-              :icon="icon.component"
-            />
-          </div>
-        </div>
-        <!-- Flag Icons -->
-        <div
-          v-if="filteredComponents.filter((icon) => icon.type === 'flags').length"
-          class="icon-container"
-        >
-          <h2>Flag Icons</h2>
-          <div class="icon-grid">
-            <SandboxIcon
-              v-for="(icon, idx) in filteredComponents.filter((icon) => icon.type === 'flags')"
-              :key="`icon-${idx}`"
+              v-for="icon in icons"
+              :key="icon.name"
               :icon="icon.component"
               :title="icon.title"
             />
           </div>
         </div>
-      </div>
-      <p v-else>
-        No icons match your query. Try searching again.
-      </p>
+      </template>
+
+      <KEmptyState
+        v-else
+        message="No icons match your query. Try searching again."
+        title="No Results Found."
+      >
+        <template #icon>
+          <solidIcons.FileEmptyIcon decorative />
+        </template>
+
+        <template #action>
+          <KButton @click="searchQuery = ''">
+            Clear Search
+          </KButton>
+        </template>
+      </KEmptyState>
     </div>
   </div>
 </template>
@@ -62,56 +53,36 @@ import * as solidIcons from '../../src/components/solid'
 import * as multiColorIcons from '../../src/components/multi-color'
 import * as flagIcons from '../../src/components/flags'
 import { COUNTRY_CODES } from '../constants/countries'
-
-interface Country {
-  code: string
-  name: string
-}
+import type { Country } from '../types'
 
 const searchQuery = ref('')
+
+// precompute country map once
+const countryMap = new Map(COUNTRY_CODES.map((c: Country) => [c.code.toUpperCase(), c.name]))
 
 const allComponents = computed(() => {
   const componentList = []
 
-  // solid icons
-  for (const [key, val] of Object.entries(solidIcons)) {
-    componentList.push({
-      type: 'solid',
-      name: key,
-      component: val,
-      keywords: [],
-    })
+  const addIcons = (icons: Record<string, any>, type: string) => {
+    for (const [name, component] of Object.entries(icons)) {
+      componentList.push({ type, name, component, keywords: [], title: '' })
+    }
   }
 
-  // multi-color icons
-  for (const [key, val] of Object.entries(multiColorIcons)) {
-    componentList.push({
-      type: 'multi-color',
-      name: key,
-      component: val,
-      keywords: [],
-    })
-  }
+  addIcons(solidIcons, 'solid')
+  addIcons(multiColorIcons, 'multi-color')
 
-  // flags
-  for (const [key, val] of Object.entries(flagIcons)) {
-    // Create a map of 2 letter code to country name
-    const countryMap: Map<string, { name: string }> = COUNTRY_CODES.reduce((
-      map: Map<string, { name: string }>,
-      country: Country,
-    ) => map.set(country.code, { name: country.name }), new Map())
-
-    // Grab 2-letter country code from icon name
-    const match = /Flag(.*?)Icon/.exec(key) || ''
-    const countryCode = match[1].toUpperCase()
-    const countryMatch = countryMap.has(countryCode)
+  for (const [key, component] of Object.entries(flagIcons)) {
+    const match = /Flag(.*?)Icon/.exec(key)
+    const code = match?.[1]?.toUpperCase()
+    const countryName = code && countryMap.get(code)
 
     componentList.push({
       type: 'flags',
       name: key,
-      component: val,
-      keywords: countryMatch ? [countryMap.get(countryCode)?.name.toLowerCase()] : [],
-      title: countryMatch ? countryMap.get(countryCode)?.name : '',
+      component,
+      keywords: countryName ? [countryName.toLowerCase()] : [],
+      title: countryName || '',
     })
   }
 
@@ -119,16 +90,29 @@ const allComponents = computed(() => {
 })
 
 const filteredComponents = computed(() => {
-  if (!searchQuery.value || searchQuery.value?.toLowerCase() === 'icon') {
-    return allComponents.value
-  }
+  const term = searchQuery.value.trim().toLowerCase().replace(/icon/gi, '')
+  if (!term) return allComponents.value
 
-  const searchTerm = searchQuery.value.toLowerCase().replace(/icon/gi, '')
-
-  return allComponents.value.filter((icon: any) => {
-    return icon.name.toLowerCase().includes(searchTerm) || icon?.keywords.some((country: string) => country.includes(searchTerm))
-  })
+  return allComponents.value.filter(icon =>
+    icon.name.toLowerCase().includes(term) ||
+    icon.keywords.some(k => k.includes(term)),
+  )
 })
+
+const hasResults = computed(() => filteredComponents.value.length > 0)
+
+// Group icons by type for easy rendering
+const groupedComponents = computed(() => {
+  const groups: Record<string, any[]> = {}
+  for (const icon of filteredComponents.value) {
+    if (!groups[icon.type]) groups[icon.type] = []
+    groups[icon.type].push(icon)
+  }
+  return groups
+})
+
+// Helper for title formatting
+const formatType = (type: string) => type.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase())
 </script>
 
 <style lang="scss" scoped>
@@ -138,7 +122,7 @@ $content-max-width: 1800px;
 .sandbox-layout {
   display: flex;
   margin-top: $header-height;
-  padding: 20px;
+  padding: $kui-space-70;
 }
 
 .sandbox-container {
@@ -146,7 +130,7 @@ $content-max-width: 1800px;
   width: 100%;
 
   @media (min-width: $kui-breakpoint-laptop) {
-    padding: 20px;
+    padding: $kui-space-70;
   }
 }
 
@@ -168,7 +152,7 @@ $content-max-width: 1800px;
   display: grid;
   gap: $kui-space-50;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: 0 auto $kui-space-50;
+  margin: $kui-space-0 auto $kui-space-50;
   max-width: $content-max-width;
   padding-bottom: $kui-space-70;
   width: 100%;
@@ -193,9 +177,10 @@ $content-max-width: 1800px;
 h2 {
   color: $kui-color-text;
   margin-top: $kui-space-0;
-}
 
-p {
-  font-size: 14px;
+  .counts {
+    font-size: $kui-font-size-40;
+    font-weight: $kui-font-weight-regular;
+  }
 }
 </style>

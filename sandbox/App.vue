@@ -1,5 +1,9 @@
 <template>
-  <router-view />
+  <KSkeleton
+    v-if="!$route.name"
+    type="fullscreen-kong"
+  />
+  <RouterView />
 </template>
 
 <style lang="scss">

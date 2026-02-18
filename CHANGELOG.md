@@ -1,3 +1,199 @@
+# [1.42.0](https://github.com/Kong/icons/compare/v1.41.0...v1.42.0) (2026-01-14)
+
+
+### Features
+
+* add filled thumb up and down icons for KAi ([#823](https://github.com/Kong/icons/issues/823)) ([1ee9a7c](https://github.com/Kong/icons/commit/1ee9a7cf8fd227bc58067bccedc8b1abb98fa148))
+
+# [1.41.0](https://github.com/Kong/icons/compare/v1.40.3...v1.41.0) (2025-11-28)
+
+
+### Features
+
+* add database and cerebras icons ([#796](https://github.com/Kong/icons/issues/796)) ([642c1c3](https://github.com/Kong/icons/commit/642c1c38b13fad7fafa4615d2a8013e2cc4f47e6))
+
+## [1.40.3](https://github.com/Kong/icons/compare/v1.40.2...v1.40.3) (2025-11-25)
+
+
+### Bug Fixes
+
+* bumping semantic-release [KHCP-17673] ([5cf0022](https://github.com/Kong/icons/commit/5cf002265de08511e69a55202bad924f650d683b))
+
+## [1.40.2](https://github.com/Kong/icons/compare/v1.40.1...v1.40.2) (2025-11-25)
+
+
+### Bug Fixes
+
+* back to publishing using semantic-release [KHCP-17673] ([#791](https://github.com/Kong/icons/issues/791)) ([66aad99](https://github.com/Kong/icons/commit/66aad99dce07b01713a1c1ea17c41d0f14c9a35a))
+
+## [1.40.1](https://github.com/Kong/icons/compare/v1.40.0...v1.40.1) (2025-11-20)
+
+
+### Bug Fixes
+
+* **renovate:** update renovate config ([#790](https://github.com/Kong/icons/issues/790)) ([0a68872](https://github.com/Kong/icons/commit/0a688728c07ccaa83f3f8b7f84b6a45f56058f09))
+
+# [1.40.0](https://github.com/Kong/icons/compare/v1.39.1...v1.40.0) (2025-11-18)
+
+
+### Features
+
+* new solid and platform icons plus small update ([#789](https://github.com/Kong/icons/issues/789)) ([2f67f02](https://github.com/Kong/icons/commit/2f67f022f43546b932ba11981ad69dfe66d469f9))
+
+## [1.39.1](https://github.com/Kong/icons/compare/v1.39.0...v1.39.1) (2025-10-31)
+
+
+### Bug Fixes
+
+* **packaging:** disable sourcemap in vite build config [KHCP-18467] ([#785](https://github.com/Kong/icons/issues/785)) ([813ca12](https://github.com/Kong/icons/commit/813ca127336d56586344610a1e193f49c4e5f3fc))
+
+# [1.39.0](https://github.com/Kong/icons/compare/v1.38.0...v1.39.0) (2025-09-30)
+
+
+### Features
+
+* add slack, swaggerhub, and traceable icons ([#768](https://github.com/Kong/icons/issues/768)) ([2a0684a](https://github.com/Kong/icons/commit/2a0684a1261cd816229c2ebbb83b342083b17a68))
+
+# [1.38.0](https://github.com/Kong/icons/compare/v1.37.0...v1.38.0) (2025-09-17)
+
+
+### Features
+
+* **misc-new-icons:** add icons for openmeter, datakit, api gateway ([#750](https://github.com/Kong/icons/issues/750)) ([e61dfd1](https://github.com/Kong/icons/commit/e61dfd1f01ea6da4741ca94350a9d442cfec3732))
+
+# [1.37.0](https://github.com/Kong/icons/compare/v1.36.0...v1.37.0) (2025-09-08)
+
+
+### Features
+
+* **platforms:** add new curity icon ([#738](https://github.com/Kong/icons/issues/738)) ([0179a1e](https://github.com/Kong/icons/commit/0179a1ebb32ffd9d786c08c94afda8d9028a255b))
+
+# [1.36.0](https://github.com/Kong/icons/compare/v1.35.0...v1.36.0) (2025-09-04)
+
+
+### Features
+
+* **om-icons-and-extras:** add icons for open meter and others ([#733](https://github.com/Kong/icons/issues/733)) ([72ebbfd](https://github.com/Kong/icons/commit/72ebbfda64ac67ef76c9d300395f0cd13921339a))
+
+# [1.35.0](https://github.com/Kong/icons/compare/v1.34.0...v1.35.0) (2025-08-28)
+
+
+### Features
+
+* **add-new-platform-icons:** add auth0 and okta to platform icons ([#727](https://github.com/Kong/icons/issues/727)) ([5504432](https://github.com/Kong/icons/commit/5504432d7b8cf9582fb6a69433f68124556f824b))
+
+# [1.34.0](https://github.com/Kong/icons/compare/v1.33.2...v1.34.0) (2025-08-18)
+
+
+### Features
+
+* **add grok icon:** add grok icon ([#719](https://github.com/Kong/icons/issues/719)) ([01a8d77](https://github.com/Kong/icons/commit/01a8d779f345c0a804c42776e648adbabc782551))
+
+## [1.33.2](https://github.com/Kong/icons/compare/v1.33.1...v1.33.2) (2025-07-23)
+
+
+### Bug Fixes
+
+* add unfold less icon ([#690](https://github.com/Kong/icons/issues/690)) ([8db1317](https://github.com/Kong/icons/commit/8db131750e0fd7813e4454f70ac2e405958fdfa2))
+
+## [1.33.1](https://github.com/Kong/icons/compare/v1.33.0...v1.33.1) (2025-07-11)
+
+
+### Bug Fixes
+
+* **progress-icon:** cross-browser spin ([#683](https://github.com/Kong/icons/issues/683)) ([54aa95a](https://github.com/Kong/icons/commit/54aa95a191c3a945f6fd9b58140928b5f849960e))
+
+# [1.33.0](https://github.com/Kong/icons/compare/v1.32.0...v1.33.0) (2025-07-09)
+
+
+### Features
+
+* add swap sort icon ([#680](https://github.com/Kong/icons/issues/680)) ([2c926d2](https://github.com/Kong/icons/commit/2c926d2473757b8c6b893e62d8ec2b6be465cffb))
+
+# [1.32.0](https://github.com/Kong/icons/compare/v1.31.0...v1.32.0) (2025-07-08)
+
+
+### Features
+
+* add cleaning icon ([#679](https://github.com/Kong/icons/issues/679)) ([a905d00](https://github.com/Kong/icons/commit/a905d00d0d157f442e6c24daf194f1a3d6ae1ec4))
+
+# [1.31.0](https://github.com/Kong/icons/compare/v1.30.0...v1.31.0) (2025-06-17)
+
+
+### Features
+
+* add pin icon ([#664](https://github.com/Kong/icons/issues/664)) ([84ac707](https://github.com/Kong/icons/commit/84ac70702a4c07ae63123cf63ef3da6b6f79a517))
+
+# [1.30.0](https://github.com/Kong/icons/compare/v1.29.0...v1.30.0) (2025-06-05)
+
+
+### Features
+
+* add dice icon ([#654](https://github.com/Kong/icons/issues/654)) ([2d147e4](https://github.com/Kong/icons/commit/2d147e48d745d6bbdf891ea9d6600989ff11e44e))
+
+# [1.29.0](https://github.com/Kong/icons/compare/v1.28.0...v1.29.0) (2025-05-21)
+
+
+### Features
+
+* **icons:** add money icon ([#635](https://github.com/Kong/icons/issues/635)) ([b070911](https://github.com/Kong/icons/commit/b0709113e40a5ae70861b9b7105de717a38f17ca))
+
+# [1.28.0](https://github.com/Kong/icons/compare/v1.27.0...v1.28.0) (2025-05-15)
+
+
+### Features
+
+* new icons ([#630](https://github.com/Kong/icons/issues/630)) ([6192d9e](https://github.com/Kong/icons/commit/6192d9eca44a09c66aace566a5c1a4b46984308b))
+
+# [1.27.0](https://github.com/Kong/icons/compare/v1.26.0...v1.27.0) (2025-05-15)
+
+
+### Features
+
+* **icons:** add AI Spark icon ([#629](https://github.com/Kong/icons/issues/629)) ([50d1740](https://github.com/Kong/icons/commit/50d17404a8939153bdc55e708dff6ac2e17a91ba))
+
+# [1.26.0](https://github.com/Kong/icons/compare/v1.25.1...v1.26.0) (2025-04-30)
+
+
+### Features
+
+* **icons:** add mail and event gradient ([#611](https://github.com/Kong/icons/issues/611)) ([7989d30](https://github.com/Kong/icons/commit/7989d305024c21cccc8ca81bbcdfc2e0ced92b25))
+
+## [1.25.1](https://github.com/Kong/icons/compare/v1.25.0...v1.25.1) (2025-04-22)
+
+
+### Bug Fixes
+
+* add conjour ([#604](https://github.com/Kong/icons/issues/604)) ([e5ca5b4](https://github.com/Kong/icons/commit/e5ca5b4372aba28c598840ae58e0fc60e94b1108))
+
+# [1.25.0](https://github.com/Kong/icons/compare/v1.24.0...v1.25.0) (2025-04-21)
+
+
+### Features
+
+* panel open and close icons ([#602](https://github.com/Kong/icons/issues/602)) ([2b7486f](https://github.com/Kong/icons/commit/2b7486f47a63a1669a9e72dab5ba32ba8231f92d))
+
+# [1.24.0](https://github.com/Kong/icons/compare/v1.23.1...v1.24.0) (2025-04-16)
+
+
+### Features
+
+* add ai platform icons ([#597](https://github.com/Kong/icons/issues/597)) ([4bb4967](https://github.com/Kong/icons/commit/4bb49678dfad1cad0c034e6f0637a097727d96c8))
+
+## [1.23.1](https://github.com/Kong/icons/compare/v1.23.0...v1.23.1) (2025-04-10)
+
+
+### Bug Fixes
+
+* add numeric value icon ([#592](https://github.com/Kong/icons/issues/592)) ([5f7c62a](https://github.com/Kong/icons/commit/5f7c62afcfd6be9b0ddc9163e4ae93a51379d32f))
+
+# [1.23.0](https://github.com/Kong/icons/compare/v1.22.1...v1.23.0) (2025-04-10)
+
+
+### Features
+
+* code-snippet ([#590](https://github.com/Kong/icons/issues/590)) ([27bba28](https://github.com/Kong/icons/commit/27bba28c392d379a06dd7c3e559c3bfe7f2b3285))
+
 ## [1.22.1](https://github.com/Kong/icons/compare/v1.22.0...v1.22.1) (2025-03-27)
 
 

@@ -43,9 +43,9 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
     }
     // Add animation for ProgressIcon
     if (name === 'progress-icon') {
-      // Add transform origin
-      path.attr('transform-origin', 'center')
-      $cheerio('svg').append('<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0" to="360" dur="1.5s" repeatCount="indefinite" />')
+      // Add spin style
+      path.attr('style', 'transform-origin: 50% 50%; animation: kong-icon-spin 1.5s linear infinite;')
+      $cheerio('svg').prepend('<style>@keyframes kong-icon-spin { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }</style>')
     }
   }
 
