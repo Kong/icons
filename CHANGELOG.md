@@ -1,3 +1,10 @@
+# [1.44.0](https://github.com/Kong/icons/compare/v1.43.0...v1.44.0) (2026-03-06)
+
+
+### Features
+
+* add misc icons for designers, update widgets icon ([#840](https://github.com/Kong/icons/issues/840)) ([55f391c](https://github.com/Kong/icons/commit/55f391c9167dfbaf7cc05a8a158b5c9d5e68eec5))
+
 # [1.43.0](https://github.com/Kong/icons/compare/v1.42.0...v1.43.0) (2026-02-18)
 
 
