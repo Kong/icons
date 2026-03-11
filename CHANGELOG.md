@@ -1,3 +1,10 @@
+# [1.45.0](https://github.com/Kong/icons/compare/v1.44.0...v1.45.0) (2026-03-11)
+
+
+### Features
+
+* add icons for new nav header ([#841](https://github.com/Kong/icons/issues/841)) ([ee30193](https://github.com/Kong/icons/commit/ee3019391a88d06cf9a4051d47cd2080a44ad759))
+
 # [1.44.0](https://github.com/Kong/icons/compare/v1.43.0...v1.44.0) (2026-03-06)
 
 
