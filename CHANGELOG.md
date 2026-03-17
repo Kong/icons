@@ -1,3 +1,10 @@
+# [1.46.0](https://github.com/Kong/icons/compare/v1.45.0...v1.46.0) (2026-03-17)
+
+
+### Features
+
+* more icons for new nav designs ([#842](https://github.com/Kong/icons/issues/842)) ([fbb4736](https://github.com/Kong/icons/commit/fbb4736cab4eb9bae245efe52d57e9424a3d1633))
+
 # [1.45.0](https://github.com/Kong/icons/compare/v1.44.0...v1.45.0) (2026-03-11)
 
 
