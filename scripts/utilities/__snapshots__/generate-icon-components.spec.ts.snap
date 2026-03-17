@@ -516,7 +516,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "UnfoldMoreIcon",
   "UploadIcon",
   "UsageIcon",
-  "VerifiedOutlineIcon",
+  "VerifiedIcon",
   "VisibilityOffIcon",
   "VisibilityIcon",
   "VitalsIcon",
