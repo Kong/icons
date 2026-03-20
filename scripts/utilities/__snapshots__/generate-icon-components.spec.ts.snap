@@ -312,7 +312,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "AddCircleIcon",
   "AddOnSingleIcon",
   "AddIcon",
-  "AiBotIcon",
+  "AiAgentIcon",
   "AnalyticsIcon",
   "ArrowDownIcon",
   "ArrowLeftIcon",
