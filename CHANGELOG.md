@@ -1,3 +1,10 @@
+# [1.47.0](https://github.com/Kong/icons/compare/v1.46.0...v1.47.0) (2026-03-20)
+
+
+### Features
+
+* add unlock icon and ai-bot icon ([#844](https://github.com/Kong/icons/issues/844)) ([2e34a7c](https://github.com/Kong/icons/commit/2e34a7c9946d33c39596f596e1926620ce09247e))
+
 # [1.46.0](https://github.com/Kong/icons/compare/v1.45.0...v1.46.0) (2026-03-17)
 
 
