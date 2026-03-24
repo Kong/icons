@@ -1,3 +1,10 @@
+# [1.48.0](https://github.com/Kong/icons/compare/v1.47.0...v1.48.0) (2026-03-24)
+
+
+### Features
+
+* add home and arrow-top-left icons for new nav ([#845](https://github.com/Kong/icons/issues/845)) ([86cb346](https://github.com/Kong/icons/commit/86cb346d8eb3d3806d67ae30568ef59d2e3a2520))
+
 # [1.47.0](https://github.com/Kong/icons/compare/v1.46.0...v1.47.0) (2026-03-20)
 
 
