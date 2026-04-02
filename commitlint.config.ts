@@ -18,14 +18,13 @@ export default {
     messages: {
       footer: 'Jira ticket (optional, e.g. JIRA-123):',
     },
-    formatMessageCB: ({ defaultHeader, body, breaking, footer }) => {
+    formatMessageCB: ({ defaultMessage, defaultHeader, footer }) => {
       const ticket = footer?.trim()
-      let header = defaultHeader
-      if (ticket) header += ` [${ticket}]`
-      const parts = [header]
-      if (body) parts.push(body)
-      if (breaking) parts.push(`BREAKING CHANGE: ${breaking}`)
-      return parts.join('\n\n')
+      if (!ticket) return defaultMessage
+      // Move Jira ticket from footer into the header line
+      return defaultMessage
+        .replace(defaultHeader, `${defaultHeader} [${ticket}]`)
+        .replace(new RegExp(`\\n\\n${footer.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`), '')
     },
   },
 } satisfies UserConfig
