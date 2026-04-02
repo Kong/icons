@@ -45,13 +45,12 @@
     "stylelint:fix:generated": "stylelint './src/components/**/*.vue' --fix",
     "fix:generated": "pnpm lint:fix:generated && pnpm stylelint:fix:generated",
     "semantic-release": "semantic-release",
-    "commit": "cz"
+    "commit": "czg"
   },
   "devDependencies": {
     "@babel/types": "^7.29.0",
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
-    "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.1",
     "@evilmartians/lefthook": "^2.1.4",
     "@kong/design-tokens": "^1.18.0",
     "@kong/eslint-config-kong-ui": "^1.5.1",
@@ -68,9 +67,8 @@
     "autoprefixer": "^10.4.27",
     "c8": "^10.1.3",
     "cheerio": "^1.2.0",
-    "commitizen": "^4.3.1",
     "cross-env": "^10.1.0",
-    "cz-conventional-changelog": "^3.3.0",
+    "czg": "^1.12.0",
     "eslint": "^9.39.4",
     "jsdom": "^26.1.0",
     "node-emoji": "^2.2.0",
@@ -154,16 +152,6 @@
   },
   "volta": {
     "node": "24.13.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira",
-      "skipScope": false,
-      "jiraOptional": true,
-      "jiraLocation": "post-description",
-      "jiraPrepend": "[",
-      "jiraAppend": "]"
-    }
   },
   "pnpm": {
     "onlyBuiltDependencies": [
