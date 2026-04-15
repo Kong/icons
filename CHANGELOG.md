@@ -1,3 +1,10 @@
+# [1.50.0](https://github.com/Kong/icons/compare/v1.49.0...v1.50.0) (2026-04-15)
+
+
+### Features
+
+* added icons for LLM providers for AI Gateway [KM-2462] ([#852](https://github.com/Kong/icons/issues/852)) ([2e1f862](https://github.com/Kong/icons/commit/2e1f8623dea5c9000bc3f407c14054cfb9507083))
+
 # [1.49.0](https://github.com/Kong/icons/compare/v1.48.0...v1.49.0) (2026-04-15)
 
 
