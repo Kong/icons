@@ -1,3 +1,10 @@
+# [1.49.0](https://github.com/Kong/icons/compare/v1.48.0...v1.49.0) (2026-04-15)
+
+
+### Features
+
+* **agent:** add agent for automatically processing the icon additions ([#850](https://github.com/Kong/icons/issues/850)) ([4b34266](https://github.com/Kong/icons/commit/4b342663d24ed74b2af231d1c69d4bd6bda6684d))
+
 # [1.48.0](https://github.com/Kong/icons/compare/v1.47.0...v1.48.0) (2026-03-24)
 
 
