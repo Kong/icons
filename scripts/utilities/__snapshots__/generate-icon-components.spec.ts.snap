@@ -959,6 +959,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "MenuIcon.vue",
   "MeshIcon.vue",
   "MetaLlamaIcon.vue",
+  "MetadataIcon.vue",
   "MicrosoftIcon.vue",
   "MicrosoftTeamsIcon.vue",
   "MistralIcon.vue",
