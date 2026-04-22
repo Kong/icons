@@ -1,3 +1,10 @@
+# [1.51.0](https://github.com/Kong/icons/compare/v1.50.0...v1.51.0) (2026-04-16)
+
+
+### Features
+
+* add metadata icon ([#853](https://github.com/Kong/icons/issues/853)) ([3e35ef7](https://github.com/Kong/icons/commit/3e35ef7418e10fb4dfaa6446d359ccf681c25839))
+
 # [1.50.0](https://github.com/Kong/icons/compare/v1.49.0...v1.50.0) (2026-04-15)
 
 

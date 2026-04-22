@@ -427,6 +427,7 @@ export default [
   'MenuIcon.vue',
   'MeshIcon.vue',
   'MetaLlamaIcon.vue',
+  'MetadataIcon.vue',
   'MicrosoftIcon.vue',
   'MicrosoftTeamsIcon.vue',
   'MistralIcon.vue',
