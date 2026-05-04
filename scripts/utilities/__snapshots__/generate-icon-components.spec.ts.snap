@@ -556,6 +556,8 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "AddOnSingleIcon.vue",
   "AiAgentIcon.vue",
   "AlibabaCloudIcon.vue",
+  "AlignVerticalBottomIcon.vue",
+  "AlignVerticalTopIcon.vue",
   "AmazonBedrockIcon.vue",
   "AnalyticsIcon.vue",
   "AnthropicIcon.vue",

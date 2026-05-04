@@ -1,3 +1,10 @@
+# [1.53.0](https://github.com/Kong/icons/compare/v1.52.0...v1.53.0) (2026-05-04)
+
+
+### Features
+
+* add observability icons (AlignVerticalBottom, AlignVerticalTop) ([#856](https://github.com/Kong/icons/issues/856)) ([ff24c51](https://github.com/Kong/icons/commit/ff24c51f53dd4d8b7ec59c0ff8154fca599239da))
+
 # [1.52.0](https://github.com/Kong/icons/compare/v1.51.0...v1.52.0) (2026-04-22)
 
 

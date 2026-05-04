@@ -17,6 +17,8 @@ export default [
   'AddOnSingleIcon.vue',
   'AiAgentIcon.vue',
   'AlibabaCloudIcon.vue',
+  'AlignVerticalBottomIcon.vue',
+  'AlignVerticalTopIcon.vue',
   'AmazonBedrockIcon.vue',
   'AnalyticsIcon.vue',
   'AnthropicIcon.vue',
