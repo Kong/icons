@@ -317,6 +317,8 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "AddOnSingleIcon",
   "AddIcon",
   "AiAgentIcon",
+  "AlignVerticalBottomIcon",
+  "AlignVerticalTopIcon",
   "AnalyticsIcon",
   "ArrowDownIcon",
   "ArrowLeftIcon",
