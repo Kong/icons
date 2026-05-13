@@ -78,7 +78,6 @@ export default [
   'CohereIcon.vue',
   'CoinIcon.vue',
   'CollapseIcon.vue',
-  'CollapsePanelIcon.vue',
   'ColorsIcon.vue',
   'ConjourIcon.vue',
   'ConnectionsIcon.vue',
