@@ -1,3 +1,10 @@
+# [1.54.0](https://github.com/Kong/icons/compare/v1.53.0...v1.54.0) (2026-05-13)
+
+
+### Features
+
+* remove collapse-panel duplicate icon [KHCP-20015] ([#860](https://github.com/Kong/icons/issues/860)) ([8be5f3f](https://github.com/Kong/icons/commit/8be5f3f4079d6346b6c76fe2c915b96a80d8c14b))
+
 # [1.53.0](https://github.com/Kong/icons/compare/v1.52.0...v1.53.0) (2026-05-04)
 
 
