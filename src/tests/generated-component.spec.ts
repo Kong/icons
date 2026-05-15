@@ -244,6 +244,38 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
           expect(consoleSpy).toHaveBeenCalledOnce()
           consoleSpy.mockReset()
         })
+
+        it('accepts a CSS var() custom property string', () => {
+          const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
+          const size = 'var(--kui-icon-size-50, 24px)'
+
+          const wrapper = mount(IconComponent, {
+            props: {
+              size,
+            },
+          })
+
+          expect(consoleSpy).not.toHaveBeenCalled()
+          consoleSpy.mockReset()
+
+          const iconWrapper = wrapper.find('.kui-icon').element as HTMLElement
+          expect(iconWrapper.style.width).toBe(size)
+          expect(iconWrapper.style.height).toBe(size)
+        })
+
+        it('console.warns if the size prop is an unsupported CSS function value', () => {
+          const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
+          const size = 'calc(100% - 4px)'
+
+          mount(IconComponent, {
+            props: {
+              size,
+            },
+          })
+
+          expect(consoleSpy).toHaveBeenCalledOnce()
+          consoleSpy.mockReset()
+        })
       })
 
       describe('as', () => {

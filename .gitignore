@@ -20,3 +20,5 @@ docs/.vitepress/.temp
 docs/.vitepress/.cache
 docs/.vitepress/cache
 docs/.vitepress/dist
+
+.claude/
