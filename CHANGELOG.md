@@ -1,3 +1,10 @@
+## [1.55.1](https://github.com/Kong/icons/compare/v1.55.0...v1.55.1) (2026-05-15)
+
+
+### Bug Fixes
+
+* allow css custom properties for size ([#862](https://github.com/Kong/icons/issues/862)) ([2bc4ffb](https://github.com/Kong/icons/commit/2bc4ffbc6521ef73cbd50d0ba3c700511bf298ba))
+
 # [1.55.0](https://github.com/Kong/icons/compare/v1.54.0...v1.55.0) (2026-05-15)
 
 
