@@ -1,3 +1,10 @@
+# [1.55.0](https://github.com/Kong/icons/compare/v1.54.0...v1.55.0) (2026-05-15)
+
+
+### Features
+
+* add new nav and KAI icons (DockRight, FitPageWidth, MenuOpen, Star, StarFill) ([#861](https://github.com/Kong/icons/issues/861)) ([c495eff](https://github.com/Kong/icons/commit/c495effaeaae76e3661daabcc6c4ad72a237105d))
+
 # [1.54.0](https://github.com/Kong/icons/compare/v1.53.0...v1.54.0) (2026-05-13)
 
 
