@@ -34,6 +34,11 @@ const props = defineProps({
     required: false,
     default: KUI_ICON_SIZE_50, // if setting to the imported const fails, just pass a number of 24 as the default.
     validator: (sizeValue: number | string): boolean => {
+      // Allow CSS custom-property expressions, e.g. var(--kui-icon-size-50, 24px)
+      if (typeof sizeValue === 'string' && /^\s*var\(\s*--[\w-]+\s*(?:,[^)]*)?\)\s*$/.test(sizeValue)) {
+        return true
+      }
+
       if (typeof sizeValue === 'number' && sizeValue > 0) {
         return true
       }
@@ -67,7 +72,15 @@ const props = defineProps({
   },
 })
 
+/** Returns true if the given value is a CSS `var()` custom-property expression, e.g. `var(--kui-icon-size-50, 24px)` */
+const isCssVar = (value: unknown): value is string => typeof value === 'string' && /^\s*var\(\s*--[\w-]+\s*(?:,[^)]*)?\)\s*$/.test(value)
+
 const iconSize = computed((): string => {
+  // If props.size is a CSS variable expression, return it as-is
+  if (isCssVar(props.size)) {
+    return props.size as string
+  }
+
   // If props.size is a number, ensure it's greater than zero
   if (typeof props.size === 'number' && props.size > 0) {
     return `${props.size}px`
