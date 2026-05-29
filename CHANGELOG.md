@@ -1,3 +1,10 @@
+# [1.56.0](https://github.com/Kong/icons/compare/v1.55.1...v1.56.0) (2026-05-29)
+
+
+### Features
+
+* **icons:** add kimi and vercel ai provider icons ([#864](https://github.com/Kong/icons/issues/864)) ([9f7011d](https://github.com/Kong/icons/commit/9f7011d965d34853d15649cfa6a9e2cc6b6627fd))
+
 ## [1.55.1](https://github.com/Kong/icons/compare/v1.55.0...v1.55.1) (2026-05-15)
 
 
