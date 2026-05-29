@@ -171,8 +171,5 @@
       "esbuild",
       "vue-demi"
     ]
-  },
-  "dependencies": {
-    "@kong/icons": "^1.55.1"
   }
 }
