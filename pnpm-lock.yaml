@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@kong/icons':
+        specifier: ^1.55.1
+        version: 1.55.1(vue@3.5.31(typescript@5.9.3))
     devDependencies:
       '@babel/types':
         specifier: ^7.29.0
@@ -954,9 +958,9 @@ packages:
     peerDependencies:
       eslint: '>= 9.23.0'
 
-  '@kong/icons@1.41.0':
-    resolution: {integrity: sha512-I6V/lYVz4AgKaSAAmEp3P5mjgYskJb2Kv5Y85xRehmRqu+jQ9mbuxDtXq90k0RzvdtBh93DAdH0T+xCzl3XXnA==}
-    engines: {node: '>=18.17.0', pnpm: '>=9.14.4 || >=10.1.0'}
+  '@kong/icons@1.55.1':
+    resolution: {integrity: sha512-5VHWvzS0S4fgXP+cRliJF+TXi7rnI2vMQfiJz6JJZ7FZDWFtJvA/DMV884474KbYcbdE0mMvoWWTyLRPhNUaAA==}
+    engines: {node: '>=18.17.0', pnpm: '>=10.28.2'}
     peerDependencies:
       vue: '>= 3.3.4 < 4'
 
@@ -5379,14 +5383,14 @@ snapshots:
       - supports-color
       - typescript
 
-  '@kong/icons@1.41.0(vue@3.5.31(typescript@5.9.3))':
+  '@kong/icons@1.55.1(vue@3.5.31(typescript@5.9.3))':
     dependencies:
       vue: 3.5.31(typescript@5.9.3)
 
   '@kong/kongponents@9.48.4(vue-router@4.6.4(vue@3.5.31(typescript@5.9.3)))(vue@3.5.31(typescript@5.9.3))':
     dependencies:
       '@floating-ui/vue': 1.1.9(vue@3.5.31(typescript@5.9.3))
-      '@kong/icons': 1.41.0(vue@3.5.31(typescript@5.9.3))
+      '@kong/icons': 1.55.1(vue@3.5.31(typescript@5.9.3))
       '@popperjs/core': 2.11.8
       date-fns: 2.30.0
       date-fns-tz: 2.0.1(date-fns@2.30.0)
