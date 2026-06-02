@@ -16,7 +16,7 @@
           >
             <DataObjectIcon
               decorative
-              :size="KUI_ICON_SIZE_30"
+              :size="`var(--kui-icon-size-30, ${KUI_ICON_SIZE_30})`"
             />
           </KButton>
         </KTooltip>
@@ -26,7 +26,7 @@
     <component
       :is="icon"
       decorative
-      :size="KUI_ICON_SIZE_70"
+      :size="`var(--kui-icon-size-70, ${KUI_ICON_SIZE_70})`"
       :title="iconName"
     />
     <KCopy
