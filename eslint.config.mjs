@@ -1,4 +1,5 @@
 import eslintKongUiConfig from '@kong/eslint-config-kong-ui'
+import designTokens from '@kong/design-tokens/eslint-plugin'
 
 export default [
   ...eslintKongUiConfig,
@@ -10,6 +11,15 @@ export default [
     ],
     rules: {
       'vue/no-v-html': 'off',
+    },
+  },
+  {
+    files: ['**/*.vue'],
+    plugins: {
+      '@kong/design-tokens': designTokens,
+    },
+    rules: {
+      '@kong/design-tokens/token-constant-requires-css-var': 'error',
     },
   },
 ]
