@@ -1,3 +1,10 @@
+# [1.57.0](https://github.com/Kong/icons/compare/v1.56.0...v1.57.0) (2026-06-03)
+
+
+### Features
+
+* add new diff icon (Difference) ([#868](https://github.com/Kong/icons/issues/868)) ([222aa71](https://github.com/Kong/icons/commit/222aa716154fed7093460721687c8c97828befc0))
+
 # [1.56.0](https://github.com/Kong/icons/compare/v1.55.1...v1.56.0) (2026-05-29)
 
 
