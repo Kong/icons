@@ -102,6 +102,7 @@ export default [
   'DevPortalIcon.vue',
   'DeviceHubIcon.vue',
   'DiceIcon.vue',
+  'DifferenceIcon.vue',
   'DisabledIcon.vue',
   'DockRightIcon.vue',
   'DockerIcon.vue',
