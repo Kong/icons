@@ -1,3 +1,10 @@
+# [1.58.0](https://github.com/Kong/icons/compare/v1.57.0...v1.58.0) (2026-06-09)
+
+
+### Features
+
+* add new custom forms icons ([#872](https://github.com/Kong/icons/issues/872)) ([07d04af](https://github.com/Kong/icons/commit/07d04afea1b8a1caa14d54e6a35f64c8bc2353d4))
+
 # [1.57.0](https://github.com/Kong/icons/compare/v1.56.0...v1.57.0) (2026-06-03)
 
 
