@@ -24,14 +24,14 @@ importers:
         specifier: ^2.1.6
         version: 2.1.8
       '@kong/design-tokens':
-        specifier: 1.23.1-pr.665.d8b14d4.0
-        version: 1.23.1-pr.665.d8b14d4.0
+        specifier: 1.23.1-pr.665.3947d19.0
+        version: 1.23.1-pr.665.3947d19.0
       '@kong/eslint-config-kong-ui':
         specifier: ^1.5.1
         version: 1.5.1(eslint@9.39.4(jiti@2.4.2))(typescript@5.9.3)
       '@kong/eslint-plugin-design-tokens':
-        specifier: 0.0.2-pr.665.d8b14d4.0
-        version: 0.0.2-pr.665.d8b14d4.0(eslint@9.39.4(jiti@2.4.2))
+        specifier: 0.0.2-pr.665.3947d19.0
+        version: 0.0.2-pr.665.3947d19.0(eslint@9.39.4(jiti@2.4.2))
       '@kong/kongponents':
         specifier: 9.48.4
         version: 9.48.4(vue-router@4.6.4(vue@3.5.34(typescript@5.9.3)))(vue@3.5.34(typescript@5.9.3))
@@ -959,8 +959,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kong/design-tokens@1.23.1-pr.665.d8b14d4.0':
-    resolution: {integrity: sha512-f0Ep7D+43YRjO4+fWqVDYPXx0c5XF+LtNR16RUrNUvP57wnM5YzgKAQgwMY3FHFQxwKwSNWkxM6RZGBFm5D7TQ==}
+  '@kong/design-tokens@1.23.1-pr.665.3947d19.0':
+    resolution: {integrity: sha512-z20oxWlUUInpRkTng2rk2L6OxP65IdnbQJ6QybfqQW0zXBam0JY1LuxPymD9zXdUTBOU797Hpz4fmABzLHO78A==}
     engines: {node: '>=20.19.5', pnpm: '>=10.28.2'}
 
   '@kong/eslint-config-kong-ui@1.5.1':
@@ -969,8 +969,8 @@ packages:
     peerDependencies:
       eslint: '>= 9.23.0'
 
-  '@kong/eslint-plugin-design-tokens@0.0.2-pr.665.d8b14d4.0':
-    resolution: {integrity: sha512-mYNHkn149HPusF6xNPIxekZjbEhb9DadhSCOBrqM0I5m0SdVn2CEvB61MYFIx+elmm/FfYwbgpsEo/8oByZv9w==}
+  '@kong/eslint-plugin-design-tokens@0.0.2-pr.665.3947d19.0':
+    resolution: {integrity: sha512-KqXalfCaTZFoRshft3iJfo0lPQp8cPszxFg23TizKM3vF7nKv8m4FiuislvBK6Svi350viE1vSDhiTofOioMuQ==}
     engines: {node: '>=20.19.5', pnpm: '>=10.28.2'}
     peerDependencies:
       eslint: ^9.0.0
@@ -5391,7 +5391,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kong/design-tokens@1.23.1-pr.665.d8b14d4.0': {}
+  '@kong/design-tokens@1.23.1-pr.665.3947d19.0': {}
 
   '@kong/eslint-config-kong-ui@1.5.1(eslint@9.39.4(jiti@2.4.2))(typescript@5.9.3)':
     dependencies:
@@ -5412,7 +5412,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@kong/eslint-plugin-design-tokens@0.0.2-pr.665.d8b14d4.0(eslint@9.39.4(jiti@2.4.2))':
+  '@kong/eslint-plugin-design-tokens@0.0.2-pr.665.3947d19.0(eslint@9.39.4(jiti@2.4.2))':
     dependencies:
       eslint: 9.39.4(jiti@2.4.2)
 
