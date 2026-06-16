@@ -1,3 +1,17 @@
+# [1.58.0](https://github.com/Kong/icons/compare/v1.57.0...v1.58.0) (2026-06-09)
+
+
+### Features
+
+* add new custom forms icons ([#872](https://github.com/Kong/icons/issues/872)) ([07d04af](https://github.com/Kong/icons/commit/07d04afea1b8a1caa14d54e6a35f64c8bc2353d4))
+
+# [1.57.0](https://github.com/Kong/icons/compare/v1.56.0...v1.57.0) (2026-06-03)
+
+
+### Features
+
+* add new diff icon (Difference) ([#868](https://github.com/Kong/icons/issues/868)) ([222aa71](https://github.com/Kong/icons/commit/222aa716154fed7093460721687c8c97828befc0))
+
 # [1.56.0](https://github.com/Kong/icons/compare/v1.55.1...v1.56.0) (2026-05-29)
 
 
