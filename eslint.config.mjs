@@ -1,5 +1,5 @@
 import eslintKongUiConfig from '@kong/eslint-config-kong-ui'
-import designTokens from '@kong/design-tokens/eslint-plugin'
+import designTokens from '@kong/eslint-plugin-design-tokens'
 
 export default [
   ...eslintKongUiConfig,
