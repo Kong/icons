@@ -1,3 +1,10 @@
+# [1.59.0](https://github.com/Kong/icons/compare/v1.58.0...v1.59.0) (2026-06-17)
+
+
+### Features
+
+* add new EqualWeb logo icon ([#874](https://github.com/Kong/icons/issues/874)) ([8e1c30e](https://github.com/Kong/icons/commit/8e1c30e3b4c082f70903d079dc885edd04f8ec83))
+
 # [1.58.0](https://github.com/Kong/icons/compare/v1.57.0...v1.58.0) (2026-06-09)
 
 
