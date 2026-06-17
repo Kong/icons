@@ -121,6 +121,7 @@ export default [
   'EditSquareIcon.vue',
   'EmailIcon.vue',
   'EqualIcon.vue',
+  'EqualwebIcon.vue',
   'EventGradientIcon.vue',
   'ExpandIcon.vue',
   'ExpansionPanelsIcon.vue',
