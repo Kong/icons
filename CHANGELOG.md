@@ -1,3 +1,10 @@
+## [1.59.1](https://github.com/Kong/icons/compare/v1.59.0...v1.59.1) (2026-06-22)
+
+
+### Bug Fixes
+
+* **tokens:** enforce token css var usage ([#867](https://github.com/Kong/icons/issues/867)) ([3606353](https://github.com/Kong/icons/commit/3606353dbbf59f4ff6763e46bbfe5314f0abff4c))
+
 # [1.59.0](https://github.com/Kong/icons/compare/v1.58.0...v1.59.0) (2026-06-17)
 
 
