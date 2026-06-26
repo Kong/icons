@@ -1,3 +1,10 @@
+# [1.60.0](https://github.com/Kong/icons/compare/v1.59.1...v1.60.0) (2026-06-26)
+
+
+### Features
+
+* add new theme icons (DarkMode, LightMode) ([#877](https://github.com/Kong/icons/issues/877)) ([e53c6ca](https://github.com/Kong/icons/commit/e53c6ca80ad283a1d8680f3c1fa4151e6d598c45))
+
 ## [1.59.1](https://github.com/Kong/icons/compare/v1.59.0...v1.59.1) (2026-06-22)
 
 
