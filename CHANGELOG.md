@@ -1,3 +1,10 @@
+## [1.60.1](https://github.com/Kong/icons/compare/v1.60.0...v1.60.1) (2026-07-08)
+
+
+### Bug Fixes
+
+* add palette icon ([#879](https://github.com/Kong/icons/issues/879)) ([da2bd9b](https://github.com/Kong/icons/commit/da2bd9b55bab6eef517f64dc3d2bdf98506428f4))
+
 # [1.60.0](https://github.com/Kong/icons/compare/v1.59.1...v1.60.0) (2026-06-26)
 
 

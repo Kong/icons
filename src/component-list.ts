@@ -463,6 +463,7 @@ export default [
   'OverviewIcon.vue',
   'PackageIcon.vue',
   'PagerdutyIcon.vue',
+  'PaletteIcon.vue',
   'PanelCloseLeftIcon.vue',
   'PanelCloseRightIcon.vue',
   'PanelOpenLeftIcon.vue',
