@@ -562,6 +562,7 @@ export default [
   'VisibilityOffIcon.vue',
   'VitalsIcon.vue',
   'VllmIcon.vue',
+  'VscodeIcon.vue',
   'WarningIcon.vue',
   'WarningOutlineIcon.vue',
   'WavingHandIcon.vue',

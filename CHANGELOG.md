@@ -1,3 +1,10 @@
+# [1.61.0](https://github.com/Kong/icons/compare/v1.60.1...v1.61.0) (2026-07-09)
+
+
+### Features
+
+* add vscode icon ([#880](https://github.com/Kong/icons/issues/880)) ([47f8d72](https://github.com/Kong/icons/commit/47f8d72debe4aa0176414b0bcc264981d632033c))
+
 ## [1.60.1](https://github.com/Kong/icons/compare/v1.60.0...v1.60.1) (2026-07-08)
 
 

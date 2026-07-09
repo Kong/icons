@@ -1122,6 +1122,7 @@ exports[`generate > does not remove icons from the previous build 1`] = `
   "VisibilityOffIcon.vue",
   "VitalsIcon.vue",
   "VllmIcon.vue",
+  "VscodeIcon.vue",
   "WarningIcon.vue",
   "WarningOutlineIcon.vue",
   "WavingHandIcon.vue",
