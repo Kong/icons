@@ -60,13 +60,13 @@ The accessibility text provided to screen readers.
 
 #### `color`
 
-> **Note**: The `color` prop only impacts solid, single-color icons generated from the `/svg/solid/` directory.
-
 - type: `String`
 - required: `false`
-- default: `'currentColor'`
+- default: `'currentColor'` for solid icons; unset for multi-color icons
 
 Set the icon color to any valid CSS color value or `currentColor`, which inherits the text color of the icon's parent element.
+
+For solid icons, this sets the icon's fill or stroke color. For multi-color icons, the original colors are preserved and an outline is only added when this prop is provided. Pass `currentColor` explicitly to inherit the parent's text color. The stacked drop-shadow outline remains approximately `1px` wide as the icon size changes.
 
 #### `display`
 

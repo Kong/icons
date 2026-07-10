@@ -2,6 +2,9 @@ import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import * as importedComponents from '../components'
 import { KUI_COLOR_TEXT_PRIMARY } from '@kong/design-tokens'
+import * as multiColorComponents from '../components/multi-color'
+import { InsomniaIcon, VscodeIcon } from '../components/multi-color'
+import { CloseIcon } from '../components/solid'
 
 // Loop through and test all Icon Components
 for (const [componentName, IconComponent] of Object.entries(importedComponents)) {
@@ -116,12 +119,15 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
       })
 
       describe('color', () => {
-        it('defaults to `currentColor` if color prop is not provided', () => {
+        it('uses the expected default when color prop is not provided', () => {
           const wrapper = mount(IconComponent)
           const iconWrapper = wrapper.find('.kui-icon').element
-          const iconWrapperStyles = getComputedStyle(iconWrapper)
 
-          expect(iconWrapperStyles.color).toEqual('currentColor')
+          if (componentName in multiColorComponents) {
+            expect(iconWrapper.getAttribute('style')).not.toContain('color:')
+          } else {
+            expect(getComputedStyle(iconWrapper).color).toEqual('currentColor')
+          }
         })
 
         it('customizes the color attribute if color prop is provided', () => {
@@ -305,3 +311,51 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
     })
   })
 }
+
+describe('multi-color outline filter', () => {
+  it('does not add an outline when color is not provided', () => {
+    const wrapper = mount(InsomniaIcon, {
+      props: {
+        staticIds: true,
+      },
+    })
+
+    const iconWrapper = wrapper.get('.kui-icon')
+
+    expect(iconWrapper.attributes('style')).not.toContain('filter:')
+  })
+
+  it('adds a stacked drop-shadow outline when color is provided', () => {
+    const wrapper = mount(InsomniaIcon, {
+      props: {
+        color: 'currentColor',
+        staticIds: true,
+      },
+    })
+
+    const iconWrapper = wrapper.get('.kui-icon')
+    const dropShadows = iconWrapper.attributes('style').match(/drop-shadow\(0 0 0\.25px currentColor\)/g)
+
+    expect(dropShadows).toHaveLength(5)
+    expect(wrapper.get('svg').find('path').exists()).toBe(true)
+  })
+
+  it('preserves filters already present in the source SVG', () => {
+    const wrapper = mount(VscodeIcon, {
+      props: {
+        color: 'currentColor',
+        staticIds: true,
+      },
+    })
+
+    expect(wrapper.get('filter#filter0_d_5955_6725').exists()).toBe(true)
+    expect(wrapper.get('g[filter="url(#filter0_d_5955_6725)"]').exists()).toBe(true)
+    expect(wrapper.get('.kui-icon').attributes('style')).toContain('filter:')
+  })
+
+  it('does not add the outline filter to solid icons', () => {
+    const wrapper = mount(CloseIcon)
+
+    expect(wrapper.get('.kui-icon').attributes('style')).not.toContain('filter:')
+  })
+})
