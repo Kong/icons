@@ -4,10 +4,11 @@ import { load } from 'cheerio'
 import pc from 'picocolors'
 import { COMPONENT_FILE_HEADER, kebabCase, pascalCase, capitalize, getIconType } from './index'
 
-const MULTI_COLOR_OUTLINE_FILTER = Array.from(
-  { length: 5 },
-  () => 'drop-shadow(0 0 0.25px currentColor)',
-).join(' ')
+// const MULTI_COLOR_OUTLINE_FILTER = Array.from(
+//   { length: 5 },
+//   () => 'drop-shadow(0 0 0.25px currentColor)',
+// ).join(' ')
+const MULTI_COLOR_OUTLINE_FILTER = 'drop-shadow(currentcolor 1px  0px 0px) drop-shadow(currentcolor -1px  0px 0px) drop-shadow(currentcolor 0px  1px 0px) drop-shadow(currentcolor 0px -1px 0px) drop-shadow(currentcolor 1px  1px 0px) drop-shadow(currentcolor -1px -1px 0px) drop-shadow(currentcolor 1px -1px 0px) drop-shadow(currentcolor -1px  1px 0px)'
 
 export default function createComponentFromSvg(pathToSvg: string, svgFileName: string): string {
   let svgFile: string
