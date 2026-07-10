@@ -33,6 +33,8 @@ jobs:
       needs:
         - run-tests
       runs-on: ubuntu-latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.KONGPONENTS_BOT_PAT }}
       steps:
         - name: Remove preview consumption comment
           if: ${{ github.event_name == 'pull_request' && env.GITHUB_TOKEN != '' }}
