@@ -1,3 +1,10 @@
+## [1.61.1](https://github.com/Kong/icons/compare/v1.61.0...v1.61.1) (2026-07-10)
+
+
+### Bug Fixes
+
+* package previews ([#883](https://github.com/Kong/icons/issues/883)) ([0e4f387](https://github.com/Kong/icons/commit/0e4f387a246040b2c6543a4b19c79761c1287342))
+
 # [1.61.0](https://github.com/Kong/icons/compare/v1.60.1...v1.61.0) (2026-07-09)
 
 
