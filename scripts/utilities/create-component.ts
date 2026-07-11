@@ -4,6 +4,11 @@ import { load } from 'cheerio'
 import pc from 'picocolors'
 import { COMPONENT_FILE_HEADER, kebabCase, pascalCase, capitalize, getIconType } from './index'
 
+const MULTI_COLOR_OUTLINE_FILTER = Array.from(
+  { length: 5 },
+  () => 'drop-shadow(0 0 0.25px currentColor)',
+).join(' ')
+
 export default function createComponentFromSvg(pathToSvg: string, svgFileName: string): string {
   let svgFile: string
   let componentTemplate: string
@@ -19,6 +24,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
 
   // Determine the top-level subdirectory within `/svg/`
   const iconSubdirectory = getIconType(pathToSvg)
+  const isMultiColorIcon = iconSubdirectory === 'multi-color'
 
   // The lowercase, kebab-case name of the svg, e.g. `add-icon`
   const name = kebabCase(`${iconSubdirectory === 'flags' ? 'Flag' : ''}${capitalize(svgFileName).replace(/([a-zA-Z]+)icon/gi, '$1')}Icon`).replace(/\.svg/, '')
@@ -61,6 +67,8 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
       .replace(/{%%ICON_SVG_INNER_HTML%%}/g, svgInnerHtml)
       .replace(/{%%KONG_COMPONENT_ICON_CLASS%%}/g, name)
       .replace(/{%%KONG_GENERATED_FILENAME%%}/g, componentFilenameWithExtension)
+      .replace('    // {%%ICON_COLOR_DEFAULT%%}', isMultiColorIcon ? '' : "    default: 'currentColor',")
+      .replace('  // {%%ICON_ROOT_FILTER_STYLE%%}', isMultiColorIcon ? `  filter: props.color ? '${MULTI_COLOR_OUTLINE_FILTER}' : undefined,` : '')
   } catch (err: any) {
     console.log(pc.red('createComponentFromSvg: could not import and parse the component templates'), err)
     console.log('')

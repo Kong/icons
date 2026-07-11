@@ -10,11 +10,11 @@ const props = defineProps({
     required: false,
     default: '',
   },
-  /** The icon color. Defaults to `currentColor` which inherits text color from the parent element */
+  /** The icon color. Solid icons default to `currentColor`; multi-color icons only add an outline when this is set */
   color: {
     type: String,
     required: false,
-    default: 'currentColor',
+    // {%%ICON_COLOR_DEFAULT%%}
   },
   /** The CSS display property for the icon. Defaults to `block` */
   display: {
@@ -107,6 +107,7 @@ const rootElementStyles = computed((): Record<string, string | undefined> => ({
   boxSizing: 'border-box',
   color: props.color,
   display: props.display,
+  // {%%ICON_ROOT_FILTER_STYLE%%}
   flexShrink: '0',
   height: iconSize.value,
   lineHeight: '0',

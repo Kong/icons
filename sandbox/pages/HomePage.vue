@@ -1,46 +1,55 @@
 <template>
-  <PageHeader v-model:search="searchQuery" />
-  <div class="sandbox-layout">
-    <div class="sandbox-container">
-      <template v-if="hasResults">
-        <div
-          v-for="(icons, type) in groupedComponents"
-          :key="type"
-          class="icon-container"
-        >
-          <h2>
-            {{ formatType(type) }} Icons
-            <span class="counts">
-              ({{ icons.length }})
-            </span>
-          </h2>
+  <div
+    class="sandbox-page"
+    :class="{ 'dark-mode': darkMode }"
+  >
+    <PageHeader
+      v-model:dark-mode="darkMode"
+      v-model:search="searchQuery"
+    />
+    <div class="sandbox-layout">
+      <div class="sandbox-container">
+        <template v-if="hasResults">
+          <div
+            v-for="(icons, type) in groupedComponents"
+            :key="type"
+            class="icon-container"
+          >
+            <h2>
+              {{ formatType(type) }} Icons
+              <span class="counts">
+                ({{ icons.length }})
+              </span>
+            </h2>
 
-          <div class="icon-grid">
-            <SandboxIcon
-              v-for="icon in icons"
-              :key="icon.name"
-              :icon="icon.component"
-              :title="icon.title"
-            />
+            <div class="icon-grid">
+              <SandboxIcon
+                v-for="icon in icons"
+                :key="icon.name"
+                :color="type === 'multi-color' && darkMode ? 'currentColor' : undefined"
+                :icon="icon.component"
+                :title="icon.title"
+              />
+            </div>
           </div>
-        </div>
-      </template>
-
-      <KEmptyState
-        v-else
-        message="No icons match your query. Try searching again."
-        title="No Results Found."
-      >
-        <template #icon>
-          <solidIcons.FileEmptyIcon decorative />
         </template>
 
-        <template #action>
-          <KButton @click="searchQuery = ''">
-            Clear Search
-          </KButton>
-        </template>
-      </KEmptyState>
+        <KEmptyState
+          v-else
+          message="No icons match your query. Try searching again."
+          title="No Results Found."
+        >
+          <template #icon>
+            <solidIcons.FileEmptyIcon decorative />
+          </template>
+
+          <template #action>
+            <KButton @click="searchQuery = ''">
+              Clear Search
+            </KButton>
+          </template>
+        </KEmptyState>
+      </div>
     </div>
   </div>
 </template>
@@ -56,6 +65,7 @@ import { COUNTRY_CODES } from '../constants/countries'
 import type { Country } from '../types'
 
 const searchQuery = ref('')
+const darkMode = ref(false)
 
 // precompute country map once
 const countryMap = new Map(COUNTRY_CODES.map((c: Country) => [c.code.toUpperCase(), c.name]))
@@ -119,10 +129,32 @@ const formatType = (type: string) => type.replace('-', ' ').replace(/\b\w/g, c =
 $header-height: 80px;
 $content-max-width: 1800px;
 
+.sandbox-page {
+  background-color: var(--kui-color-background, $kui-color-background);
+  min-height: 100vh;
+  transition: background-color 0.2s ease-in-out;
+
+  &.dark-mode {
+    background-color: var(--kui-color-background-inverse, $kui-color-background-inverse);
+    color-scheme: dark;
+
+    h2,
+    :deep(.sandbox-icon),
+    :deep(.icon-name .copy-text),
+    :deep(.icon-name .text-icon-wrapper) {
+      color: var(--kui-color-text-inverse, $kui-color-text-inverse);
+    }
+
+    :deep(.icon-title) {
+      color: var(--kui-color-text-neutral-weak, $kui-color-text-neutral-weak);
+    }
+  }
+}
+
 .sandbox-layout {
   display: flex;
   margin-top: $header-height;
-  padding: $kui-space-70;
+  padding: var(--kui-space-70, $kui-space-70);
 }
 
 .sandbox-container {
@@ -130,31 +162,31 @@ $content-max-width: 1800px;
   width: 100%;
 
   @media (min-width: $kui-breakpoint-laptop) {
-    padding: $kui-space-70;
+    padding: var(--kui-space-70, $kui-space-70);
   }
 }
 
 .icon-container {
-  border-bottom: $kui-border-width-10 solid $kui-color-border;
-  margin-bottom: $kui-space-70;
+  border-bottom: var(--kui-border-width-10, $kui-border-width-10) solid var(--kui-color-border, $kui-color-border);
+  margin-bottom: var(--kui-space-70, $kui-space-70);
 
   &:first-of-type {
-    padding-top: $kui-space-0;
+    padding-top: var(--kui-space-0, $kui-space-0);
   }
 
   &:last-of-type {
     border-bottom: none;
-    margin-bottom: $kui-space-0;
+    margin-bottom: var(--kui-space-0, $kui-space-0);
   }
 }
 
 .icon-grid {
   display: grid;
-  gap: $kui-space-50;
+  gap: var(--kui-space-50, $kui-space-50);
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: $kui-space-0 auto $kui-space-50;
+  margin: var(--kui-space-0, $kui-space-0) auto var(--kui-space-50, $kui-space-50);
   max-width: $content-max-width;
-  padding-bottom: $kui-space-70;
+  padding-bottom: var(--kui-space-70, $kui-space-70);
   width: 100%;
 
   @media (min-width: $kui-breakpoint-mobile) {
@@ -175,12 +207,12 @@ $content-max-width: 1800px;
 }
 
 h2 {
-  color: $kui-color-text;
-  margin-top: $kui-space-0;
+  color: var(--kui-color-text, $kui-color-text);
+  margin-top: var(--kui-space-0, $kui-space-0);
 
   .counts {
-    font-size: $kui-font-size-40;
-    font-weight: $kui-font-weight-regular;
+    font-size: var(--kui-font-size-40, $kui-font-size-40);
+    font-weight: var(--kui-font-weight-regular, $kui-font-weight-regular);
   }
 }
 </style>

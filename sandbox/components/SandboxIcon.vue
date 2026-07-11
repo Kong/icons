@@ -25,6 +25,7 @@
 
     <component
       :is="icon"
+      :color="color"
       decorative
       :size="`var(--kui-icon-size-70, ${KUI_ICON_SIZE_70})`"
       :title="iconName"
@@ -49,9 +50,11 @@ import { KUI_ICON_SIZE_30, KUI_ICON_SIZE_70 } from '@kong/design-tokens'
 import { DataObjectIcon } from '../../src/components/solid'
 
 const {
+  color,
   icon,
   title = null,
 } = defineProps<{
+  color?: string
   icon: Record<string, any>
   title?: string
 }>()
@@ -72,17 +75,17 @@ const handleCopy = (copyToClipboard: (text: string) => void) => {
 <style lang="scss" scoped>
 .sandbox-icon {
   align-items: center;
-  border: $kui-border-width-10 solid $kui-color-border-neutral-weaker;
-  border-radius: $kui-border-radius-20;
-  color: $kui-color-text-info;
+  border: var(--kui-border-width-10, $kui-border-width-10) solid var(--kui-color-border-neutral-weaker, $kui-color-border-neutral-weaker);
+  border-radius: var(--kui-border-radius-20, $kui-border-radius-20);
+  color: var(--kui-color-text-info, $kui-color-text-info);
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  padding: $kui-space-60 $kui-space-40;
+  padding: var(--kui-space-60, $kui-space-60) var(--kui-space-40, $kui-space-40);
   position: relative;
 
   &:hover {
-    border-color: $kui-color-border-neutral-weak;
+    border-color: var(--kui-color-border-neutral-weak, $kui-color-border-neutral-weak);
 
     .actions-container {
       opacity: 1;
@@ -94,7 +97,7 @@ const handleCopy = (copyToClipboard: (text: string) => void) => {
 .actions-container {
   display: flex;
   opacity: 0;
-  padding: $kui-space-40;
+  padding: var(--kui-space-40, $kui-space-40);
   pointer-events: none;
   position: absolute;
   right: 0;
@@ -109,13 +112,13 @@ const handleCopy = (copyToClipboard: (text: string) => void) => {
 }
 
 .icon-name {
-  margin-top: $kui-space-50;
+  margin-top: var(--kui-space-50, $kui-space-50);
 
   :deep(.copy-text) {
     color: #333;
-    font-family: $kui-font-family-text;
-    font-size: $kui-font-size-30;
-    font-weight: $kui-font-weight-medium;
+    font-family: var(--kui-font-family-text, $kui-font-family-text);
+    font-size: var(--kui-font-size-30, $kui-font-size-30);
+    font-weight: var(--kui-font-weight-medium, $kui-font-weight-medium);
   }
 
   :deep(.text-icon-wrapper) {
@@ -129,8 +132,8 @@ const handleCopy = (copyToClipboard: (text: string) => void) => {
 
 .icon-title {
   color: #999;
-  font-size: $kui-font-size-30;
+  font-size: var(--kui-font-size-30, $kui-font-size-30);
   font-weight: 300;
-  margin-top: $kui-space-20;
+  margin-top: var(--kui-space-20, $kui-space-20);
 }
 </style>
