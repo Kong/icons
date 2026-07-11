@@ -5,7 +5,7 @@ import pc from 'picocolors'
 import { COMPONENT_FILE_HEADER, kebabCase, pascalCase, capitalize, getIconType } from './index'
 
 const MULTI_COLOR_OUTLINE_FILTER = Array.from(
-  { length: 2 },
+  { length: 3 },
   () => 'drop-shadow(0 0 0.5px currentColor)',
 ).join(' ')
 
