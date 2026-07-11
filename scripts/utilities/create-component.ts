@@ -5,8 +5,8 @@ import pc from 'picocolors'
 import { COMPONENT_FILE_HEADER, kebabCase, pascalCase, capitalize, getIconType } from './index'
 
 const MULTI_COLOR_OUTLINE_FILTER = Array.from(
-  { length: 5 },
-  () => 'drop-shadow(0 0 0.25px currentColor)',
+  { length: 2 },
+  () => 'drop-shadow(0 0 0.5px currentColor)',
 ).join(' ')
 
 export default function createComponentFromSvg(pathToSvg: string, svgFileName: string): string {

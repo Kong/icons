@@ -334,9 +334,9 @@ describe('multi-color outline filter', () => {
     })
 
     const iconWrapper = wrapper.get('.kui-icon')
-    const dropShadows = iconWrapper.attributes('style').match(/drop-shadow\(0 0 0\.25px currentColor\)/g)
+    const dropShadows = iconWrapper.attributes('style').match(/drop-shadow\(0 0 0\.5px currentColor\)/g)
 
-    expect(dropShadows).toHaveLength(5)
+    expect(dropShadows).toHaveLength(2)
     expect(wrapper.get('svg').find('path').exists()).toBe(true)
   })
 
