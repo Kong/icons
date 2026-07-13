@@ -1,3 +1,10 @@
+## [1.61.2](https://github.com/Kong/icons/compare/v1.61.1...v1.61.2) (2026-07-13)
+
+
+### Bug Fixes
+
+* update brand icons with manual fixes for dark mode ([#884](https://github.com/Kong/icons/issues/884)) ([10327ae](https://github.com/Kong/icons/commit/10327aec7210a336ec5037b4095a40a7b078872b))
+
 ## [1.61.1](https://github.com/Kong/icons/compare/v1.61.0...v1.61.1) (2026-07-10)
 
 
