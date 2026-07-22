@@ -313,7 +313,7 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
         const isFlag = componentName in flagIcons
 
         if (isFlag) {
-          it('never applies a gradient to flag icons (and warns), even with valid colors', () => {
+          it('never applies a gradient to flag icons (silently), even with valid colors', () => {
             const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
             const wrapper = mount(IconComponent, {
               props: {
@@ -323,8 +323,9 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
               },
             })
 
+            // Flag icons keep their official colors and skip the gradient without warning
             expect(wrapper.html()).not.toContain(gradientId)
-            expect(consoleSpy).toHaveBeenCalled()
+            expect(consoleSpy).not.toHaveBeenCalled()
             consoleSpy.mockReset()
           })
         } else {
@@ -347,36 +348,36 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
             expect(html).toContain('#0044F4')
             expect(html).toContain('#00D6A4')
           })
+
+          it('does not apply a gradient (and warns) when only one color is provided', () => {
+            const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
+            const wrapper = mount(IconComponent, {
+              props: {
+                staticIds: true,
+                colorGradientStart: '#0044F4',
+              },
+            })
+
+            expect(wrapper.html()).not.toContain(gradientId)
+            expect(consoleSpy).toHaveBeenCalled()
+            consoleSpy.mockReset()
+          })
+
+          it('does not apply a gradient (and warns) when a color is invalid', () => {
+            const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
+            const wrapper = mount(IconComponent, {
+              props: {
+                staticIds: true,
+                colorGradientStart: '#0044F4',
+                colorGradientStop: 'not-a-real-color',
+              },
+            })
+
+            expect(wrapper.html()).not.toContain(gradientId)
+            expect(consoleSpy).toHaveBeenCalled()
+            consoleSpy.mockReset()
+          })
         }
-
-        it('does not apply a gradient (and warns) when only one color is provided', () => {
-          const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
-          const wrapper = mount(IconComponent, {
-            props: {
-              staticIds: true,
-              colorGradientStart: '#0044F4',
-            },
-          })
-
-          expect(wrapper.html()).not.toContain(gradientId)
-          expect(consoleSpy).toHaveBeenCalled()
-          consoleSpy.mockReset()
-        })
-
-        it('does not apply a gradient (and warns) when a color is invalid', () => {
-          const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
-          const wrapper = mount(IconComponent, {
-            props: {
-              staticIds: true,
-              colorGradientStart: '#0044F4',
-              colorGradientStop: 'not-a-real-color',
-            },
-          })
-
-          expect(wrapper.html()).not.toContain(gradientId)
-          expect(consoleSpy).toHaveBeenCalled()
-          consoleSpy.mockReset()
-        })
       })
     })
   })

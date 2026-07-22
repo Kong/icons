@@ -120,7 +120,7 @@ Optionally apply a dynamically-generated linear gradient to **any** icon in the 
 
 The feature is fully opt-in: when either prop is omitted or invalid, the icon renders exactly as it does by default (no gradient), and a development-only `console.warn` is emitted for the invalid value.
 
-> **Note**: Gradients are **never** applied to `flag` icons, which must retain their official colors. Passing gradient props to a flag icon is ignored (with a development-only `console.warn`).
+> **Note**: Gradients are **never** applied to `flag` icons, which must retain their official colors. Passing gradient props to a flag icon is silently ignored.
 
 Each color accepts a hex, `rgb()`/`rgba()`, or CSS `var()` custom-property value:
 

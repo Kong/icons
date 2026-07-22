@@ -13,8 +13,14 @@ const HEX_COLOR_REGEX = /^#([0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/i
  * alpha, so malformed values (e.g. `rgb(0, 68)`) are rejected. The restricted grammar also serves as sanitization.
  */
 const RGB_COLOR_REGEX = /^rgba?\(\s*(?:\d{1,3}(?:\.\d+)?%?\s*,\s*\d{1,3}(?:\.\d+)?%?\s*,\s*\d{1,3}(?:\.\d+)?%?(?:\s*,\s*(?:\d*\.?\d+)%?)?|\d{1,3}(?:\.\d+)?%?\s+\d{1,3}(?:\.\d+)?%?\s+\d{1,3}(?:\.\d+)?%?(?:\s*\/\s*(?:\d*\.?\d+)%?)?)\s*\)$/i
-/** Matches a CSS `var()` custom-property color; quotes and parens are disallowed in the fallback to prevent injection */
-const CSS_VAR_COLOR_REGEX = /^var\(\s*--[\w-]+\s*(?:,\s*[^)'"]*)?\)$/
+/**
+ * Matches a CSS `var()` custom-property color, including an optional fallback value.
+ * The fallback may be any value — a hex/rgb color, a keyword, or another (nested) `var()` with its own
+ * fallback — but quotes, angle brackets, and semicolons are disallowed so the value stays safe for injection
+ * into the SVG string. Parens are permitted so nested `var()` fallbacks resolve, e.g.
+ * `var(--a, var(--b, #007ac1))`.
+ */
+const CSS_VAR_COLOR_REGEX = /^var\(\s*--[\w-]+\s*(?:,\s*[^"'<>;\s][^"'<>;]*)?\)$/
 
 /**
  * Returns true if the given value is a supported gradient color (hex, `rgb()`/`rgba()`, or `var()`).

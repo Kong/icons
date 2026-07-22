@@ -22,6 +22,13 @@ describe('isValidGradientColor', () => {
     'rgb(0 68 244 / 50%)',
     'var(--kui-color-brand)',
     'var(--kui-color-accent, #00D6A4)',
+    // Fallback values, including nested custom properties with their own fallbacks
+    'var(--kui-color-text-accent, #007ac1)',
+    'var(--a, var(--b, #007ac1))',
+    'var(--a, var(--b, var(--c, #007ac1)))',
+    'var(--a, var(--b))',
+    'var(--kui-color-x, currentColor)',
+    'var(--a, rgb(0, 122, 193))',
   ])('accepts the valid color %s', (value) => {
     expect(isValidGradientColor(value)).toBe(true)
   })
@@ -35,9 +42,14 @@ describe('isValidGradientColor', () => {
     '0044F4',
     'rgb(0, 68)',
     'hsl(200, 50%, 50%)',
+    // Empty or malformed fallbacks
+    'var(--a, )',
+    'var(--a,)',
     // Injection attempts must be rejected (validation doubles as sanitization)
     '#fff" onload="alert(1)',
     'var(--x, "><script>)',
+    'var(--a, #fff)<script>',
+    'var(--a, foo<bar)',
     'rgb(0,0,0);}</style>',
   ])('rejects the invalid color %s', (value) => {
     expect(isValidGradientColor(value)).toBe(false)

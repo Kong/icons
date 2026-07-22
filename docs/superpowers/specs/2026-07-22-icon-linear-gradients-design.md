@@ -32,7 +32,7 @@ renders unchanged. Fully backward-compatible.
 **Flag icons are always excluded:** gradients are never applied to `flag` icons (they must retain
 their official colors). Each generated component knows its own type via an injected
 `{%%KONG_COMPONENT_ICON_TYPE%%}` placeholder (`solid` | `multi-color` | `flags`); when the type is
-`flags` the gradient is skipped and a dev-only `console.warn` is emitted if colors were provided.
+`flags` the gradient is skipped silently (no warning), so passing gradient props to a flag is a no-op.
 
 ## Validation & fallback (fail-safe)
 
