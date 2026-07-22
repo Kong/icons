@@ -2,6 +2,8 @@
 /** {%%ICON_COMPONENT_FILE_HEADER%%} */
 import { computed } from 'vue'
 import { KUI_ICON_SIZE_50 } from '@kong/design-tokens'
+import { applyColorGradient, createGradientId, resolveColorGradient } from '@/utils/color-gradient'
+import type { ColorGradient } from '@/types/color-gradient'
 
 const props = defineProps({
   /** The accessibility text provided to screen readers */
@@ -69,6 +71,38 @@ const props = defineProps({
   staticIds: {
     type: Boolean,
     default: false,
+  },
+  /**
+   * The start color of an optional, dynamically-generated linear gradient.
+   * Accepts a hex, `rgb()`/`rgba()`, or CSS `var()` custom-property value.
+   * The gradient is applied only when both `colorGradientStart` and `colorGradientStop` are provided and valid,
+   * overriding any existing gradient or flat fills. Defaults to an empty string (no gradient).
+   */
+  colorGradientStart: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  /**
+   * The stop (end) color of an optional, dynamically-generated linear gradient.
+   * Accepts a hex, `rgb()`/`rgba()`, or CSS `var()` custom-property value.
+   * The gradient is applied only when both `colorGradientStart` and `colorGradientStop` are provided and valid,
+   * overriding any existing gradient or flat fills. Defaults to an empty string (no gradient).
+   */
+  colorGradientStop: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  /**
+   * The direction of the generated linear gradient, expressed as a standard CSS gradient angle
+   * (e.g. `45`, `"90deg"`) following the `linear-gradient()` convention (`0deg` points up, increasing clockwise).
+   * Invalid values fall back to the default. Defaults to `135deg` (top-left to bottom-right).
+   */
+  colorGradientDirection: {
+    type: [String, Number],
+    required: false,
+    default: '135deg',
   },
 })
 
@@ -154,11 +188,62 @@ const escapeHtml = (str: string) => {
   return str.replace(/[<>"'&]/g, (match) => htmlEntities[match])
 }
 
+/** The top-level `/svg/*` subdirectory this icon was generated from: `solid`, `multi-color`, or `flags`. */
+const iconType: string = '{%%KONG_COMPONENT_ICON_TYPE%%}'
+
+/**
+ * A stable, unique `id` for this icon instance's generated `<linearGradient>` so that multiple gradient
+ * icons can coexist on the same page. Uses a stable id under `staticIds` (e.g. for snapshot testing).
+ */
+const gradientId = createGradientId(props.staticIds)
+
+/**
+ * The validated gradient to apply, or `null` when the feature is unused or the provided colors are invalid.
+ * Emits a dev console warning when a gradient is attempted with missing/invalid colors.
+ */
+const colorGradient = computed((): ColorGradient | null => {
+  const start = typeof props.colorGradientStart === 'string' ? props.colorGradientStart.trim() : ''
+  const stop = typeof props.colorGradientStop === 'string' ? props.colorGradientStop.trim() : ''
+
+  // The feature is opt-in: do nothing unless at least one gradient color was provided
+  if (!start && !stop) {
+    return null
+  }
+
+  // Gradients are never applied to flag icons, which must retain their official colors
+  if (iconType === 'flags') {
+    return null
+  }
+
+  const gradient = resolveColorGradient({
+    id: gradientId,
+    start,
+    stop,
+    direction: props.colorGradientDirection,
+  })
+
+  // Both colors are required and must be valid; otherwise fall back to the un-gradiented icon
+  if (!gradient) {
+    console.warn(`[kong-icons] Ignoring invalid linear gradient: both \`colorGradientStart\` and \`colorGradientStop\` must be a valid hex, rgb()/rgba(), or var() color. Received start="${props.colorGradientStart}", stop="${props.colorGradientStop}".`)
+    return null
+  }
+
+  return gradient
+})
+
 // The `svgOriginalContent` template string will be replaced with the SVG innerHTML in the generate script.
 // eslint-disable-next-line @stylistic/quotes
 const svgOriginalContent = `{%%ICON_SVG_INNER_HTML%%}`
-const svgTitleContent = props.title ? `<title data-testid="kui-icon-svg-title">${escapeHtml(props.title)}</title>` : ''
-const svgProcessedContent = `${svgTitleContent}${!props.staticIds ? prefixSvgIdsInString(svgOriginalContent) : svgOriginalContent}`
+
+/** The fully-processed SVG inner HTML: optional title, optional gradient, and (unless `staticIds`) uniquely-prefixed IDs. */
+const svgProcessedContent = computed((): string => {
+  const titleContent = props.title ? `<title data-testid="kui-icon-svg-title">${escapeHtml(props.title)}</title>` : ''
+  const gradient = colorGradient.value
+  const content = gradient ? applyColorGradient(svgOriginalContent, gradient) : svgOriginalContent
+  const processed = props.staticIds ? content : prefixSvgIdsInString(content)
+
+  return `${titleContent}${processed}`
+})
 </script>
 
 <template>

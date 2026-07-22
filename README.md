@@ -110,6 +110,52 @@ The HTML tag to use in place of the default wrapper `<span>` tag.
 <CloseIcon as="button" />
 ```
 
+#### `colorGradientStart` and `colorGradientStop`
+
+- type: `String`
+- required: `false`
+- default: `''`
+
+Optionally apply a dynamically-generated linear gradient to **any** icon in the library. When **both** `colorGradientStart` and `colorGradientStop` are provided and valid, the icon's fills are repainted with the generated gradient — overriding an existing gradient, or adding one to an icon that has none.
+
+The feature is fully opt-in: when either prop is omitted or invalid, the icon renders exactly as it does by default (no gradient), and a development-only `console.warn` is emitted for the invalid value.
+
+> **Note**: Gradients are **never** applied to `flag` icons, which must retain their official colors. Passing gradient props to a flag icon is ignored (with a development-only `console.warn`).
+
+Each color accepts a hex, `rgb()`/`rgba()`, or CSS `var()` custom-property value:
+
+```html
+<!-- hex -->
+<CloudIcon color-gradient-start="#0044F4" color-gradient-stop="#00D6A4" />
+
+<!-- rgb() -->
+<CloudIcon color-gradient-start="rgb(0, 68, 244)" color-gradient-stop="rgb(0, 214, 164)" />
+
+<!-- CSS custom properties -->
+<CloudIcon
+  :color-gradient-start="`var(--kui-color-text-primary, ${KUI_COLOR_TEXT_PRIMARY})`"
+  :color-gradient-stop="`var(--kui-color-text-decorative-aqua, ${KUI_COLOR_DECORATIVE_AQUA})`"
+/>
+```
+
+> **Note**: The gradient is applied to shape **fills** only; `stroke` colors and `fill="none"` regions are left unchanged. Every icon currently in the library has fillable shapes.
+
+#### `colorGradientDirection`
+
+- type: `[String, Number]`
+- required: `false`
+- default: `'135deg'`
+
+The direction of the generated gradient, expressed as a standard CSS gradient angle following the [`linear-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient) convention (`0deg` points up, increasing clockwise). Accepts a `number` (e.g. `45`) or a `string` (e.g. `'90deg'`). Only takes effect when a valid gradient is applied; invalid values fall back to the default `135deg` (top-left to bottom-right).
+
+```html
+<CloudIcon
+  color-gradient-start="#0044F4"
+  color-gradient-stop="#00D6A4"
+  color-gradient-direction="90deg"
+/>
+```
+
 ## Contributing & Local Development
 
 To get started, install the package dependencies

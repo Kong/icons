@@ -1,6 +1,9 @@
 import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import * as importedComponents from '../components'
+import * as flagIcons from '../components/flags'
+import { AddIcon } from '../components/solid'
+import { ServerlessGradientIcon, GithubIcon } from '../components/multi-color'
 import { KUI_COLOR_TEXT_PRIMARY } from '@kong/design-tokens'
 
 // Loop through and test all Icon Components
@@ -302,6 +305,180 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
           expect(iconWrapper.exists()).toBe(true)
         })
       })
+
+      describe('color gradient', () => {
+        // With `staticIds: true` the injected gradient id is not prefixed
+        const gradientId = 'kong-icon-gradient'
+        // Flag icons never receive a gradient, regardless of the provided colors
+        const isFlag = componentName in flagIcons
+
+        if (isFlag) {
+          it('never applies a gradient to flag icons (and warns), even with valid colors', () => {
+            const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
+            const wrapper = mount(IconComponent, {
+              props: {
+                staticIds: true,
+                colorGradientStart: '#0044F4',
+                colorGradientStop: '#00D6A4',
+              },
+            })
+
+            expect(wrapper.html()).not.toContain(gradientId)
+            expect(consoleSpy).toHaveBeenCalled()
+            consoleSpy.mockReset()
+          })
+        } else {
+          it('applies a generated linear gradient when both start and stop colors are valid', () => {
+            const wrapper = mount(IconComponent, {
+              props: {
+                staticIds: true,
+                colorGradientStart: '#0044F4',
+                colorGradientStop: '#00D6A4',
+              },
+            })
+            const html = wrapper.html()
+
+            // Exactly one gradient definition is injected
+            expect(html.match(new RegExp(`id="${gradientId}"`, 'g'))?.length).toBe(1)
+            expect(html).toContain(`<linearGradient id="${gradientId}"`)
+            // Fills are repointed to the generated gradient
+            expect(html).toContain(`url(#${gradientId})`)
+            // Both stop colors are present
+            expect(html).toContain('#0044F4')
+            expect(html).toContain('#00D6A4')
+          })
+        }
+
+        it('does not apply a gradient (and warns) when only one color is provided', () => {
+          const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
+          const wrapper = mount(IconComponent, {
+            props: {
+              staticIds: true,
+              colorGradientStart: '#0044F4',
+            },
+          })
+
+          expect(wrapper.html()).not.toContain(gradientId)
+          expect(consoleSpy).toHaveBeenCalled()
+          consoleSpy.mockReset()
+        })
+
+        it('does not apply a gradient (and warns) when a color is invalid', () => {
+          const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
+          const wrapper = mount(IconComponent, {
+            props: {
+              staticIds: true,
+              colorGradientStart: '#0044F4',
+              colorGradientStop: 'not-a-real-color',
+            },
+          })
+
+          expect(wrapper.html()).not.toContain(gradientId)
+          expect(consoleSpy).toHaveBeenCalled()
+          consoleSpy.mockReset()
+        })
+      })
     })
   })
 }
+
+// The pure gradient logic (color validation, direction parsing, coordinate math, id generation,
+// and the SVG transform) is unit-tested in `src/utils/color-gradient.spec.ts`. These integration
+// tests verify the template correctly wires that logic into the rendered components.
+describe('color gradient (component integration)', () => {
+  const gradientId = 'kong-icon-gradient'
+
+  it('overrides an existing gradient by repointing fills to the generated gradient', () => {
+    // ServerlessGradientIcon ships with its own `url(#paint0_linear_2107_23107)` gradient
+    const wrapper = mount(ServerlessGradientIcon, {
+      props: {
+        staticIds: true,
+        colorGradientStart: '#111111',
+        colorGradientStop: '#222222',
+      },
+    })
+    const html = wrapper.html()
+
+    expect(html).toContain(`url(#${gradientId})`)
+    // The original gradient reference is no longer used by any fill
+    expect(html).not.toContain('url(#paint0_linear_2107_23107)')
+    expect(html).toContain('#111111')
+    expect(html).toContain('#222222')
+  })
+
+  it('preserves fills inside <defs> (clipPath / mask contents are untouched)', () => {
+    // GithubIcon has <clipPath><rect fill="white"/></clipPath> inside <defs>,
+    // and a body <path fill="#24292F" stroke="white"/>
+    const wrapper = mount(GithubIcon, {
+      props: {
+        staticIds: true,
+        colorGradientStart: '#111111',
+        colorGradientStop: '#222222',
+      },
+    })
+    const html = wrapper.html()
+
+    // Body fill is repointed to the gradient
+    expect(html).toContain(`url(#${gradientId})`)
+    expect(html).not.toContain('#24292F')
+    // The clipPath rect's fill inside <defs> is preserved
+    expect(html).toContain('fill="white"')
+  })
+
+  it('leaves stroke colors untouched', () => {
+    const wrapper = mount(GithubIcon, {
+      props: {
+        staticIds: true,
+        colorGradientStart: '#111111',
+        colorGradientStop: '#222222',
+      },
+    })
+
+    expect(wrapper.html()).toContain('stroke="white"')
+  })
+
+  it('uses userSpaceOnUse so a single gradient spans the whole icon', () => {
+    const wrapper = mount(AddIcon, {
+      props: {
+        staticIds: true,
+        colorGradientStart: '#111111',
+        colorGradientStop: '#222222',
+      },
+    })
+
+    expect(wrapper.html()).toContain('gradientUnits="userSpaceOnUse"')
+  })
+
+  it('generates a unique gradient id per instance so multiple icons can coexist on a page', () => {
+    /** Extract the (runtime-prefixed) linearGradient id from rendered HTML */
+    const extractId = (html: string): string | undefined => /<linearGradient id="([^"]+)"/.exec(html)?.[1]
+
+    // Without `staticIds`, each instance's ids are made unique at runtime
+    const first = mount(AddIcon, { props: { colorGradientStart: '#111111', colorGradientStop: '#222222' } }).html()
+    const second = mount(AddIcon, { props: { colorGradientStart: '#111111', colorGradientStop: '#222222' } }).html()
+
+    const firstId = extractId(first)
+    const secondId = extractId(second)
+
+    expect(firstId).toBeTruthy()
+    expect(secondId).toBeTruthy()
+    expect(firstId).not.toBe(secondId)
+    // Each icon's fill references its own gradient id
+    expect(first).toContain(`url(#${firstId})`)
+    expect(second).toContain(`url(#${secondId})`)
+  })
+
+  it('renders rgb() and var() color values through to the DOM', () => {
+    const rgb = mount(AddIcon, {
+      props: { staticIds: true, colorGradientStart: 'rgb(0, 68, 244)', colorGradientStop: 'rgba(0, 214, 164, 0.5)' },
+    }).html()
+    expect(rgb).toContain('rgb(0, 68, 244)')
+    expect(rgb).toContain('rgba(0, 214, 164, 0.5)')
+
+    const cssVar = mount(AddIcon, {
+      props: { staticIds: true, colorGradientStart: 'var(--kui-color-brand)', colorGradientStop: 'var(--kui-color-accent, #00D6A4)' },
+    }).html()
+    expect(cssVar).toContain('var(--kui-color-brand)')
+    expect(cssVar).toContain('var(--kui-color-accent, #00D6A4)')
+  })
+})
