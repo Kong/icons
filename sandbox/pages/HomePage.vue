@@ -1,5 +1,11 @@
 <template>
-  <PageHeader v-model:search="searchQuery" />
+  <PageHeader
+    v-model:gradient-direction="gradientDirection"
+    v-model:gradient-enabled="gradientEnabled"
+    v-model:gradient-start="gradientStart"
+    v-model:gradient-stop="gradientStop"
+    v-model:search="searchQuery"
+  />
   <div class="sandbox-layout">
     <div class="sandbox-container">
       <template v-if="hasResults">
@@ -19,6 +25,7 @@
             <SandboxIcon
               v-for="icon in icons"
               :key="icon.name"
+              :gradient="gradientProps"
               :icon="icon.component"
               :title="icon.title"
             />
@@ -56,6 +63,21 @@ import { COUNTRY_CODES } from '../constants/countries'
 import type { Country } from '../types'
 
 const searchQuery = ref('')
+
+// Live gradient preview state, applied across every icon in the grid
+const gradientEnabled = ref(false)
+const gradientStart = ref('#0044F4')
+const gradientStop = ref('#00D6A4')
+const gradientDirection = ref('135deg')
+
+/** The gradient props forwarded to every icon, or an empty object when the preview is disabled */
+const gradientProps = computed((): Record<string, string> => gradientEnabled.value
+  ? {
+    colorGradientStart: gradientStart.value,
+    colorGradientStop: gradientStop.value,
+    colorGradientDirection: gradientDirection.value,
+  }
+  : {})
 
 // precompute country map once
 const countryMap = new Map(COUNTRY_CODES.map((c: Country) => [c.code.toUpperCase(), c.name]))

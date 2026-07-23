@@ -28,6 +28,7 @@
       decorative
       :size="`var(--kui-icon-size-70, ${KUI_ICON_SIZE_70})`"
       :title="iconName"
+      v-bind="gradient"
     />
     <KCopy
       class="icon-name"
@@ -51,9 +52,12 @@ import { DataObjectIcon } from '../../src/components/solid'
 const {
   icon,
   title = null,
+  gradient = {},
 } = defineProps<{
   icon: Record<string, any>
   title?: string
+  /** Optional gradient props (`colorGradientStart`/`Stop`/`Direction`) forwarded to the icon component */
+  gradient?: Record<string, string>
 }>()
 
 const iconName = computed((): string => icon?.__name || '')
