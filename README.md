@@ -116,7 +116,9 @@ The HTML tag to use in place of the default wrapper `<span>` tag.
 - required: `false`
 - default: `''`
 
-Optionally apply a dynamically-generated linear gradient to **any** icon in the library. When **both** `colorGradientStart` and `colorGradientStop` are provided and valid, the icon's fills are repainted with the generated gradient — overriding an existing gradient, or adding one to an icon that has none.
+Optionally apply a dynamically-generated linear gradient to an icon. When **both** `colorGradientStart` and `colorGradientStop` are provided and valid, the gradient is applied to the icon's **single-color (`currentColor`) fills** and any **existing gradient fills** (`url(#…)`, e.g. Kong's `*-gradient` icons); recoloring solid icons and overriding existing gradients.
+
+Multi-color icons that use an explicit palette (e.g. brand logos such as `HuggingFaceIcon` or `LinuxIcon`) are intentionally **left untouched**, so their artwork is never flattened. If an icon has no `currentColor` or gradient fills, passing gradient props is a no-op.
 
 The feature is fully opt-in: when either prop is omitted or invalid, the icon renders exactly as it does by default (no gradient), and a development-only `console.warn` is emitted for the invalid value.
 
@@ -138,7 +140,7 @@ Each color accepts a hex, `rgb()`/`rgba()`, or CSS `var()` custom-property value
 />
 ```
 
-> **Note**: The gradient is applied to shape **fills** only; `stroke` colors and `fill="none"` regions are left unchanged. Every icon currently in the library has fillable shapes.
+> **Note**: The gradient is applied to shape **fills** only (`currentColor` and existing `url(#…)` gradient fills); `stroke` colors, explicit color fills, and `fill="none"` regions are left unchanged.
 
 #### `colorGradientDirection`
 

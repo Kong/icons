@@ -171,7 +171,7 @@ describe('applyColorGradient', () => {
     y2: '24',
   }
 
-  it('repoints painting fills to the generated gradient and appends its definition', () => {
+  it('repoints `currentColor` fills to the generated gradient and appends its definition', () => {
     const svg = '<path d="M0 0" fill="currentColor"/>'
     const result = applyColorGradient(svg, gradient)
 
@@ -182,7 +182,7 @@ describe('applyColorGradient', () => {
     expect(result).toContain('<stop offset="1" stop-color="#222222"/>')
   })
 
-  it('overrides an existing gradient fill reference', () => {
+  it('overrides an existing gradient by repointing `url(#…)` fills', () => {
     const svg = '<path fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear"></linearGradient></defs>'
     const result = applyColorGradient(svg, gradient)
 
@@ -190,40 +190,67 @@ describe('applyColorGradient', () => {
     expect(result).not.toContain('fill="url(#paint0_linear)"')
   })
 
+  it('does NOT repoint explicit color fills (multi-color palettes are preserved)', () => {
+    const svg = '<path fill="#FFD21E"/><path fill="white"/><path fill="black"/><path fill="rgb(0, 68, 244)"/>'
+    const result = applyColorGradient(svg, gradient)
+
+    // Explicit colors are left exactly as-is
+    expect(result).toContain('fill="#FFD21E"')
+    expect(result).toContain('fill="white"')
+    expect(result).toContain('fill="black"')
+    expect(result).toContain('fill="rgb(0, 68, 244)"')
+    expect(result).not.toContain('url(#kong-icon-gradient)')
+  })
+
+  it('returns the SVG unchanged (no gradient def) when there are no repointable fills', () => {
+    const svg = '<path fill="#FFD21E"/><path fill="none"/>'
+    const result = applyColorGradient(svg, gradient)
+
+    expect(result).toBe(svg)
+    expect(result).not.toContain('<linearGradient')
+  })
+
   it('does not repoint `fill="none"`', () => {
-    const svg = '<path fill="none" stroke="#000"/>'
+    const svg = '<path fill="currentColor"/><path fill="none" stroke="#000"/>'
     const result = applyColorGradient(svg, gradient)
 
     expect(result).toContain('fill="none"')
   })
 
-  it('preserves fills inside <defs>, <mask>, and <clipPath> blocks', () => {
+  it('repoints a mix of `currentColor` and explicit fills, keeping the explicit ones', () => {
+    const svg = '<path fill="currentColor"/><path fill="#4000BF"/>'
+    const result = applyColorGradient(svg, gradient)
+
+    expect(result).toContain('fill="url(#kong-icon-gradient)"')
+    expect(result).toContain('fill="#4000BF"')
+  })
+
+  it('preserves repointable fills inside <defs>, <mask>, and <clipPath> blocks', () => {
     const svg = [
-      '<rect fill="#abcabc"/>',
+      '<rect fill="currentColor"/>',
       '<defs>',
-      '<clipPath id="c"><rect fill="white"/></clipPath>',
-      '<mask id="m"><rect fill="black"/></mask>',
+      '<clipPath id="c"><rect fill="currentColor"/></clipPath>',
+      '<mask id="m"><rect fill="url(#other)"/></mask>',
       '</defs>',
     ].join('')
     const result = applyColorGradient(svg, gradient)
 
     // The body rect is repointed
-    expect(result).not.toContain('fill="#abcabc"')
-    // The clipPath and mask fills are untouched
-    expect(result).toContain('<clipPath id="c"><rect fill="white"/></clipPath>')
-    expect(result).toContain('<mask id="m"><rect fill="black"/></mask>')
+    expect(result).toContain('fill="url(#kong-icon-gradient)"')
+    // The clipPath and mask fills are untouched, even though they would otherwise be repointable
+    expect(result).toContain('<clipPath id="c"><rect fill="currentColor"/></clipPath>')
+    expect(result).toContain('<mask id="m"><rect fill="url(#other)"/></mask>')
   })
 
   it('leaves stroke colors untouched', () => {
-    const svg = '<path fill="#abcabc" stroke="white"/>'
+    const svg = '<path fill="currentColor" stroke="white"/>'
     const result = applyColorGradient(svg, gradient)
 
     expect(result).toContain('stroke="white"')
-    expect(result).not.toContain('fill="#abcabc"')
   })
 
   it('uses the id from the provided gradient definition', () => {
-    const result = applyColorGradient('<path fill="#000"/>', { ...gradient, id: 'kong-icon-gradient-abc123' })
+    const result = applyColorGradient('<path fill="currentColor"/>', { ...gradient, id: 'kong-icon-gradient-abc123' })
 
     expect(result).toContain('id="kong-icon-gradient-abc123"')
     expect(result).toContain('fill="url(#kong-icon-gradient-abc123)"')
