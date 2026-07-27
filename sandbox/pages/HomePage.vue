@@ -5,49 +5,52 @@
     v-model:gradient-start="gradientStart"
     v-model:gradient-stop="gradientStop"
     v-model:search="searchQuery"
-    v-model:selected-types="selectedTypes"
   />
   <div class="sandbox-layout">
+    <aside
+      v-if="hasResults"
+      class="sidebar"
+    >
+      <nav class="sidebar-nav">
+        <button
+          v-for="type in visibleTypes"
+          :key="type"
+          class="sidebar-link"
+          :class="{ active: activeType === type }"
+          type="button"
+          @click="scrollToSection(type)"
+        >
+          <span>{{ formatType(type) }}</span>
+          <span class="counts">{{ groupedComponents[type].length }}</span>
+        </button>
+      </nav>
+    </aside>
+
     <div class="sandbox-container">
       <template v-if="hasResults">
-        <div
-          v-for="(icons, type) in groupedComponents"
+        <section
+          v-for="type in visibleTypes"
+          :id="`section-${type}`"
           :key="type"
-          class="icon-container"
+          class="icon-card"
         >
-          <button
-            :aria-expanded="expandedTypes[type]"
-            class="group-toggle"
-            type="button"
-            @click="expandedTypes[type] = !expandedTypes[type]"
-          >
-            <ChevronDownIcon
-              class="group-chevron"
-              :class="{ collapsed: !expandedTypes[type] }"
-              decorative
-              :size="20"
-            />
-            <h2>
-              {{ formatType(type) }} Icons
-              <span class="counts">
-                ({{ icons.length }})
-              </span>
-            </h2>
-          </button>
+          <h2>
+            {{ formatType(type) }} Icons
+            <span class="counts">
+              ({{ groupedComponents[type].length }})
+            </span>
+          </h2>
 
-          <div
-            v-show="expandedTypes[type]"
-            class="icon-grid"
-          >
+          <div class="icon-grid">
             <SandboxIcon
-              v-for="icon in icons"
+              v-for="icon in groupedComponents[type]"
               :key="icon.name"
               :gradient="gradientProps"
               :icon="icon.component"
               :title="icon.title"
             />
           </div>
-        </div>
+        </section>
       </template>
 
       <KEmptyState
@@ -60,8 +63,8 @@
         </template>
 
         <template #action>
-          <KButton @click="resetFilters">
-            Clear Filters
+          <KButton @click="clearSearch">
+            Clear Search
           </KButton>
         </template>
       </KEmptyState>
@@ -70,17 +73,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, watch } from 'vue'
+import { ref, computed, watch } from 'vue'
+import { useEventListener, useThrottleFn } from '@vueuse/core'
 import PageHeader from '../components/PageHeader.vue'
 import SandboxIcon from '../components/SandboxIcon.vue'
 import * as solidIcons from '../../src/components/solid'
 import * as multiColorIcons from '../../src/components/multi-color'
 import * as flagIcons from '../../src/components/flags'
-import { ChevronDownIcon } from '../../src/components/solid'
 import { COUNTRY_CODES } from '../constants/countries'
 import type { Country } from '../types'
 
-/** The icon types available to filter by, in display order */
+/** The icon types, in display order */
 const ICON_TYPES = ['solid', 'multi-color', 'flags'] as const
 type IconType = typeof ICON_TYPES[number]
 
@@ -88,8 +91,7 @@ type IconType = typeof ICON_TYPES[number]
 const STORAGE_KEY = 'kong-icons-sandbox-options'
 
 /**
- * The gradient options that persist across reloads. The icon-type filter is intentionally
- * excluded — it always resets to showing every type on load.
+ * The gradient options that persist across reloads.
  */
 interface SandboxOptions {
   /** Whether the gradient preview is applied across every icon */
@@ -137,16 +139,6 @@ const loadOptions = (): SandboxOptions => {
 const storedOptions = loadOptions()
 
 const searchQuery = ref('')
-
-// Icon-type filter (v-model bound to the PageHeader options popover). Not persisted:
-// always resets to showing every type on load.
-const selectedTypes = ref<IconType[]>([...ICON_TYPES])
-// Per-type collapse state: all groups expanded by default
-const expandedTypes = reactive<Record<IconType, boolean>>({
-  'solid': true,
-  'multi-color': true,
-  'flags': true,
-})
 
 // Live gradient preview state, applied across every icon in the grid
 const gradientEnabled = ref(storedOptions.gradientEnabled)
@@ -209,8 +201,8 @@ const allComponents = computed(() => {
   return componentList
 })
 
-// Icons matching the search term (before the icon-type filter is applied)
-const searchedComponents = computed(() => {
+// Icons matching the search term
+const filteredComponents = computed(() => {
   const term = searchQuery.value.trim().toLowerCase().replace(/icon/gi, '')
   if (!term) return allComponents.value
 
@@ -219,11 +211,6 @@ const searchedComponents = computed(() => {
     icon.keywords.some(k => k.includes(term)),
   )
 })
-
-// Icons matching both the search term and the selected icon types
-const filteredComponents = computed(() =>
-  searchedComponents.value.filter(icon => selectedTypes.value.includes(icon.type as IconType)),
-)
 
 const hasResults = computed(() => filteredComponents.value.length > 0)
 
@@ -237,74 +224,161 @@ const groupedComponents = computed(() => {
   return groups
 })
 
-/** Reset both the search term and the icon-type filter to their defaults */
-const resetFilters = () => {
+// The icon types that currently have results, in canonical order (drives the sidebar and sections)
+const visibleTypes = computed<IconType[]>(() =>
+  ICON_TYPES.filter(type => groupedComponents.value[type]?.length),
+)
+
+/** Clear the search term */
+const clearSearch = () => {
   searchQuery.value = ''
-  selectedTypes.value = [...ICON_TYPES]
 }
 
 // Helper for title formatting
 const formatType = (type: string) => type.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase())
+
+// --- Section navigation & scroll spy ---
+
+// The fixed header height plus a little breathing room, used to offset anchor scrolling and scroll spy
+const SCROLL_OFFSET = 100
+
+// The section currently highlighted in the sidebar
+const activeType = ref<IconType | undefined>(ICON_TYPES[0])
+
+/** Resolve a section's DOM element by its icon type */
+const sectionEl = (type: string): HTMLElement | null => document.getElementById(`section-${type}`)
+
+/** Smooth-scroll a section into view and mark it active */
+const scrollToSection = (type: IconType) => {
+  activeType.value = type
+  sectionEl(type)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+/** Highlight the section nearest the top of the viewport as the user scrolls */
+const updateActiveType = () => {
+  let current = visibleTypes.value[0]
+  for (const type of visibleTypes.value) {
+    const el = sectionEl(type)
+    if (el && el.getBoundingClientRect().top - SCROLL_OFFSET <= 1) {
+      current = type
+    }
+  }
+  if (current) {
+    activeType.value = current
+  }
+}
+
+useEventListener(window, 'scroll', useThrottleFn(updateActiveType, 100))
+
+// When the search results change the set of visible sections, reset the active section
+watch(visibleTypes, (types) => {
+  if (!activeType.value || !types.includes(activeType.value)) {
+    activeType.value = types[0]
+  }
+})
 </script>
 
 <style lang="scss" scoped>
-$header-height: 80px;
+$header-height: 48px;
 $content-max-width: 1800px;
+$sidebar-width: 200px;
 
 .sandbox-layout {
   display: flex;
+  flex-direction: column;
+  gap: $kui-space-70;
   margin-top: $header-height;
-  padding: $kui-space-70;
+  padding: $kui-space-50;
+
+  @media (min-width: $kui-breakpoint-tablet) {
+    padding: $kui-space-70;
+  }
+
+  @media (min-width: $kui-breakpoint-laptop) {
+    flex-direction: row;
+  }
+}
+
+.sidebar {
+  flex-shrink: 0;
+
+  @media (min-width: $kui-breakpoint-laptop) {
+    align-self: flex-start;
+    inline-size: $sidebar-width;
+    position: sticky;
+    top: calc(#{$header-height} + #{$kui-space-50});
+  }
+}
+
+.sidebar-nav {
+  display: flex;
+  gap: $kui-space-20;
+  overflow-x: auto;
+  padding-bottom: $kui-space-20;
+
+  @media (min-width: $kui-breakpoint-laptop) {
+    flex-direction: column;
+    overflow-x: visible;
+    padding-bottom: $kui-space-0;
+  }
+}
+
+.sidebar-link {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: $kui-border-radius-30;
+  color: $kui-color-text-neutral;
+  cursor: pointer;
+  display: flex;
+  font-size: $kui-font-size-30;
+  font-weight: $kui-font-weight-medium;
+  gap: $kui-space-40;
+  padding: $kui-space-40 $kui-space-50;
+  white-space: nowrap;
+
+  @media (min-width: $kui-breakpoint-laptop) {
+    inline-size: 100%;
+    justify-content: space-between;
+  }
+
+  &:hover {
+    background-color: $kui-color-background-neutral-weakest;
+    color: $kui-color-text;
+  }
+
+  &.active {
+    background-color: $kui-color-background-primary-weakest;
+    color: $kui-color-text-primary;
+  }
+
+  .counts {
+    font-size: $kui-font-size-20;
+    font-weight: $kui-font-weight-regular;
+  }
 }
 
 .sandbox-container {
+  flex: 1;
   min-height: 50vh;
-  width: 100%;
+  min-width: 0;
+}
 
-  @media (min-width: $kui-breakpoint-laptop) {
+.icon-card {
+  background-color: $kui-color-background;
+  border: $kui-border-width-10 solid $kui-color-border;
+  border-radius: $kui-border-radius-40;
+  box-shadow: $kui-shadow;
+  margin-bottom: $kui-space-70;
+  padding: $kui-space-50;
+  scroll-margin-top: calc(#{$header-height} + #{$kui-space-50});
+
+  @media (min-width: $kui-breakpoint-tablet) {
     padding: $kui-space-70;
   }
-}
 
-.icon-container {
-  border-bottom: $kui-border-width-10 solid $kui-color-border;
-  margin-bottom: $kui-space-70;
-
-  &:first-of-type {
-    padding-top: $kui-space-0;
-  }
-
-  &:last-of-type {
-    border-bottom: none;
+  &:last-child {
     margin-bottom: $kui-space-0;
-  }
-}
-
-.group-toggle {
-  align-items: center;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  gap: $kui-space-30;
-  padding: $kui-space-0;
-  text-align: left;
-  width: 100%;
-
-  // Reset heading margins so the chevron aligns to the text's vertical center
-  h2 {
-    margin: $kui-space-0;
-  }
-
-  .group-chevron {
-    color: $kui-color-text-neutral;
-    display: block;
-    flex-shrink: 0;
-    transition: transform 0.2s ease;
-
-    &.collapsed {
-      transform: rotate(-90deg);
-    }
   }
 }
 
@@ -312,9 +386,8 @@ $content-max-width: 1800px;
   display: grid;
   gap: $kui-space-50;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: $kui-space-0 auto $kui-space-50;
+  margin: $kui-space-0 auto;
   max-width: $content-max-width;
-  padding-bottom: $kui-space-70;
   width: 100%;
 
   @media (min-width: $kui-breakpoint-mobile) {
@@ -326,7 +399,7 @@ $content-max-width: 1800px;
   }
 
   @media (min-width: $kui-breakpoint-laptop) {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   @media (min-width: $kui-breakpoint-desktop) {
@@ -336,7 +409,7 @@ $content-max-width: 1800px;
 
 h2 {
   color: $kui-color-text;
-  margin-top: $kui-space-0;
+  margin-block: $kui-space-0 $kui-space-60;
 
   .counts {
     font-size: $kui-font-size-40;

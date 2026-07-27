@@ -124,9 +124,14 @@ const handleCopy = (copyToClipboard: (text: string) => void) => {
 
   :deep(.text-icon-wrapper) {
     color: #333;
+    display: none;
 
     &:hover {
       color: #292929;
+    }
+
+    @media (min-width: 500px) {
+      display: inline-flex;
     }
   }
 }
