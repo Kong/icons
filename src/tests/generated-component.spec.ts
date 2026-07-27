@@ -1,7 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import * as importedComponents from '../components'
-import * as flagIcons from '../components/flags'
 import * as solidIcons from '../components/solid'
 import { AddIcon } from '../components/solid'
 import { ServerlessGradientIcon, GithubIcon, HuggingFaceIcon } from '../components/multi-color'
@@ -310,14 +309,11 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
       describe('color gradient', () => {
         // With `staticIds: true` the injected gradient id is not prefixed
         const gradientId = 'kong-icon-gradient'
-        // Flag icons never receive a gradient, regardless of the provided colors
-        const isFlag = componentName in flagIcons
-        // Solid icons use `currentColor` fills, so a gradient always applies to them
+        // Solid icons use `currentColor` fills and are the only icons a gradient applies to
         const isSolid = componentName in solidIcons
 
-        if (isFlag) {
-          it('never applies a gradient to flag icons (silently), even with valid colors', () => {
-            const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
+        if (isSolid) {
+          it('applies a generated linear gradient when both start and stop colors are valid', () => {
             const wrapper = mount(IconComponent, {
               props: {
                 staticIds: true,
@@ -325,36 +321,17 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
                 colorGradientStop: '#00D6A4',
               },
             })
+            const html = wrapper.html()
 
-            // Flag icons keep their official colors and skip the gradient without warning
-            expect(wrapper.html()).not.toContain(gradientId)
-            expect(consoleSpy).not.toHaveBeenCalled()
-            consoleSpy.mockReset()
+            // Exactly one gradient definition is injected
+            expect(html.match(new RegExp(`id="${gradientId}"`, 'g'))?.length).toBe(1)
+            expect(html).toContain(`<linearGradient id="${gradientId}"`)
+            // Fills are repointed to the generated gradient
+            expect(html).toContain(`url(#${gradientId})`)
+            // Both stop colors are present
+            expect(html).toContain('#0044F4')
+            expect(html).toContain('#00D6A4')
           })
-        } else {
-          // Solid icons (`currentColor` fills) always accept the gradient. Multi-color icons only accept it
-          // when they have repointable fills (an existing `url(#…)` gradient), which is covered separately.
-          if (isSolid) {
-            it('applies a generated linear gradient when both start and stop colors are valid', () => {
-              const wrapper = mount(IconComponent, {
-                props: {
-                  staticIds: true,
-                  colorGradientStart: '#0044F4',
-                  colorGradientStop: '#00D6A4',
-                },
-              })
-              const html = wrapper.html()
-
-              // Exactly one gradient definition is injected
-              expect(html.match(new RegExp(`id="${gradientId}"`, 'g'))?.length).toBe(1)
-              expect(html).toContain(`<linearGradient id="${gradientId}"`)
-              // Fills are repointed to the generated gradient
-              expect(html).toContain(`url(#${gradientId})`)
-              // Both stop colors are present
-              expect(html).toContain('#0044F4')
-              expect(html).toContain('#00D6A4')
-            })
-          }
 
           it('does not apply a gradient (and warns) when only one color is provided', () => {
             const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
@@ -384,6 +361,23 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
             expect(consoleSpy).toHaveBeenCalled()
             consoleSpy.mockReset()
           })
+        } else {
+          // Multi-color and flag icons must retain their official colors: gradient props are
+          // silently ignored (no gradient injected, no warning), even when valid.
+          it('never applies a gradient to non-solid icons (silently), even with valid colors', () => {
+            const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
+            const wrapper = mount(IconComponent, {
+              props: {
+                staticIds: true,
+                colorGradientStart: '#0044F4',
+                colorGradientStop: '#00D6A4',
+              },
+            })
+
+            expect(wrapper.html()).not.toContain(gradientId)
+            expect(consoleSpy).not.toHaveBeenCalled()
+            consoleSpy.mockReset()
+          })
         }
       })
     })
@@ -396,9 +390,10 @@ for (const [componentName, IconComponent] of Object.entries(importedComponents))
 describe('color gradient (component integration)', () => {
   const gradientId = 'kong-icon-gradient'
 
-  it('overrides an existing gradient (a `url(#…)` fill) with the generated gradient', () => {
-    // ServerlessGradientIcon is a single-shape icon whose fill is `url(#paint0_linear_2107_23107)` —
-    // exactly the case designers want to recolor
+  it('does not apply a gradient to a multi-color icon that already uses a `url(#…)` fill', () => {
+    // ServerlessGradientIcon is a multi-color icon whose fill is `url(#paint0_linear_2107_23107)`.
+    // Gradients apply to solid icons only, so its existing gradient reference must be left intact.
+    const consoleSpy = vi.spyOn(console, 'warn').mockImplementation(() => null)
     const wrapper = mount(ServerlessGradientIcon, {
       props: {
         staticIds: true,
@@ -408,11 +403,11 @@ describe('color gradient (component integration)', () => {
     })
     const html = wrapper.html()
 
-    expect(html).toContain(`url(#${gradientId})`)
-    // The original gradient reference is no longer used by any fill
-    expect(html).not.toContain('url(#paint0_linear_2107_23107)')
-    expect(html).toContain('#111111')
-    expect(html).toContain('#222222')
+    // No generated gradient is injected, and the original gradient reference is preserved
+    expect(html).not.toContain(gradientId)
+    expect(html).toContain('url(#paint0_linear_2107_23107)')
+    expect(consoleSpy).not.toHaveBeenCalled()
+    consoleSpy.mockReset()
   })
 
   it('does NOT flatten explicit-color multi-color icons (leaves their palette intact)', () => {

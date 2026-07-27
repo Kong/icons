@@ -119,9 +119,9 @@ export const resolveColorGradient = (params: {
 
 /**
  * Returns true if a `fill` value should be repointed to the generated gradient.
- * Only `currentColor` (single-color icons) and existing gradient references (`url(#…)`, e.g. Kong's
- * `*-gradient` icons) are repointed. Explicit colors — the intentional palettes of multi-color icons —
- * and `fill="none"` are left untouched so multi-color artwork is not flattened.
+ * Repoints `currentColor` fills (the norm for solid icons, whose fills are normalized to `currentColor`
+ * at generation time) as well as any existing gradient reference (`url(#…)`), in case a solid icon
+ * defines its own gradient. Explicit colors and `fill="none"` are left untouched.
  *
  * @param {string} fillValue - The raw `fill` attribute value.
  * @returns {boolean} Whether the fill should be repointed.
@@ -133,10 +133,10 @@ const isRepointableFill = (fillValue: string): boolean => {
 
 /**
  * Apply a generated linear gradient to an SVG content string.
- * Repoints only `currentColor` and existing gradient (`url(#…)`) fills — leaving explicit colors and
- * `fill="none"` untouched — then appends the gradient definition. If the icon has no repointable fills
- * (e.g. a multi-color logo with an explicit palette), the SVG is returned unchanged with no definition added.
- * Fills inside `<defs>`, `<mask>`, and `<clipPath>` are always preserved so clip/mask geometry is not altered.
+ * Repoints `currentColor` and existing gradient (`url(#…)`) fills — leaving explicit colors and
+ * `fill="none"` untouched — then appends the gradient definition. If the icon has no repointable fills,
+ * the SVG is returned unchanged with no definition added. Fills inside `<defs>`, `<mask>`, and
+ * `<clipPath>` are always preserved so clip/mask geometry is not altered.
  *
  * @param {string} svgString - The raw SVG inner HTML.
  * @param {ColorGradient} gradient - The resolved gradient definition to apply.
@@ -151,7 +151,7 @@ export const applyColorGradient = (svgString: string, gradient: ColorGradient): 
     return `%%KONG_ICON_GRADIENT_PROTECTED_${protectedBlocks.length - 1}%%`
   })
 
-  // Repoint only `currentColor` and existing gradient (`url(#…)`) fills to the generated gradient
+  // Repoint `currentColor` and existing gradient (`url(#…)`) fills to the generated gradient
   let didRepoint = false
   const repointed = withoutProtected.replace(/fill="([^"]*)"/g, (match, value: string) => {
     if (!isRepointableFill(value)) {
@@ -161,7 +161,7 @@ export const applyColorGradient = (svgString: string, gradient: ColorGradient): 
     return `fill="url(#${gradient.id})"`
   })
 
-  // If nothing was repointable (e.g. a multi-color logo), leave the icon exactly as-is
+  // If nothing was repointable (no `currentColor` or `url(#…)` fills), leave the icon exactly as-is
   if (!didRepoint) {
     return svgString
   }

@@ -210,8 +210,9 @@ const colorGradient = computed((): ColorGradient | null => {
     return null
   }
 
-  // Gradients are never applied to flag icons, which must retain their official colors
-  if (iconType === 'flags') {
+  // Gradients are only applied to solid icons.
+  // All other icons must retain their official colors, so we ignore any gradient props and return null.
+  if (iconType !== 'solid') {
     return null
   }
 

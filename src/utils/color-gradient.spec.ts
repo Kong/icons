@@ -182,7 +182,7 @@ describe('applyColorGradient', () => {
     expect(result).toContain('<stop offset="1" stop-color="#222222"/>')
   })
 
-  it('overrides an existing gradient by repointing `url(#…)` fills', () => {
+  it('repoints an existing gradient (`url(#…)`) fill, e.g. a solid icon that defines its own gradient', () => {
     const svg = '<path fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear"></linearGradient></defs>'
     const result = applyColorGradient(svg, gradient)
 

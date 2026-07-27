@@ -5,6 +5,7 @@
     v-model:gradient-start="gradientStart"
     v-model:gradient-stop="gradientStop"
     v-model:search="searchQuery"
+    v-model:selected-types="selectedTypes"
   />
   <div class="sandbox-layout">
     <div class="sandbox-container">
@@ -14,14 +15,30 @@
           :key="type"
           class="icon-container"
         >
-          <h2>
-            {{ formatType(type) }} Icons
-            <span class="counts">
-              ({{ icons.length }})
-            </span>
-          </h2>
+          <button
+            :aria-expanded="expandedTypes[type]"
+            class="group-toggle"
+            type="button"
+            @click="expandedTypes[type] = !expandedTypes[type]"
+          >
+            <ChevronDownIcon
+              class="group-chevron"
+              :class="{ collapsed: !expandedTypes[type] }"
+              decorative
+              :size="20"
+            />
+            <h2>
+              {{ formatType(type) }} Icons
+              <span class="counts">
+                ({{ icons.length }})
+              </span>
+            </h2>
+          </button>
 
-          <div class="icon-grid">
+          <div
+            v-show="expandedTypes[type]"
+            class="icon-grid"
+          >
             <SandboxIcon
               v-for="icon in icons"
               :key="icon.name"
@@ -43,8 +60,8 @@
         </template>
 
         <template #action>
-          <KButton @click="searchQuery = ''">
-            Clear Search
+          <KButton @click="resetFilters">
+            Clear Filters
           </KButton>
         </template>
       </KEmptyState>
@@ -53,22 +70,103 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, reactive, computed, watch } from 'vue'
 import PageHeader from '../components/PageHeader.vue'
 import SandboxIcon from '../components/SandboxIcon.vue'
 import * as solidIcons from '../../src/components/solid'
 import * as multiColorIcons from '../../src/components/multi-color'
 import * as flagIcons from '../../src/components/flags'
+import { ChevronDownIcon } from '../../src/components/solid'
 import { COUNTRY_CODES } from '../constants/countries'
 import type { Country } from '../types'
 
+/** The icon types available to filter by, in display order */
+const ICON_TYPES = ['solid', 'multi-color', 'flags'] as const
+type IconType = typeof ICON_TYPES[number]
+
+/** localStorage key used to persist the sandbox's gradient preview options */
+const STORAGE_KEY = 'kong-icons-sandbox-options'
+
+/**
+ * The gradient options that persist across reloads. The icon-type filter is intentionally
+ * excluded — it always resets to showing every type on load.
+ */
+interface SandboxOptions {
+  /** Whether the gradient preview is applied across every icon */
+  gradientEnabled: boolean
+  /** The gradient start color (hex or rgb()) */
+  gradientStart: string
+  /** The gradient stop color (hex or rgb()) */
+  gradientStop: string
+  /** The gradient direction as a CSS angle (e.g. `135deg`) */
+  gradientDirection: string
+}
+
+/** The default gradient options used when nothing valid is stored */
+const defaultOptions = (): SandboxOptions => ({
+  gradientEnabled: false,
+  gradientStart: '#0044F4',
+  gradientStop: '#00D6A4',
+  gradientDirection: '135deg',
+})
+
+/** Read and validate persisted gradient options from localStorage, falling back to defaults */
+const loadOptions = (): SandboxOptions => {
+  const defaults = defaultOptions()
+
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) {
+      return defaults
+    }
+
+    const parsed = JSON.parse(raw) as Partial<SandboxOptions>
+
+    return {
+      gradientEnabled: typeof parsed.gradientEnabled === 'boolean' ? parsed.gradientEnabled : defaults.gradientEnabled,
+      gradientStart: typeof parsed.gradientStart === 'string' ? parsed.gradientStart : defaults.gradientStart,
+      gradientStop: typeof parsed.gradientStop === 'string' ? parsed.gradientStop : defaults.gradientStop,
+      gradientDirection: typeof parsed.gradientDirection === 'string' ? parsed.gradientDirection : defaults.gradientDirection,
+    }
+  } catch {
+    // Ignore malformed JSON or unavailable storage and fall back to defaults
+    return defaults
+  }
+}
+
+const storedOptions = loadOptions()
+
 const searchQuery = ref('')
 
+// Icon-type filter (v-model bound to the PageHeader options popover). Not persisted:
+// always resets to showing every type on load.
+const selectedTypes = ref<IconType[]>([...ICON_TYPES])
+// Per-type collapse state: all groups expanded by default
+const expandedTypes = reactive<Record<IconType, boolean>>({
+  'solid': true,
+  'multi-color': true,
+  'flags': true,
+})
+
 // Live gradient preview state, applied across every icon in the grid
-const gradientEnabled = ref(false)
-const gradientStart = ref('#0044F4')
-const gradientStop = ref('#00D6A4')
-const gradientDirection = ref('135deg')
+const gradientEnabled = ref(storedOptions.gradientEnabled)
+const gradientStart = ref(storedOptions.gradientStart)
+const gradientStop = ref(storedOptions.gradientStop)
+const gradientDirection = ref(storedOptions.gradientDirection)
+
+// Persist the gradient options whenever any of them change, so they survive a reload
+watch([gradientEnabled, gradientStart, gradientStop, gradientDirection], () => {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      gradientEnabled: gradientEnabled.value,
+      gradientStart: gradientStart.value,
+      gradientStop: gradientStop.value,
+      gradientDirection: gradientDirection.value,
+    } satisfies SandboxOptions))
+  } catch {
+    // Ignore storage write failures (e.g. private mode / quota)
+  }
+})
 
 /** The gradient props forwarded to every icon, or an empty object when the preview is disabled */
 const gradientProps = computed((): Record<string, string> => gradientEnabled.value
@@ -111,7 +209,8 @@ const allComponents = computed(() => {
   return componentList
 })
 
-const filteredComponents = computed(() => {
+// Icons matching the search term (before the icon-type filter is applied)
+const searchedComponents = computed(() => {
   const term = searchQuery.value.trim().toLowerCase().replace(/icon/gi, '')
   if (!term) return allComponents.value
 
@@ -120,6 +219,11 @@ const filteredComponents = computed(() => {
     icon.keywords.some(k => k.includes(term)),
   )
 })
+
+// Icons matching both the search term and the selected icon types
+const filteredComponents = computed(() =>
+  searchedComponents.value.filter(icon => selectedTypes.value.includes(icon.type as IconType)),
+)
 
 const hasResults = computed(() => filteredComponents.value.length > 0)
 
@@ -132,6 +236,12 @@ const groupedComponents = computed(() => {
   }
   return groups
 })
+
+/** Reset both the search term and the icon-type filter to their defaults */
+const resetFilters = () => {
+  searchQuery.value = ''
+  selectedTypes.value = [...ICON_TYPES]
+}
 
 // Helper for title formatting
 const formatType = (type: string) => type.replace('-', ' ').replace(/\b\w/g, c => c.toUpperCase())
@@ -167,6 +277,34 @@ $content-max-width: 1800px;
   &:last-of-type {
     border-bottom: none;
     margin-bottom: $kui-space-0;
+  }
+}
+
+.group-toggle {
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  gap: $kui-space-30;
+  padding: $kui-space-0;
+  text-align: left;
+  width: 100%;
+
+  // Reset heading margins so the chevron aligns to the text's vertical center
+  h2 {
+    margin: $kui-space-0;
+  }
+
+  .group-chevron {
+    color: $kui-color-text-neutral;
+    display: block;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+
+    &.collapsed {
+      transform: rotate(-90deg);
+    }
   }
 }
 

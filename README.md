@@ -116,13 +116,11 @@ The HTML tag to use in place of the default wrapper `<span>` tag.
 - required: `false`
 - default: `''`
 
-Optionally apply a dynamically-generated linear gradient to an icon. When **both** `colorGradientStart` and `colorGradientStop` are provided and valid, the gradient is applied to the icon's **single-color (`currentColor`) fills** and any **existing gradient fills** (`url(#…)`, e.g. Kong's `*-gradient` icons); recoloring solid icons and overriding existing gradients.
+Optionally apply a dynamically-generated linear gradient to a **solid** icon. When **both** `colorGradientStart` and `colorGradientStop` are provided and valid, the gradient recolors the icon's single-color (`currentColor`) fills.
 
-Multi-color icons that use an explicit palette (e.g. brand logos such as `HuggingFaceIcon` or `LinuxIcon`) are intentionally **left untouched**, so their artwork is never flattened. If an icon has no `currentColor` or gradient fills, passing gradient props is a no-op.
+Gradients apply to **solid (single-color) icons only** (those generated from the `/svg/solid/` directory). Multi-color icons and flags must retain their official colors, so passing gradient props to them is a silent no-op.
 
-The feature is fully opt-in: when either prop is omitted or invalid, the icon renders exactly as it does by default (no gradient), and a development-only `console.warn` is emitted for the invalid value.
-
-> **Note**: Gradients are **never** applied to `flag` icons, which must retain their official colors. Passing gradient props to a flag icon is silently ignored.
+The feature is fully opt-in: when either prop is omitted or invalid, the icon renders exactly as it does by default (no gradient). For solid icons, a development-only `console.warn` is emitted when a gradient is attempted with a missing or invalid color.
 
 Each color accepts a hex, `rgb()`/`rgba()`, or CSS `var()` custom-property value:
 
@@ -140,7 +138,7 @@ Each color accepts a hex, `rgb()`/`rgba()`, or CSS `var()` custom-property value
 />
 ```
 
-> **Note**: The gradient is applied to shape **fills** only (`currentColor` and existing `url(#…)` gradient fills); `stroke` colors, explicit color fills, and `fill="none"` regions are left unchanged.
+> **Note**: The gradient is applied to `currentColor` **fills** only; `stroke` colors and `fill="none"` regions are left unchanged.
 
 #### `colorGradientDirection`
 
