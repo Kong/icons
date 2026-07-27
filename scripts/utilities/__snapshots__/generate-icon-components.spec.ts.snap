@@ -379,6 +379,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "ConnectionsIcon",
   "ContactSupportIcon",
   "ContractIcon",
+  "ContrastIcon",
   "CopyIcon",
   "DangerCircleIcon",
   "DangerIcon",
