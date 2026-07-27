@@ -86,6 +86,7 @@ export default [
   'ConnectionsIcon.vue',
   'ContactSupportIcon.vue',
   'ContractIcon.vue',
+  'ContrastIcon.vue',
   'CopyIcon.vue',
   'CurityIcon.vue',
   'DangerCircleIcon.vue',

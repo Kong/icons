@@ -1,3 +1,10 @@
+# [1.62.0](https://github.com/Kong/icons/compare/v1.61.2...v1.62.0) (2026-07-27)
+
+
+### Features
+
+* add contrast icon ([#887](https://github.com/Kong/icons/issues/887)) ([e13eaa8](https://github.com/Kong/icons/commit/e13eaa83bbe8b5a99019891346cf2184db9fd754))
+
 ## [1.61.2](https://github.com/Kong/icons/compare/v1.61.1...v1.61.2) (2026-07-13)
 
 
