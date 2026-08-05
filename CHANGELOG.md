@@ -1,3 +1,10 @@
+## [1.62.1](https://github.com/Kong/icons/compare/v1.62.0...v1.62.1) (2026-08-05)
+
+
+### Bug Fixes
+
+* amazon-ai icon and agentic reviewer ([#889](https://github.com/Kong/icons/issues/889)) ([680a08c](https://github.com/Kong/icons/commit/680a08cca1098653ac1666123351d8b015206934))
+
 # [1.62.0](https://github.com/Kong/icons/compare/v1.61.2...v1.62.0) (2026-07-27)
 
 

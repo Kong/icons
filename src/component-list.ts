@@ -19,6 +19,7 @@ export default [
   'AlibabaCloudIcon.vue',
   'AlignVerticalBottomIcon.vue',
   'AlignVerticalTopIcon.vue',
+  'AmazonAiIcon.vue',
   'AmazonBedrockIcon.vue',
   'AnalyticsIcon.vue',
   'AnthropicIcon.vue',
