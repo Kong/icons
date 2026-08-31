@@ -60,6 +60,7 @@ export default function createComponentFromSvg(pathToSvg: string, svgFileName: s
       .replace(/\/\*\* {%%ICON_COMPONENT_FILE_HEADER%%} \*\//g, COMPONENT_FILE_HEADER)
       .replace(/{%%ICON_SVG_INNER_HTML%%}/g, svgInnerHtml)
       .replace(/{%%KONG_COMPONENT_ICON_CLASS%%}/g, name)
+      .replace(/{%%KONG_COMPONENT_ICON_TYPE%%}/g, iconSubdirectory)
       .replace(/{%%KONG_GENERATED_FILENAME%%}/g, componentFilenameWithExtension)
   } catch (err: any) {
     console.log(pc.red('createComponentFromSvg: could not import and parse the component templates'), err)
