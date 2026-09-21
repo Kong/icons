@@ -1,3 +1,10 @@
+# [1.63.0](https://github.com/Kong/icons/compare/v1.62.1...v1.63.0) (2026-09-21)
+
+
+### Features
+
+* atlassian, figma, snowflake icons ([#894](https://github.com/Kong/icons/issues/894)) ([2b15e92](https://github.com/Kong/icons/commit/2b15e928b0ba2b39413649fadb9d72aa6fea1a5a))
+
 ## [1.62.1](https://github.com/Kong/icons/compare/v1.62.0...v1.62.1) (2026-08-05)
 
 
