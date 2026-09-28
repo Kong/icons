@@ -1,3 +1,10 @@
+## [1.63.1](https://github.com/Kong/icons/compare/v1.63.0...v1.63.1) (2026-09-28)
+
+
+### Bug Fixes
+
+* switching ci from pat to app token [KHCP-2195] ([#897](https://github.com/Kong/icons/issues/897)) ([c5c9664](https://github.com/Kong/icons/commit/c5c96641618e744b2ca725ef87d8df420713bdca))
+
 # [1.63.0](https://github.com/Kong/icons/compare/v1.62.1...v1.63.0) (2026-09-21)
 
 
