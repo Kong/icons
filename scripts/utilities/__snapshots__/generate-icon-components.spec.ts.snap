@@ -304,7 +304,7 @@ exports[`generate > \`/src/components/index.ts\` file > has exports that match t
   "SonarIcon",
   "SwaggerhubIcon",
   "TraceableIcon",
-  "TypesafeIcon",
+  "TypesafeAiIcon",
   "UbuntuIcon",
   "VercelIcon",
   "VllmIcon",
