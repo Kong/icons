@@ -1,3 +1,10 @@
+# [1.64.0](https://github.com/Kong/icons/compare/v1.63.1...v1.64.0) (2026-10-20)
+
+
+### Features
+
+* add Baseten and TypeSafe AI icons ([#896](https://github.com/Kong/icons/issues/896)) ([c956944](https://github.com/Kong/icons/commit/c9569445a4f4c4be777df0019a196969bb2e73ab))
+
 ## [1.63.1](https://github.com/Kong/icons/compare/v1.63.0...v1.63.1) (2026-09-28)
 
 
