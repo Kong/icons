@@ -24,8 +24,8 @@ importers:
         specifier: ^2.1.9
         version: 2.1.9
       '@kong/design-tokens':
-        specifier: 2.0.0
-        version: 2.0.0
+        specifier: 3.5.2
+        version: 3.5.2
       '@kong/eslint-config-kong-ui':
         specifier: ^1.7.1
         version: 1.7.1(@typescript-eslint/parser@8.61.1(eslint@9.39.4(jiti@2.4.2))(typescript@5.9.3))(eslint@9.39.4(jiti@2.4.2))(typescript@5.9.3)
@@ -946,8 +946,8 @@ packages:
   '@keyv/serialize@1.1.1':
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
 
-  '@kong/design-tokens@2.0.0':
-    resolution: {integrity: sha512-5IzpE2QK1PV2f+lQ697PlAB0sxBosjRpM4g955TQkSN3fKDUKRn6DPgKDRX7LGEkqNGLn1jwy8jN70CMRbEi7w==}
+  '@kong/design-tokens@3.5.2':
+    resolution: {integrity: sha512-So11p2L49B9LWtL3yIqdjJpSNbT5Bof//bAr/OQ98Djcvy7Qzk1W+f6HY2ymelCz3viHJqhvnpu9wDLcmPB45A==}
     engines: {node: '>=20.19.5', pnpm: '>=10.28.2'}
 
   '@kong/eslint-config-kong-ui@1.7.1':
@@ -2359,6 +2359,7 @@ packages:
   eslint@9.39.4:
     resolution: {integrity: sha512-XoMjdBOwe/esVgEvLmNsD3IRHkm7fbKIUGvrleloJXUZgDHig2IPWNniv+GwjyJXzuNqVjlr5+4yVUZjycJwfQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -2611,6 +2612,7 @@ packages:
   git-raw-commits@5.0.1:
     resolution: {integrity: sha512-Y+csSm2GD/PCSh6Isd/WiMjNAydu0VBiG9J7EdQsNA5P9uXvLayqjmTsNlK5Gs9IhblFZqOU0yid5Il5JPoLiQ==}
     engines: {node: '>=18'}
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   glob-parent@5.1.2:
@@ -5432,7 +5434,7 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@kong/design-tokens@2.0.0': {}
+  '@kong/design-tokens@3.5.2': {}
 
   '@kong/eslint-config-kong-ui@1.7.1(@typescript-eslint/parser@8.61.1(eslint@9.39.4(jiti@2.4.2))(typescript@5.9.3))(eslint@9.39.4(jiti@2.4.2))(typescript@5.9.3)':
     dependencies:
