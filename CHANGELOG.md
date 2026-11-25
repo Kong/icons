@@ -1,3 +1,10 @@
+# [1.65.0](https://github.com/Kong/icons/compare/v1.64.0...v1.65.0) (2026-11-25)
+
+
+### Features
+
+* add new platform icons ([#911](https://github.com/Kong/icons/issues/911)) ([65e1a9e](https://github.com/Kong/icons/commit/65e1a9e1207d0981399f2ed84dd631715710e107))
+
 # [1.64.0](https://github.com/Kong/icons/compare/v1.63.1...v1.64.0) (2026-10-20)
 
 
